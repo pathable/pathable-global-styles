@@ -13,6 +13,7 @@
     api.use('ecmascript');
     api.use('francocatena:compass@0.6.0');
     api.use('fourseven:scss');
+    api.use('meta:susy');
 
     api.addFiles([
       './imports/host.scss',
