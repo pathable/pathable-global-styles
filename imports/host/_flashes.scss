@@ -5,7 +5,7 @@
 	background: rgba(0,0,0,0.3);
 	color: #fff;
 	margin-bottom: 2em;
-	padding: $padding/2 $padding/2 $padding/2 $padding*1.8;
+	padding: $size/2 $size/2 $size/2 $size*1.8;
 	position: relative;
 	@include border-top-radius(2px);
 	@include box-sizing(border-box);
@@ -37,7 +37,7 @@
   }
   .session & {
     margin-bottom: 0;
-    padding: $padding $padding*2.2;
+    padding: $size $size*2.2;
     &:after {
       left: 1.5em;
     }
@@ -48,7 +48,7 @@
   font-size: 1em;
   margin-top: -0.75em;
 	position: absolute;
-	right: $padding;
+	right: $size;
 	top: 50%;
   i {
     color: #fff;

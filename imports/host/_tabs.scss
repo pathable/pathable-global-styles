@@ -1,0 +1,45 @@
+
+//
+// TABS
+
+
+// Simple tabs
+
+.tabs-simple {
+	border-bottom: 1px solid $border-light;
+	margin-bottom: $size;
+	@include pie-clearfix;
+	li {
+		display: inline-block;
+		float: left;
+		&.active {
+			background: $bg-light;
+			bottom: -1px;
+			position: relative;
+			@include background-image(linear-gradient($white, $bg-light));
+			a {
+				border: 1px solid $border-light;
+				border-bottom-color: $bg-light;
+				color: $blue;		
+			}
+		}
+	}
+	a {
+		border: 1px solid $bg-light;
+		color: $gray05;
+		display: block;
+		padding: $size/2 $size;
+	}
+	i {
+		display: inline-block;
+		font-size: $size/1.1;
+		margin-right: $size/4;
+		position: relative;
+		top: $size/8;
+	}
+	@media screen and (max-width:500px) {
+		a span {
+			display: none;
+		}
+	}
+}

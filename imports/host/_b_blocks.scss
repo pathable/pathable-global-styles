@@ -14,13 +14,20 @@
 // Block row
 
 .b-block-row {
-	margin-bottom: $padding/4;
+	margin-bottom: $size/4;
 	@include pie-clearfix;
 	&.expanded {
 		border: 1px solid $blue;
-		> .b-block a {
-			color: $blue;
-			font-weight: 500;
+		@include border-radius(3px);
+		> .b-block {
+			@include border-radius(2px);
+			a {
+				color: $blue;
+				font-weight: 500;
+			}
+		}
+		.b-block-sub .b-block-style {
+			@include border-radius(0);
 		}
 		.b-block-toggle {
 			@include rotate(90deg);
@@ -35,6 +42,35 @@
 			color: $red;
 		}
 	}
+	&.editable {
+		.b-block-content {
+			border-color: $blue;
+			&:hover, &:focus {
+				border-color: $blue;
+			}
+		}
+		.b-block-linetext {
+			label {
+				float: left;
+				margin-right: 2%;
+				width: 45%;
+			}
+			input, select {
+				width: 100%;
+			}
+		}
+		input, select {
+			height: 3.3em;
+			line-height: 3.3em;
+			margin: -$size/2 0;
+			width: 45%;
+		}
+		button {
+			font-size: 0.9em;
+			margin: -$size/2 0;
+			text-transform: uppercase;
+		}
+	}
 }
 
 
@@ -43,6 +79,9 @@
 .b-block-style {
 	border: 1px solid $border-light;
 	background: #fff;
+	@include border-radius(2px);
+	@include box-shadow($gray05 0 10px 0);
+	@include transition(all .4s);
 }
 
 .b-block-ellipsis {
@@ -57,24 +96,25 @@
 .b-block {
 	position: static;
 	width: 100%;
+	@include transition(all .4s);
 	[class*="block-"]:not(.b-block-actions) {
 		float: left;
 	}
 	&:hover, &:focus {
 		color: $blue;
 		z-index: 1;
-		a {
+		a, span {
 			color: $blue;
 		}
+		span {
+			opacity: 0.5;
+		}
 		.b-block-style {
-			border: 1px solid $border;
+			border: 1px solid rgba($blue,	 0.4);
 		}
 		.b-block-actions {
 			ul {
 				display: block;
-			}
-			a {
-				// padding: 0 $padding / 5;
 			}
 			span {
 				display: none;
@@ -82,17 +122,17 @@
 		}
 	}
 	a {
-		color: $black;
+		color: $gray;
 	}
 
 	&.image {
 		float: left;
-		padding-right: $padding/2;
-		padding-bottom: $padding/2;
+		padding-right: $size/2;
+		padding-bottom: $size/2;
 		width: 25%;
 		@include box-sizing(border-box);
 		.b-block-content {
-			padding: $padding/1.5;
+			padding: $size/1.5;
 		}
 		.b-block-text {
 			p {
@@ -119,10 +159,10 @@
 }
 
 .b-block-overflow {
-	padding: $padding/1.3;
+	padding: $size/1.3;
 	position: absolute;
 	text-align: center;
-	width: $padding * 2.7;
+	width: $size * 2.7;
 	@include box-sizing(border-box);
 	a {
 		display: block;
@@ -146,7 +186,7 @@
 // Block content
 
 .b-block-content {
-	padding: $padding;
+	padding: $size;
 	width: 100%;
 	@extend .b-block-style;
 	@include box-sizing(border-box);
@@ -156,7 +196,7 @@
 // Block drag&drop
 
 .b-block-handle {
-	width: 10%;
+	width: 7%;
 }
 
 
@@ -164,12 +204,12 @@
 
 .b-block-indent {
 	color: $gray;
-	margin-right: $padding;
+	margin-right: $size;
 	.icon-arrow-divert {
 		display: block;
-		font-size: $padding/1.4;
+		font-size: $size/1.4;
 		position: relative;
-		top: $padding/8;
+		top: $size/8;
 		@include rotate(45deg);
 	}
 }
@@ -179,9 +219,9 @@
 
 .b-block-search {
 	i {
-		font-size: $padding/1.4;
+		font-size: $size/1.4;
 		line-height: 1;
-		padding: $padding;
+		padding: $size;
 		position: absolute;
 	}
 }
@@ -201,9 +241,23 @@
 	color: $gray;
 }
 
+.b-block-linetext {
+	// margin: -$size/2 0;
+	width: 50%;
+	a {
+		display: block;
+		@extend .b-block-ellipsis;
+	}
+	span {
+		color: $gray05;
+		font: 1.2em monospace;
+		margin-left: $size*2;
+	}
+}
+
 .b-block-doubletext {
 	line-height: 1.7;
-	margin: -$padding/2 0;
+	margin: -$size/2 0;
 	width: 50%;
 	a {
 		display: block;
@@ -217,13 +271,19 @@
 	}
 }
 
+.b-block-linetext, .b-block-doubletext {
+	@media screen and (max-width:500px) {
+		width: 80%;
+	}
+}
+
 
 // Block content (people)
 
 .b-block-avatar {
 	height: 4em;
-	margin: -$padding/1.35;
-	margin-right: $padding*1.5;
+	margin: -$size/1.35;
+	margin-right: $size*1.5;
 	overflow: hidden;
 	@include border-radius(50%);
 	img {
@@ -250,12 +310,12 @@
 }
 
 .b-block-image {
-	margin: $padding/2 0 $padding/3;
+	margin: $size/2 0 $size/3;
 	overflow: hidden;
 	width: 100%;
 	img {
 		float: left;
-		height: $padding*6;
+		height: $size*6;
 		min-width: 100%;
 	}
 }
@@ -275,20 +335,45 @@
 	width: 20%;
 	ul {
 		display: none;
-		@include horizontal-list;
+		@extend .horizontal-list;
 	}
 	ul, span {
 		float: right;
 	}
+	li {
+		padding-left: $size/4;
+	}
 	.button {
 		float: right;
-		margin: -$padding/3 0;
+		margin: -$size/3 0;
 	}
 	.icon-cross-circle {
 		color: $red;
 	}
 	.icon-plus-circle {
 		color: $green;
+	}
+	a {
+		display: block;
+		line-height: 1.5em;
+		text-align: center;
+		width: 1.5em;
+		@include border-radius(0.75em);
+		&:hover, &:focus {
+			background: $blue;
+			color: #fff;
+			@include scale(1.3);
+		}
+		&:active {
+			background: $orange;
+		}
+		i {
+			font-size: 0.9em;
+		}
+	}
+	@media screen and (max-width:500px) {
+		clear: both;
+		width: 100%;
 	}
 }
 
@@ -310,12 +395,23 @@
 
 .b-block-wtype {
 	height: 4em;
-	margin: -$padding/1.35;
-	margin-right: $padding*1.5;
+	margin: -$size/1.35 0;
+	margin-right: $size*1.5;
 	overflow: hidden;
 	img {
 		float: left;
 		height: 100%;
 		width: auto;
+	}
+}
+
+// Block device switch
+
+.b-block-devices {
+	@include pie-clearfix;
+	i {
+		float: left;
+		font-size: 1.5em;
+		margin-left: .5em;
 	}
 }

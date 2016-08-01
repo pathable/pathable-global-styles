@@ -149,7 +149,7 @@ $btn-schemes: (
   	@include scale(1.25);
   }
   span {
-    margin-left: $padding/2;
+    margin-left: $size/2;
     text-transform: uppercase;
   }
 }
@@ -172,13 +172,22 @@ $btn-schemes: (
 		display: inline-block;
 		float: left;
     margin-bottom: .5em;
+    margin-left: .5em;
 	}
   &.padded {
     margin: 0 0 2em;
   }
   &.top-right {
     float: right;
-    margin-top: $padding/4;
+    margin-top: -5.5em;
+    li {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width:500px) {
+    span {
+      display: none;
+    }
   }
 }
 .btn-group button {

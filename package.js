@@ -15,7 +15,8 @@
     api.use('fourseven:scss');
 
     api.addFiles([
-      './imports/attendees-app.scss'
+      './imports/host.scss',
+      './imports/theme.scss'
     ]);
   });
 })();

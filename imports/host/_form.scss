@@ -32,6 +32,23 @@
 }
 
 
+// Basic select styles
+
+.select {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid $border;
+  font-size: 1em;
+  font-weight: 300;
+  outline: none;
+  padding: 1em;
+  @include border-radius(2px);
+  @include box-sizing(border-box);
+  @include input-placeholder {
+    color: #444444;
+  }
+}
+
+
 // Input wrapper
 
 .field {
@@ -147,9 +164,9 @@
 .input-search {
   @extend .input;
   @extend .input-icon--search;
-  font-size: $padding/1.5;
-  margin-bottom: $padding;
-  padding: $padding $padding $padding $padding*3;
+  font-size: $size/1.5;
+  margin-bottom: $size;
+  padding: $size $size $size $size*3;
   width: 100%;
 }
 
@@ -207,5 +224,68 @@
       top: 0;
       right: -19em;
     }
+  }
+}
+
+// Icon checkbox
+
+.icon-checkbox {
+  display: inline-block;
+  float: left;
+  height: $size*1.8;
+  margin: -$size/2 0;
+  position: relative;
+  white-space: nowrap;
+  width: $size*1.8;
+  @include border-radius(2px);
+  label {
+    cursor: pointer;
+    display: inline-block;
+    height: $size*1.8;
+    left: 0;
+    line-height: $size*1.8;
+    position: absolute;
+    top: 0;
+    width: $size*1.8;
+    @include border-radius(2px);
+    &:after {
+      background: #fff;
+      bottom: 0;
+      color: $blue;
+      content: "";
+      display: inline-block;
+      font: 1.5em linearicons;
+      left: 0;
+      line-height: $size*1.2;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      @include border-radius(2px);
+      @include box-sizing(border-box);
+    }
+    &:hover, &:focus {
+      &:after {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+  &.both label:after {
+    content: "\e7ae";
+  }
+  &.desktop label:after {
+    content: "\e7af";
+  }
+  &.mobile label:after {
+    content: "\e7a6";
+  }
+  input[type=checkbox] {
+    margin: 0;
+    visibility: hidden;
+  }
+  input[type=checkbox]:checked + label:after {
+    background: $blue;
+    color: $white;
   }
 }

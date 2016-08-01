@@ -4,7 +4,7 @@
 body {
   background: $bg-light;
   color: #444444;
-  font: 300 12px / 1.5 "open sans", "helvetica neue", arial, sans-serif;
+  font: 400 12px / 1.5 "open sans", "helvetica neue", arial, sans-serif;
   @media screen and (min-width: 1400px) {
     font-size: 12px;
   }
@@ -50,4 +50,7 @@ a {
 
 em { 
   font-style: italic;
+}
+strong { 
+  font-weight: bold;
 }

@@ -10,7 +10,7 @@
 }
 
 #left-close {
-	right: -$padding;
+	right: -$size;
 	.icon-chevron-right {
 		display: none;
 		@media screen and (max-width:500px) {
@@ -30,8 +30,8 @@
 		}
 	}
 	@media screen and (max-width:500px) {
-		right: $padding/3;
-		top: $padding/1.5;
+		right: $size/3;
+		top: $size/1.5;
 
 		a {
 			display: block;
@@ -39,8 +39,8 @@
 
 		.icon-chevron-left, .icon-chevron-right {
 			color: $white;
-			font-size: $padding * 1.5;
-			padding: $padding/4;
+			font-size: $size * 1.5;
+			padding: $size/4;
 			@include box-sizing(border-box);
 			&:before {
 				display: inline-block;
@@ -51,7 +51,7 @@
 }
 
 #right-close {
-	left: -$padding * 2;
+	left: -$size * 2;
 	.icon-chevron-left {
 		display: none;
 	}

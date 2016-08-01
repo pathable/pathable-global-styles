@@ -46,12 +46,12 @@
     @include box-sizing(border-box);
     &.big {
       display: block;
-      padding: $padding / 2 $padding;
+      padding: $size / 2 $size;
     }
     &.small {
       display: none;
       opacity: 0.9;
-      padding: $padding / 2;
+      padding: $size / 2;
     }
     &:hover, &:focus {
       background: darken($blue, 15%);
@@ -89,7 +89,7 @@
   }
   @media screen and (max-width:500px) {
     background: darken($blue, 10%);
-    padding: $padding/3 0;
+    padding: $size/3 0;
     position: fixed;
     top: 0;
     width: 100%;
