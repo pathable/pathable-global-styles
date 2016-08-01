@@ -1,0 +1,44 @@
+$w-body: #fff;
+$bg-light: #f9f9f9;
+$border: #bbb;
+$border-light: #e9e9e9;
+$black: rgba(0,0,0,0.9);
+$white: rgba(255,255,255,0.9);
+$white05: rgba(255,255,255,0.5);
+$green: #69c200;
+$blue: #29a0d1;
+$red: #e41313;
+$orange: #e4a213;
+$gray: #888;
+$gray05: rgba($gray,0.5);
+
+
+/* Font weights */
+
+$light: 300;
+$regular: 400;
+$bold: 600;
+
+
+/* Base Font */
+
+$w-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$w-font-weight: $light;
+$w-font-size: 13px;
+$w-line-height: 1.5;
+
+
+/* Headings */
+
+$header-font-weight: $bold;
+
+
+/* Width */
+
+$padding: 2em;
+
+
+/* Style */
+
+$input-gray-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+$input-blue-shadow: inset 0 -1px rgba($blue, 0.4);
