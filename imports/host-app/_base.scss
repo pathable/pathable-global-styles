@@ -1,0 +1,56 @@
+//
+// Base styles
+
+body {
+  background: $bg-light;
+  color: #444444;
+  font: 400 12px / 1.5 "open sans", "helvetica neue", arial, sans-serif;
+  @media screen and (min-width: 1400px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1681px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 1921px) {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4 {
+  color: $blue;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 2.4em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  @include transition(all, 0.4s);
+  &:hover, &:focus {
+    color: $red;
+  }
+}
+
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}

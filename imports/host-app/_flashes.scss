@@ -1,0 +1,57 @@
+//
+// FLASH MESSAGES
+
+.flash-box {
+	background: rgba(0,0,0,0.3);
+	color: #fff;
+	margin-bottom: 2em;
+	padding: $size/2 $size/2 $size/2 $size*1.8;
+	position: relative;
+	@include border-top-radius(2px);
+	@include box-sizing(border-box);
+  &:after {
+    display: block;
+    font: 1.3em linearicons;
+    position: absolute;
+    left: 1em;
+    margin-top: -0.5em;
+    top: 50%;
+  }
+  &.success {
+    background: $green;
+    &:after {
+      content: "\e959";
+    }
+  }
+  &.warning {
+    background: $orange;
+    &:after {
+      content: "\e956";
+    }
+  }
+  &.error {
+    background: $red;
+    &:after {
+      content: "\e95a";
+    }
+  }
+  .session & {
+    margin-bottom: 0;
+    padding: $size $size*2.2;
+    &:after {
+      left: 1.5em;
+    }
+  }
+}
+
+.flash-close {
+  font-size: 1em;
+  margin-top: -0.75em;
+	position: absolute;
+	right: $size;
+	top: 50%;
+  i {
+    color: #fff;
+    font-size: 1em;
+  }
+}

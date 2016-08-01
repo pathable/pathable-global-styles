@@ -1,0 +1,167 @@
+//
+// Navigation
+//
+
+.nav-host {
+	a {
+		background: $blue;
+		color: #fff;
+		display: block;
+		line-height: 20px;
+		padding: .9em 2em;
+		position: relative;
+		text-decoration: none;
+		z-index: 2;
+		span {
+			color: rgba(255,255,255,.8);
+		}
+		&.active {
+			background: darken($blue, 20%);
+			// background: $bg-light;
+			// color: $blue;
+			+ .sub-nav-host {
+				display: block;
+				a {
+					padding-left: 5em;
+				}
+			}
+		}
+		&:hover, &:focus {
+			background: darken($blue, 15%);
+			color: #fff;
+		}
+	}
+	span {
+		font-size: 1em;
+		margin-left: .5em;
+		@media screen and (max-width: 500px) {
+			margin-left: .75em;
+		}
+	}
+	i {
+		font-size: 20px;
+	}
+	>ul {
+		position: relative;
+		z-index: 10;
+	}
+
+	@media screen and (max-width: 500px) {
+		background: $blue;
+		bottom: 0;
+		font-size: $size/1.5;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: $size*2.5;
+		.sub-nav-host {
+			display: block;
+			position: static;
+		}
+	}
+
+	.collapsed & {
+
+		@media screen and (max-width: 500px) {
+			display: none;
+		}
+
+		@media screen and (min-width: 501px) {
+			a {
+				padding-left: 0;
+				padding-right: 0;
+				text-align: center;
+			}
+
+			.sub-nav-host {
+				display: block;
+				a {
+					padding-left: 2em;
+					text-align: left;
+				}
+			}
+			>ul>li {
+				position: relative;
+				&:hover, &:focus {
+					>a {
+						background: darken($blue, 15%);
+						color: #fff;
+					}
+					.sub-nav-host {
+						display: block;
+						opacity: 1;
+						@include translate(0, 0);
+					}
+				}
+			}
+		}
+	}
+
+	.expanded & {
+	}
+}
+
+.sub-nav-host {
+	text-align: left;
+	a {
+		display: block;
+		font-size: .8em;
+		padding-left: 2em;
+		text-align: left;
+		&:hover, &:focus {
+			background: darken($blue, 20%);
+		}
+	}
+	@media screen and (max-width: 500px) {
+		padding-left: $size*1.5;
+	}
+	@media screen and (min-width: 501px) {
+		background: darken($blue, 15%);
+		display: none;
+		a {
+			background: darken($blue, 15%);
+		}
+		.collapsed & {
+			right: -$sub-nav;
+			position: absolute;
+			top: 0;
+			width: $sub-nav;
+			z-index: 1;
+			@include transition(all .75s);
+			@include translate(-$sub-nav - $nav, 0);
+		}
+		.expanded & {
+			a {
+				position: relative;
+				&:before {
+					color: rgba($white, .3);
+					content: ">";
+					left: 3em;
+					position: absolute;
+				}
+			}
+		}
+	}
+}
+
+#launch {
+	background: #444;
+	bottom: 0;
+	color: #fff;
+	display: block;
+	font-size: 20px;
+	left: 0;
+	padding: .8em 1.2em;
+	position: absolute;
+	right: 0;
+
+	span {
+		margin-left: .5em;
+	}
+	.collapsed & {
+		text-align: center;
+	}
+	@media screen and (max-width: 500px) {
+		display: none;
+	}
+}

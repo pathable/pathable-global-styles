@@ -1,0 +1,25 @@
+//
+// PAGINATION
+
+.pagination {
+	margin-top: 2em;
+	@include pie-clearfix;
+	li {
+		display: inline-block;
+		float: left;
+		margin-right: .5em;
+	}
+	a {
+		background: #fff;
+		border: 1px solid $border-light;
+		color: #666;
+		display: block;
+		padding: .5em 1em;
+		@include border-radius(2px);
+		@include box-shadow($input-gray-shadow);
+		&.active, &:hover, &:focus {
+			border-color: $blue;
+			color: $blue;
+		}
+	}
+}

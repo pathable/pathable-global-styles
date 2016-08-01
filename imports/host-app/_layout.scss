@@ -1,0 +1,116 @@
+
+//
+// LAYOUT
+
+html, body {
+  height: 100%;
+}
+
+
+// Utilities
+
+.inner-wrap, .full, .row, .half, .third, .twothirds, .fourth, .block {
+  position: relative;
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+ }
+
+.inner-wrap {
+  height: 100%;
+  padding: 1em;
+}
+
+.full, .row, .half, .third, .twothirds, .fourth, .left {
+  float: left;
+}
+.full, .row {
+  width: 100%;
+}
+.half {
+  width: 50%;
+}
+.third {
+  width: 33.3%;
+}
+.twothirds {
+  width: 66.7%;
+}
+.fourth {
+  width: 25%;
+}
+.right {
+	float: right;
+}
+.block {
+	display: block;
+	width: 100%;
+}
+.height-100 {
+	height: 100%;
+}
+
+// App wrapper
+#app {
+	@extend .height-100;
+	div & {
+		@extend .height-100;
+	}
+}
+
+// Chromatic pages fix
+
+body.styleguide-white {
+	background: #f9f9f9;
+}
+body[class^="styleguide-"], body[class*="styleguide-"] {
+	>div, >div>div, >div>div>div, >div>div>div>div {
+		height: 100%;
+	}
+}
+
+// Container
+
+.container {
+	height: 100%;
+	@media screen and (max-width: 500px) {
+		padding: $size*4 $size $size;
+	}
+	@media screen and (min-width: 501px) {
+		margin-left: 240px;
+		margin-right: 300px;
+
+		.content {
+			height: 100%;
+			overflow-y: auto;
+			padding: $size * 3;
+			position: relative;
+			@include box-sizing(border-box);
+		}
+
+		&.editor, &.profile {
+			.content {
+				padding: $size*2 $size*4 $size*3;
+			}
+		}
+		&.expand-nav {
+			margin-left: 60px;
+		}
+		&.expand-aside {
+			margin-right: 0px;
+		}
+	}
+	&.editor {
+	  @media screen and (min-width: 1400px) { margin-right: 500px; }
+	  @media screen and (min-width: 1681px) { margin-right: 700px; }
+	  @media screen and (min-width: 1921px) { margin-right: 900px; }
+	}
+	@media screen and (max-width: 1000px) { margin-right: 0px; }
+}
+
+
+// Hide all things
+.hide {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+}

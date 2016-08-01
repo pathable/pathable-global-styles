@@ -1,0 +1,66 @@
+//
+// OPEN/CLOSE PANELS
+
+#left-close, #right-close {
+	position: absolute;
+	bottom: 10px;
+	.session & {
+		display: none;
+	}
+}
+
+#left-close {
+	right: -$size;
+	.icon-chevron-right {
+		display: none;
+		@media screen and (max-width:500px) {
+			&:before {
+				content:"\e92b";
+			}
+		}
+	}
+	&.open {
+		@media screen and (min-width:501px) {
+			.icon-chevron-right {
+				display: inline;
+			}
+			.icon-chevron-left {
+				display: none;
+			}
+		}
+	}
+	@media screen and (max-width:500px) {
+		right: $size/3;
+		top: $size/1.5;
+
+		a {
+			display: block;
+		}
+
+		.icon-chevron-left, .icon-chevron-right {
+			color: $white;
+			font-size: $size * 1.5;
+			padding: $size/4;
+			@include box-sizing(border-box);
+			&:before {
+				display: inline-block;
+				content:"\e92b";
+			}
+		}
+	}
+}
+
+#right-close {
+	left: -$size * 2;
+	.icon-chevron-left {
+		display: none;
+	}
+	&.open {
+		.icon-chevron-left {
+			display: inline;
+		}
+		.icon-chevron-right {
+			display: none;
+		}
+	}
+}

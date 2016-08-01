@@ -1,0 +1,16 @@
+//
+// RTE OVERRIDES
+
+.rte {
+  .field & {
+    [class^="icon-"], [class*="icon-"] {
+      position: static;
+      @include opacity(1);
+    }
+    select {
+      display: block;
+      float: none;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+
+//
+// SESSION
+
+// Session screens
+
+.session {
+  background: url("/packages/pathable-styles/images/bg.jpg") no-repeat center;
+  background-size: cover;
+
+  a {
+    // color: $blue;
+    // font-size: 0.9em;
+  }
+}
+
+.session-form {
+  max-width: 25em;
+  width: 100%;
+  @include center;
+  form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    @include border-radius(2px);
+  }
+  h1 {
+    color: white;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  ul {
+    margin-top: 1em;
+    text-align: center;
+    a {
+      color: rgba(255, 255, 255, 0.75);
+      &:hover, &:focus {
+        color: white;
+      }
+    }
+  }
+  .rounded-checkbox {
+    margin-bottom: 1.5em;
+  }
+  &.wide {
+    max-width: 60%;
+  }
+}
+
+// Template selection
+
+.template {
+  background: rgba(255, 255, 255, 0.9);
+  float: left;
+  margin: 0 1%;
+  padding: 1.5em;
+  width: 31.33%;
+  @include border-radius(2px);
+  @include box-sizing(border-box);
+  img {
+    max-width: 100%;
+  }
+  button {
+    margin-top: 0.5em;
+    &.preview {
+      /*@include button(#cccccc);*/
+    }
+  }
+}

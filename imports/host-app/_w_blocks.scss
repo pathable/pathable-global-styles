@@ -1,0 +1,101 @@
+
+//
+// WIDGET GALLERY BLOCKS
+
+
+// Widget wrapper
+
+.w-blocks {
+	position: relative;
+}
+
+
+// Widget block
+
+.w-block {
+	border: 1px solid $border-light - #090909;
+	margin-bottom: $size;
+}
+
+
+// Widget block heading
+
+.w-block-heading {
+	background: rgba(0,0,0,0.05);
+	border-bottom: 1px solid $border-light - #090909;
+	color: $gray;
+	font-size: 1.2em;
+	font-weight: 400;
+	letter-spacing: 0.06em;
+	padding: $size/3 $size/2;
+	text-transform: uppercase;
+	@include box-sizing(border-box);
+}
+
+
+// Widget block list
+
+.w-block-list {
+	@extend .horizontal-list;
+	@include box-sizing(border-box);
+	background: #fff;
+	padding: $size $size*2;
+}
+
+
+// Widget block item (selected)
+
+.w-block-item {
+	@include box-sizing(border-box);
+	float: left;
+	padding: $size/1.5 $size/1.5 $size*2;
+	position: relative;
+	width: 25%;
+	@media screen and (max-width: 500px) {
+		width: 50%;
+	}
+
+	a {
+		border: 5px solid #fff;
+		display: block;
+		@include pie-clearfix;
+		&:hover, &:focus, .w-selected & {
+			border-color: rgba($blue, 0.25);
+		}
+	}
+	img {
+		float: left;
+		width: 100%;
+	}
+	span {
+		bottom: $size/2;
+		display: block;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+	&.w-selected {
+		font-weight: 400;
+		a {
+			border-color: rgba($blue, 0.25);
+		}
+		&:after {
+			background: $orange;
+			border: 3px solid #fff;
+			color: #fff;
+			content: "\e934";
+			display: block;
+			font: bold 1em linearicons;
+			font-weight: 400;
+			height: 18px;
+			line-height: 18px;
+			position: absolute;
+			right: 5px;
+			text-align: center;
+			top: 5px;
+			width: 18px;
+			@include border-radius(50%);
+		}
+	}
+}

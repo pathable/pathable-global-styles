@@ -1,0 +1,145 @@
+//
+// TABLES
+
+// Table layout
+.table {
+	display: table;
+}
+.thead {
+	display: table-header-group;
+}
+.tbody {
+	display: table-row-group;
+}
+.tfoot {
+	display: table-footer-group;
+}
+.tr {
+	display: table-row;
+}
+.td, .th {
+	display: table-cell;
+}
+.tcap {
+	display: table-caption;
+}
+
+
+// Table modifiers
+
+.table {
+	&.block {
+		width: 100%;
+	}
+	&.fixed {
+		table-layout: fixed;
+	}
+}
+
+
+// Table style
+
+.table {
+	min-width: 400px;
+	// Standard data table
+	&.data {
+		background: #fff;
+		font-size: .9em;
+		width: 100%;
+
+		// Table cells
+		.td, .th {
+			border-bottom: 1px solid $border-light;
+			vertical-align: middle;
+			white-space: nowrap;
+			&:first-child {
+				padding-left: 1.5em;
+				width: 10px;
+			}
+		}
+		.th {
+			background: rgba(0,0,0,0.05);
+			border-top: 1px solid $border-light;
+			color: $blue;
+			letter-spacing: 0.03em;
+			padding: 1.25em;
+			i {
+				margin-left: 0.5em;
+			}
+		}
+		.td {
+			border-top: 1px solid #fff;
+			padding: 1em 1em 1em 1.25em;
+			.icon-checkmark-circle {
+				color: $green;
+				float: left;
+				line-height: 3em;
+				margin-right: .5em;
+			}
+		}
+
+		// Table row
+		.tr {
+			.td, .th {
+				&:first-child {
+					border-left: 1px solid $border-light;
+				}
+				&:last-child {
+					border-right: 1px solid $border-light;
+				}
+			}
+			&:last-child td {
+				background: rgba(0,0,0,0.05);
+				padding: 0.5em 0 1.25em 0.5em;
+			}
+		}
+
+		// Table row hover
+		.tbody .tr {
+			&:hover, &:focus {
+				position: relative;
+				z-index: 1;
+				.td {
+					border-top: 1px solid $blue;
+					border-bottom: 1px solid $blue;
+					color: $blue;
+					&:first-child {
+						border-left: 1px solid $blue;
+					}
+					&:last-child {
+						border-right: 1px solid $blue;
+					}
+				}
+			}
+		}
+
+		// Table filter row
+		.tr.filter {
+			.td {
+				background: rgba(0,0,0,0.05);
+				border-top-color: rgba(0,0,0,0);
+				padding: 1em 0 1em 1em;
+			}
+			i {
+				font-size: 1.5em;
+				padding-left: .5em;
+			}
+			input {
+				background: rgba(255,255,255,.5);
+				padding: .75em 1em;
+			}
+			&:hover, &:focus {
+				color: $blue;
+			}
+		}
+		time {
+			font-size: .9em;
+		}
+	}
+}
+
+// Table wrapper
+.table-wrapper {
+	overflow-x: auto;
+	overflow-y: hidden;
+}

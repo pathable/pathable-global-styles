@@ -1,0 +1,41 @@
+//
+// Aside
+
+.sidebar {
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	@include box-sizing(border-box);
+	@media screen and (max-width: 1000px) { display: none; }
+
+	&.help {
+		background: #fff;
+		border-left: 1px solid $border-light;
+		padding: 2em;
+		width: 300px;
+	}
+
+	&.preview {
+		border-left: 1px solid $border-light;
+		width: 300px;
+	  @media screen and (min-width: 1400px) { width: 500px; }
+	  @media screen and (min-width: 1681px) { width: 700px; }
+	  @media screen and (min-width: 1921px) { width: 900px; }
+	}
+	iframe, img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.preview-wrapper {
+
+	height: 100%;
+	overflow: auto;
+	@include box-sizing(border-box);
+}
+.preview-controls {
+	padding: $size;
+	position: absolute;
+}
