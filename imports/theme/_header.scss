@@ -1,0 +1,58 @@
+//
+// HEADER WIDGET
+
+.w-header {
+	padding: 2em;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include box-sizing(border-box);
+}
+
+.w-logo {
+	display: block;
+	margin: 0;
+	padding: $size/2;
+	@media screen and (max-width: 999px) {
+		padding: 3em 0 1em;
+		text-align: center;
+	}
+	@media screen and (min-width: 1000px) {
+		float: left;
+	}
+}
+
+.w-nav {
+	margin: 0 auto;
+	@media screen and (max-width: 999px) {
+		ul {
+			display: inline-block;
+		}
+		text-align: center;
+	}
+	@media screen and (min-width: 1000px) {
+		float: right;
+	}
+
+	ul {
+		@include pie-clearfix;
+	}
+
+	li {
+		display: inline-block;
+		float: left;
+		a {
+			color: #fff;
+			display: block;
+			padding: $size/2;
+		}
+	}
+}
+
+.w-nav--toggle {
+	color: $white;
+	display: block;
+	font-size: 2em;
+	line-height: 1;
+	padding: $size/3;
+}

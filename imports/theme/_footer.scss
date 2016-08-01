@@ -1,0 +1,32 @@
+//
+// FOOTER WIDGET
+
+.w-footer {
+	background: $black;
+	color: $white;
+	text-align: center;
+}
+
+.w-footer--icons {
+	@extend .horizontal-inline;
+	font-size: 1.5em;
+	margin-bottom: $size / 2;
+	li {
+		margin: 0 $size / 4;
+	}
+	a {
+		color: $white;
+	}
+}
+
+.w-footer--copyright {
+	color: $white05;
+	font-size: 0.8em;
+	line-height: $size;
+	margin: 0 auto;
+	width: 80%;
+	@include box-sizing(border-box);
+	@media screen and (min-width: 1000px) {
+		padding: 0 20%;
+	}
+}

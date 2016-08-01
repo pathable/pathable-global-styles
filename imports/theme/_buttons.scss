@@ -14,49 +14,49 @@ $btn-schemes: (
   info:    #2980b9
 ) !default;
 
-// Color helper
+// Color helper 
 // 1. Background-color
 // 2. On hover
 // 3. Border-color
 @mixin button-color($color) {
   $everything-okay: true;
-
+  
   // Making sure $color is a color
   @if type-of($color) != color {
     @warn "`#{$color}` is not a color for `button-color`";
     $everything-okay: false;
   }
-
+  
   // Making sure $btn-hover and $btn-border are 2 items long
-  @if length($btn-hover) != 2
+  @if length($btn-hover) != 2 
    or length($btn-border) != 2 {
     @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
     $everything-okay: false;
   }
-
+  
   // Making sure first items from $btn-hover and $btn-border are valid functions
-  @if not function-exists(nth($btn-hover, 1))
+  @if not function-exists(nth($btn-hover, 1)) 
    or not function-exists(nth($btn-border, 1)) {
     @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
     $everything-okay: false;
   }
-
+  
   // Making sure second items from $btn-hover and $btn-border are percentages
-  @if type-of(nth($btn-hover, 2)) != number
+  @if type-of(nth($btn-hover, 2)) != number 
    or type-of(nth($btn-border, 2)) != number {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
   }
-
+  
   // If there is no mistake
   @if $everything-okay == true {
     background-color: $color; // 1
-
+  
     &:hover,
     &:active { // 2
       background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
-    }
-
+    }  
+  
     @if $btn-border != false { // 3
       border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
     }
@@ -73,10 +73,11 @@ $btn-schemes: (
 // 7. Block modifier
 // 8. Uppercase modifier
 // 9. Light modifier
-// 10. Color themes modifier
+// 10. Wide modifier
+// 11. Color themes modifier
 .#{$btn-name} {
   // Default styles
-  @include box-shadow($input-gray-shadow);
+  // @include box-shadow($input-gray-shadow);
   @include transition(background .15s);
   border-radius: .15em;
   border: if($btn-border != false, 1px solid, none); // 1
@@ -84,42 +85,37 @@ $btn-schemes: (
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
-  height: 4em;
+  font-weight: $regular;
+  letter-spacing: 0.05em;
   padding: .85em 1.5em 1em;
-  @include box-sizing(border-box);
+  
   // Modifiers
 
   &--xxl { // 2
-    font-size: 1.4em * $btn-size-ratio;
+    font-size: 1.2em * $btn-size-ratio;
   }
 
   &--xl { // 3
-    font-size: 1.2em * $btn-size-ratio;
+    font-size: 1.1em * $btn-size-ratio;
   }
 
   &--large { // 4
     font-size: 1em * $btn-size-ratio;
-    // height: 6em;
   }
-
+  
   &--small { // 5
     font-size: 1em / $btn-size-ratio;
-    height: 3.4em;
-  }
-
-  &--xs { // 5
-    font-size: 0.8em / $btn-size-ratio;
   }
 
   &--bold { // 6
     font-weight: bold;
   }
-
+  
   &--block { // 7
     display: block;
     width: 100%;
-  }
-
+  }  
+  
   &--upper { // 8
     text-transform: uppercase;
   }
@@ -134,6 +130,10 @@ $btn-schemes: (
   	}
   }
 
+  &--wide { // 10
+    padding: .85em 2.5em 1em;
+  }
+  
   @each $key, $value in $btn-schemes { // 10
     &--#{$key} {
       @include button-color($value);
@@ -147,10 +147,10 @@ $btn-schemes: (
   	position: relative;
   	top: 1px;
   	@include scale(1.25);
-  }
-  span {
-    margin-left: $size/2;
-    text-transform: uppercase;
+    &.icon-chevron-right {
+      font-size: 1em;
+      margin-left: 1em;
+    }
   }
 }
 
@@ -171,23 +171,9 @@ $btn-schemes: (
 	li {
 		display: inline-block;
 		float: left;
-    margin-bottom: .5em;
-    margin-left: .5em;
 	}
   &.padded {
     margin: 0 0 2em;
-  }
-  &.top-right {
-    float: right;
-    margin-top: -5.5em;
-    li {
-      margin-bottom: 0;
-    }
-  }
-  @media screen and (max-width:500px) {
-    span {
-      display: none;
-    }
   }
 }
 .btn-group button {

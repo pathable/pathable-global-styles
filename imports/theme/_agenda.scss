@@ -1,0 +1,79 @@
+//
+// AGENDA WIDGET
+
+.w-agenda {
+	background: url("/packages/pathable-styles/images/theme/bg2.jpg");
+	background-size: cover;
+	color: #fff;
+}
+
+.w-agenda--column {
+	padding: 0 $size;
+	@extend .fourth;
+}
+
+.w-agenda--list {
+	margin-top: $size;
+	text-align: left;
+	@media screen and (max-width: 999px) {
+		margin-bottom: $size*2;
+	}
+	li {
+		margin-bottom: $size;
+	}
+	a {
+		color: $white;
+	}
+	header {
+		background: $black;
+		color: $white05;	
+		display: block;
+		font-size: 0.9em;
+		font-style: italic;
+		margin-bottom: 0.9em;
+		padding: 0.4em 1em;
+		&.red {
+			border-right: 5px solid $red;
+		}
+		&.blue {
+			border-right: 5px solid $blue;
+		}
+		&.green {
+			border-right: 5px solid $green;
+		}
+		&.orange {
+			border-right: 5px solid $orange;
+		}
+	}
+	span {
+		display: block;
+		font-weight: 100;
+		padding: 0 $size/2;
+	}
+}
+
+.w-agenda--flip {
+	display: none;
+	@media screen and (max-width: 500px) {
+		display: block;
+		a {
+			font-size: 2em;
+			position: absolute;
+			top: $size/5;
+			&.w-agenda--flip-left {
+				left: $size/2;
+			}
+			&.w-agenda--flip-right {
+				right: $size/2;
+			}
+		}
+	}
+}
+
+// Presentation hack #remove#
+
+@media screen and (max-width: 500px) {
+	.w-agenda .w-container div:nth-of-type(n+2) {
+		display: none;
+	}
+}

@@ -73,23 +73,23 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 .container {
 	height: 100%;
 	@media screen and (max-width: 500px) {
-		padding: $size*4 $size $size;
+		padding: $padding*4 $padding $padding;
 	}
 	@media screen and (min-width: 501px) {
 		margin-left: 240px;
 		margin-right: 300px;
-
+		
 		.content {
 			height: 100%;
 			overflow-y: auto;
-			padding: $size * 3;
+			padding: $padding * 3;
 			position: relative;
 			@include box-sizing(border-box);
 		}
-
+		
 		&.editor, &.profile {
 			.content {
-				padding: $size*2 $size*4 $size*3;
+				padding: $padding*2 $padding*4 $padding*3;
 			}
 		}
 		&.expand-nav {

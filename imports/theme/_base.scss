@@ -1,9 +1,5 @@
-@import "{francocatena:compass}/compass/reset";
-@import "{francocatena:compass}/compass/utilities";
-@import "{francocatena:compass}/compass/css3";
-
-@import "./lib/linearicons";
-@import "./attendees-app-variables";
+//
+// BASE STYLES
 
 body {
   background: $w-body;
@@ -23,25 +19,18 @@ body {
   }
 }
 
-html, body {
-  height: 100%;
-}
-
 h1, h2, h3, h4 {
   font-weight: 300;
   text-align: center;
-}
 
-/*
-FIXME: This shouldn't be defined like this
-span.block {
-  color: $green;
-  font-size: 0.4em;
-  font-weight: 100;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  span.block {
+    color: $green;
+    font-size: 0.4em;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 }
-*/
 
 h1 {
   font-size: 3.6em;
@@ -66,12 +55,5 @@ a {
   @include transition(all, 0.4s);
   &:hover, &:focus {
     color: $red;
-  }
-}
-
-#app {
-  height: 100%;
-  >div, >div>div:not(.w-nav), >div>div>div {
-    height: 100%;
   }
 }

@@ -1,0 +1,198 @@
+//
+// BUTTONS
+
+// Configuration
+$btn-name: 'button' !default;
+$btn-hover: darken 3% !default;
+$btn-border:  darken 3% !default; // Set to false for no border
+$btn-size-ratio: 1.2 !default;
+$btn-schemes: (
+  default: $border,
+  success: $green,
+  danger:  $red,
+  warning: #f1c40f,
+  info:    #2980b9
+) !default;
+
+// Color helper 
+// 1. Background-color
+// 2. On hover
+// 3. Border-color
+@mixin button-color($color) {
+  $everything-okay: true;
+  
+  // Making sure $color is a color
+  @if type-of($color) != color {
+    @warn "`#{$color}` is not a color for `button-color`";
+    $everything-okay: false;
+  }
+  
+  // Making sure $btn-hover and $btn-border are 2 items long
+  @if length($btn-hover) != 2 
+   or length($btn-border) != 2 {
+    @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
+    $everything-okay: false;
+  }
+  
+  // Making sure first items from $btn-hover and $btn-border are valid functions
+  @if not function-exists(nth($btn-hover, 1)) 
+   or not function-exists(nth($btn-border, 1)) {
+    @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
+    $everything-okay: false;
+  }
+  
+  // Making sure second items from $btn-hover and $btn-border are percentages
+  @if type-of(nth($btn-hover, 2)) != number 
+   or type-of(nth($btn-border, 2)) != number {
+    @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
+    $everything-okay: false;
+  }
+  
+  // If there is no mistake
+  @if $everything-okay == true {
+    background-color: $color; // 1
+  
+    &:hover,
+    &:active { // 2
+      background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+    }  
+  
+    @if $btn-border != false { // 3
+      border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
+    }
+  }
+}
+
+// Default class
+// 1. Border or not border?
+// 2. XXL modifier
+// 3. XL modifier
+// 4. Large modifier
+// 5. Small modifier
+// 6. Bold modifier
+// 7. Block modifier
+// 8. Uppercase modifier
+// 9. Light modifier
+// 10. Color themes modifier
+.#{$btn-name} {
+  // Default styles
+  @include box-shadow($input-gray-shadow);
+  @include transition(background .15s);
+  border-radius: .15em;
+  border: if($btn-border != false, 1px solid, none); // 1
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  height: 4em;
+  padding: .85em 1.5em 1em;
+  @include box-sizing(border-box);
+  // Modifiers
+
+  &--xxl { // 2
+    font-size: 1.4em * $btn-size-ratio;
+  }
+
+  &--xl { // 3
+    font-size: 1.2em * $btn-size-ratio;
+  }
+
+  &--large { // 4
+    font-size: 1em * $btn-size-ratio;
+    // height: 6em;
+  }
+  
+  &--small { // 5
+    font-size: 1em / $btn-size-ratio;
+    height: 3.4em;
+  }
+
+  &--xs { // 5
+    font-size: 0.8em / $btn-size-ratio;
+  }
+
+  &--bold { // 6
+    font-weight: bold;
+  }
+  
+  &--block { // 7
+    display: block;
+    width: 100%;
+  }  
+  
+  &--upper { // 8
+    text-transform: uppercase;
+  }
+
+  &--light { // 9
+  	background: #fff;
+  	border-color: rgba($blue, .2);
+  	color: $blue;
+  	@include box-shadow($input-blue-shadow);
+  	&:hover, &:focus {
+  		border-color: $blue;
+  	}
+  }
+  
+  @each $key, $value in $btn-schemes { // 10
+    &--#{$key} {
+      @include button-color($value);
+    }
+  }
+
+  // Custom icon fonts
+  i {
+  	display: inline-block;
+    font-size: 1.25em;
+  	position: relative;
+  	top: 1px;
+  	@include scale(1.25);
+  }
+  span {
+    margin-left: $padding/2;
+    text-transform: uppercase;
+  }
+}
+
+// Button layout
+.btn-controls {
+	@include pie-clearfix;
+	ul {
+		@include pie-clearfix;
+		&.left li {
+			float: left;
+			margin-right: .5em;
+		}
+		&.right li {
+			float: left;
+			margin-left: .5em;
+		}
+	}
+	li {
+		display: inline-block;
+		float: left;
+    margin-bottom: .5em;
+	}
+  &.padded {
+    margin: 0 0 2em;
+  }
+  &.top-right {
+    float: right;
+    margin-top: $padding/4;
+  }
+}
+.btn-group button {
+	float: left;
+	margin-right: -1px;
+	@include border-radius(0);
+	&:first-child {
+		@include border-left-radius(2px);
+	}
+	&:last-child {
+		@include border-right-radius(2px);
+	}
+	&:hover, &:focus {
+		position: relative;
+		z-index: 1;
+	}
+}

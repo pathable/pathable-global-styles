@@ -1,0 +1,44 @@
+//
+// PEOPLE WIDGET
+
+.w-people {
+}
+
+.w-people--circle {
+	@extend .horizontal-center;
+
+	li {
+		margin-bottom: $size * 2;
+		@media screen and (min-width: 1000px) {
+      width: 19%;
+    }
+    @media screen and (max-width: 999px) {
+      width: 49%;
+    }
+	}
+
+	a {
+		color: #444;
+		display: block;
+		font-size: $size;
+		span {
+			color: $green;
+			display: block;
+			font-size: .5em;
+			letter-spacing: 0.05em;
+			text-decoration: uppercase;
+		}
+	}
+}
+
+.w-people--avatar {
+	margin: 0 auto $size / 3;
+	max-width: 70%;
+	overflow: hidden;
+	@include border-radius(50%);
+	img {
+		float: left;
+		max-width: 100%;
+		width: 100%;
+	}
+}

@@ -14,7 +14,7 @@
 
 .w-block {
 	border: 1px solid $border-light - #090909;
-	margin-bottom: $size;
+	margin-bottom: $padding;
 }
 
 
@@ -27,7 +27,7 @@
 	font-size: 1.2em;
 	font-weight: 400;
 	letter-spacing: 0.06em;
-	padding: $size/3 $size/2;
+	padding: $padding/3 $padding/2;
 	text-transform: uppercase;
 	@include box-sizing(border-box);
 }
@@ -39,7 +39,7 @@
 	@extend .horizontal-list;
 	@include box-sizing(border-box);
 	background: #fff;
-	padding: $size $size*2;
+	padding: $padding $padding*2;
 }
 
 
@@ -48,13 +48,13 @@
 .w-block-item {
 	@include box-sizing(border-box);
 	float: left;
-	padding: $size/1.5 $size/1.5 $size*2;
+	padding: $padding/1.5 $padding/1.5 $padding*2;
 	position: relative;
 	width: 25%;
 	@media screen and (max-width: 500px) {
 		width: 50%;
 	}
-
+	
 	a {
 		border: 5px solid #fff;
 		display: block;
@@ -68,7 +68,7 @@
 		width: 100%;
 	}
 	span {
-		bottom: $size/2;
+		bottom: $padding/2;
 		display: block;
 		left: 0;
 		position: absolute;
