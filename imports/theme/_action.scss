@@ -1,4 +1,4 @@
-
+	
 //
 // CALL TO ACTIONS
 
@@ -16,17 +16,17 @@
 		}
 		@media screen and (min-width: 1000px) {
 		  position: absolute;
-		  right: $size*1.5;
-		  top: $size*1.5;
+		  right: $w-size*1.5;
+		  top: $w-size*1.5;
 	  }
 	}
 
 	// Style
 
 	&--splash {
-		color: $white;
+		color: $w-white;
 		font-size: 1.4em;
-		font-weight: $light;
+		font-weight: $w-light;
 		padding: 1em 2em;
 		@extend .button;
     @media screen and (max-width:500px) {
@@ -35,33 +35,33 @@
     }
 	}
 	&--text {
-		color: $gray05;
+		color: $w-gray05;
 		@extend .w-action--top-right;
 	}
 	&--gallery {
 
 	}
 	&--people {
-		color: $gray05;
+		color: $w-gray05;
 		@extend .w-action--top-right;
 	}
 	&--agenda {
-		color: $white05;
+		color: $w-white05;
 		@extend .w-action--top-right;
 	}
 	&--community {
-		color: $gray05;
+		color: $w-gray05;
 		@extend .w-action--top-right;
 	}
 	&--footer {
-		color: $green;
-		margin: 0 0 $size*3;
+		color: $w-green;
+		margin: 0 0 $w-size*3;
 		@extend .button;
 	}
 
 	// Pseudo classes
 
 	&:hover, &:focus {
-		color: $green;
+		color: $w-green;
 	}
 }

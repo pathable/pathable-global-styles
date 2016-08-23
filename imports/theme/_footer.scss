@@ -2,27 +2,27 @@
 // FOOTER WIDGET
 
 .w-footer {
-	background: $black;
-	color: $white;
+	background: $w-black;
+	color: $w-white;
 	text-align: center;
 }
 
 .w-footer--icons {
 	@extend .horizontal-inline;
 	font-size: 1.5em;
-	margin-bottom: $size / 2;
+	margin-bottom: $w-size / 2;
 	li {
-		margin: 0 $size / 4;
+		margin: 0 $w-size / 4;
 	}
 	a {
-		color: $white;
+		color: $w-white;
 	}
 }
 
 .w-footer--copyright {
-	color: $white05;
+	color: $w-white05;
 	font-size: 0.8em;
-	line-height: $size;
+	line-height: $w-size;
 	margin: 0 auto;
 	width: 80%;
 	@include box-sizing(border-box);

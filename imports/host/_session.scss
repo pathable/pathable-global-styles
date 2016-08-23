@@ -5,12 +5,19 @@
 // Session screens
 
 .session {
+  background: url("/img/bg.jpg") no-repeat center;
   background: url("/packages/pathable-styles/images/bg.jpg") no-repeat center;
   background-size: cover;
 
   a {
     // color: $blue;
     // font-size: 0.9em;
+  }
+  &.wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -40,9 +47,15 @@
   }
   .rounded-checkbox {
     margin-bottom: 1.5em;
+    span {
+      padding-left: $size/1.75;
+    }
   }
   &.wide {
     max-width: 60%;
+    @media screen and (max-width:1000px) {
+      max-width: 75%;
+    }
   }
 }
 
@@ -50,19 +63,36 @@
 
 .template {
   background: rgba(255, 255, 255, 0.9);
-  float: left;
-  margin: 0 1%;
-  padding: 1.5em;
-  width: 31.33%;
+  border: 1px solid $border-light;
+  margin-bottom: $size;
+  padding: $size/1.5;
   @include border-radius(2px);
   @include box-sizing(border-box);
-  img {
-    max-width: 100%;
+  @include pie-clearfix;
+  @media screen and (min-width:501px) {
+    float: left;
+    width: 31.33%;
+    &:nth-child(3n+2) {
+      margin: 0 3%;
+    }
   }
   button {
-    margin-top: 0.5em;
+    margin-top: $size;
     &.preview {
       /*@include button(#cccccc);*/
     }
+  }
+  .session & {
+    margin: 0 1%;
+  }
+}
+
+.template-thumb {
+  display: block;
+  overflow: hidden;
+  max-height: $size*9;
+  img {
+    max-width: 100%;
+    width: 100%;
   }
 }

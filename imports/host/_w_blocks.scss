@@ -13,7 +13,7 @@
 // Widget block
 
 .w-block {
-	border: 1px solid $border-light - #090909;
+	border: 1px solid $border-light;
 	margin-bottom: $size;
 }
 
@@ -22,12 +22,12 @@
 
 .w-block-heading {
 	background: rgba(0,0,0,0.05);
-	border-bottom: 1px solid $border-light - #090909;
+	border-bottom: 1px solid $border-light;
 	color: $gray;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 400;
 	letter-spacing: 0.06em;
-	padding: $size/3 $size/2;
+	padding: $size/2 $size/1.5;
 	text-transform: uppercase;
 	@include box-sizing(border-box);
 }

@@ -1,0 +1,22 @@
+
+//
+// WIDGET SETTINGS BLOCKS
+
+.w-settings-list {
+	@include box-sizing(border-box);
+	background: #fff;
+}
+
+.w-setting {
+	border-bottom: 1px dashed $border-light;
+	padding: 0.6em;
+	@include box-sizing(border-box);
+	@include pie-clearfix;
+	&:last-child {
+		border-bottom: none;
+	}
+	.label {
+		color: $gray;
+		padding: 0.6em;
+	}
+}

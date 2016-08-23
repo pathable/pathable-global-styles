@@ -2,7 +2,7 @@
 // GALLERY WIDGET
 
 .w-gallery--horizontal {
-	height: $size*20;
+	height: $w-size*20;
 	@extend .horizontal-list;
 
 	li {

@@ -16,19 +16,19 @@
     top: .9em;
   }
   &.success {
-    background: $green;
+    background: $w-green;
     &:after {
       content: "\e959";
     }
   }
   &.warning {
-    background: $orange;
+    background: $w-orange;
     &:after {
       content: "\e956";
     }
   }
   &.error {
-    background: $red;
+    background: $w-red;
     &:after {
       content: "\e95a";
     }

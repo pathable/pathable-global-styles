@@ -8,47 +8,47 @@
 }
 
 .w-agenda--column {
-	padding: 0 $size;
+	padding: 0 $w-size;
 	@extend .fourth;
 }
 
 .w-agenda--list {
-	margin-top: $size;
+	margin-top: $w-size;
 	text-align: left;
 	@media screen and (max-width: 999px) {
-		margin-bottom: $size*2;
+		margin-bottom: $w-size*2;
 	}
 	li {
-		margin-bottom: $size;
+		margin-bottom: $w-size;
 	}
 	a {
-		color: $white;
+		color: $w-white;
 	}
 	header {
-		background: $black;
-		color: $white05;	
+		background: $w-black;
+		color: $w-white05;	
 		display: block;
 		font-size: 0.9em;
 		font-style: italic;
 		margin-bottom: 0.9em;
 		padding: 0.4em 1em;
 		&.red {
-			border-right: 5px solid $red;
+			border-right: 5px solid $w-red;
 		}
 		&.blue {
-			border-right: 5px solid $blue;
+			border-right: 5px solid $w-blue;
 		}
 		&.green {
-			border-right: 5px solid $green;
+			border-right: 5px solid $w-green;
 		}
 		&.orange {
-			border-right: 5px solid $orange;
+			border-right: 5px solid $w-orange;
 		}
 	}
 	span {
 		display: block;
 		font-weight: 100;
-		padding: 0 $size/2;
+		padding: 0 $w-size/2;
 	}
 }
 
@@ -59,12 +59,12 @@
 		a {
 			font-size: 2em;
 			position: absolute;
-			top: $size/5;
+			top: $w-size/5;
 			&.w-agenda--flip-left {
-				left: $size/2;
+				left: $w-size/2;
 			}
 			&.w-agenda--flip-right {
-				right: $size/2;
+				right: $w-size/2;
 			}
 		}
 	}

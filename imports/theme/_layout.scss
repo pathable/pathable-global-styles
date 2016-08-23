@@ -88,19 +88,19 @@ html, body {
   .w-gallery & {
   }
   .w-people & {
-    padding: $size * 3 10%;
+    padding: $w-size * 3 10%;
   }
   .w-agenda & {
-    padding: $size * 3 5%;
+    padding: $w-size * 3 5%;
   }
   .w-community & {
-    padding: $size * 3 10%;
+    padding: $w-size * 3 10%;
   }
   .w-contact & {
     height: 100%;
   }
   .w-footer & {
-     padding: $size*4 10% $size*3;
+     padding: $w-size*4 10% $w-size*3;
   }
 
   @media screen and (max-width:999px) {

@@ -8,7 +8,7 @@
 	@extend .horizontal-center;
 
 	li {
-		margin-bottom: $size * 2;
+		margin-bottom: $w-size * 2;
 		@media screen and (min-width: 1000px) {
       width: 19%;
     }
@@ -20,9 +20,9 @@
 	a {
 		color: #444;
 		display: block;
-		font-size: $size;
+		font-size: $w-size;
 		span {
-			color: $green;
+			color: $w-green;
 			display: block;
 			font-size: .5em;
 			letter-spacing: 0.05em;
@@ -32,7 +32,7 @@
 }
 
 .w-people--avatar {
-	margin: 0 auto $size / 3;
+	margin: 0 auto $w-size / 3;
 	max-width: 70%;
 	overflow: hidden;
 	@include border-radius(50%);

@@ -44,9 +44,12 @@
 	}
 	&.editable {
 		.b-block-content {
-			border-color: $blue;
+			background: rgba($blue, 0.05);
+			border-color: rgba($blue, 0.7);
+			border-style: dashed;
 			&:hover, &:focus {
 				border-color: $blue;
+				border-style: dashed;
 			}
 		}
 		.b-block-linetext {
@@ -56,17 +59,38 @@
 				width: 45%;
 			}
 			input, select {
+				border-color: rgba($blue, 0.7);
 				width: 100%;
+			}
+			.field {
+				.select & {		
+					&:after {
+						color: $gray05;
+						content: "\e93a";
+						position: absolute;
+						top: 0;
+					}
+				}
 			}
 		}
 		input, select {
+			background: $white;
+			display: block;
 			height: 3.3em;
 			line-height: 3.3em;
 			margin: -$size/2 0;
+			padding: 0 1.2em;
+			position: relative;
 			width: 45%;
+			@include border-radius(1.65em);
+			@include appearance(initial);
+			&:hover, &:focus {
+				border-color: $blue;
+			}
 		}
+
 		button {
-			font-size: 0.9em;
+			font-size: 1em;
 			margin: -$size/2 0;
 			text-transform: uppercase;
 		}
@@ -223,6 +247,9 @@
 		line-height: 1;
 		padding: $size;
 		position: absolute;
+	}
+	.input-search.small {
+		padding: $size/1.5;
 	}
 }
 

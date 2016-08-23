@@ -3,9 +3,9 @@
 // CONTACT WIDGET
 
 .w-contact {
-	height: $size*15;
+	height: $w-size*15;
 	@media screen and (max-width:999px) {
-		height: $size*25;
+		height: $w-size*25;
 	}
 }
 
@@ -24,10 +24,10 @@
 }
 
 .w-contact--details {
-	background: rgba($green, 0.9);
-	color: $white;
+	background: rgba($w-green, 0.9);
+	color: $w-white;
 	height: 100%;
-	padding: $size;
+	padding: $w-size;
 	position: absolute;
 	right: 0;
 	text-align: center;
@@ -38,7 +38,7 @@
 		margin: 2em 0 0.5em;
 	}
 	a {
-		color: $white;
+		color: $w-white;
 	}
 }
 
@@ -46,7 +46,7 @@
 	text-transform: uppercase;
 }
 .w-contact--list {
-	bottom: $size;
+	bottom: $w-size;
 	left: 0;
 	position: absolute;
 	width: 100%;
@@ -56,7 +56,7 @@
 }
 .w-contact--phone {
 	font-size: 1.2em;
-	font-weight: $bold;
+	font-weight: $w-bold;
 }
 .w-contact--link {}
 
@@ -70,7 +70,7 @@
 	iframe {
 		float: left;
 		height: 100%;
-		min-height: $size*10;
+		min-height: $w-size*10;
 		width: 100%;
 	}
 }

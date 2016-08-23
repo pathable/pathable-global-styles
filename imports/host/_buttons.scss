@@ -126,7 +126,7 @@ $btn-schemes: (
 
   &--light { // 9
   	background: #fff;
-  	border-color: rgba($blue, .2);
+  	border-color: rgba($blue, .3);
   	color: $blue;
   	@include box-shadow($input-blue-shadow);
   	&:hover, &:focus {
