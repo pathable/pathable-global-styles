@@ -118,7 +118,7 @@
         width: 30%;
       }
     }
-    input, textarea, select,.rte {
+    input, textarea, select, .rte, .label + * {
       display: block;
       width: 100%;
       @include box-sizing(border-box);

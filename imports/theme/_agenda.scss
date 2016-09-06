@@ -54,7 +54,7 @@
 
 .w-agenda--flip {
 	display: none;
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 600px) {
 		display: block;
 		a {
 			font-size: 2em;
@@ -72,7 +72,7 @@
 
 // Presentation hack #remove#
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.w-agenda .w-container div:nth-of-type(n+2) {
 		display: none;
 	}
