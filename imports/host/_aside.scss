@@ -43,6 +43,8 @@
 // Custom preview sidebar overrides
 
 .sidebar.preview {
+	background-color: #111;
+
 	> div, > div > div, > div > div > div {
 		height: 100%;
 		> h1 {
@@ -64,4 +66,4 @@
 	.theme__w-nav {
 		height: auto;
 	}
-}	
+}
