@@ -24,7 +24,9 @@
 .session-form {
   max-width: 25em;
   width: 100%;
-  @include center;
+  @media screen and (min-width: 501px) {
+    @include center;
+  }
   form {
     background: rgba(255, 255, 255, 0.9);
     padding: 2em;
@@ -52,6 +54,7 @@
     }
   }
   &.wide {
+    margin: 0 auto;
     max-width: 60%;
     @media screen and (max-width:1000px) {
       max-width: 75%;
