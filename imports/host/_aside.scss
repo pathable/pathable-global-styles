@@ -18,11 +18,11 @@
 
 	&.preview {
 		border-left: 1px solid $border-light;
-		width: 300px;
+		width: 400px;
 		overflow-y: auto;
-	  @media screen and (min-width: 1400px) { width: 500px; }
-	  @media screen and (min-width: 1681px) { width: 700px; }
-	  @media screen and (min-width: 1921px) { width: 900px; }
+	  @media screen and (min-width: 1400px) { width: 600px; }
+	  @media screen and (min-width: 1681px) { width: 800px; }
+	  @media screen and (min-width: 1921px) { width: 1000px; }
 	}
 	iframe, img {
 		width: 100%;
@@ -31,7 +31,6 @@
 }
 
 .preview-wrapper {
-
 	height: 100%;
 	overflow: auto;
 	@include box-sizing(border-box);
@@ -39,4 +38,32 @@
 .preview-controls {
 	padding: $size;
 	position: absolute;
+}
+
+// Custom preview sidebar overrides
+
+.sidebar.preview {
+	background-color: #111;
+
+	> div, > div > div, > div > div > div {
+		height: 100%;
+		> h1 {
+			display: none;
+		}
+	}
+	> div {
+    width: 300%;
+    position: absolute;
+    right: 0;
+    overflow-y: auto;
+    @include scale(0.33333333);
+    transform-origin: top right;
+    background: white;
+    height: 130%;
+    bottom: 0;
+    top: 25%;
+	}
+	.theme__w-nav {
+		height: auto;
+	}
 }
