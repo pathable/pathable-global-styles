@@ -19,5 +19,12 @@
       './imports/host.scss',
       './imports/theme.scss'
     ]);
+
+    api.addAssets([
+      'fonts/linearicons.eot',
+      'fonts/linearicons.svg',
+      'fonts/linearicons.ttf',
+      'fonts/linearicons.woff'
+    ], 'client')
   });
 })();
