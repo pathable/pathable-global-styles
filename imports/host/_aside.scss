@@ -43,7 +43,8 @@
 // Custom preview sidebar overrides
 
 .sidebar.preview {
-	background-color: #111;
+	background-color: $gray;
+
 
 	> div, > div > div, > div > div > div {
 		height: 100%;
@@ -52,16 +53,17 @@
 		}
 	}
 	> div {
-    width: 300%;
+    @include scale(0.33333333);
+    background: white;
+    bottom: 0;
+    height: 130%;
+    margin-top: -25%;
+    overflow-y: auto;
     position: absolute;
     right: 0;
-    overflow-y: auto;
-    @include scale(0.33333333);
+    top: 50%;
     transform-origin: top right;
-    background: white;
-    height: 130%;
-    bottom: 0;
-    top: 25%;
+    width: 300%;
 	}
 	.theme__w-nav {
 		height: auto;
