@@ -1,0 +1,235 @@
+
+//
+// SUPER SELECT
+
+.sSelect {
+  position: relative;
+  @include box-sizing(border-box);
+  div, input, span {
+    @include box-sizing(border-box);
+  }
+  &.is-disabled {
+    > .sSelect-control {
+      background-color: #f9f9f9;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .sSelect-arrow-zone {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+  }
+}
+
+.sSelect-control {
+  background-color: #fff;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: default;
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: 36px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  @include border-radius(2px);
+  &:hover {
+    @include box-shadow(rgba(0, 0, 0, 0.06) 0 1px 0)
+  }
+  .sSelect-input:focus {
+    outline: none;
+  }
+}
+
+.is-open > .sSelect-control {
+  @include border-bottom-radius(0);
+  background: #fff;
+  border-color: #b3b3b3 #ccc #d9d9d9;
+  > .sSelect-arrow {
+    border-color: transparent transparent #999;
+    border-width: 0 5px 5px;
+  }
+}
+
+.is-focused:not(.is-open) > .sSelect-control {
+  border-color: #007eff;
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1));
+}
+
+.sSelect--single > .sSelect-control .sSelect-value {
+  bottom: 0;
+  color: #aaa;
+  left: 0;
+  line-height: 34px;
+  max-width: 100%;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  white-space: nowrap;
+}
+
+.has-value.sSelect--single > .sSelect-control .sSelect-value {
+  .sSelect-value-label {
+    color: #333;
+  }
+  a.sSelect-value-label {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #007eff;
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+}
+
+.sSelect-input {
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  > input {
+    width: 100%;
+    background: none transparent;
+    border: 0 none;
+    box-shadow: none;
+    cursor: default;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    outline: none;
+    line-height: 14px;
+    /* For IE 8 compatibility */
+    padding: 8px 0 12px;
+    /* For IE 8 compatibility */
+    -webkit-appearance: none;
+  }
+}
+
+.is-focused .sSelect-input > input {
+  cursor: text;
+}
+
+.sSelect-clear-zone {
+  color: #999;
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 17px;
+  @include animation(sSelect-animation-fadeIn 200ms);
+  &:hover {
+    color: #D0021B;
+  }
+}
+
+.sSelect-clear {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sSelect-arrow-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  padding-right: 5px;
+}
+
+.sSelect-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 2.5px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
+
+.is-open .sSelect-arrow, .sSelect-arrow-zone:hover > .sSelect-arrow {
+  border-top-color: #666;
+}
+
+@-webkit-keyframes sSelect-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes sSelect-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.sSelect-menu-outer {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top-color: #e6e6e6;
+  display: table;
+  margin-top: -1px;
+  max-height: 200px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+  @include border-bottom-radius(2px);
+  @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.06));
+  @include box-sizing(border-box);
+}
+
+.sSelect-menu {
+  max-height: 198px;
+  overflow-y: auto;
+}
+
+.sSelect-option {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #666666;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  &:last-child {
+    @include border-bottom-radius(2px);
+  }
+  &.is-selected {
+    background-color: #f5faff;
+    // Fallback color for IE 8
+    background-color: rgba(0, 126, 255, 0.04);
+    color: #333;
+  }
+  &:hover {
+    background-color: #ebf5ff;
+    // Fallback color for IE 8
+    background-color: rgba(0, 126, 255, 0.08);
+    color: #333;
+  }
+  &.is-disabled {
+    color: #cccccc;
+    cursor: default;
+  }
+}
