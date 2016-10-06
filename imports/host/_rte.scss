@@ -2,6 +2,7 @@
 // RTE OVERRIDES
 
 .rte {
+  font: 13px "open sans", "helvetica neue", helvetica, arial, sans-serif !important;
   .field & {
     [class^="icon-"], [class*="icon-"] {
       position: static;

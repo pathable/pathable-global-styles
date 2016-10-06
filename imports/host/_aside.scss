@@ -26,7 +26,6 @@
 	}
 	iframe, img {
 		width: 100%;
-		height: auto;
 	}
 }
 
@@ -44,15 +43,7 @@
 
 .sidebar.preview {
 	background-color: $gray;
-
-
-	> div, > div > div, > div > div > div {
-		height: 100%;
-		> h1 {
-			display: none;
-		}
-	}
-	> div {
+	.themeContainer {
     @include scale(0.33333333);
     background: white;
     bottom: 0;
@@ -65,7 +56,13 @@
     transform-origin: top right;
     width: 300%;
 	}
-	.theme__w-nav {
-		height: auto;
+	.widgetContainer {
+		height: 100%;
+		> div {
+			height: 100%;
+		}
+		> h1 {
+			display: none;
+		}
 	}
 }

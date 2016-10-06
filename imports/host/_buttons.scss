@@ -76,7 +76,7 @@ $btn-schemes: (
 // 10. Color themes modifier
 .#{$btn-name} {
   // Default styles
-  @include box-shadow($input-gray-shadow);
+  @include box-shadow($input-gray-shadow 1px 1px 1px);
   @include transition(background .15s);
   border-radius: .15em;
   border: if($btn-border != false, 1px solid, none); // 1
@@ -86,6 +86,7 @@ $btn-schemes: (
   font-size: 1em;
   height: 4em;
   padding: .85em 1.5em 1em;
+  text-transform: uppercase;
   @include box-sizing(border-box);
   // Modifiers
 
@@ -118,7 +119,7 @@ $btn-schemes: (
   &--block { // 7
     display: block;
     width: 100%;
-  }  
+  }
   
   &--upper { // 8
     text-transform: uppercase;
@@ -134,6 +135,19 @@ $btn-schemes: (
   	}
   }
   
+  &--cancel { // 10
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.05);
+    &:hover, &:focus {
+      background: $red;
+    }
+  }
+
+  &--reset { // 11
+    background: transparent;
+    border: none;
+  }
+
   @each $key, $value in $btn-schemes { // 10
     &--#{$key} {
       @include button-color($value);

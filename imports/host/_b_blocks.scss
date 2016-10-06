@@ -47,15 +47,16 @@
 			background: rgba($blue, 0.05);
 			border-color: rgba($blue, 0.7);
 			border-style: dashed;
-			&:hover, &:focus {
-				border-color: $blue;
-				border-style: dashed;
-			}
+			// &:hover, &:focus {
+			// 	border-color: $blue;
+			// 	border-style: dashed;
+			// }
 		}
 		.b-block-linetext {
 			label {
 				float: left;
 				margin-right: 2%;
+				margin-bottom: 0;
 				width: 45%;
 			}
 			input, select {
@@ -88,11 +89,20 @@
 				border-color: $blue;
 			}
 		}
-
+		span.label {
+			display: none;
+		}
 		button {
 			font-size: 1em;
 			margin: -$size/2 0;
 			text-transform: uppercase;
+		}
+		i {
+			left: 1.2em;
+			top: 0.4em;
+		}
+		.b-block-linetext .field:after {
+			top: .2em;
 		}
 	}
 }
@@ -270,6 +280,7 @@
 
 .b-block-linetext {
 	// margin: -$size/2 0;
+	white-space: nowrap;
 	width: 50%;
 	a {
 		display: block;
@@ -331,6 +342,7 @@
 
 .b-block-company {
 	max-width: 30%;
+	white-space: nowrap;
 	a {
 		color: $gray05;
 	}

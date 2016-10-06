@@ -2,4 +2,13 @@
 //
 
 body.host {
+
+}
+.host-people {
+	h2 {
+		color: $gray;
+		font-size: $font-size;
+		margin-bottom: $font-size/1.5;
+		text-transform: uppercase;
+	}
 }
