@@ -3,6 +3,7 @@
 // SUPER SELECT
 
 .sSelect {
+  outline: none;
   position: relative;
   @include box-sizing(border-box);
   div, input, span {
@@ -46,13 +47,18 @@
   }
 }
 
-.is-open > .sSelect-control {
-  @include border-bottom-radius(0);
-  background: #fff;
-  border-color: #b3b3b3 #ccc #d9d9d9;
-  > .sSelect-arrow {
-    border-color: transparent transparent #999;
-    border-width: 0 5px 5px;
+.is-open {
+  .sSelect-menu-outer {
+    display: table;
+  }
+  > .sSelect-control {
+    @include border-bottom-radius(0);
+    background: #fff;
+    border-color: #b3b3b3 #ccc #d9d9d9;
+    > .sSelect-arrow {
+      border-color: transparent transparent #999;
+      border-width: 0 5px 5px;
+    }
   }
 }
 
@@ -188,7 +194,7 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-top-color: #e6e6e6;
-  display: table;
+  display: none;
   margin-top: -1px;
   max-height: 200px;
   position: absolute;
