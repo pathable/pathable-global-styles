@@ -46,9 +46,9 @@
       'fonts/OpenSans/OpenSans-Light.eot',
       'fonts/OpenSans/OpenSans-Light.ttf',
       'fonts/OpenSans/OpenSans-Light.woff',
-      'fonts/OpenSans/OpenSans-Semibold.eot',
-      'fonts/OpenSans/OpenSans-Semibold.ttf',
-      'fonts/OpenSans/OpenSans-Semibold.woff',
+      'fonts/OpenSans/OpenSans-SemiBold.eot',
+      'fonts/OpenSans/OpenSans-SemiBold.ttf',
+      'fonts/OpenSans/OpenSans-SemiBold.woff',
       'fonts/OpenSans/OpenSans.eot',
       'fonts/OpenSans/OpenSans.ttf',
       'fonts/OpenSans/OpenSans.woff',
@@ -109,9 +109,9 @@
       'fonts/TitilliumWeb/TitilliumWeb-Regular.eot',
       'fonts/TitilliumWeb/TitilliumWeb-Regular.ttf',
       'fonts/TitilliumWeb/TitilliumWeb-Regular.woff',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.eot',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.ttf',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.woff'
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.eot',
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf',
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.woff'
     ], 'client')
   });
 })();
