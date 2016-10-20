@@ -1,0 +1,26 @@
+//
+// COLOR PICKER OVERRIDES
+
+.colorpickr {
+  width: 100%;
+  button {
+    width: 50%;
+  }
+  .cp-col {
+    @include box-sizing(border-box);
+    &:first-child {
+      width: 64%;
+    }
+    &:last-child {
+      width: 36%;
+    }
+  }
+
+  .cp-selector {
+    width: 100%;
+  }
+  .cp-inputs > div fieldset div {
+    &:first-child {}
+    &:last-child { width:50px;}
+  }
+}

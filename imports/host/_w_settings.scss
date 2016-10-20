@@ -15,8 +15,27 @@
 	&:last-child {
 		border-bottom: none;
 	}
+	.field:after {
+		right: -3em;
+	}
 	.label {
 		color: $gray;
 		padding: 0.6em;
+	}
+	.input.cell {
+		display: table;
+		padding: 0.7em 1em 0.7em 0.7em;
+		input {
+			border: none;
+			float: left;
+			width: 50%;
+		}
+		select, span {
+			float: right;
+			width: 40%;
+		}
+		span {
+			text-align: right;
+		}
 	}
 }
