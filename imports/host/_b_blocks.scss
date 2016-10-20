@@ -373,13 +373,18 @@
 }
 
 .b-block-image {
+	height: $size*6;
 	margin: $size/2 0 $size/3;
 	overflow: hidden;
+	position: relative;
 	width: 100%;
 	img {
+		background: $gray05;
 		float: left;
-		height: $size*6;
+		height: auto;
+		max-width: 100%;
 		min-width: 100%;
+		@include center;
 	}
 }
 
