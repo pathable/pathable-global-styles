@@ -74,8 +74,8 @@
 				}
 			}
 		}
-		input:not(.rte &), select:not(.rte &) {
-			background: $white;
+		.input, .select {
+			background-color: $white;
 			display: block;
 			height: 3.3em;
 			line-height: 3.3em;
@@ -92,7 +92,7 @@
 		span.label {
 			display: none;
 		}
-		button:not(.rte &) {
+		.button {
 			font-size: 1em;
 			margin: -$size/2 0;
 			text-transform: uppercase;
@@ -100,9 +100,6 @@
 		i {
 			left: 1.2em;
 			top: 0.4em;
-		}
-		.button--cancel i {
-			top: 1.2em;
 		}
 		.b-block-linetext .field:after {
 			top: .2em;
@@ -113,15 +110,18 @@
 		}
 		.field.inline .rte {
 			width: 100%;
+			@include text-shadow(none);
 			.label {
 				display: none;
 			}
 			.editor {
 				font-size: 12px;
 			}
+			.button {
+				margin: 0;
+			}
 		}
 		.inline.field.inline.field .input {
-			margin-bottom: 1em;
 			width: 100%;
 		}
 	}
