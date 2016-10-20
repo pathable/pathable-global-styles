@@ -64,7 +64,7 @@
 				width: 100%;
 			}
 			.field {
-				.select & {		
+				.select & {
 					&:after {
 						color: $gray05;
 						content: "\e93a";
@@ -74,8 +74,8 @@
 				}
 			}
 		}
-		input, select {
-			background: $white;
+		.input, .select {
+			background-color: $white;
 			display: block;
 			height: 3.3em;
 			line-height: 3.3em;
@@ -83,7 +83,7 @@
 			padding: 0 1.2em;
 			position: relative;
 			width: 45%;
-			@include border-radius(1.65em);
+			@include border-radius(2px);
 			@include appearance(initial);
 			&:hover, &:focus {
 				border-color: $blue;
@@ -92,7 +92,7 @@
 		span.label {
 			display: none;
 		}
-		button {
+		.button {
 			font-size: 1em;
 			margin: -$size/2 0;
 			text-transform: uppercase;
@@ -103,6 +103,26 @@
 		}
 		.b-block-linetext .field:after {
 			top: .2em;
+		}
+		.input-message {
+			position: absolute;
+			top: 2.5em;
+		}
+		.field.inline .rte {
+			width: 100%;
+			@include text-shadow(none);
+			.label {
+				display: none;
+			}
+			.editor {
+				font-size: 12px;
+			}
+			.button {
+				margin: 0;
+			}
+		}
+		.inline.field.inline.field .input {
+			width: 100%;
 		}
 	}
 }
@@ -153,6 +173,10 @@
 			span {
 				display: none;
 			}
+		}
+		.rte, .rte * {
+			color: #444;
+			opacity: 1;
 		}
 	}
 	a {
@@ -349,13 +373,18 @@
 }
 
 .b-block-image {
+	height: $size*6;
 	margin: $size/2 0 $size/3;
 	overflow: hidden;
+	position: relative;
 	width: 100%;
 	img {
+		background: $gray05;
 		float: left;
-		height: $size*6;
+		height: auto;
+		max-width: 100%;
 		min-width: 100%;
+		@include center;
 	}
 }
 

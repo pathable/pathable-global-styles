@@ -24,6 +24,7 @@
 @import "utilities/linearicons"; // Linearicons font
 @import "utilities/mixins"; // Custom mixins
 @import "utilities/lists"; // List extends
+@import "utilities/colorpickr";
 
 
 // Import layout
@@ -44,6 +45,7 @@
 @import "host/breadcrumbs";
 @import "host/tabs";
 @import "host/select";
+@import "host/colorpickr-overrides";
 
 
 // Import general styles

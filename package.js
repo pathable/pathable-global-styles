@@ -109,9 +109,9 @@
       'fonts/TitilliumWeb/TitilliumWeb-Regular.eot',
       'fonts/TitilliumWeb/TitilliumWeb-Regular.ttf',
       'fonts/TitilliumWeb/TitilliumWeb-Regular.woff',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.eot',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.ttf',
-      'fonts/TitilliumWeb/TitilliumWeb-Semibold.woff'
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.eot',
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf',
+      'fonts/TitilliumWeb/TitilliumWeb-SemiBold.woff'
     ], 'client')
   });
 })();

@@ -4,7 +4,7 @@
 // Basic input styles
 
 .input {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.75);
   border: 1px solid $border-light;
   font-size: 1em;
   font-weight: 300;
@@ -113,12 +113,16 @@
       font-weight: 100;
       padding: 0.5em 0;
       @include text-shadow($white 1px 1px 1px);
+      @include box-sizing(border-box);
       @media screen and (min-width:501px) {
         display: inline-block;
         float: left;
-        padding: 1em 0;
-        width: 30%;
+        padding: 1em 1em 1em 0;
+        width: 25%;
       }
+    }
+    .inline {
+      width: auto;
     }
     input, textarea, select, .rte {
       display: block;
@@ -127,7 +131,7 @@
       @media screen and (min-width:501px) {
         display: inline-block;
         float: right;
-        width: 70%;
+        width: 75%;
         .geosuggest__input {
           width: 100%;
         }
@@ -153,7 +157,7 @@
     right: -0.5em;
     text-align: center;
     top: -0.6em;
-    width: 1.5em; 
+    width: 1.5em;
     @include border-radius(50%);
   }
 
@@ -218,6 +222,13 @@
   }
   &.push-top {
     margin-top: $size;
+  }
+  &.right-align {
+    > .field, .field.inline {
+      float: right;
+      margin-right: 0;
+      margin-left: $size/3;
+    }
   }
 }
 
@@ -472,4 +483,21 @@
   @include border-radius(2px);
   @include box-sizing(border-box);
   @include pie-clearfix;
+}
+
+// Loading indicator
+.loading {
+  @include center;
+}
+
+// Waiting to retry
+.waiting-retry {
+  background: #f5f5f5;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  > div div {
+    float: left;
+  }
 }

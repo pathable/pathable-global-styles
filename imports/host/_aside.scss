@@ -27,6 +27,14 @@
 	iframe, img {
 		width: 100%;
 	}
+	iframe.twitter-timeline {
+		height: 500px !important;
+		width: 100% !important;
+	}
+}
+
+.timeline-Widget {
+	background-color: red !important;
 }
 
 .preview-wrapper {
@@ -36,25 +44,48 @@
 }
 .preview-controls {
 	padding: $size;
-	position: absolute;
+	.radio-field input[type="radio"] + label span {
+		color: $white;
+		background: transparent;
+	}
+	.radio-field input[type="radio"]:checked + label span {
+		background: $white;
+		border-color: $white;
+		color: #444;
+	}
 }
 
 // Custom preview sidebar overrides
 
 .sidebar.preview {
 	background-color: $gray;
-	.themeContainer {
-    @include scale(0.33333333);
-    background: white;
-    bottom: 0;
-    height: 130%;
-    margin-top: -25%;
-    overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform-origin: top right;
-    width: 300%;
+	&.preview-desktop {
+		.themeContainer {
+	    @include scale(0.33333333);
+	    background: white;
+	    bottom: 0;
+	    height: 130%;
+	    margin-top: -25%;
+	    overflow-y: auto;
+	    position: absolute;
+	    right: 0;
+	    top: 50%;
+	    transform-origin: top right;
+	    width: 300%;
+		}
+	}
+	&.preview-mobile {
+		.themeContainer {
+			background: white;
+			bottom: 0;
+			overflow-y: auto;
+			position: absolute;
+			right: 0;
+			transform-origin: top right;
+			height: 80%;
+			width: 70%;
+			@include center;
+		}
 	}
 	.widgetContainer {
 		height: 100%;
