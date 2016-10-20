@@ -43,18 +43,32 @@
 
 .sidebar.preview {
 	background-color: $gray;
-	.themeContainer {
-    @include scale(0.33333333);
-    background: white;
-    bottom: 0;
-    height: 130%;
-    margin-top: -25%;
-    overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform-origin: top right;
-    width: 300%;
+	&.preview-desktop {
+		.themeContainer {
+	    @include scale(0.33333333);
+	    background: white;
+	    bottom: 0;
+	    height: 130%;
+	    margin-top: -25%;
+	    overflow-y: auto;
+	    position: absolute;
+	    right: 0;
+	    top: 50%;
+	    transform-origin: top right;
+	    width: 300%;
+		}
+	}
+	&.preview-mobile {
+		.themeContainer {
+			background: white;
+			bottom: 0;
+			overflow-y: auto;
+			position: absolute;
+			right: 0;
+			transform-origin: top right;
+			width: 100%;
+			height: 100%;
+		}
 	}
 	.widgetContainer {
 		height: 100%;
