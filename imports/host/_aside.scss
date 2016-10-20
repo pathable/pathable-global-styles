@@ -27,6 +27,14 @@
 	iframe, img {
 		width: 100%;
 	}
+	iframe.twitter-timeline {
+		height: 500px !important;
+		width: 100% !important;
+	}
+}
+
+.timeline-Widget {
+	background-color: red !important;
 }
 
 .preview-wrapper {
