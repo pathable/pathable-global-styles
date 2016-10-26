@@ -170,11 +170,30 @@ $btn-schemes: (
   }
 }
 
-.btn-loading:before {
-    background: src("img/loading.svg");
-    color: red;
+.btn-loading {
+  position: relative;
+  &:before {
+    background: url("/img/loading-light.svg") no-repeat center;
+    background-size: cover;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+  &.button--success {
+    &:before {
+      background-color: $green;
+    }
+  }
+  &.button--light {
+    &:before {
+      background-color: $blue;
+    }
+  }
 }
-
 
 // Button layout
 .btn-controls {
