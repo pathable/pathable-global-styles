@@ -267,6 +267,31 @@
   width: 100%;
 }
 
+.global-search {
+  input {
+    @extend .input;
+    @extend .input-icon--search;
+    border-color: rgba($blue, .8);
+    color: $blue;
+    padding: .7em 1.5em;
+    @include input-placeholder {
+      color: $blue;
+    }
+    &:hover, &:focus {
+      border-color: $blue;
+    }
+    &:active {
+      @include box-shadow(rgba(0,0,0,.3) 0 1px 1px);
+    }
+  }
+  [class^="icon-"], [class*="icon-"] {
+    color: $blue - #111;
+    opacity: 1;
+    top: 1em;
+    @include scale(1.25);
+  }
+}
+
 // Rounded Checkbox
 
 .rounded-checkbox {

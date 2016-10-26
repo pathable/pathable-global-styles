@@ -85,7 +85,7 @@ $btn-schemes: (
   display: inline-block;
   font-size: 1em;
   height: 3.4em;
-  padding: .85em 1.5em 1em;
+  padding: .9em 1.5em 1em;
   text-transform: uppercase;
   @include box-sizing(border-box);
   // Modifiers
@@ -127,11 +127,13 @@ $btn-schemes: (
 
   &--light { // 9
   	background: #fff;
-  	border-color: rgba($blue, .3);
-  	color: $blue;
+  	border-color: rgba($blue, .8);
+  	color: $blue - #111;
   	@include box-shadow($input-blue-shadow);
   	&:hover, &:focus {
+      background-color: $blue;
   		border-color: $blue;
+      color: $white;
   	}
   }
 
@@ -168,6 +170,12 @@ $btn-schemes: (
   }
 }
 
+.btn-loading:before {
+    background: src("img/loading.svg");
+    color: red;
+}
+
+
 // Button layout
 .btn-controls {
 	@include pie-clearfix;
@@ -176,6 +184,9 @@ $btn-schemes: (
 		&.left li {
 			float: left;
 			margin-right: .5em;
+      &:first-child {
+        margin-left: 0;
+      }
 		}
 		&.right li {
 			float: left;
