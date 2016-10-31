@@ -152,6 +152,11 @@ $btn-schemes: (
     border: none;
   }
 
+  &--error { // 12
+    background: $red;
+    color: $white;
+  }
+
   @each $key, $value in $btn-schemes { // 10
     &--#{$key} {
       @include button-color($value);

@@ -1,0 +1,120 @@
+.wizard-guide {
+	background: rgba(0,0,0,0.3);
+  clear: both;
+	color: #fff;
+  padding: 0 2em 0 7em;
+	position: relative;
+	@include border-top-radius(2px);
+	@include box-sizing(border-box);
+  @include pie-clearfix;
+
+  &.wizard-basic {
+    background: $blue;
+  }
+  &.wizard-data {
+    background: $green;
+  }
+  &.wizard-design {
+    background: $red;
+  }
+}
+
+.wizard-cell {
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+  &.wizard-title {
+    color: $white;
+    float: left;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 0.7em 0.7em 0.7em 0;
+    span {
+      display: block;
+      font-size: 0.7em;
+      font-weight: normal;
+      opacity: 0.7;
+    }
+    i {
+      background: $blue - #111;
+      bottom: 0;
+      color: rgba($white, 0.7em);
+      font-size: 2em;
+      left: 0;
+      padding: 0.6em;
+      position: absolute;
+      top: 0;
+      vertical-align: middle;
+    }
+  }
+  &.wizard-actions {
+    float: right;
+    .button {
+      border: none;
+      font-weight: 600;
+      height: 3em;
+      margin: 1.5em;
+      &:first-child {
+        background: $blue;
+        color: $white;
+        margin-right: 0;
+      }
+      &:last-child {
+        background: rgba($white, 0.7);
+        color: $blue;
+        margin-left: 0;
+      }
+      &:hover, &:focus {
+        background: $white;
+        color: $blue;
+      }
+    }
+  }
+  &.wizard-aside {
+    background: $blue - #111;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 2em;
+    a {
+      color: $white;
+      display: table;
+      height: 50%;
+      line-height: 3em;
+      width: 100%;
+      &:hover, &:focus {
+        background: $blue - #222;
+      }
+      i {
+        display: table-cell;
+      }
+      &:first-child i {
+        padding-top: 1em;
+        vertical-align: top;
+      }
+      &:last-child i {
+        padding-bottom: 0.7em;
+        vertical-align: bottom;
+      }
+    }
+  }
+  &.wizard-content {
+    background: $blue;
+    clear: both;
+    // display: none;
+    font-size: 1em;
+    p {
+      width: 60%;
+    }
+  }
+}
+
+.wizard-toggle {
+  overflow: hidden;
+  @include pie-clearfix;
+  button {
+    background: $blue;
+    border: none;
+    display: block;
+  }
+}
