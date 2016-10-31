@@ -124,7 +124,7 @@
     .inline {
       width: auto;
     }
-    input, textarea, select, .rte {
+    input, textarea, select, .rte, .field-image {
       display: block;
       width: 100%;
       @include box-sizing(border-box);
@@ -137,6 +137,9 @@
         }
       }
     }
+  }
+  &.with-image {
+
   }
   &:after {
     font-family: linearicons;
@@ -208,6 +211,7 @@
 }
 
 .field-group {
+  clear: both;
   &.with-border {
     border-top: 1px dashed rgba(0,0,0,0.1);
     padding-top: $size;
@@ -229,6 +233,36 @@
       margin-right: 0;
       margin-left: $size/3;
     }
+  }
+  &.right {
+    > .field, .field.inline {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Field image
+
+.field-image {
+  background: $border-light;
+  border: 1px solid $border-light;
+  overflow: hidden;
+  padding: $size*1.5 $size;
+  position: relative;
+  text-align: center;
+  img {
+    left: 0;
+    position: absolute;
+    top: -33.333%;
+    width: 100%;
+    @include border-radius(2px);
+  }
+  .button {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
   }
 }
 

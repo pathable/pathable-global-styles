@@ -84,8 +84,10 @@ $btn-schemes: (
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
+  font-weight: 400;
   height: 3.4em;
-  padding: .9em 1.5em 1em;
+  letter-spacing: 0.02em;
+  padding: .8em 1.5em;
   text-transform: uppercase;
   @include box-sizing(border-box);
   // Modifiers
@@ -105,7 +107,7 @@ $btn-schemes: (
 
   &--small { // 5
     font-size: 1em / $btn-size-ratio;
-    height: 3.4em;
+    height: 3.3em;
   }
 
   &--xs { // 5

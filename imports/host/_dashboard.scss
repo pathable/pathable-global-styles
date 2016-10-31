@@ -1,0 +1,150 @@
+//
+// Dashboard
+
+.dashboard {
+  h1, h1 + p {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    width: 70%;
+  }
+  h1 {
+    color: $blue;
+  }
+}
+
+.wizard-col {
+
+  margin-top: $size*1.5;
+  @media screen and (min-width: 800px) {
+    float: left;
+    width: 32%;
+  }
+  &.basic-setup {
+    margin-right: 2%;
+  }
+  &.data-entry {}
+  &.design-layout {
+    margin-left: 2%;
+  }
+}
+
+.wizard-header {
+  background: $white;
+  border: 1px solid $border-light;
+  padding: $size;
+  text-align: center;
+  @box-sizing(border-box);
+  h2 {
+    font-size: $size*0.7;
+    font-weight: normal;
+    margin-bottom: $size/5;
+    text-transform: uppercase;
+  }
+  i {
+    font-size: $size*1.5;
+    margin: $size/5 0;
+  }
+  i, span {
+    display: block;
+  }
+  span {
+    color: $gray;
+    font-size: $size/2.5;
+    margin-top: $size/10;
+    text-transform: uppercase;
+  }
+  p {
+    margin-bottom: $size/2;
+  }
+  .basic-setup & {
+    h2 {
+      color: $blue;
+    }
+    .button {
+      background: $blue;
+    }
+  }
+  .data-entry & {
+    h2 {
+      color: $green;
+    }
+    .button {
+      background: $green;
+    }
+  }
+  .design-layout & {
+    h2 {
+      color: $red;
+    }
+    .button {
+      background: $red;
+    }
+  }
+}
+
+.wizard-body {
+  background: rgba($white, 0.5);
+  border: 1px solid $border-light;
+  border-top: none;
+  padding: $size;
+  @box-sizing(border-box);
+  p {
+    margin-bottom: $size/2;
+  }
+  a {
+    color: #444;
+    display: block;
+    margin: $size/2 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .button {
+    float: left;
+    margin-right: $size/2;
+    position: relative;
+  }
+  span {
+    color: $gray;
+    display: block;
+    font-size: $size/2;
+    text-transform: uppercase;
+  }
+  .basic-setup & {
+    button, span, i {
+      border-color: $blue;
+      color: $blue;
+    }
+    a:hover button {
+      background: $blue;
+      i {
+        color: $white;
+      }
+    }
+  }
+  .data-entry & {
+    button, span, i {
+      border-color: $green;
+      color: $green;
+    }
+    a:hover button {
+      background: $green;
+      i {
+        color: $white;
+      }
+    }
+  }
+  .design-layout & {
+    button, span, i {
+      border-color: $red;
+      color: $red;
+    }
+    a:hover button {
+      background: $red;
+      i {
+        color: $white;
+      }
+    }
+  }
+}
