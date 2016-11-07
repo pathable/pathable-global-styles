@@ -3,6 +3,7 @@
 
 .sidebar {
 	bottom: 0;
+	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -17,12 +18,51 @@
 	}
 
 	&.preview {
+		background: #eee;
 		border-left: 1px solid $border-light;
 		width: 400px;
 		overflow-y: auto;
 	  @media screen and (min-width: 1400px) { width: 600px; }
 	  @media screen and (min-width: 1681px) { width: 800px; }
 	  @media screen and (min-width: 1921px) { width: 1000px; }
+
+		&.preview-desktop {
+			.themeContainer {
+		    @include scale(0.33333333);
+		    background: #eee;
+		    bottom: 0;
+		    height: 130%;
+				padding: $size*1.5 $size*1.5 0;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    transform-origin: top right;
+		    width: 300%;
+				@include box-sizing(border-box);
+			}
+		}
+		&.preview-mobile {
+			.themeContainer {
+				background: #eee;
+				bottom: 0;
+				overflow-y: auto;
+				position: absolute;
+				right: 0;
+				transform-origin: top right;
+				height: 70%;
+				width: 60%;
+				@include center;
+			}
+		}
+		.widgetContainer {
+			height: 100%;
+			> div {
+				height: 100%;
+			}
+			> h1 {
+				display: none;
+			}
+		}
 	}
 	iframe, img {
 		width: 100%;
@@ -31,6 +71,15 @@
 		height: 500px !important;
 		width: 100% !important;
 	}
+}
+
+.themeScrollbar {
+	bottom: 0;
+	overflow: auto;
+	position: absolute;
+	right: 0;
+	top: $size*2.5;
+	width: 100%;
 }
 
 .timeline-Widget {
@@ -43,57 +92,53 @@
 	@include box-sizing(border-box);
 }
 .preview-controls {
-	padding: $size;
+	background: $bg-light;
+	border-bottom: 1px solid $border-light;
+	height: $size*2.5;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	@include pie-clearfix;
+	h1 {
+		border-bottom: 1px solid $bg-light;
+		float: left;
+		font-size: $size;
+		font-weight: 400;
+		height: $size*1.5;
+		margin: 0;
+		position: relative;
+		a {
+			background: #eee;
+			border-right: 1px solid $border-light;
+			color: $gray;
+			display: block;
+			font-size: $size/3;
+			height: $size*2.5;
+			line-height: $size*2.5;
+			padding: 0 $size;
+			&:hover, &:focus {
+				background: $gray;
+				color: $white;
+			}
+		}
+		i {
+			margin-left: $size/2;
+		}
+	}
+	.radio-group {
+		float: right;
+		padding: $size/2;
+	}
 	.radio-field input[type="radio"] + label span {
-		color: $white;
 		background: transparent;
+		border-color: $border;
 	}
 	.radio-field input[type="radio"]:checked + label span {
-		background: $white;
-		border-color: $white;
-		color: #444;
-	}
-}
-
-// Custom preview sidebar overrides
-
-.sidebar.preview {
-	background-color: $gray;
-	&.preview-desktop {
-		.themeContainer {
-	    @include scale(0.33333333);
-	    background: white;
-	    bottom: 0;
-	    height: 130%;
-	    margin-top: -25%;
-	    overflow-y: auto;
-	    position: absolute;
-	    right: 0;
-	    top: 50%;
-	    transform-origin: top right;
-	    width: 300%;
-		}
-	}
-	&.preview-mobile {
-		.themeContainer {
-			background: white;
-			bottom: 0;
-			overflow-y: auto;
-			position: absolute;
-			right: 0;
-			transform-origin: top right;
-			height: 80%;
-			width: 70%;
-			@include center;
-		}
-	}
-	.widgetContainer {
-		height: 100%;
-		> div {
-			height: 100%;
-		}
-		> h1 {
-			display: none;
-		}
+		background: $gray;
+		border-color: $gray;
+		color: #fff;
 	}
 }
