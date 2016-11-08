@@ -180,8 +180,8 @@ $btn-schemes: (
 .button--loading {
   position: relative;
   &:before {
-    background: url("/img/loading-light.svg") no-repeat center;
-    background-size: cover;
+    background: url("/packages/pathable-styles/images/loading-light.svg") no-repeat center;
+    background-size: contain;
     bottom: 0;
     content: "";
     left: 0;
