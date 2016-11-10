@@ -27,12 +27,19 @@
 	  @media screen and (min-width: 1921px) { width: 1000px; }
 
 		&.preview-desktop {
+			.themeOuterContainer {
+				margin: $size/2 $size/2 0;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
 			.themeContainer {
 		    @include scale(0.33333333);
 		    background: #eee;
 		    bottom: 0;
 		    height: 130%;
-				padding: $size*1.5 $size*1.5 0;
 		    position: absolute;
 		    right: 0;
 		    top: 0;
@@ -42,6 +49,14 @@
 			}
 		}
 		&.preview-mobile {
+			.themeOuterContainer {
+				margin: $size/2 $size/2 0;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
 			.themeContainer {
 				background: #eee;
 				bottom: 0;
@@ -135,6 +150,7 @@
 	.radio-field input[type="radio"] + label span {
 		background: transparent;
 		border-color: $border;
+		padding: $size/3.3 $size/1.5;
 	}
 	.radio-field input[type="radio"]:checked + label span {
 		background: $gray;

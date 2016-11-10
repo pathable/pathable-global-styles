@@ -37,6 +37,13 @@
     @include border-radius(2px);
     @include pie-clearfix;
   }
+  .field {
+    clear: both;
+    .input-message {
+      margin-top: -$size;
+      margin-bottom: $size/2;
+    }
+  }
   h1 {
     color: white;
     margin-bottom: 0.5em;
