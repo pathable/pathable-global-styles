@@ -1,0 +1,107 @@
+
+//
+// PEOPLE LIST
+
+@import "shared/shared";
+@import "../defaults/people-list";
+
+.section.people {
+	background-color: $x-widgetBackground; color: $x-fontColor;
+	font-weight: $w-font-weight; font-size: $x-fontSize; font-family: $x-fontFamily; line-height: $w-line-height;
+	height: auto; width: $x-widgetWidth;
+	@include box-sizing(border-box);
+	@include pie-clearfix;
+	@media screen and (min-width:1400px) { font-size: 14px; }
+  @media screen and (min-width:1680px) { font-size: 16px; }
+  @media screen and (min-width:1920px) { font-size: 18px; }
+
+	h1, h2, h3, h4 { color: $w-text-color; font-weight: 300; text-align: center; }
+	h1 { font-size: 3.6em; margin-bottom: 1.2em; }
+	h2 { font-size: 2.4em; }
+	h3 { font-size: 2em; }
+	h4 { font-size: 1.5em; }
+
+	a { color: $w-green; text-decoration: none;
+		@include transition(all, 0.4s);
+		&:hover, &:focus { color: $x-secondaryColor; }
+	}
+
+	@media screen and (min-width: $w-tablet) {
+		.list {
+			li {
+				width: 19%;
+			}
+		}
+	}
+
+	@media screen and (max-width: $w-tablet - 1px) {
+		.list {
+			li {
+				width: 49%;
+			}
+		}
+	}
+
+	.container {
+		margin: 0 auto;
+		max-width: $x-contentMaxWidth;
+		padding: $x-padding*3 0;
+		position: relative;
+		text-align: center;
+		width: $x-contentWidth;
+		@include box-sizing(border-box);
+		@include pie-clearfix;
+	}
+
+	.list {
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-bottom: $x-padding*2;
+			vertical-align: top;
+		}
+
+		a {
+			color: $x-fontColor;
+			display: block;
+			font-size: $x-fontSize*1.5;
+			line-height: 2;
+			span {
+				color: $x-primaryColor;
+				display: block;
+				font-size: $x-fontSize;
+				letter-spacing: $x-fontSize*0.05;
+				text-transform: uppercase;
+			}
+			&:hover, &:focus {
+				color: $x-fontColor - #111;
+				@include scale(1.1);
+				@include transition(all .3s);
+				span {
+					color: $x-secondaryColor;
+				}
+			}
+		}
+	}
+
+	.avatar {
+		margin: 0 auto $x-padding/3;
+		max-width: 70%;
+		overflow: hidden;
+		@include border-radius(50%);
+		img {
+			float: left;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	.title {
+		display: block;
+		color: $x-primaryColor;
+		font-size: $x-fontSize*1.6;
+		font-weight: $w-light;
+		letter-spacing: $x-fontSize/6;
+		text-transform: uppercase;
+	}
+}

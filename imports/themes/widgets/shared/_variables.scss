@@ -1,0 +1,62 @@
+//
+// THEME VARIABLES
+
+$w-size: 2em;
+$w-wrapper: 80%;
+
+
+$w-body: #fff;
+$w-bg-light: #f9f9f9;
+$w-border: #bbb;
+$w-border-light: #e9e9e9;
+$w-black: #000;
+$w-black09: rgba(0,0,0,0.9);
+$w-white: #fff;
+$w-white09: rgba(255,255,255,0.9);
+$w-white05: rgba(255,255,255,0.5);
+$w-green: #69c200;
+$w-blue: #29a0d1;
+$w-red: #e41313;
+$w-orange: #e4a213;
+$w-gray: #888;
+$w-gray05: rgba($w-gray,0.5);
+
+
+$w-primary-color: $w-green;
+$w-secondary-color: $w-orange;
+$w-body-color: $w-white;
+$w-text-color: #444;
+
+
+$w-light: 300;
+$w-regular: 400;
+$w-bold: 600;
+
+
+$w-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$w-font-weight: $w-light;
+$w-font-size: 13px;
+$w-line-height: 1.5;
+
+
+$w-header-font-weight: $w-bold;
+
+
+$w-input-gray-shadow: inset 0 -1px rgba($w-black, 0.2);
+$w-input-blue-shadow: inset 0 -1px rgba($w-blue, 0.4);
+
+
+$w-radius-size: 2px;
+$w-box-shadow:;
+
+
+$w-noneSize: 0;
+$w-smallSize: 0.75;
+$w-regularSize: 1;
+$w-largeSize: 1.25;
+
+
+$w-mobile: 500px;
+$w-tablet: 1000px;
+$w-laptop: 1440px;
+$w-desktop: 1920px;

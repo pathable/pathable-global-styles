@@ -1,0 +1,193 @@
+//
+// BUTTONS
+@import "./shared";
+// Configuration
+$w-btn-name: 'button' !default;
+$w-btn-hover: darken 3% !default;
+$w-btn-border:  darken 3% !default; // Set to false for no border
+$w-btn-size-ratio: 1.2 !default;
+$w-btn-schemes: (
+  default: $w-border,
+  success: $w-green,
+  danger:  $w-red,
+  warning: $w-orange,
+  info:    $w-blue
+) !default;
+
+// Color helper 
+// 1. Background-color
+// 2. On hover
+// 3. Border-color
+@mixin button-color($w-color) {
+  $w-everything-okay: true;
+  
+  // Making sure $color is a color
+  @if type-of($w-color) != color {
+    @warn "`#{$w-color}` is not a color for `button-color`";
+    $w-everything-okay: false;
+  }
+  
+  // Making sure $btn-hover and $btn-border are 2 items long
+  @if length($w-btn-hover) != 2 
+   or length($w-btn-border) != 2 {
+    @warn "Both `$w-btn-hover` and `$w-btn-border` should be two items long for `button-color`.";
+    $w-everything-okay: false;
+  }
+  
+  // Making sure first items from $btn-hover and $btn-border are valid functions
+  @if not function-exists(nth($w-btn-hover, 1)) 
+   or not function-exists(nth($w-btn-border, 1)) {
+    @warn "Either `#{nth($w-btn-hover, 1)}` or `#{nth($w-btn-border, 1)}` is not a valid function for `button-color`.";
+    $w-everything-okay: false;
+  }
+  
+  // Making sure second items from $btn-hover and $btn-border are percentages
+  @if type-of(nth($w-btn-hover, 2)) != number 
+   or type-of(nth($w-btn-border, 2)) != number {
+    @warn "Either `#{nth($w-btn-hover, 2)}` or `#{nth($w-btn-border, 2)}` is not a valid percentage for `button-color`.";
+    $w-everything-okay: false;
+  }
+  
+  // If there is no mistake
+  @if $w-everything-okay == true {
+    background-color: $w-color; // 1
+  
+    &:hover,
+    &:active { // 2
+      background: call(nth($w-btn-hover, 1), $w-color, nth($w-btn-hover, 2));
+    }  
+  
+    @if $w-btn-border != false { // 3
+      border-color: call(nth($w-btn-border, 1), $w-color, nth($w-btn-border, 2));
+    }
+  }
+}
+
+// Default class
+// 1. Border or not border?
+// 2. XXL modifier
+// 3. XL modifier
+// 4. Large modifier
+// 5. Small modifier
+// 6. Bold modifier
+// 7. Block modifier
+// 8. Uppercase modifier
+// 9. Light modifier
+// 10. Wide modifier
+// 11. Color themes modifier
+.#{$w-btn-name} {
+  // Default styles
+  // @include box-shadow($w-input-gray-shadow);
+  @include transition(background .15s);
+  border-radius: $w-radius-size;
+  border: if($w-btn-border != false, 1px solid, none); // 1
+  color: $w-white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $w-font-size;
+  font-weight: $w-regular;
+  letter-spacing: $w-font-size*0.05;
+  padding: $w-size/2.4 $w-size/1.3 $w-size/2;
+  
+  // Modifiers
+
+  &--xxl { // 2
+    font-size: $w-font-size * 1.2 * $w-btn-size-ratio;
+  }
+
+  &--xl { // 3
+    font-size: $w-font-size * 1.1 * $w-btn-size-ratio;
+  }
+
+  &--large { // 4
+    font-size: $w-font-size * $w-btn-size-ratio;
+  }
+  
+  &--small { // 5
+    font-size: $w-font-size / $w-btn-size-ratio;
+  }
+
+  &--bold { // 6
+    font-weight: $w-bold;
+  }
+  
+  &--block { // 7
+    display: block;
+    width: 100%;
+  }  
+  
+  &--upper { // 8
+    text-transform: uppercase;
+  }
+
+  &--light { // 9
+  	background: transparent;
+  	border-color: rgba($w-primary-color, 0.2);
+  	color: $w-primary-color;
+  	@include box-shadow($w-input-blue-shadow);
+  	&:hover, &:focus {
+  		border-color: $w-primary-color;
+  	}
+  }
+
+  &--wide { // 10
+    padding: $w-size/2.4 $w-size*1.25 $w-size/2;
+  }
+  
+  @each $w-key, $w-value in $w-btn-schemes { // 10
+    &--#{$w-key} {
+      @include button-color($w-value);
+    }
+  }
+
+  // Custom icon fonts
+  i {
+  	display: inline-block;
+    font-size: $w-font-size*1.25;
+  	position: relative;
+  	top: 1px;
+  	@include scale(1.25);
+    &.icon-chevron-right {
+      font-size: $w-font-size;
+      margin-left: $w-size/2;
+    }
+  }
+}
+
+// Button layout
+.btn-controls {
+	@include pie-clearfix;
+	ul {
+		@include pie-clearfix;
+		&.left li {
+			float: left;
+			margin-right: $w-size/4;
+		}
+		&.right li {
+			float: left;
+			margin-left: $w-size/4;
+		}
+	}
+	li {
+		display: inline-block;
+		float: left;
+	}
+  &.padded {
+    margin: 0 0 $w-size;
+  }
+}
+.btn-group button {
+	float: left;
+	margin-right: -1px;
+	@include border-radius(0);
+	&:first-child {
+		@include border-left-radius($w-radius-size);
+	}
+	&:last-child {
+		@include border-right-radius($w-radius-size);
+	}
+	&:hover, &:focus {
+		position: relative;
+		z-index: 1;
+	}
+}

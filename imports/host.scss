@@ -14,12 +14,12 @@
 
 
 // Import variables
-
+//
 @import "host/variables";
 
 
 // Import utilities
-
+//
 @import "utilities/webfonts";
 @import "utilities/linearicons"; // Linearicons font
 @import "utilities/functions"; // Custom mixins
@@ -29,12 +29,12 @@
 
 
 // Import layout
-
+//
 @import "host/layout";
 
 
 // Import modules
-
+//
 @import "host/buttons";
 @import "host/table";
 @import "host/b_blocks";
@@ -52,14 +52,14 @@
 
 
 // Import general styles
-
+//
 @import "host/base";
 @import "host/form";
 @import "host/theme";
 
 
 // Import specific styles
-
+//
 @import "host/header";
 @import "host/nav";
 @import "host/session";
@@ -69,5 +69,11 @@
 @import "host/dashboard";
 
 
-// RTE overrides
+// Overrides
+//
 @import "host/rte";
+
+
+// Import themes
+//
+@import "themes";

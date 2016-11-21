@@ -1,0 +1,22 @@
+
+//
+// NAVIGATION WIDGET DEFAULTS
+
+// Size
+
+$x-padding: $w-size;
+$x-widgetWidth: 100%;
+$x-contentWidth: 100%;
+$x-contentMaxWidth: none;
+
+// Colors
+
+$x-fontColor: $w-white;
+$x-widgetBackground: rgba(0,0,0,0);
+$x-primaryColor: $w-primary-color;
+$x-secondaryColor: $w-secondary-color;
+
+// Fonts
+
+$x-fontFamily: $w-font-family;
+$x-fontSize: $w-font-size;
