@@ -3,27 +3,15 @@
 
 
 // Import compass
+// Duplicates Chromatic's import so it's commented out
 //
-@import "{francocatena:compass}/compass/reset";
-@import "{francocatena:compass}/compass/utilities";
-@import "{francocatena:compass}/compass/css3";
+// @import "{francocatena:compass}/compass/reset";
+// @import "{francocatena:compass}/compass/utilities";
+// @import "{francocatena:compass}/compass/css3";
 
 
-// Import shared
+// Import themes
 //
-@import "themes/widgets/shared/shared";
-
-
-// Import widgets
-//
-@import "themes/widgets/agenda";
-@import "themes/widgets/community";
-@import "themes/widgets/contact";
-@import "themes/widgets/embed-video";
-@import "themes/widgets/header";
-@import "themes/widgets/html-columns";
-@import "themes/widgets/links";
-@import "themes/widgets/navigation";
-@import "themes/widgets/people-list";
-@import "themes/widgets/photo";
-@import "themes/widgets/twitter-timeline";
+// @import "themes/greencon";
+// @import "themes/bigbusiness";
+@import "themes/bluerock";

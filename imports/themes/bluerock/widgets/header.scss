@@ -1,0 +1,116 @@
+
+//
+// HEADER
+
+@import "shared/shared";
+@import "../defaults/header";
+
+.w-section.w-hero {
+  background: url("/img/themes/bluerock/bg.jpg") no-repeat center $x-widgetBackground; background-size: cover; color: $x-fontColor;
+  font-weight: $w-font-weight; font-size: $x-fontSize; font-family: $x-fontFamily; line-height: $w-line-height;
+  height: 100%; width: $x-widgetWidth;
+  position: relative;
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+  @media screen and (min-width:1400px) { font-size: 14px; }
+  @media screen and (min-width:1680px) { font-size: 16px; }
+  @media screen and (min-width:1920px) { font-size: 18px; }
+
+  h1, h2, h3, h4 { color: $w-text-color; font-family: $x-headingFont; font-weight: 300; text-align: center; line-height: 1; }
+  h1 { font-size: 3.6em; line-height: $x-fontSize; margin-bottom: $x-padding/2.5; img { max-width: 100%; width: 100%; }}
+  h2 { font-size: 2.4em; }
+  h3 { font-size: 2em; }
+  h4 { font-size: 1.5em; }
+
+  a { color: $x-fontColor; text-decoration: none;
+    @include transition(all, 0.4s);
+    &:hover, &:focus { color: $x-fontColor; }
+  }
+
+  .w-container {
+    height: auto;
+    margin: 0 auto;
+    max-width: $x-contentMaxWidth;
+    position: relative;
+    text-align: center;
+    width: $x-contentWidth;
+    @include center;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+  }
+
+  .w-sponsors {
+    bottom: $x-padding*2;
+    height: $x-padding*2;
+    padding: 0 20%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    @include box-sizing(border-box);
+
+    span {
+      display: inline-block;
+      float: left;
+      height: 100%;
+      position: relative;
+      width: 12.5%;
+      @include box-sizing(border-box);
+    }
+
+    img {
+      @include center;
+      max-width: 80%;
+    }
+  }
+
+  .w-action {
+    background: $x-secondaryColor;
+    border-bottom: 4px solid rgba(0,0,0,.2);
+    color: $w-black;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $x-headingFont;
+    font-size: $x-fontSize*1.5;
+    margin: 0 auto;
+    padding: $x-padding/2 $x-padding*1.2;
+    text-transform: uppercase;
+    width: auto;
+    @include border-radius($w-radius-size);
+    @include box-shadow(rgba(0,0,0,0.1) 0 3px 0);
+    @include box-sizing(border-box);
+    &:hover, &:focus {
+      background-color: $x-primaryColor;
+    }
+    i {
+			display: none;
+		}
+  }
+
+  .w-icon {
+    @extend .icon-chevron-right;
+    // composes: icon-chevron-right from './shared/shared.scss';
+  }
+
+  @media screen and (min-width: $w-tablet) {
+    .w-container {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: $w-mobile) {
+    // REMOVE: This is an example for fixing the action button on the
+    // header preview in mobile size
+    .w-action {
+      font-size: 14px;
+    }
+
+    // Presentation hack #remove#
+    .w-sponsors {
+      .w-span {
+        width: 33.333%;
+        &:nth-of-type(n+4) {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+
+//
+// LISTS
+
+
+// Horizontal list & variations
+
+.horizontal {
+
+  &-list {
+    @include pie-clearfix;
+    li {
+      display: inline-block;
+      float: left;
+    }
+  }
+
+  &-center {
+    text-align: center;
+    li {
+      display: inline-block;
+      
+    }
+  }
+
+  &-table {
+    display: table;
+    li {
+      display: table-cell;
+    }
+  }
+
+  &-inline {
+    @include pie-clearfix;
+    li {
+      display: inline-block;
+    }
+  }
+}

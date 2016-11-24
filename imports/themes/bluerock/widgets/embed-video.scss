@@ -1,0 +1,58 @@
+
+//
+// EMBED VIDEO
+
+@import "shared/shared";
+@import "../defaults/embed-video";
+
+.w-section.w-videos {
+	background-color: $x-widgetBackground; color: $x-fontColor;
+	font-weight: $w-font-weight; font-size: $x-fontSize; font-family: $x-fontFamily; line-height: $w-line-height;
+	height: auto; width: $x-widgetWidth;
+	padding: $x-padding*2 0;
+	@include box-sizing(border-box);
+	@include pie-clearfix;
+	@media screen and (min-width:1400px) { font-size: 14px; }
+  @media screen and (min-width:1680px) { font-size: 16px; }
+  @media screen and (min-width:1920px) { font-size: 18px; }
+
+	h1, h2, h3, h4 { color: $w-text-color; font-weight: 300; font-family: $x-headingFont; text-align: center; }
+	h1 { font-size: 3.6em; margin-bottom: 1.2em; }
+	h2 { font-size: 2.4em; }
+	h3 { font-size: 2em; }
+	h4 { font-size: 1.5em; }
+
+	a { color: $w-green; text-decoration: none;
+		@include transition(all, 0.4s);
+		&:hover, &:focus { color: $x-secondaryColor; }
+	}
+
+	.w-container {
+		display: table;
+		height: $x-padding*20;
+		margin: 0 auto;
+		max-width: $x-contentMaxWidth;
+		position: relative;
+		width: $x-contentWidth;
+		@include box-sizing(border-box);
+		@include pie-clearfix;
+	}
+
+	.w-video {
+		display: table-cell;
+		height: 100%;
+		width: auto;
+		iframe {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: $w-mobile - 1px) {
+		.w-video {
+			display: inline-block;
+			height: 50%;
+			width: 50%;
+		}
+	}
+}

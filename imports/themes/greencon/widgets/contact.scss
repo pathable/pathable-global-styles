@@ -1,0 +1,127 @@
+
+//
+// CONTACT
+
+@import "shared/shared";
+@import "../defaults/contact";
+
+.w-section.w-contact {
+  background-color: $x-widgetBackground; color: $x-fontColor;
+  font-weight: $w-font-weight; font-size: $x-fontSize; font-family: $x-fontFamily; line-height: $w-line-height;
+  height: $x-padding*15; width: $x-widgetWidth;
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+  @media screen and (max-width: $w-tablet - 1px) { height: $x-padding*25; }
+  @media screen and (min-width:1400px) { font-size: 14px; }
+  @media screen and (min-width:1680px) { font-size: 16px; }
+  @media screen and (min-width:1920px) { font-size: 18px; }
+
+  h1, h2, h3, h4 { color: $w-text-color; font-family: $x-headingFont; font-weight: 300; text-align: center; }
+  h1 { font-size: 3.6em; margin-bottom: 1.2em; }
+  h2 { font-size: 2.4em; }
+  h3 { font-size: 2em; }
+  h4 { font-size: 1.5em; }
+
+  a { color: $w-green; text-decoration: none;
+    @include transition(all, 0.4s);
+    &:hover, &:focus { color: $x-secondaryColor; }
+  }
+
+  .w-container {
+  	height: 100%;
+  	margin: 0 auto;
+    max-width: $x-contentMaxWidth;
+    overflow: hidden;
+  	position: relative;
+  	width: $x-contentWidth;
+  	@include box-sizing(border-box);
+  	@include pie-clearfix;
+  }
+
+  .w-phone {
+    font-size: $x-fontSize*1.2;
+    font-weight: $w-bold;
+  }
+
+  .w-venue {
+    float: left;
+  	height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    img {
+      min-height: 100%;
+      min-width: 100%;
+      @include center;
+    }
+  }
+
+  .w-details {
+    background: $x-primaryColor;
+    color: $x-fontColor;
+    height: 100%;
+    padding: $x-padding;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 33.333%;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    h1 {
+      color: $x-fontColor;
+      font-size: $x-fontSize*1.5;
+      margin: $x-padding 0 $x-padding/4;
+    }
+    a {
+      color: $x-fontColor;
+    }
+  }
+
+  .w-address {
+  	text-transform: uppercase;
+  }
+
+  .w-list {
+    bottom: $x-padding;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .w-listLink {
+    display: block;
+  }
+
+  .w-map {
+    float: right;
+    height: 100%;
+    width: 50%;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    iframe {
+      float: left;
+      height: 100%;
+      min-height: $x-padding*10;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: $w-tablet) {
+    .w-venue, .w-map {
+      float: none;
+      height: 50%;
+      width: 100%;
+    }
+    .w-details {
+      background: rgba($x-primaryColor, 0.8);
+      height: 100%;
+      width: 100%;
+    }
+    .w-list {
+      bottom: auto;
+      margin: $x-padding*2 0 0;
+      position: relative;
+    }
+  }
+}
