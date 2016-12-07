@@ -1,0 +1,23 @@
+
+//
+// MULTI-TEXT WIDGET DEFAULTS
+
+// Size
+
+$x-padding: $w-size;
+$x-widgetWidth: 100%;
+$x-contentWidth: 100%;
+$x-contentMaxWidth: 800px;
+
+// Colors
+
+$x-fontColor: $w-text-color;
+$x-widgetBackground: $w-body;
+$x-primaryColor: $w-primary-color;
+$x-secondaryColor: $w-secondary-color;
+
+// Fonts
+
+$x-fontFamily: $w-font-family;
+$x-fontSize: $w-font-size;
+$x-headingFont: "open sans";

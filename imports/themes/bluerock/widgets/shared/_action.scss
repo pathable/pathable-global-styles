@@ -1,0 +1,71 @@
+
+//
+// CALL TO ACTIONS
+@import "./button";
+
+/*
+	FIXME: This file doesn't seem to be used at all
+*/
+
+.w-action {
+
+	// Position
+
+	&--top-right {
+		display: inline-block;
+		@extend .button;
+		@media screen and (max-width: $w-tablet - 1px) {
+			margin: $w-size*1.5 0 0;
+			text-align: center;
+		}
+		@media screen and (min-width: $w-tablet) {
+		  position: absolute;
+		  right: $w-size*1.5;
+		  top: $w-size*1.5;
+	  }
+	}
+
+	// Style
+
+	&--splash {
+		color: $w-white;
+		font-size: $w-font-size*1.4;
+		font-weight: $w-light;
+		padding: $w-size/2 $w-size;
+		@extend .button;
+		@media screen and (max-width:$w-mobile) {
+			font-size: $w-font-size*1.2;
+			padding: $w-size*0.4 $w-size*0.8;
+		}
+	}
+	&--text {
+		color: $w-gray05;
+		@extend .w-action--top-right;
+	}
+	&--gallery {
+
+	}
+	&--people {
+		color: $w-gray05;
+		@extend .w-action--top-right;
+	}
+	&--agenda {
+		color: $w-white05;
+		@extend .w-action--top-right;
+	}
+	&--community {
+		color: $w-gray05;
+		@extend .w-action--top-right;
+	}
+	&--footer {
+		color: $w-primary-color;
+		margin: 0 0 $w-size*3;
+		@extend .button;
+	}
+
+	// Pseudo classes
+
+	&:hover, &:focus {
+		color: $w-primary-color;
+	}
+}
