@@ -9,6 +9,10 @@
   div, input, span {
     @include box-sizing(border-box);
   }
+  span {
+    margin: 0;
+    font: inherit;
+  }
   &.is-disabled {
     > .sSelect-control {
       background-color: #f9f9f9;
@@ -21,6 +25,9 @@
       pointer-events: none;
       opacity: 0.35;
     }
+  }
+  .b-block-linetext & {
+    margin: -$size/2 0;
   }
 }
 
@@ -45,6 +52,9 @@
   .sSelect-input:focus {
     outline: none;
   }
+  .b-block-linetext & {
+    border-color: rgba($blue, .8);
+  }
 }
 
 .is-open {
@@ -58,6 +68,9 @@
     > .sSelect-arrow {
       border-color: transparent transparent #999;
       border-width: 0 5px 5px;
+    }
+    .b-block-linetext & {
+      border-color: inherit;
     }
   }
 }

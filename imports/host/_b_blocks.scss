@@ -47,33 +47,29 @@
 			background: rgba($blue, 0.05);
 			border-color: rgba($blue, 0.7);
 			border-style: dashed;
-			// &:hover, &:focus {
-			// 	border-color: $blue;
-			// 	border-style: dashed;
-			// }
 		}
 		.b-block-linetext {
-			display: table;
-			width: 60%;
-			label {
-				display: table-cell;
-				float: none;
-				padding-right: $size/4;
-				margin-bottom: 0;
-				width: auto;
-			}
-			input, select {
+			width: 50%;
+			input, select, .select {
 				border-color: rgba($blue, 0.7);
 				width: 100%;
 			}
 			.field {
-				.select & {
+				float: left;
+				padding-right: $size/4;
+				margin-bottom: 0;
+				width: 50%;
+				@include box-sizing(border-box);
+				.select &, .sSelect & {
 					&:after {
 						color: $gray05;
 						content: "\e93a";
 						position: absolute;
 						top: 0;
 					}
+				}
+				&:only-child {
+					width: 100%;
 				}
 			}
 		}
@@ -92,6 +88,7 @@
 				border-color: $blue;
 			}
 		}
+
 		span.label {
 			display: none;
 		}
@@ -243,7 +240,9 @@
 	a {
 		color: $gray;
 	}
-
+	.fa {
+		float: left;
+	}
 	&.image {
 		float: left;
 		padding-right: $size/2;
@@ -268,6 +267,9 @@
 		.b-block-actions {
 			width: 70%;
 		}
+	}
+	.icon-circle-minus {
+		color: red;
 	}
 }
 
@@ -360,8 +362,13 @@
 	@extend .b-block-ellipsis;
 }
 
-.b-block-icon a {
-	color: $gray;
+.b-block-icon {
+	a {
+		color: $gray;
+	}
+	+ .b-block-linetext {
+		margin-left: $size;
+	}
 }
 
 .b-block-linetext {
@@ -541,6 +548,7 @@
 // Block device switch
 
 .b-block-devices {
+	margin-left: $size/2;
 	@include pie-clearfix;
 	i {
 		float: left;

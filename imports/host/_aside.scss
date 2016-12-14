@@ -159,13 +159,16 @@
 	}
 }
 
-// Temporary CSS fix for widget groups until we have designated classnames
 .groupWidget {
 	clear: both;
+	width: 100%;
 	&:first-child {
 		height: 80px;
 		position: absolute;
 		top: 0;
 		width: 100%;
+		z-index: 100;
+	}
+	&:last-child {
 	}
 }
