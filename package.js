@@ -17,7 +17,6 @@
 
     api.addFiles([
       './imports/host.scss',
-      './imports/theme.scss'
     ]);
 
     api.addAssets([
