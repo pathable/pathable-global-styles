@@ -20,9 +20,6 @@
       max-width: 33.333%;
       padding: 1.4em;
     }
-    #nav-toggle {
-      display: none;
-    }
   }
 }
 
@@ -37,6 +34,7 @@
 
 #nav-toggle {
   color: white;
+  display: none;
   float: right;
   font-size: 1.8em;
   line-height: 1;
