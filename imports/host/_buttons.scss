@@ -215,7 +215,7 @@ $btn-schemes: (
 }
 
 // Button layout
-.trols {
+.btn-controls {
 	@include pie-clearfix;
 	ul {
 		@include pie-clearfix;
@@ -262,29 +262,6 @@ $btn-schemes: (
     span {
       display: none;
     }
-  }
-}
-
-// Button layout
-.btn-controls {
-	@include pie-clearfix;
-	ul {
-		@include pie-clearfix;
-		&.left li {
-			float: left;
-			margin-right: .5em;
-		}
-		&.right li {
-			float: left;
-			margin-left: .5em;
-		}
-	}
-	li {
-		display: inline-block;
-		float: left;
-	}
-  &.padded {
-    margin: 0 0 2em;
   }
 }
 
