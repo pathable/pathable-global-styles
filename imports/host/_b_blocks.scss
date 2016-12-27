@@ -340,8 +340,12 @@
 .b-block-content {
 	padding: $size;
 	width: 100%;
+	white-space: nowrap;
 	@extend .b-block-style;
 	@include box-sizing(border-box);
+	@media screen and (max-width: 500px) {
+		padding: $size $size/1.5;
+	}
 }
 
 
@@ -349,6 +353,9 @@
 
 .b-block-handle {
 	width: 7%;
+	@media screen and (max-width:500px) {
+		width: 9%;
+	}
 }
 
 
@@ -545,6 +552,9 @@
 		i {
 			font-size: 0.9em;
 		}
+	}
+	@media screen and (max-width: 350px) {
+		width: auto;
 	}
 }
 
