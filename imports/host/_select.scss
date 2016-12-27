@@ -33,8 +33,7 @@
 
 .sSelect-control {
   background-color: #fff;
-  border-color: #d9d9d9 #ccc #b3b3b3;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   color: #333;
   cursor: default;
   display: table;
@@ -64,7 +63,7 @@
   > .sSelect-control {
     @include border-bottom-radius(0);
     background: #fff;
-    border-color: #b3b3b3 #ccc #d9d9d9;
+    border-color: #ddd #ddd #ddd;
     > .sSelect-arrow {
       border-color: transparent transparent #999;
       border-width: 0 5px 5px;
@@ -205,7 +204,7 @@
 
 .sSelect-menu-outer, sSelect ul {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-top-color: #e6e6e6;
   display: none;
   margin-top: -1px;

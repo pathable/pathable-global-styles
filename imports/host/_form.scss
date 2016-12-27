@@ -28,6 +28,9 @@
 
   &.push {
     margin: 0 0 1.2em;
+    @media screen and (max-width:500px) {
+      margin: 0 0 0.8em;
+    }
   }
 
   &.small {
@@ -167,12 +170,12 @@
   // Input wrapper states
 
   &.success {
-    color: $green;
     &:after {
+      color: $green;
       content: "\e959";
     }
     input, select, textarea {
-      border-color: $green;
+      // border-color: $green;
     }
     &.mini-notice:after {
       background: $green;
@@ -211,7 +214,7 @@
 }
 
 .field-group {
-  // clear: both;
+  @include box-sizing(border-box);
   &.with-border {
     border-top: 1px dashed rgba(0,0,0,0.1);
     padding-top: $size;
@@ -239,6 +242,17 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+  @media screen and (max-width:500px) {
+    &.with-border {
+      background: white;
+      bottom: 0;
+      position: fixed;
+      right: 0;
+      width: 100%;
+      border-style: solid;
+      padding: 0.5em;
     }
   }
 }

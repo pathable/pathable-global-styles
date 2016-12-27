@@ -14,6 +14,16 @@
     max-width: 40%;
     padding: 3em;
   }
+  @media screen and (max-width: 500px) {
+    height: auto;
+    #logo {
+      max-width: 33.333%;
+      padding: 1.4em;
+    }
+    #nav-toggle {
+      display: none;
+    }
+  }
 }
 
 #logo, #nav-toggle {
@@ -46,7 +56,7 @@
     @include box-sizing(border-box);
     &.big {
       display: block;
-      padding: $size / 2 $size;
+      padding: $size/1.6 $size*2 $size/1.6 $size/1.4;
     }
     &.small {
       display: none;
@@ -85,17 +95,17 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 240px;
+    width: 200px;
   }
   @media screen and (max-width:500px) {
     background: darken($blue, 10%);
-    padding: $size/3 0;
     position: fixed;
     top: 0;
     width: 100%;
     width: 100%;
-    #logo {
-      width: 50%;
+    #logo.big {
+      padding: $size*0.7;
+      width: 40%;
     }
   }
 }

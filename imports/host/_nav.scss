@@ -8,7 +8,7 @@
 		color: #fff;
 		display: block;
 		line-height: 20px;
-		padding: .9em 2em;
+		padding: .9em 1.6em;
 		position: relative;
 		text-decoration: none;
 		z-index: 2;
@@ -21,9 +21,6 @@
 			// color: $blue;
 			+ .sub-nav-host {
 				display: block;
-				a {
-					padding-left: 5em;
-				}
 			}
 		}
 		&:hover, &:focus {
@@ -33,7 +30,7 @@
 	}
 	span {
 		font-size: 1em;
-		margin-left: .5em;
+		margin-left: .75em;
 		@media screen and (max-width: 500px) {
 			margin-left: .75em;
 		}
@@ -53,10 +50,24 @@
 		left: 0;
 		position: fixed;
 		right: 0;
-		top: $size*2.5;
+		top: $size*2.2;
 		.sub-nav-host {
 			display: block;
 			position: static;
+			li {
+				border: 0;
+			}
+		}
+		li {
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+		a {
+			font-size: $size*0.5;
+			line-height: 20px;
+			padding: .7em 1.4em;
+		}
+		i {
+			font-size: 15px;
 		}
 	}
 
@@ -72,7 +83,7 @@
 				padding-right: 0;
 				text-align: center;
 			}
-		
+
 			.sub-nav-host {
 				display: block;
 				a {
@@ -105,15 +116,14 @@
 	text-align: left;
 	a {
 		display: block;
-		font-size: .8em;
-		padding-left: 2em;
+		font-size: .9em;
+		padding-left: $size*2.6;
 		text-align: left;
 		&:hover, &:focus {
 			background: darken($blue, 20%);
 		}
 	}
 	@media screen and (max-width: 500px) {
-		padding-left: $size*1.5;
 	}
 	@media screen and (min-width: 501px) {
 		background: darken($blue, 15%);
@@ -154,12 +164,12 @@
 	padding: .8em 1.2em;
 	position: absolute;
 	right: 0;
-	
+
 	span {
 		margin-left: .5em;
 	}
 	.collapsed & {
-		text-align: center;	
+		text-align: center;
 	}
 	@media screen and (max-width: 500px) {
 		display: none;

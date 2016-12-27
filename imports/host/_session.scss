@@ -7,11 +7,8 @@
 .session {
   background: url("/img/bg.jpg") no-repeat center;
   background: url("/packages/pathable-styles/images/bg.jpg") no-repeat center;
-  background-size: cover;
-
-  a {
-    // color: $blue;
-    // font-size: 0.9em;
+  @media screen and (min-width:500px) {
+    background-size: cover;
   }
   &.wrapper {
     height: 100%;
@@ -25,9 +22,13 @@
   clear: both;
   margin: 0 auto;
   max-width: 25em;
+  padding: 2em 0;
   width: 100%;
   @include box-sizing(border-box);
   @include pie-clearfix;
+  @media screen and (max-width:500px) {
+    width: 80%;
+  }
   @media screen and (min-width: 501px) {
     @include center;
   }
@@ -43,9 +44,13 @@
       margin-top: -$size;
       margin-bottom: $size/2;
     }
+    &.inline {
+      margin-bottom: 0;
+    }
   }
   h1 {
     color: white;
+    line-height: 1.3;
     margin-bottom: 0.5em;
     text-align: center;
   }
@@ -97,28 +102,40 @@
   @include pie-clearfix;
   @media screen and (min-width:501px) {
     float: left;
-    width: 31.33%;
-    &:nth-child(3n+2) {
-      margin: 0 3%;
+    width: 48.5%;
+    &:nth-child(odd) {
+      margin-right: 1.5%;
+    }
+    &:nth-child(even) {
+      margin-left: 1.5%;
     }
   }
   button {
     margin-top: $size;
+    width: 100%;
     &.preview {
       /*@include button(#cccccc);*/
     }
   }
   .session & {
     margin: 0 1%;
+    @media screen and (min-width:501px) {
+      width: 23%;
+      &:nth-child(3n+2) {
+        margin: 0 3%;
+      }
+    }
   }
 }
 
 .template-thumb {
   display: block;
   overflow: hidden;
-  max-height: $size*9;
   img {
     max-width: 100%;
     width: 100%;
+  }
+  .session & {
+    max-height: $size*9;
   }
 }

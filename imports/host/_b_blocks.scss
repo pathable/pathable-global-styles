@@ -16,6 +16,9 @@
 .b-block-row {
 	margin-bottom: $size/4;
 	@include pie-clearfix;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	&.expanded {
 		border: 1px solid $blue;
 		@include border-radius(3px);
@@ -43,6 +46,9 @@
 		}
 	}
 	&.editable {
+		@media screen and (max-width:500px) {
+			margin-bottom: 1em;
+		}
 		.b-block-content {
 			background: rgba($blue, 0.05);
 			border-color: rgba($blue, 0.7);
@@ -50,6 +56,10 @@
 		}
 		.b-block-linetext {
 			width: 50%;
+			@media screen and (max-width:500px) {
+				margin-bottom: 3em;
+				width: 100%;
+			}
 			input, select, .select {
 				border-color: rgba($blue, 0.7);
 				width: 100%;
@@ -67,6 +77,9 @@
 						position: absolute;
 						top: 0;
 					}
+				}
+				&:last-child {
+					padding-right: 0;
 				}
 				&:only-child {
 					width: 100%;
@@ -128,6 +141,11 @@
 		.inline.field.inline.field .input {
 			width: 100%;
 		}
+		a {
+			&:hover, &:focus {
+				color: #fff;
+			}
+		}
 	}
 	&.locked {
 		.b-block-style {
@@ -146,7 +164,8 @@
 	&.group.opened {
 		border: 1px solid $border-light;
 		background: #f2f2f2;
-		margin: -$size/3;
+		margin-left: -$size/3;
+		margin-right: -$size/3;
 		padding: $size/3;
 		@include border-radius(2px);
 		&:hover, &:focus {
@@ -180,6 +199,7 @@
 	border: none;
 	border-top: 1px dashed $border;
 	height: 0;
+	margin: 1em 0;
 }
 
 // Block basic style
@@ -237,6 +257,10 @@
 			opacity: 1;
 		}
 	}
+	.button span {
+		color: $white;
+		opacity: 1;
+	}
 	a {
 		color: $gray;
 	}
@@ -244,11 +268,16 @@
 		float: left;
 	}
 	&.image {
-		float: left;
-		padding-right: $size/2;
 		padding-bottom: $size/2;
-		width: 25%;
 		@include box-sizing(border-box);
+		@media screen and (min-width:501px) {
+			float: left;
+			padding-right: $size/2;
+			width: 25%;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
 		.b-block-content {
 			padding: $size/1.5;
 		}
@@ -267,6 +296,7 @@
 		.b-block-actions {
 			width: 70%;
 		}
+
 	}
 	.icon-circle-minus {
 		color: red;
@@ -384,6 +414,10 @@
 		font: 1.2em monospace;
 		margin-left: $size*2;
 	}
+	i {
+		font-size: $size;
+		margin-right: .5em;
+	}
 }
 
 .b-block-doubletext {
@@ -404,7 +438,7 @@
 
 .b-block-linetext, .b-block-doubletext {
 	@media screen and (max-width:500px) {
-		width: 80%;
+		width: 70%;
 	}
 }
 
@@ -416,12 +450,12 @@
 	margin: -$size/1.35;
 	margin-right: $size*1.5;
 	overflow: hidden;
+	width: 4em;
 	@include border-radius(50%);
 	img {
 		float: left;
 		height: 100%;
 		width: auto;
-		@include border-radius(50%);
 	}
 }
 
@@ -462,6 +496,9 @@
 
 .b-block-name {
 	width: 40%;
+	@media screen and (max-width:500px) {
+		width: 33.333%;
+	}
 }
 
 
@@ -509,10 +546,6 @@
 			font-size: 0.9em;
 		}
 	}
-	@media screen and (max-width:500px) {
-		clear: both;
-		width: 100%;
-	}
 }
 
 
@@ -538,6 +571,9 @@
 	opacity: 0.85;
 	overflow: hidden;
 	@include transition(all 0.4s);
+	@media screen and (max-width:500px) {
+		margin-right: $size;
+	}
 	img {
 		float: left;
 		height: 100%;
@@ -554,5 +590,11 @@
 		float: left;
 		font-size: 1.5em;
 		margin-left: .5em;
+	}
+	@media screen and (max-width:500px) {
+		margin-left: 0;
+	}
+	.icon-checkbox {
+		margin-right: 0.3em;
 	}
 }

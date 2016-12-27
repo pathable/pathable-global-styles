@@ -39,7 +39,7 @@
 
 		.icon-chevron-left, .icon-chevron-right {
 			color: $white;
-			font-size: $size * 1.5;
+			font-size: $size * 1.2;
 			padding: $size/4;
 			@include box-sizing(border-box);
 			&:before {

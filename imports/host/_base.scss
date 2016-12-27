@@ -25,6 +25,10 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 2.8em;
   margin-bottom: 0.75em;
+  @media screen and (max-width:500px) {
+    font-size: 2.4em;
+    margin-bottom: 0.5em;
+  }
 }
 
 h2 {
@@ -54,57 +58,3 @@ em {
 strong {
   font-weight: bold;
 }
-
-
-// #preview > div {
-//   //
-//   // BASE STYLES
-
-//   background: $w-body;
-//   color: #444444;
-//   font-weight: $w-font-weight;
-//   font-size: $w-font-size;
-//   font-family: $w-font-family;
-//   line-height: $w-line-height;
-//   @media screen and (min-width: 1400px) {
-//     font-size: 14px;
-//   }
-//   @media screen and (min-width: 1680px) {
-//     font-size: 16px;
-//   }
-//   @media screen and (min-width: 1920px) {
-//     font-size: 18px;
-//   }
-
-//   h1, h2, h3, h4 {
-//     color: #444;
-//     font-weight: 300;
-//     text-align: center;
-//   }
-
-//   h1 {
-//     font-size: 3.6em;
-//     margin-bottom: 1.2em;
-//   }
-
-//   h2 {
-//     font-size: 2.4em;
-//   }
-
-//   h3 {
-//     font-size: 2em;
-//   }
-
-//   h4 {
-//     font-size: 1.5em;
-//   }
-
-//   a {
-//     color: $w-green;
-//     text-decoration: none;
-//     @include transition(all, 0.4s);
-//     &:hover, &:focus {
-//       color: $w-red;
-//     }
-//   }
-// }

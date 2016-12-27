@@ -56,6 +56,16 @@
 				bottom: 0;
 				left: 0;
 				right: 0;
+				&:after {
+					background: url("/packages/pathable-styles/images/iphone.png") no-repeat center;
+					background-size: 300px 608px;
+					content:'';
+					display: inline-block;
+					height: 608px;
+					opacity: 0.5;
+					width: 300px;
+					@include center;
+				}
 			}
 			.themeContainer {
 				background: #eee;
@@ -64,9 +74,11 @@
 				position: absolute;
 				right: 0;
 				transform-origin: top right;
-				height: 70%;
-				width: 60%;
+				height: 461px;
+				width: 260px;
+				z-index: 1;
 				@include center;
+
 			}
 		}
 		.widgetContainer {
