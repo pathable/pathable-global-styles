@@ -356,6 +356,9 @@
 	@media screen and (max-width:500px) {
 		width: 9%;
 	}
+	@media screen and (max-width:300px) {
+		width: 12%;
+	}
 }
 
 
@@ -583,6 +586,9 @@
 	@include transition(all 0.4s);
 	@media screen and (max-width:500px) {
 		margin-right: $size;
+	}
+	@media screen and (max-width:300px) {
+		display: none;
 	}
 	img {
 		float: left;
