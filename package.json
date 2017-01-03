@@ -1,0 +1,13 @@
+{
+  "name": "pathable-global-styles",
+  "version": "0.0.1",
+  "description": "Pathable.",
+  "keywords": [],
+  "homepage": "http://pathable.com",
+  "scripts": {
+    "postinstall": "./postinstall"
+  },
+  "dependencies": {
+    "antd": "^2.5.3"
+  }
+}

@@ -1,7 +1,6 @@
 //
 // MASTER THEME CSS
 
-
 // Import compass
 //
 @import "{francocatena:compass}/compass/reset";
@@ -24,6 +23,7 @@
 @import "utilities/linearicons"; // Linearicons font
 @import "utilities/mixins"; // Custom mixins
 @import "utilities/lists"; // List extends
+@import "utilities/antd";
 
 
 // Import shared styles
