@@ -286,12 +286,12 @@
 			padding: $size/1.5;
 		}
 		.b-block-text {
+			width: 100%;
 			p {
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 			}
-			width: 100%;
 		}
 		.b-block-avatar {
 			height: 8em;
@@ -300,7 +300,6 @@
 		.b-block-actions {
 			width: 70%;
 		}
-
 	}
 	.icon-circle-minus {
 		color: red;

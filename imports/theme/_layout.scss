@@ -52,6 +52,25 @@ html, body {
   }
 }
 
+// Header and footer widget groups
+.themeContainer {
+  height: 100%;
+  >[class^="section"], >[class*="section"] {
+    &:first-child {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      @include box-sizing(border-box);
+      @include pie-clearfix;
+      z-index: 10;
+    }
+    &:last-child {
+      @include box-sizing(border-box);
+      @include pie-clearfix;
+    }
+  }
+}
+
 @media screen and (max-width: 999px) {
   .third, .twothirds, .fourth {
     width: 50%;
@@ -72,7 +91,7 @@ html, body {
 // Container
 
 .w-container {
-  
+
   .w-header & {
   }
   .w-splash & {
