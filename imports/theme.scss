@@ -19,7 +19,7 @@
 
 // Import utilities
 
-@import "utilities/webfonts";
+@import "utilities/webfonts"; // Custom web fonts
 @import "utilities/linearicons"; // Linearicons font
 @import "utilities/mixins"; // Custom mixins
 @import "utilities/lists"; // List extends
@@ -28,22 +28,11 @@
 
 // Import shared styles
 
-@import "theme/buttons";
-@import "theme/flashes";
 @import "theme/base";
 @import "theme/layout";
-@import "theme/action";
 
 
 // Import widgets
 
 @import "theme/header";
-@import "theme/nav";
-@import "theme/splash";
-@import "theme/text_single";
-@import "theme/gallery";
-@import "theme/people";
-@import "theme/agenda";
-@import "theme/community";
-@import "theme/contact";
 @import "theme/footer";

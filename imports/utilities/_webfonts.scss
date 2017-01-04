@@ -25,7 +25,6 @@
 	font-family: 'Bungee';
 	src: url('/packages/pathable-global-styles/fonts/Bungee/Bungee-Regular.eot');
 	src: url('/packages/pathable-global-styles/fonts/Bungee/Bungee-Regular.eot?#iefix') format('embedded-opentype'),
-		url('/packages/pathable-global-styles/fonts/Bungee/Bungee-Regular.woff2') format('woff2'),
 		url('/packages/pathable-global-styles/fonts/Bungee/Bungee-Regular.woff') format('woff'),
 		url('/packages/pathable-global-styles/fonts/Bungee/Bungee-Regular.ttf') format('truetype');
 	font-weight: normal;
@@ -71,7 +70,6 @@
 	font-family: 'Maven';
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProRegular.eot');
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProRegular.eot?#iefix') format('embedded-opentype'),
-		url('/packages/pathable-global-styles/fonts/Maven/MavenProRegular.woff2') format('woff2'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProRegular.woff') format('woff'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProRegular.ttf') format('truetype');
 	font-weight: normal;
@@ -82,7 +80,6 @@
 	font-family: 'Maven';
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProMedium.eot');
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProMedium.eot?#iefix') format('embedded-opentype'),
-		url('/packages/pathable-global-styles/fonts/Maven/MavenProMedium.woff2') format('woff2'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProMedium.woff') format('woff'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProMedium.ttf') format('truetype');
 	font-weight: 500;
@@ -93,7 +90,6 @@
 	font-family: 'Maven';
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProBold.eot');
 	src: url('/packages/pathable-global-styles/fonts/Maven/MavenProBold.eot?#iefix') format('embedded-opentype'),
-		url('/packages/pathable-global-styles/fonts/Maven/MavenProBold.woff2') format('woff2'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProBold.woff') format('woff'),
 		url('/packages/pathable-global-styles/fonts/Maven/MavenProBold.ttf') format('truetype');
 	font-weight: bold;
@@ -211,7 +207,7 @@
 // Styles: Regular, Bold
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'PlayfairDisplay';
   src: url('/packages/pathable-global-styles/fonts/PlayfairDisplay/PlayfairDisplay-Regular.eot');
   src: url('/packages/pathable-global-styles/fonts/PlayfairDisplay/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
     url('/packages/pathable-global-styles/fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff') format('woff'),
