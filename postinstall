@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+# Include the `antd` style dependency to our context
+# And solve an issue with `meteor-scss` that unable us to import css files
+# by renaming the file as scss
+# https://github.com/fourseven/meteor-scss/issues/219#issue-174566005
+cp node_modules/antd/dist/antd.css imports/utilities
+mv imports/utilities/antd.css imports/utilities/_antd.scss
