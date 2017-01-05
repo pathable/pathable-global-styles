@@ -214,6 +214,7 @@
 }
 
 .field-group {
+  border: none;
   @include box-sizing(border-box);
   &.with-border {
     border: none;

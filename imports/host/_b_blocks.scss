@@ -55,7 +55,7 @@
 			border-style: dashed;
 		}
 		.b-block-linetext {
-			width: 50%;
+			width: 60%;
 			@media screen and (max-width:500px) {
 				margin-bottom: 3em;
 				width: 100%;
@@ -144,6 +144,11 @@
 		}
 		.inline.field.inline.field .input {
 			width: 100%;
+		}
+		.field-group.with-border.push-top.right-align {
+			border: none;
+			margin-top: 0;
+			padding-top: 0;
 		}
 		a {
 			&:hover, &:focus {
