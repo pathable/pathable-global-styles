@@ -582,3 +582,26 @@
     float: left;
   }
 }
+
+// Geosuggest UL overrides
+.geosuggest__suggests {
+  clear: both;
+  margin-left: 25%;
+  background: white;
+  border: 1px solid $border-light;
+  border-top: none;
+  padding: $size/4 $size/2;
+  li {
+    color: $gray;
+    cursor: pointer;
+    font-weight: 100;
+    margin: $size/3 0;
+    &:hover, &:focus {
+      color: $blue;
+    }
+  }
+}
+
+.geosuggest__suggests--hidden {
+  display: none;
+}
