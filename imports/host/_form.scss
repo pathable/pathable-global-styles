@@ -221,6 +221,9 @@
     padding-top: $size;
     @media screen and (min-width:501px) {
       margin-bottom: 2em;
+      .b-block-row.editable & {
+        margin-bottom: 0;
+      }
     }
   }
   .field, .field.inline {

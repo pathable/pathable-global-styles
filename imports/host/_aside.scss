@@ -8,7 +8,7 @@
 	right: 0;
 	top: 0;
 	@include box-sizing(border-box);
-	@media screen and (max-width: 1000px) { display: none; }
+	@media screen and (max-width: 800px) { display: none; }
 
 	&.help {
 		background: #fff;
@@ -22,9 +22,7 @@
 		border-left: 1px solid $border-light;
 		width: 400px;
 		overflow-y: auto;
-	  @media screen and (min-width: 1400px) { width: 600px; }
-	  @media screen and (min-width: 1681px) { width: 800px; }
-	  @media screen and (min-width: 1921px) { width: 1000px; }
+
 
 		&.preview-desktop {
 			.themeOuterContainer {
@@ -90,6 +88,11 @@
 				display: none;
 			}
 		}
+		@media screen and (min-width: 801px) { width: 300px; &.preview-desktop .themeContainer {@include scale(0.2); width:500%;} }
+		@media screen and (min-width: 1001px) { width: 400px; &.preview-desktop .themeContainer {@include scale(0.25); width:400%;} }
+	  @media screen and (min-width: 1401px) { width: 600px; &.preview-desktop .themeContainer {@include scale(0.3333); width:300%;} }
+	  @media screen and (min-width: 1681px) { width: 800px; }
+	  @media screen and (min-width: 1921px) { width: 1000px; }
 	}
 	iframe, img {
 		width: 100%;
