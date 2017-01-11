@@ -100,8 +100,8 @@
 
   [class^="icon-"], [class*="icon-"] {
     font: 1em linearicons;
-    left: 1em;
-    @include opacity(0.5);
+    left: 1.2em;
+    @include opacity(0.75);
     position: absolute;
     top: 1.2em;
   }

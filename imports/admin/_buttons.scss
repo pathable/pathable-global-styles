@@ -151,7 +151,7 @@ $btn-schemes: (
   	}
   }
 
-  &--cancel { // 10
+  &--cancel, &--delete { // 10
     background: rgba(0,0,0,0.2);
     border: 1px solid rgba(0,0,0,0.05);
     &:hover, &:focus {
@@ -181,10 +181,10 @@ $btn-schemes: (
     font-size: 1.25em;
   	position: relative;
   	top: 1px;
-  	@include scale(1.25);
+  	@include scale(1);
   }
   i + span {
-    margin-left: $size/2;
+    margin-left: $size/1.5;
     text-transform: uppercase;
   }
 }
