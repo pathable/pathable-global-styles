@@ -126,15 +126,34 @@
 	background: $bg-light;
 	border-bottom: 1px solid $border-light;
 	height: $size*2.5;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 100%;
 	z-index: 2;
 	@include pie-clearfix;
+	.radio-group {
+		float: right;
+		padding: $size/2;
+	}
+	.radio-field input[type="radio"] + label span {
+		background: transparent;
+		border-color: $border;
+		padding: $size/3.3 $size/1.5;
+	}
+	.radio-field input[type="radio"]:checked + label span {
+		background: $gray;
+		border-color: $gray;
+		color: #fff;
+	}
+}
+
+.page-selector {
+	float: left;
+	position: relative;
+	@include pie-clearfix;
 	h1 {
-		border-bottom: 1px solid $bg-light;
+		border-bottom: none;
 		float: left;
 		font-size: $size;
 		font-weight: 400;
@@ -149,29 +168,41 @@
 			font-size: $size/3;
 			height: $size*2.5;
 			line-height: $size*2.5;
-			padding: 0 $size;
-			&:hover, &:focus {
-				background: $gray;
-				color: $white;
-			}
+			padding: 0 $size/1.5;
 		}
 		i {
 			margin-left: $size/2;
 		}
 	}
-	.radio-group {
-		float: right;
-		padding: $size/2;
+
+	ul {
+		display: none;
+		font-size: $size;
+		left: 0;
+		margin-top: -1px;
+		position: absolute;
+		top: $size*1.5;
+		width: 150%;
+		a {
+			background: $gray;
+			border-top: 1px solid rgba(0,0,0,0.1);
+			color: $white;
+			display: block;
+			font-size: $size/3.5;
+			padding: $size/2 $size/1.5;
+			&:hover, &:focus {
+				background: $gray - #111;
+			}
+		}
 	}
-	.radio-field input[type="radio"] + label span {
-		background: transparent;
-		border-color: $border;
-		padding: $size/3.3 $size/1.5;
-	}
-	.radio-field input[type="radio"]:checked + label span {
-		background: $gray;
-		border-color: $gray;
-		color: #fff;
+	&:hover, &:focus {
+		h1 a {
+			background: $gray;
+			color: $white;
+		}
+		ul {
+			display: block;
+		}
 	}
 }
 
