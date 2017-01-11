@@ -1,5 +1,5 @@
 //
-// MASTER THEME CSS
+// MASTER APP CSS
 
 // Import compass
 //
@@ -14,7 +14,7 @@
 
 // Import variables
 
-@import "theme/variables";
+@import "app/variables";
 
 
 // Import utilities
@@ -28,11 +28,11 @@
 
 // Import shared styles
 
-@import "theme/base";
-@import "theme/layout";
+@import "app/base";
+@import "app/layout";
 
 
 // Import widgets
 
-@import "theme/header";
-@import "theme/footer";
+@import "app/header";
+@import "app/footer";

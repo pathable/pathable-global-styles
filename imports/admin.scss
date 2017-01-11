@@ -1,5 +1,5 @@
 //
-// MASTER HOST CSS
+// MASTER ADMIN CSS
 
 // Import compass
 //
@@ -14,7 +14,7 @@
 
 // Import variables
 
-@import "host/variables";
+@import "admin/variables";
 
 
 // Import utilities
@@ -31,44 +31,44 @@
 
 // Import layout
 
-@import "host/layout";
+@import "admin/layout";
 
 
 // Import modules
 
-@import "host/buttons";
-@import "host/table";
-@import "host/b_blocks";
-@import "host/w_blocks";
-@import "host/w_settings";
-@import "host/pagination";
-@import "host/close";
-@import "host/flashes";
-@import "host/breadcrumbs";
-@import "host/tabs";
-@import "host/select";
-@import "host/colorpickr-overrides";
-@import "host/404";
-@import "host/wizard";
+@import "admin/buttons";
+@import "admin/table";
+@import "admin/b_blocks";
+@import "admin/w_blocks";
+@import "admin/w_settings";
+@import "admin/pagination";
+@import "admin/close";
+@import "admin/flashes";
+@import "admin/breadcrumbs";
+@import "admin/tabs";
+@import "admin/select";
+@import "admin/colorpickr-overrides";
+@import "admin/404";
+@import "admin/wizard";
 
 
 // Import general styles
 
-@import "host/base";
-@import "host/form";
-@import "host/theme";
+@import "admin/base";
+@import "admin/form";
+@import "admin/theme";
 
 
 // Import specific styles
 
-@import "host/header";
-@import "host/nav";
-@import "host/session";
-@import "host/host";
-@import "host/editor";
-@import "host/aside";
-@import "host/dashboard";
+@import "admin/header";
+@import "admin/nav";
+@import "admin/session";
+@import "admin/host";
+@import "admin/editor";
+@import "admin/aside";
+@import "admin/dashboard";
 
 
 // RTE overrides
-@import "host/rte";
+@import "admin/rte";
