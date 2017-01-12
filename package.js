@@ -16,8 +16,8 @@
     api.use('meta:susy');
 
     api.addFiles([
-      './imports/host.scss',
-      './imports/theme.scss',
+      './imports/admin.scss',
+      './imports/app.scss',
     ]);
 
     api.addAssets([

@@ -9,7 +9,7 @@
   font-size: 1em;
   font-weight: 300;
   outline: none;
-  padding: 1em;
+  padding: 0.9em 1em;
   @include border-radius(2px);
   @include box-sizing(border-box);
   @include input-placeholder {
@@ -100,8 +100,8 @@
 
   [class^="icon-"], [class*="icon-"] {
     font: 1em linearicons;
-    left: 1em;
-    @include opacity(0.5);
+    left: 1.2em;
+    @include opacity(0.75);
     position: absolute;
     top: 1.2em;
   }
@@ -127,7 +127,7 @@
     .inline {
       width: auto;
     }
-    input, textarea, select, .rte, .field-image {
+    input, textarea, select, .rte, .field-image, .sSelect, .radio-group {
       display: block;
       width: 100%;
       @include box-sizing(border-box);
@@ -140,7 +140,27 @@
         }
       }
     }
+    .radio-group {
+      display: table;
+    }
   }
+
+  &.checkbox {
+    color: $gray;
+    float: left;
+    font-weight: 100;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    @media screen and (min-width:501px) {
+      padding-left: 25%
+    }
+    input {
+      float: left;
+      margin: $size/5 $size/4 0 0;
+      width: auto;
+    }
+  }
+
   &.with-image {
 
   }
@@ -261,6 +281,59 @@
       width: 100%;
       border-top-style: solid;
       padding: 0.5em;
+    }
+  }
+}
+
+.multi-field {
+  margin-bottom: $size/2;
+  legend {
+    float: left;
+    font-weight: 100;
+    padding: $size/4 0;
+    width: 25%;
+  }
+  .field {
+    float: left;
+    margin-right: 2%;
+    width: 38%;
+    span.label {
+      display: none;
+    }
+    input, textarea, select {
+      width: 100%;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &.name {
+    .field {
+      width: 28%;
+      &:last-child {
+        width: 15%;
+      }
+    }
+  }
+  &.phone {
+    .field {
+      width: 48%;
+      &:first-of-type {
+        width: 25%;
+      }
+    }
+  }
+  @media screen and (max-width:500px) {
+    label, .field {
+      clear: both;
+      float: none;
+      width: 100% !important;
+    }
+    .field {
+      margin-bottom: $size/2;
+      &:last-child {
+        width: 100%;
+      }
     }
   }
 }
@@ -467,28 +540,37 @@
   }
 }
 
+.radio-group {
+  display: table;
+  table-layout: fixed;
+}
+
 .radio-field {
+  display: table-cell;
   input[type="radio"] {
-      display:none;
+    display:none;
   }
   input[type="radio"] + label {
-      color: $gray;
-      font-size: 1em;
-      text-align: center;
+    color: $gray;
+    font-size: 1em;
+    text-align: center;
   }
   input[type="radio"] + label span {
-      background-color: $white;
-      border: 1px solid $border-light;
-      cursor: pointer;
-      display: block;
-      padding: $size/3.3;
-      vertical-align: middle;
+    background-color: $white;
+    border: 1px solid $border-light;
+    cursor: pointer;
+    display: block;
+    padding: $size/3.3;
+    vertical-align: middle;
+    .field.inline & {
+      padding: $size/2.3;
+    }
   }
 
   input[type="radio"]:checked + label span {
-       background-color: $gray;
-       border-color: $gray;
-       color: $white;
+    background-color: $gray;
+    border-color: $gray;
+    color: $white;
   }
 
   input[type="radio"] + label span,
@@ -561,9 +643,38 @@
   border: 1px solid rgba($black, 0.07);
   margin: $size/2 0 $size;
   padding: $size $size $size/2;
+  position: relative;
   @include border-radius(2px);
   @include box-sizing(border-box);
   @include pie-clearfix;
+  legend {
+    color: $blue;
+    float: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    margin-bottom: $size;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+}
+
+.form-link {
+  clear: both;
+  display: inline-block;
+  font-size: $size/2;
+  padding: $size/4 0;
+  position: relative;
+  // display: block;
+  // @media screen and (min-width:501px) {
+  //   .field.inline & {
+  //     margin-left: 25%;
+  //   }
+  // }
+  [class^="icon-"], [class*="icon-"] {
+    position: static;
+  }
 }
 
 // Loading indicator
