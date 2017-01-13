@@ -107,3 +107,146 @@
     }
   }
 }
+
+.admin-header {
+  background: #333;
+  height: 30px;
+  img {
+    float: left;
+  }
+  a {
+    color: #fff;
+    display: block;
+    line-height: 30px;
+    opacity: 0.8;
+    @include pie-clearfix;
+    @include transition(all 0.4s);
+    &:hover, &:focus {
+      background: $blue;
+      opacity: 1;
+    }
+  }
+  hgroup {
+    float: left;
+    width: 25%;
+    @media screen and (max-width:500px) {
+      white-space: nowrap;
+      width: auto;
+    }
+  }
+  h1 {
+    float: left;
+    margin: 0;
+    a {
+      background: #111;
+      padding: 5px;
+      @include box-sizing(border-box);
+    }
+    img {
+      height: 20px;
+    }
+  }
+  h2 {
+    float: left;
+    letter-spacing: 0.01em;
+    a {
+      font-size: 12px;
+      font-weight: 400;
+      padding: 0 10px;
+    }
+  }
+  nav {
+    float: left;
+    text-align: center;
+    width: 50%;
+    @include pie-clearfix;
+    @media screen and (max-width:500px) {
+      width: auto;
+    }
+  }
+  nav ul {
+    li {
+      display: inline-block;
+      @media screen and (max-width:500px) {
+        float: left;
+      }
+    }
+    a {
+      font-size: 11px;
+      padding: 0 10px;
+    }
+    i {
+      margin-right: 5px;
+    }
+    @media screen and (max-width:500px) {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.admin-name {
+  @media screen and (max-width:500px) {
+    display: none;
+  }
+}
+
+.admin-avatar {
+  display: block;
+  float: right;
+  height: 30px;
+  margin-left: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 30px;
+  img {
+    height: 30px;
+    object-fit: contain;
+    @include center;
+  }
+}
+
+.admin-user {
+  float: right;
+  font-size: 11px;
+  max-width: 25%;
+  position: relative;
+  @media screen and (max-width:500px) {
+    width: 25%;
+  }
+  a {
+    line-height: 30px;
+    padding: 0 0 0 10px;
+  }
+  span {
+
+  }
+
+  ul {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    a {
+      background: $blue;
+      font-size: 10px;
+      line-height: 25px;
+    }
+  }
+  li {
+    display: block;
+  }
+  &:hover, &:focus {
+    p a {
+      background: $blue;
+    }
+    ul {
+      display: block;
+    }
+  }
+  .admin-logout {
+    background: $orange;
+  }
+}

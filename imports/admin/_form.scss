@@ -242,9 +242,6 @@
     padding-top: $size;
     @media screen and (min-width:501px) {
       margin-bottom: 2em;
-      .b-block-row.editable & {
-        margin-bottom: 0;
-      }
     }
   }
   .field, .field.inline {
@@ -483,28 +480,28 @@
 .icon-checkbox {
   display: inline-block;
   float: left;
-  height: $size*1.8;
-  margin: -$size/2 0;
+  height: $size*1.6;
+  margin: -$size/2.3 0;
   position: relative;
   white-space: nowrap;
-  width: $size*1.8;
+  width: $size*1.6;
   @include border-radius(50%);
   label {
     cursor: pointer;
     display: inline-block;
-    height: $size*1.8;
+    height: $size*1.6;
     left: 0;
-    line-height: $size*1.8;
+    line-height: $size*1.6;
     position: absolute;
     top: 0;
-    width: $size*1.8;
+    width: $size*1.6;
     @include border-radius(50%);
     &:after {
       bottom: 0;
       color: $blue;
       content: "";
       display: inline-block;
-      font: 1.5em linearicons;
+      font: 1.25em linearicons;
       left: 0;
       line-height: $size*1.2;
       position: absolute;

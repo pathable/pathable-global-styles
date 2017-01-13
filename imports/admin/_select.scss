@@ -26,9 +26,11 @@
       opacity: 0.35;
     }
   }
-  .b-block-linetext & {
+  // refactor
+  .b-block-linetext &, .b-block-fieldset & {
     margin: -$size/2 0;
   }
+  // refactor
 }
 
 .sSelect-control {
@@ -51,9 +53,14 @@
   .sSelect-input:focus {
     outline: none;
   }
-  .b-block-linetext & {
+  .b-block-row.editable & {
+    height: 35px;
+  }
+  // refactor
+  .b-block-linetext &, .b-block-fieldset & {
     border-color: rgba($blue, .8);
   }
+  // refactor
 }
 
 .is-open {
@@ -68,9 +75,11 @@
       border-color: transparent transparent #999;
       border-width: 0 5px 5px;
     }
-    .b-block-linetext & {
+    // refactor
+    .b-block-linetext &, .b-block-fieldset & {
       border-color: inherit;
     }
+    // refactor
   }
 }
 
@@ -83,7 +92,7 @@
   bottom: 0;
   color: #aaa;
   left: 0;
-  line-height: 34px;
+  line-height: 36px;
   max-width: 100%;
   overflow: hidden;
   padding-left: 10px;
@@ -93,6 +102,9 @@
   text-overflow: ellipsis;
   top: 0;
   white-space: nowrap;
+  .b-block-row.editable & {
+    line-height: 34px;
+  }
 }
 
 .has-value.sSelect--single > .sSelect-control .sSelect-value {
@@ -202,7 +214,7 @@
   }
 }
 
-.sSelect-menu-outer, sSelect ul {
+.sSelect-menu-outer, .sSelect ul {
   background-color: #fff;
   border: 1px solid #ddd;
   border-top-color: #e6e6e6;

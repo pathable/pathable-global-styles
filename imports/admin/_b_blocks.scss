@@ -51,9 +51,10 @@
 		}
 		.b-block-content {
 			background: rgba($blue, 0.05);
-			border-color: rgba($blue, 0.7);
-			border-style: dashed;
+			border-color: rgba($blue, 0.2);
+			border-style: solid;
 		}
+		// delete 1
 		.b-block-linetext {
 			width: 60%;
 			@media screen and (max-width:500px) {
@@ -84,8 +85,12 @@
 				&:only-child {
 					width: 100%;
 				}
+				&:after {
+					top: .2em;
+				}
 			}
 		}
+		// delete 1
 		.input, .select {
 			background-color: $white;
 			display: block;
@@ -118,9 +123,7 @@
 			left: 1.2em;
 			top: 0.4em;
 		}
-		.b-block-linetext .field:after {
-			top: .2em;
-		}
+
 		.input-message {
 			font-size: $size/2;
 			left: 0;
@@ -361,9 +364,13 @@
 // Block drag&drop
 
 .b-block-handle {
-	width: 7%;
+	width: 5%;
 	@media screen and (max-width:500px) {
 		width: 9%;
+		.b-block-row.editable & {
+			text-align: center;
+			width: 100%;
+		}
 	}
 	@media screen and (max-width:300px) {
 		width: 12%;
@@ -565,7 +572,7 @@
 			font-size: 0.9em;
 		}
 	}
-	@media screen and (max-width: 350px) {
+	@media screen and (max-width:350px) {
 		width: auto;
 	}
 	@media screen and (max-width:850px) and (min-width:500px) {
@@ -627,5 +634,90 @@
 	}
 	.icon-checkbox {
 		margin-right: 0.3em;
+	}
+}
+
+// Block form
+
+.b-block-row.editable .b-block-form {
+	width: 95%;
+	@media screen and (max-width:500px) {
+		clear: both;
+		margin-top: $size;
+		width: 100%;
+		.b-block-row.editable & {
+			text-align: center;
+			width: 100%;
+		}
+		.b-block-handle {
+			display: none;
+		}
+	}
+	@media screen and (max-width:300px) {
+		width: 12%;
+	}
+}
+
+// Block fieldset
+
+// refactor
+.b-block-row.editable .b-block-fieldset {
+	width: 60%;
+	@media screen and (max-width:500px) {
+		margin-bottom: 3em;
+		width: 100%;
+	}
+	input, select, .select {
+		border-color: rgba($blue, 0.7);
+		width: 100%;
+	}
+	.field {
+		float: left;
+		padding-right: $size/4;
+		margin-bottom: 0;
+		width: 50%;
+		@include box-sizing(border-box);
+		.select &, .sSelect & {
+			&:after {
+				color: $gray05;
+				content: "\e93a";
+				position: absolute;
+				top: 0;
+			}
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+		&:only-child {
+			width: 100%;
+		}
+		&:after {
+			top: .2em;
+		}
+	}
+}
+// refactor
+
+
+.b-block-row.editable .b-block-buttons {
+	float: right;
+	.field {
+		float: right;
+		margin-left: $size/5;
+	}
+	i {
+		font-size: $size/1.5;
+		font-weight: bold;
+	}
+	.button {
+		height: 3.25em;
+	}
+	.button--warning {
+		opacity: 0.7;
+		padding: .8em;
+		@include transition(opacity .4em)
+		&:hover, &:focus {
+			opacity: 1;
+		}
 	}
 }
