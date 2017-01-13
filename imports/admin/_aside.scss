@@ -144,7 +144,20 @@
 	.radio-field input[type="radio"]:checked + label span {
 		background: $gray;
 		border-color: $gray;
-		color: #fff;
+		color: $white;
+	}
+	.button--light {
+		background: transparent;
+		border-color: $border;
+		color: $gray;
+		height: 32px;
+		margin: $size/2 $size/2 $size/2 0;
+		padding: $size/3.3 $size/1.5;
+		&:hover, &:focus {
+			background: $gray;
+			border-color: $gray;
+			color: $white;
+		}
 	}
 }
 
