@@ -76,6 +76,22 @@
       }
     }
   }
+  .checkbox {
+    margin-bottom: 1.5em;
+    padding-left: 0;
+    width: 100%;
+    input {
+      margin-right: 0.5em;
+      margin-top: 0.2em;
+      margin-bottom: 0;
+    }
+    .input-message {
+      padding-top: 2.4em;
+    }
+    &:after {
+      top: 0;
+    }
+  }
   .rounded-checkbox {
     margin-bottom: 1.5em;
     span {
