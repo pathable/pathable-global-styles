@@ -5,9 +5,11 @@
   "keywords": [],
   "homepage": "http://pathable.com",
   "scripts": {
+    "initialize": "./initialize",
+    "preinstall": "npm run initialize",
     "postinstall": "./postinstall"
   },
-  "dependencies": {
+  "devDependencies": {
     "antd": "^2.5.3"
   }
 }
