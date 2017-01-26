@@ -127,7 +127,7 @@
     .inline {
       width: auto;
     }
-    input, textarea, select, .rte, .field-image, .sSelect, .radio-group {
+    input, textarea, select, .rte, .field-image, .field-code, .sSelect, .radio-group {
       display: block;
       width: 100%;
       @include box-sizing(border-box);

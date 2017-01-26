@@ -11,3 +11,8 @@ do
   cp node_modules/antd/lib/$antDep/style/index.css imports/utilities/antd
   mv imports/utilities/antd/index.css imports/utilities/antd/_$antDep.scss
 done
+
+# Include the `prism` style dependency to our context
+echo "Importing prism style dependency..."
+cp node_modules/prismjs/themes/prism.css imports/utilities
+mv imports/utilities/prism.css imports/utilities/_prism.scss
