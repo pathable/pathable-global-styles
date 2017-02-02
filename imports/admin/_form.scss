@@ -127,7 +127,7 @@
     .inline {
       width: auto;
     }
-    input, textarea, select, .rte, .field-image, .field-code, .sSelect, .radio-group {
+    input, textarea, select, code, .rte, .field-image, .sSelect, .radio-group {
       display: block;
       width: 100%;
       @include box-sizing(border-box);
@@ -338,23 +338,26 @@
 // Field image
 
 .field-image {
-  background: $border-light;
-  border: 1px solid $border-light;
-  overflow: hidden;
-  padding: $size*1.5 $size;
-  position: relative;
-  text-align: center;
-  img {
-    left: 0;
-    position: absolute;
-    top: -33.333%;
-    width: 100%;
-    @include border-radius(2px);
-  }
-  .button {
-    display: inline-block;
+  div {
+    @include box-sizing(border-box);
+    background: $border-light;
+    border: 1px solid $border-light;
+    overflow: hidden;
+    padding: $size*1.5 $size;
     position: relative;
-    z-index: 2;
+    text-align: center;
+    img {
+      left: 0;
+      position: absolute;
+      top: -33.333%;
+      width: 100%;
+      @include border-radius(2px);
+    }
+    .button {
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+    }
   }
 }
 
