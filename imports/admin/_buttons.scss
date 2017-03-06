@@ -141,19 +141,22 @@ $btn-schemes: (
 
   &--light { // 9
   	background: #fff;
-  	border-color: rgba($blue, .8);
-  	color: $blue - #111;
-  	@include box-shadow($input-blue-shadow);
+  	border: none;
+  	color: $blue;
+  	box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
   	&:hover, &:focus {
       background-color: $blue;
   		border-color: $blue;
       color: $white;
   	}
+    .b-blocks-toolbar & {
+      height: 38px;
+    }
   }
 
   &--cancel, &--delete { // 10
     background: rgba(0,0,0,0.2);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: rgba($red, 0.4) -1px -1px 0 inset;
     &:hover, &:focus {
       background: $red;
     }

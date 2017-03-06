@@ -127,7 +127,9 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
-  > input {
+  // This selector should be replaced with "input". Temporary fix to override mdg default form styles.
+  // https://monosnap.com/file/3yF8UyVXQWdgdpW6JC1gtAvU7hGE5C
+  > textarea, input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type="submit"]):not([type="file"]), input[type="number"] {
     width: 100%;
     background: none transparent;
     border: 0 none;
@@ -261,5 +263,47 @@
   &.is-disabled {
     color: #cccccc;
     cursor: default;
+  }
+}
+
+.sSelect--columns {
+  @media screen and (min-width: 501px) {
+    float: left;
+    max-width: 400px;
+    width: 60%;
+  }
+  .sSelect-arrow-zone {
+    background: rgba($blue, 0.08);
+    color: $blue;
+    padding-right: 0;
+    width: 40px;
+  }
+  .sSelect-control {
+    border: none;
+    @extend .b-block-style;
+  }
+  &.has-value.sSelect--single > .sSelect-control .sSelect-value .sSelect-value-label {
+    color: $blue;
+  }
+  .sSelect-value-label {
+    img {
+      float: left;
+      height: 18px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  }
+  .sSelect-option {
+    background: transparent;
+    font-size: 12px;
+    img {
+      height: 17px;
+      margin-top: 2px;
+      margin-right: 8px;
+    }
+  }
+  .sSelect-menu-outer {
+    border: none;
+    @extend .b-block-style;
   }
 }
