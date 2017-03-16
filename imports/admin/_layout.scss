@@ -142,3 +142,10 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 	opacity: 0;
 	visibility: hidden;
 }
+
+// Show all things
+.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
