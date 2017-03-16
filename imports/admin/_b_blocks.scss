@@ -43,18 +43,12 @@ $block-size: 50px;
   display: flex;
 	overflow: hidden;
 	padding: $size/1.5;
-	&.two-columns, &.three-columns, &.four-columns, &.five-columns, &.six-columns, &.seven-columns {
+	&.multi-columns {
 		padding: 0;
 		.b-blocks-column {
 			padding: $size/1.5 $size/1.5 $size*1.5;
 		}
 	}
-	&.two-columns .b-blocks-column {width: 50%;}
-	&.three-columns .b-blocks-column {width: 33.3333%;}
-	&.four-columns .b-blocks-column {width: 25%;}
-	&.five-columns .b-blocks-column {width: 20%;}
-	&.six-columns .b-blocks-column {width: 16.6667%;}
-	&.seven-columns .b-blocks-column {width: 14.2857%;}
 }
 
 // Blocks divider
