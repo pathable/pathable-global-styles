@@ -95,9 +95,9 @@
 	  @media screen and (min-width: 1921px) { width: 1000px; }
 		@media screen and (min-width: 801px) and (max-width: 1000px) { &.preview-mobile .themeOuterContainer {@include scale(0.8);} }
 	}
-	iframe, img {
-		width: 100%;
-	}
+	// iframe, img {
+	// 	width: 100%;
+	// }
 	iframe.twitter-timeline {
 		height: 500px !important;
 		width: 100% !important;
