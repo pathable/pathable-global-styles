@@ -16,8 +16,8 @@ $block-size: 50px;
 	border-radius: 2px;
 	box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
 	display: block;
-	overflow: hidden;
 	padding: $size/1.5;
+	@include pie-clearfix;
 	.button {
 		opacity: 0.6;
 		&:hover, &:focus {
