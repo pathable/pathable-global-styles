@@ -13,7 +13,8 @@
 // Widget block
 
 .w-block {
-	border: 1px solid $border-light;
+	background: #e0f3fb;
+	box-shadow: rgba($blue, 0.3) 0 -1px 0 inset;
 	margin-bottom: $size;
 }
 
@@ -21,13 +22,14 @@
 // Widget block heading
 
 .w-block-heading {
-	background: rgba(0,0,0,0.05);
-	border-bottom: 1px solid $border-light;
-	color: $gray;
+	background: #cfebf7;
+	box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
+	color: rgba($blue, 0.7);
 	font-size: 1em;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.06em;
-	padding: $size/2 $size/1.5;
+	padding: $size/2.5 $size/1.5;
+	text-align: center;
 	text-transform: uppercase;
 	@include box-sizing(border-box);
 }
@@ -54,7 +56,7 @@
 	@media screen and (max-width: 500px) {
 		width: 50%;
 	}
-	
+
 	a {
 		border: 5px solid #fff;
 		display: block;

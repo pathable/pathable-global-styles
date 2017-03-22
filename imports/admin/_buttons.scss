@@ -77,19 +77,20 @@ $btn-schemes: (
 .#{$btn-name} {
   // Default styles
   @include box-shadow($input-gray-shadow 1px 1px 1px);
-  @include transition(background .15s);
+
   border-radius: .15em;
-  border: if($btn-border != false, 1px solid, none); // 1
+  // border: if($btn-border != false, 1px solid, none); // 1
+  border: none;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
-  height: 3.4em;
   letter-spacing: 0.02em;
-  padding: .8em 1.5em;
+  padding: .9em 1.8em;
   text-transform: uppercase;
   @include box-sizing(border-box);
+  @include transition(all .3s);
 
   // Modifiers
 
@@ -106,7 +107,6 @@ $btn-schemes: (
     // height: 6em;
     @media screen and (max-width:500px) {
       font-size: 1em;
-      height: 3em;
       padding: 0.6em 1.2em;
       .field & {
         [class^="icon-"], [class*="icon-"] {
@@ -117,9 +117,12 @@ $btn-schemes: (
     }
   }
 
+  &--medium { // 5
+    font-size: 1.2em / $btn-size-ratio;
+  }
+
   &--small { // 5
     font-size: 1em / $btn-size-ratio;
-    height: 3.3em;
   }
 
   &--xs { // 5
@@ -154,6 +157,18 @@ $btn-schemes: (
     }
   }
 
+  &--blue { // 9
+    background: $blue;
+    border: none;
+    color: $white;
+    box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+    &:hover, &:focus, &.active {
+      background-color: $blue - #111;
+      border-color: $blue - #222;
+      color: $white;
+    }
+  }
+
   &--cancel, &--delete { // 10
     background: rgba(0,0,0,0.2);
     box-shadow: rgba($red, 0.4) -1px -1px 0 inset;
@@ -181,6 +196,10 @@ $btn-schemes: (
       color: $blue;
       opacity: 0.5;
     }
+  }
+
+  &--icon-only {
+    padding: .8em 1em;
   }
 
   @each $key, $value in $btn-schemes { // 10
@@ -267,7 +286,7 @@ $btn-schemes: (
   }
   &.top-right {
     float: right;
-    margin-top: -5.5em;
+    margin-top: -5em;
     li {
       margin-bottom: 0;
     }

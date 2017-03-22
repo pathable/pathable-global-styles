@@ -8,6 +8,9 @@ $block-size: 50px;
 .b-blocks {
 	font-size: .9em;
 	width: 100%;
+	&.twothirds {
+		width: 66.666%;
+	}
 }
 
 // Block columns controls
@@ -268,6 +271,14 @@ $block-size: 50px;
 				color: #fff;
 			}
 		}
+		.b-block-actions {
+			padding: 0;
+			.button {
+				line-height: 36px;
+				padding-bottom: 0;
+				padding-top: 0;
+			}
+		}
 	}
 	&.group {
 		// -webkit-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
@@ -488,7 +499,15 @@ $block-size: 50px;
 		position: absolute;
 	}
 	.input-search.small {
-		padding: $size/1.5;
+		font-size: 1em;
+		line-height: normal;
+		padding: $size/2 $size/2 $size/2 $size*1.5;
+	}
+	.b-blocks-filter & {
+		i {
+			font-size: $size/1.7;
+			padding: $size/2;
+		}
 	}
 }
 
@@ -947,6 +966,39 @@ $block-size: 50px;
 		@include transition(opacity .4em)
 		&:hover, &:focus {
 			opacity: 1;
+		}
+	}
+}
+
+.b-block-buttons {
+	float: right !important;
+	.button {
+		height: $size*1.7;
+		line-height: $size*1.7;
+		margin: $size*0.5;
+		position: relative;
+		i {
+			top: 1em;
+		}
+	}
+}
+
+.b-blocks-filter {
+	padding-left: $size*2;
+	a {
+		background: rgba($blue, 0.05);
+		box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
+		color: rgba($blue, 0.5);
+		display: block;
+		font-size: 0.9em;
+		padding: $size/2 $size/2;
+		@include border-radius(2px);
+		span {
+			float: right;
+		}
+		&.active {
+			background: $blue;
+			color: $white;
 		}
 	}
 }
