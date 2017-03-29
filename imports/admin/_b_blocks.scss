@@ -87,6 +87,64 @@ $block-size: 50px;
 	.b-block-style {
 		background: #fff;
 	}
+	&[max-width~="400px"] {
+		.b-blocks-header {
+			h3, p {
+				float: none;
+			}
+		}
+		.b-block-content {
+			height: auto;
+		}
+		.b-block-show {
+			border: none;
+			padding: 0 $size/3;
+			a {
+				line-height: $block-size/1.5;
+			}
+		}
+		.b-block-wtype {
+			height: $block-size - 10px;
+			margin-right: 0;
+			width: 100%;
+			@include border-radius(2px);
+			i {
+				height: $block-size - 10px;
+				line-height: $block-size - 10px;
+				width: 100%;
+			}
+		}
+		.b-block-devices {
+			margin-left: 0;
+		}
+		.b-block-linetext, .b-block-doubletext {
+			width: 70%;
+		}
+		.b-block-name {
+			border-bottom: 1px solid rgba($blue,0.1);
+			text-align: center;
+			width: 100%;
+			a {
+				display: block;
+				height: auto;
+				margin: 0 auto;
+				padding: $size/2 0 $size/3;
+				white-space: normal;
+				width: 80%;
+				span {
+					margin-top: $size/5;
+				}
+			}
+		}
+		.b-block-actions {
+			float: left;
+			padding: 0 $size*0.6;
+			width: auto;
+			a, span {
+				line-height: $block-size/1.5;
+			}
+		}
+	}
 }
 
 .b-blocks-header {
@@ -852,17 +910,6 @@ $block-size: 50px;
 	}
 	@media screen and (max-width:1000px) {
 		margin-right: $size;
-	}
-	@media screen and (max-width:500px) {
-		height: $block-size - 10px;
-		margin-right: 0;
-		width: 100%;
-		@include border-radius(2px);
-		i {
-			height: $block-size - 10px;
-			line-height: $block-size - 10px;
-			width: 100%;
-		}
 	}
 }
 

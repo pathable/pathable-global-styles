@@ -103,7 +103,7 @@
     padding-left: 2.5em;
   }
 
-  [class^="icon-"], [class*="icon-"] {
+  [class^="icon-"]:not(.button &), [class*="icon-"]:not(.button &) {
     font: 1em linearicons;
     left: 1.2em;
     @include opacity(0.75);

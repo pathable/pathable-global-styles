@@ -87,7 +87,7 @@ $btn-schemes: (
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.02em;
-  padding: .9em 1.8em;
+  padding: .9em 1.5em;
   text-transform: uppercase;
   @include box-sizing(border-box);
   @include transition(all .3s);
@@ -118,7 +118,8 @@ $btn-schemes: (
   }
 
   &--medium { // 5
-    font-size: 1.2em / $btn-size-ratio;
+    font-size: 1.1em / $btn-size-ratio;
+    padding: 1em 1.5em;
   }
 
   &--small { // 5
@@ -157,14 +158,24 @@ $btn-schemes: (
     }
   }
 
+  &--orange {
+    background: $orange;
+    border: none;
+    color: $white;
+    box-shadow: rgba($black, 0.1) -1px -1px 0 inset;
+    &:hover, &:focus, &.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
   &--blue { // 9
     background: $blue;
     border: none;
     color: $white;
-    box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+    box-shadow: rgba($black, 0.1) -1px -1px 0 inset;
     &:hover, &:focus, &.active {
       background-color: $blue - #111;
-      border-color: $blue - #222;
       color: $white;
     }
   }
@@ -199,7 +210,11 @@ $btn-schemes: (
   }
 
   &--icon-only {
-    padding: .8em 1em;
+    padding: inherit 0.8em;
+    text-align: center;
+    &.button i {
+      @include scale(1.2);
+    }
   }
 
   @each $key, $value in $btn-schemes { // 10
@@ -217,7 +232,7 @@ $btn-schemes: (
   	@include scale(1);
   }
   i + span {
-    margin-left: $size/1.5;
+    margin-left: $size/3;
     text-transform: uppercase;
   }
 }
@@ -303,6 +318,25 @@ $btn-schemes: (
     span {
       display: none;
     }
+  }
+}
+
+.layout-presets {
+  &.top-right {
+    margin-top: -4.5em;
+  }
+  a {
+    background: #ddd;
+    display: block;
+    padding: 4px;
+    @include border-radius(2px);
+    @include pie-clearfix;
+    &:hover, &:focus, &.active {
+      background: $blue;
+    }
+  }
+  img {
+    float: left;
   }
 }
 
