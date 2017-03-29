@@ -71,8 +71,23 @@
 .select-custom {
   display: block;
   position: relative;
+  @include pie-clearfix;
   .select {
     @include appearance(none);
+    width: 100%;
+  }
+  &.w-units {
+    display: inline-block;
+    position: absolute;
+    &:before {
+      color: $blue;
+      font-size: $size/3;
+      font-weight: bold;
+    }
+    .select {
+  		line-height: $size;
+  		padding-right: $size/1.5;
+  	}
   }
   &:before {
     color: inherit;
@@ -81,7 +96,7 @@
     pointer-events: none;
     position: absolute;
     right: .75em;
-    top: 25%;
+    top: 30%;
     z-index: 1;
   }
 }

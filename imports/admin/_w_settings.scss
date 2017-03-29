@@ -101,3 +101,19 @@
 		z-index: 1;
 	}
 }
+
+.w-units {
+	color: $blue;
+	opacity: 0.7;
+	position: absolute;
+	right: $size*1.7;
+	top: $size*0.35;
+	&:hover, &:focus {
+		opacity: 1;
+	}
+
+	//line-height: $size*1.7;
+}
+span.w-units {
+	padding-right: $size/4;
+}
