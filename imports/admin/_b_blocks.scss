@@ -121,7 +121,6 @@ $block-size: 50px;
 // Block row
 .b-block-row {
 	margin-bottom: $size/4;
-	overflow: hidden;
 	@include pie-clearfix;
 	&:last-child {
 		margin-bottom: 0;
@@ -958,7 +957,7 @@ $block-size: 50px;
 		font-weight: bold;
 	}
 	.button {
-		height: 3.25em;
+		float: left;
 	}
 	.button--warning {
 		opacity: 0.7;
@@ -973,8 +972,8 @@ $block-size: 50px;
 .b-block-buttons {
 	float: right !important;
 	.button {
-		height: $size*1.7;
-		line-height: $size*1.7;
+		height: $size*1.85;
+		line-height: $size;
 		margin: $size*0.5;
 		position: relative;
 		i {
