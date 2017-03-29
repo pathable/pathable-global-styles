@@ -635,7 +635,7 @@
     padding-left: 15%;
   }
   &:hover, &:focus {
-    z-index: 1;
+    z-index: 5;
     .color-overlay {
       display: block;
     }
@@ -643,6 +643,9 @@
       z-index: 3;
     }
     .color-preview {
+      z-index: 4;
+    }
+    &:before {
       z-index: 4;
     }
   }

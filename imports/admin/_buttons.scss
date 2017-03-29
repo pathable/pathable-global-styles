@@ -292,6 +292,14 @@ $btn-schemes: (
     }
   }
   @media screen and (max-width:500px) {
+    &.top-right {
+      float: none;
+      margin-top: 0;
+      margin-bottom: $size;
+      > div {
+        width: 100%;
+      }
+    }
     span {
       display: none;
     }
