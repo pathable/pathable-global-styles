@@ -320,6 +320,11 @@
       }
     }
   }
+  &.date-time {
+    .field {
+      width: 48%;
+    }
+  }
   @media screen and (max-width:500px) {
     label, .field {
       clear: both;
