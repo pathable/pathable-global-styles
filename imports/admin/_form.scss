@@ -5,7 +5,8 @@
 
 .input {
   background: rgba(255,255,255,0.75);
-  border: 1px solid $border-light;
+  border: none;
+  box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
   font-size: 1em;
   font-weight: 300;
   outline: none;
@@ -34,7 +35,8 @@
   }
 
   &.small {
-    padding: 0.6em 0.8em;
+    line-height: $size*1.7;
+    padding: 0 0.8em;
   }
 }
 
@@ -48,8 +50,9 @@
 // Basic select styles
 
 .select {
-  background: rgba(255,255,255,0.5);
-  border: 1px solid $border-light;
+  @extend .b-block-style;
+  background: #fff;
+  border: none;
   font-size: 1em;
   font-weight: 300;
   outline: none;
@@ -60,15 +63,31 @@
     color: #444444;
   }
   &.small {
-    padding: .7em;
+    line-height: $size*1.7;
+    padding: 0 0.8em;
   }
 }
 
 .select-custom {
   display: block;
   position: relative;
+  @include pie-clearfix;
   .select {
     @include appearance(none);
+    width: 100%;
+  }
+  &.w-units {
+    display: inline-block;
+    position: absolute;
+    &:before {
+      color: $blue;
+      font-size: $size/3;
+      font-weight: bold;
+    }
+    .select {
+  		line-height: $size;
+  		padding-right: $size/1.5;
+  	}
   }
   &:before {
     color: inherit;
@@ -77,7 +96,8 @@
     pointer-events: none;
     position: absolute;
     right: .75em;
-    top: 25%;
+    top: 30%;
+    z-index: 1;
   }
 }
 
@@ -98,7 +118,7 @@
     padding-left: 2.5em;
   }
 
-  [class^="icon-"], [class*="icon-"] {
+  [class^="icon-"]:not(.button &), [class*="icon-"]:not(.button &) {
     font: 1em linearicons;
     left: 1.2em;
     @include opacity(0.75);
@@ -160,10 +180,6 @@
       width: auto;
     }
   }
-
-  &.with-image {
-
-  }
   &:after {
     font-family: linearicons;
     position: absolute;
@@ -184,6 +200,7 @@
     text-align: center;
     top: -0.6em;
     width: 1.5em;
+    z-index: 4;
     @include border-radius(50%);
   }
 
@@ -541,36 +558,60 @@
 }
 
 .radio-group {
+  @extend .b-block-style;
+  background-color: #eef8fc;
   display: table;
   table-layout: fixed;
 }
 
 .radio-field {
   display: table-cell;
+  white-space: nowrap;
   input[type="radio"] {
     display:none;
   }
   input[type="radio"] + label {
-    color: $gray;
+    color: rgba($blue, 0.7);
     font-size: 1em;
     text-align: center;
+    &:hover, &:focus {
+      color: $blue;
+    }
+    .btn-controls & {
+      font-size: 1.05em;
+    }
   }
   input[type="radio"] + label span {
-    background-color: $white;
-    border: 1px solid $border-light;
     cursor: pointer;
     display: block;
     padding: $size/3.3;
     vertical-align: middle;
+    .btn-controls & {
+      padding: $size/2.5 $size;
+      background-color: rgba($blue, 0.2);
+      i {
+        font-size: 1.3em;
+        position: relative;
+        top: 2px;
+      }
+    }
     .field.inline & {
       padding: $size/2.3;
+    }
+    i {
+      margin-right: 0.5em;
     }
   }
 
   input[type="radio"]:checked + label span {
-    background-color: $gray;
-    border-color: $gray;
-    color: $white;
+    background-color: #fff;
+    box-shadow: rgba($blue, 0.4) 0 -1px 0 inset;
+    color: $blue;
+    .btn-controls & {
+      padding: $size/2.5 $size/1.5;
+      background-color: $blue;
+      color: $white;
+    }
   }
 
   input[type="radio"] + label span,
@@ -580,8 +621,13 @@
   &:first-child span {
     @include border-left-radius(2px);
   }
-  &:last-child span {
-    @include border-right-radius(2px);
+  &:last-child {
+    input[type="radio"]:checked + label span {
+      box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+    }
+    span {
+      @include border-right-radius(2px);
+    }
   }
   &:nth-child(n+2) input[type="radio"]:not(:checked) + label span {
     border-left-color: $white;
@@ -596,38 +642,49 @@
   input:after {
     position: absolute;
   }
+  .input {
+    padding-left: $size*2;
+    @include box-sizing(border-box);
+  }
   a {
     padding-left: 15%;
   }
   &:hover, &:focus {
-    z-index: 1;
+    z-index: 5;
     .color-overlay {
       display: block;
     }
-    .input, .color-preview, .field:after {
+    .input, .field:after {
       z-index: 3;
+    }
+    .color-preview {
+      z-index: 4;
+    }
+    &:before {
+      z-index: 4;
     }
   }
 }
 .color-preview {
   background-color: $blue;
-  border: 1px solid rgba(0,0,0,0.1);
   display: block;
-  height: 100%;
+  height: $size*1.25;
   position: absolute;
-  right: 0;
-  top: 0;
+  left: $size*0.2;
+  top: $size*0.2;
+  width: $size*1.25;
+  z-index: 1;
   @include border-radius(2px);
 }
 .color-overlay {
   background-color: #fff;
   border: 1px solid $blue;
   display: none;
-  left: -0.7em;
-  padding: $size*2 0.7em 0.7em;
+  left: -0.5em;
+  padding: $size*2 0.5em 0.5em;
   position: absolute;
-  right: -0.7em;
-  top: -0.7em;
+  right: -0.5em;
+  top: -0.5em;
   z-index: 2;
   @include box-shadow($gray05 1px 1px 0);
   @include box-sizing(border-box);

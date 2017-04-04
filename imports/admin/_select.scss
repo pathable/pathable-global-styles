@@ -35,13 +35,13 @@
 
 .sSelect-control {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: none;
   color: #333;
   cursor: default;
   display: table;
   border-spacing: 0;
   border-collapse: separate;
-  height: 38px;
+  height: 40px;
   outline: none;
   overflow: hidden;
   position: relative;
@@ -54,11 +54,12 @@
     outline: none;
   }
   .b-block-row.editable & {
-    height: 35px;
+    height: 36px;
   }
   // refactor
   .b-block-linetext &, .b-block-fieldset & {
-    border-color: rgba($blue, .8);
+    border: none;
+    box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
   }
   // refactor
 }
@@ -70,14 +71,14 @@
   > .sSelect-control {
     @include border-bottom-radius(0);
     background: #fff;
-    border-color: #ddd #ddd #ddd;
     > .sSelect-arrow {
       border-color: transparent transparent #999;
       border-width: 0 5px 5px;
     }
     // refactor
     .b-block-linetext &, .b-block-fieldset & {
-      border-color: inherit;
+      z-index: 2;
+      position: relative;
     }
     // refactor
   }
@@ -92,7 +93,7 @@
   bottom: 0;
   color: #aaa;
   left: 0;
-  line-height: 36px;
+  line-height: 37px;
   max-width: 100%;
   overflow: hidden;
   padding-left: 10px;
@@ -127,7 +128,9 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
-  > input {
+  // This selector should be replaced with "input". Temporary fix to override mdg default form styles.
+  // https://monosnap.com/file/3yF8UyVXQWdgdpW6JC1gtAvU7hGE5C
+  > textarea, input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type="submit"]):not([type="file"]), input[type="number"] {
     width: 100%;
     background: none transparent;
     border: 0 none;
@@ -216,8 +219,9 @@
 
 .sSelect-menu-outer, .sSelect ul {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-top-color: #e6e6e6;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), rgba($blue, 0.4) -1px -1px 0 inset;
   display: none;
   margin-top: -1px;
   max-height: 200px;
@@ -227,7 +231,6 @@
   z-index: 1;
   -webkit-overflow-scrolling: touch;
   @include border-bottom-radius(2px);
-  @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.06));
   @include box-sizing(border-box);
 }
 
@@ -238,7 +241,6 @@
 
 .sSelect-option {
   box-sizing: border-box;
-  background-color: #fff;
   color: #666666;
   cursor: pointer;
   display: block;
@@ -261,5 +263,49 @@
   &.is-disabled {
     color: #cccccc;
     cursor: default;
+  }
+}
+
+.sSelect--columns {
+  @media screen and (min-width: 501px) {
+    float: left;
+    max-width: 400px;
+    width: 60%;
+  }
+  .sSelect-arrow-zone {
+    background: rgba($blue, 0.08);
+    color: $blue;
+    padding-right: 0;
+    width: 40px;
+  }
+  .sSelect-control {
+    background: #fff;
+    border: none;
+    @extend .b-block-style;
+  }
+  &.has-value.sSelect--single > .sSelect-control .sSelect-value .sSelect-value-label {
+    color: $blue;
+  }
+  .sSelect-value-label {
+    img {
+      float: left;
+      height: 18px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  }
+  .sSelect-option {
+    background: transparent;
+    font-size: 12px;
+    img {
+      height: 17px;
+      margin-top: 2px;
+      margin-right: 8px;
+    }
+  }
+  .sSelect-menu-outer {
+    background: #fff;
+    border: none;
+    @extend .b-block-style;
   }
 }
