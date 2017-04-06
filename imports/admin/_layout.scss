@@ -67,19 +67,23 @@ html, body {
 // Header and footer widget groups
 .themeContainer {
   height: 100%;
-  >[class^="section"], >[class*="section"] {
-    &:first-child {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-      z-index: 10;
+  .group-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    z-index: 10;
+  }
+  .widget-hero {
+    height: 1200px;
+    [data-m="action"] {
+      width: 360px;
     }
-    &:last-child {
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-    }
+  }
+  .group-footer {
+    @include box-sizing(border-box);
+    @include pie-clearfix;
   }
 }
 

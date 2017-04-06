@@ -689,7 +689,7 @@ $block-size: 50px;
 .b-block-name {
 	display: table;
 	height: $block-size;
-	width: 40%;
+	width: 30%;
 	a {
 		color: $blue;
 		display: table-cell;
@@ -738,7 +738,7 @@ $block-size: 50px;
 	@extend .right;
 	color: $blue;
 	padding: 0 $size*0.9;
-	width: 20%;
+	width: auto;
 	&:hover, &:focus {
 		ul {
 			display: block;
@@ -877,7 +877,7 @@ $block-size: 50px;
 .b-block-wtype {
 	cursor: move;
 	height: $block-size;
-	margin-right: $size*1.5;
+	margin-right: $size*0.8;
 	opacity: 0.8;
 	overflow: hidden;
 	@include border-left-radius(2px);
