@@ -40,6 +40,9 @@ html, body {
 .fifth {
   width: 20%;
 }
+.sixth {
+  width: 16.666%;
+}
 .right {
 	float: right;
 }
@@ -141,4 +144,11 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 	display: none;
 	opacity: 0;
 	visibility: hidden;
+}
+
+// Show all things
+.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
