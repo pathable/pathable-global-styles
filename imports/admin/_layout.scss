@@ -75,12 +75,6 @@ html, body {
     @include pie-clearfix;
     z-index: 10;
   }
-  .widget-hero {
-    height: 1200px;
-    [data-m="action"] {
-      width: 360px;
-    }
-  }
   .group-footer {
     @include box-sizing(border-box);
     @include pie-clearfix;
