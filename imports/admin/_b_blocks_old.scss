@@ -2,181 +2,17 @@
 //
 // BUILDING BLOCKS
 
-$block-size: 50px;
 
 // Blocks wrapper
+
 .b-blocks {
 	font-size: .9em;
 	width: 100%;
-	&.twothirds {
-		width: 66.666%;
-	}
 }
 
-// Block columns controls
-.b-blocks-toolbar {
-	background: #cfebf7;
-	border-radius: 2px;
-	box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
-	display: block;
-	padding: $size/1.5;
-	@include pie-clearfix;
-	.button {
-		opacity: 0.6;
-		&:hover, &:focus {
-			opacity: 1;
-		}
-	}
-	@media screen and (min-width:501px) {
-		.b-blocks-controls {
-			float: right;
-		}
-	}
-}
-
-// Blocks main container
-.b-blocks-container {
-	background: #e0f2f9;
-	border-bottom: 1px solid rgba($blue, 0.3);
-	border-radius: 2px;
-	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;
-	overflow: hidden;
-	padding: $size/1.5;
-	&.multi-columns {
-		padding: 0;
-		.b-blocks-column {
-			padding: $size/1.5 $size/1.5 $size*1.5;
-		}
-	}
-}
-
-// Blocks divider
-.b-blocks-divider {
-	border-left: 1px dashed rgba($blue, 0.5);
-	position: relative;
-	width: 0;
-	&:before {
-		bottom: 0;
-		content: "";
-		cursor: col-resize;
-		left: -5px;
-		position: absolute;
-		right: -4px;
-		top: 0;
-	}
-	&:hover, &:focus {
-		border-color: $blue;
-		&:before {
-			background: rgba($orange, 0.5);
-		}
-	}
-}
-
-// Block columns
-.b-blocks-column {
-	padding-bottom: $size;
-	&:hover, &:focus {
-		.b-blocks-header {
-			opacity: 1;
-		}
-	}
-	.b-block-style {
-		background: #fff;
-	}
-	&[max-width~="400px"] {
-		.b-blocks-header {
-			h3, p {
-				float: none;
-			}
-		}
-		.b-block-content {
-			height: auto;
-		}
-		.b-block-show {
-			border: none;
-			padding: 0 $size/3;
-			a {
-				line-height: $block-size/1.5;
-			}
-		}
-		.b-block-wtype {
-			height: $block-size - 10px;
-			margin-right: 0;
-			width: 100%;
-			@include border-radius(2px);
-			i {
-				height: $block-size - 10px;
-				line-height: $block-size - 10px;
-				width: 100%;
-			}
-		}
-		.b-block-devices {
-			margin-left: 0;
-		}
-		.b-block-linetext, .b-block-doubletext {
-			width: 70%;
-		}
-		.b-block-name {
-			border-bottom: 1px solid rgba($blue,0.1);
-			text-align: center;
-			width: 100%;
-			a {
-				display: block;
-				height: auto;
-				margin: 0 auto;
-				padding: $size/2 0 $size/3;
-				white-space: normal;
-				width: 80%;
-				span {
-					margin-top: $size/5;
-				}
-			}
-		}
-		.b-block-actions {
-			float: left;
-			padding: 0 $size*0.6;
-			width: auto;
-			a, span {
-				line-height: $block-size/1.5;
-			}
-		}
-	}
-}
-
-.b-blocks-header {
-	line-height: $size;
-	opacity: 0.6;
-	padding-bottom: $size/4;
-	@include transition(all, .4);
-	@include pie-clearfix;
-	h3 {
-		color: $blue;
-		font-size: $size/2;
-		font-weight: 600;
-		text-transform: uppercase;
-		@extend .left;
-	}
-	p {
-		font-size: $size/2;
-		font-weight: 600;
-		@extend .right;
-	}
-	i {
-		font-weight: bold;
-		margin-left: $size/4;
-	}
-	@media screen and (max-width:500px) {
-		h3, p {
-			float: none;
-		}
-	}
-}
 
 // Block row
+
 .b-block-row {
 	margin-bottom: $size/4;
 	@include pie-clearfix;
@@ -217,11 +53,6 @@ $block-size: 50px;
 			background: rgba($blue, 0.05);
 			border-color: rgba($blue, 0.2);
 			border-style: solid;
-			height: auto;
-			padding: $size $size $size 0;
-		}
-		.b-block-handle {
-			line-height: normal;
 		}
 		// delete 1
 		.b-block-linetext {
@@ -328,27 +159,20 @@ $block-size: 50px;
 				color: #fff;
 			}
 		}
-		.b-block-actions {
-			padding: 0;
-			.button {
-				line-height: 36px;
-				padding-bottom: 0;
-				padding-top: 0;
-			}
+	}
+	&.locked {
+		.b-block-style {
+			background: #ffffea;
 		}
 	}
-	&.group {
+	&.group.closed {
 		// -webkit-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
 		// -moz-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
-		box-shadow: 2px 2px 0 0 rgba(#fff,0.2), 3px 3px 0 0 rgba($blue,0.2);
-		border-radius: 3px;
-		margin: $size/3 0;
-		&:first-of-type {
-			margin-top: 0;
-		}
-		@media screen and (max-width:500px) {
-			box-shadow: 0 2px 0 0 rgba(#fff,0.2), 0 3px 0 0 rgba($blue,0.2);
-		}
+		box-shadow: 5px 5px 0 0 #fff, 5px 5px 1px 0 rgba(0,0,0,0.25);
+		margin-bottom: 5px;
+	}
+	&.group.closed.locked {
+		box-shadow: 5px 5px 0 0 #ffffea, 5px 5px 1px 0 rgba(0,0,0,0.25);
 	}
 	&.group.opened {
 		border: 1px solid $border-light;
@@ -359,6 +183,12 @@ $block-size: 50px;
 		@include border-radius(2px);
 		&:hover, &:focus {
 			border-color: $blue;
+		}
+	}
+	&.group.opened.locked {
+		background: #ffffea - #060606;
+		.b-block-header .b-block-style {
+			background: #ffffea - #060606;
 		}
 	}
 }
@@ -388,19 +218,11 @@ $block-size: 50px;
 // Block basic style
 
 .b-block-style {
-	background: rgba($blue, 0.05);
-	box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+	border: 1px solid $border-light;
+	background: #fff;
 	@include border-radius(2px);
+	@include box-shadow($gray05 0 10px 0);
 	@include transition(all .4s);
-	&:hover, &:focus {
-		box-shadow: rgba($blue, 0.5) -1px -1px 0 inset;
-	}
-	@media screen and (max-width: 500px) {
-		box-shadow: rgba($blue, 0.4) 0 -1px 0 inset;
-		&:hover, &:focus {
-			box-shadow: rgba($blue, 0.5) 0 -1px 0 inset;
-		}
-	}
 }
 
 .b-block-ellipsis {
@@ -417,13 +239,31 @@ $block-size: 50px;
 	width: 100%;
 	@include pie-clearfix;
 	@include transition(all .4s);
-	[class*="block-"]:not(.b-block-actions, .b-block-show) {
+	[class*="block-"]:not(.b-block-actions) {
 		float: left;
 	}
 	&:hover, &:focus {
+		color: $blue;
 		z-index: 1;
+		a, span {
+			color: $blue;
+		}
+		span {
+			opacity: 0.5;
+		}
+		.b-block-style {
+			border: 1px solid rgba($blue, 0.4);
+		}
 		.b-block-wtype {
 			opacity: 1;
+		}
+		.b-block-actions {
+			ul {
+				display: block;
+			}
+			span {
+				display: none;
+			}
 		}
 		.rte, .rte * {
 			color: #444;
@@ -441,7 +281,6 @@ $block-size: 50px;
 		float: left;
 	}
 	&.image {
-		height: auto;
 		padding-bottom: $size/2;
 		@include box-sizing(border-box);
 		@media screen and (min-width:501px) {
@@ -453,11 +292,9 @@ $block-size: 50px;
 			}
 		}
 		.b-block-content {
-			height: auto;
-			padding: 0 $size/1.5;
+			padding: $size/1.5;
 		}
 		.b-block-text {
-			line-height: $block-size;
 			width: 100%;
 			p {
 				overflow: hidden;
@@ -469,11 +306,7 @@ $block-size: 50px;
 			height: 8em;
 			@include border-radius(0);
 		}
-		.b-block-image {
-			margin: 0;
-		}
 		.b-block-actions {
-			padding-right: 0;
 			width: 70%;
 		}
 	}
@@ -517,15 +350,30 @@ $block-size: 50px;
 // Block content
 
 .b-block-content {
-	height: $block-size;
-	padding: 0;
+	padding: $size;
 	width: 100%;
 	white-space: nowrap;
 	@extend .b-block-style;
 	@include box-sizing(border-box);
-	@include border-radius(2px);
+	@media screen and (max-width: 500px) {
+		padding: $size $size/1.5;
+	}
+}
+
+
+// Block drag&drop
+
+.b-block-handle {
+	width: 5%;
 	@media screen and (max-width:500px) {
-		height: auto;
+		width: 9%;
+		.b-block-row.editable & {
+			text-align: center;
+			width: 100%;
+		}
+	}
+	@media screen and (max-width:300px) {
+		width: 12%;
 	}
 }
 
@@ -534,7 +382,6 @@ $block-size: 50px;
 
 .b-block-indent {
 	color: $gray;
-	line-height: $block-size;
 	margin-right: $size;
 	.icon-arrow-divert {
 		display: block;
@@ -556,33 +403,22 @@ $block-size: 50px;
 		position: absolute;
 	}
 	.input-search.small {
-		font-size: 1em;
-		line-height: normal;
-		padding: $size/2 $size/2 $size/2 $size*1.5;
-	}
-	.b-blocks-filter & {
-		i {
-			font-size: $size/1.7;
-			padding: $size/2;
-		}
+		padding: $size/1.5;
 	}
 }
 
 // Block content (agenda)
 
 .b-block-time {
-	line-height: $block-size;
 	width: 20%;
 }
 
 .b-block-text {
-	line-height: $block-size;
 	width: 50%;
 	@extend .b-block-ellipsis;
 }
 
 .b-block-icon {
-	line-height: $block-size;
 	a {
 		color: $gray;
 	}
@@ -592,7 +428,7 @@ $block-size: 50px;
 }
 
 .b-block-linetext {
-	line-height: $block-size;
+	// margin: -$size/2 0;
 	white-space: nowrap;
 	width: 50%;
 	a {
@@ -611,8 +447,8 @@ $block-size: 50px;
 }
 
 .b-block-doubletext {
-	line-height: $block-size/3;
-	margin: $block-size/6 0;
+	line-height: 1.7;
+	margin: -$size/2 0;
 	width: 50%;
 	a {
 		display: block;
@@ -637,7 +473,7 @@ $block-size: 50px;
 
 .b-block-avatar {
 	height: 4em;
-	margin: 0;
+	margin: -$size/1.35;
 	margin-right: $size*1.5;
 	overflow: hidden;
 	width: 4em;
@@ -650,7 +486,6 @@ $block-size: 50px;
 }
 
 .b-block-attendee {
-	line-height: $block-size;
 	margin-right: 3em;
 	max-width: 30%;
 	p {
@@ -659,7 +494,6 @@ $block-size: 50px;
 }
 
 .b-block-company {
-	line-height: $block-size;
 	max-width: 30%;
 	white-space: nowrap;
 	a {
@@ -687,47 +521,9 @@ $block-size: 50px;
 // Block name
 
 .b-block-name {
-	display: table;
-	height: $block-size;
-	width: 30%;
-	a {
-		color: $blue;
-		display: table-cell;
-    vertical-align: middle;
-		&:hover, &:focus {
-			color: $blue - #111;
-		}
-		.b-block-row.group & {
-			font-weight: 600;
-		}
-	}
-	span {
-		display: block;
-		font-weight: 400;
-		line-height: 1em;
-		opacity: 0.5;
-		i {
-			line-height: 1em;
-	    margin-right: 0.35em;
-	    vertical-align: text-top;
-	    font-size: 1.5em;
-		}
-	}
+	width: 40%;
 	@media screen and (max-width:500px) {
-		border-bottom: 1px solid rgba($blue,0.1);
-		text-align: center;
-		width: 100%;
-		a {
-			display: block;
-			height: auto;
-			margin: 0 auto;
-			padding: $size/2 0 $size/3;
-			white-space: normal;
-			width: 80%;
-			span {
-				margin-top: $size/5;
-			}
-		}
+		width: 33.333%;
 	}
 }
 
@@ -736,23 +532,16 @@ $block-size: 50px;
 
 .b-block-actions {
 	@extend .right;
-	color: $blue;
-	padding: 0 $size*0.9;
-	width: auto;
-	&:hover, &:focus {
-		ul {
-			display: block;
-		}
-		span {
-			display: none;
-		}
-	}
+	width: 20%;
 	ul {
 		display: none;
 		@extend .horizontal-list;
 	}
 	ul, span {
 		float: right;
+	}
+	li {
+		padding-left: $size/3;
 	}
 	.button {
 		float: right;
@@ -764,19 +553,17 @@ $block-size: 50px;
 	.icon-plus-circle {
 		color: $green;
 	}
-	span {
-		line-height: $block-size;
-	}
 	a {
-		color: rgba($blue, 0.5);
 		display: block;
-		font-size: $size/1.5;
-		line-height: $block-size;
-		padding: 0 $size/3;
+		line-height: 1.5em;
 		text-align: center;
+		width: 1.5em;
+		@include border-radius(0.75em);
 		@include transition(all 0.4s);
 		&:hover, &:focus {
-			color: $blue;
+			background: $blue;
+			color: #fff;
+			@include scale(1.5);
 		}
 		&:active {
 			background: $orange;
@@ -788,14 +575,6 @@ $block-size: 50px;
 	@media screen and (max-width:350px) {
 		width: auto;
 	}
-	@media screen and (max-width:500px) {
-		float: left;
-		padding: 0 $size*0.6;
-		width: auto;
-		a, span {
-			line-height: $block-size/1.5;
-		}
-	}
 	@media screen and (max-width:850px) and (min-width:500px) {
 		width: auto;
 	}
@@ -804,60 +583,6 @@ $block-size: 50px;
 	}
 }
 
-
-// Block show device
-
-.b-block-show {
-	border-left: 1px solid rgba($blue,0.1);
-	padding: 0 $size/1.5;
-	@extend .right;
-	a {
-		.b-block & {
-			color: rgba($blue, 0.5);
-		}
-		display: none;
-		font-size: $size/1.4;
-		line-height: $block-size;
-		padding: 0 $size/4;
-		&:hover, &:focus {
-			color: $blue;
-		}
-		&.visible {
-			color: $blue;
-			display: inline-block;
-		}
-	}
-	&:hover, &:focus {
-		a {
-			display: inline-block;
-		}
-	}
-	@media screen and (max-width: 500px) {
-		border: none;
-		padding: 0 $size/3;
-		a {
-			line-height: $block-size/1.5;
-		}
-	}
-}
-
-// Block drag&drop
-
-.b-block-handle {
-	line-height: $block-size;
-	text-align: center;
-	width: 5%;
-	@media screen and (max-width:500px) {
-		width: 9%;
-		.b-block-row.editable & {
-			text-align: center;
-			width: 100%;
-		}
-	}
-	@media screen and (max-width:300px) {
-		width: 12%;
-	}
-}
 
 // Block turn off/on
 
@@ -875,51 +600,32 @@ $block-size: 50px;
 // Block widget type
 
 .b-block-wtype {
-	cursor: move;
-	height: $block-size;
-	margin-right: $size*0.8;
-	opacity: 0.8;
+	height: $size*2.95;
+	margin: -$size*1.05 0;
+	margin-right: $size*1.5;
+	opacity: 0.85;
 	overflow: hidden;
-	@include border-left-radius(2px);
-	transition: all 0.4s;
-
-	i {
-		background: $blue;
-		display: block;
-		color: #fff;
-		float: left;
-		font-size: $size*1.2;
-		height: $block-size;
-		line-height: $block-size;
-		text-align: center;
-		width: $block-size + 5px;
-		&.icon-menu {
-			color: rgba(255,255,255, 0.4);
-			font-size: $size/1.5;
-			padding: 0 $size/5 0 $size/2;
-			width: auto;
-		}
-		.b-block-row.group & {
-			background: $blue - #222;
-		}
+	@include transition(all 0.4s);
+	@media screen and (max-width:1000px) {
+		margin-right: $size;
+	}
+	@media screen and (max-width:300px) {
+		display: none;
 	}
 	img {
 		float: left;
 		height: 100%;
 		width: auto;
 	}
-	@media screen and (max-width:1000px) {
-		margin-right: $size;
-	}
 }
 
 // Block device switch
 
 .b-block-devices {
-	line-height: $block-size;
 	margin-left: $size/2;
 	@include pie-clearfix;
 	i {
+		float: left;
 		font-size: 1.5em;
 		margin-left: .5em;
 	}
@@ -993,7 +699,7 @@ $block-size: 50px;
 // refactor
 
 
-.b-block-row.editable .b-block-form .b-block-buttons {
+.b-block-row.editable .b-block-buttons {
 	float: right;
 	.field {
 		float: right;
@@ -1004,7 +710,7 @@ $block-size: 50px;
 		font-weight: bold;
 	}
 	.button {
-		float: left;
+		height: 3.25em;
 	}
 	.button--warning {
 		opacity: 0.7;
@@ -1012,39 +718,6 @@ $block-size: 50px;
 		@include transition(opacity .4em)
 		&:hover, &:focus {
 			opacity: 1;
-		}
-	}
-}
-
-.b-block-buttons {
-	float: right !important;
-	.button {
-		height: $size*1.85;
-		line-height: $size;
-		margin: $size*0.5;
-		position: relative;
-		i {
-			top: 1em;
-		}
-	}
-}
-
-.b-blocks-filter {
-	padding-left: $size*2;
-	a {
-		background: rgba($blue, 0.05);
-		box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
-		color: rgba($blue, 0.5);
-		display: block;
-		font-size: 0.9em;
-		padding: $size/2 $size/2;
-		@include border-radius(2px);
-		span {
-			float: right;
-		}
-		&.active {
-			background: $blue;
-			color: $white;
 		}
 	}
 }

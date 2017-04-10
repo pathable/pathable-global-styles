@@ -4,12 +4,12 @@
 
 .w-settings-list {
 	@include box-sizing(border-box);
-	background: #fff;
 }
 
 .w-setting {
-	border-bottom: 1px dashed $border-light;
-	padding: 0.6em;
+	border-bottom: 1px dashed rgba($blue, 0.2);
+	clear: both;
+	padding: 0.5em;
 	@include box-sizing(border-box);
 	@include pie-clearfix;
 	&:last-child {
@@ -18,13 +18,23 @@
 	.field:after {
 		right: -3em;
 	}
+	.label, .input, .select {
+		color: $blue;
+	}
+	.label, .input, .select, .radio-field input[type="radio"] + label span {
+		line-height: $size*1.7;
+		padding: 0 0.8em;
+	}
 	.label {
-		color: $gray;
-		padding: 0.6em;
+		color: rgba($blue, 0.7);
+	}
+	.input {
+		background: $white;
+		box-sizing: border-box;
+		width: 100%;
 	}
 	.input.cell {
 		display: table;
-		padding: 0.7em 1em 0.7em 0.7em;
 		input {
 			border: none;
 			float: left;
@@ -39,8 +49,71 @@
 		}
 	}
 	@media screen and (max-width:500px) {
-		.fourth {
+		.fourth, .fifth {
+			clear: right;
 			width: 50%;
 		}
 	}
+}
+
+.w-setting-size:before {
+	@extend .icon-expand;
+}
+.w-setting-color:before {
+	@extend .icon-palette;
+}
+.w-setting-radius:before {
+	@extend .icon-vector;
+}
+.w-setting-border:before {
+	@extend .icon-enter-vertical;
+}
+.w-setting-picture:before {
+	@extend .icon-picture;
+}
+.w-setting-select:before {
+	@extend .icon-chevron-down;
+}
+.w-setting-font:before {
+	@extend .icon-text-size;
+}
+.w-setting-saw:before {
+	@extend .icon-saw;
+}
+[class^="w-setting-"], [class*="w-setting-"] {
+	@media screen and (min-width:501px) {
+		margin-left: 5px;
+	}
+	position: relative;
+	@include pie-clearfix;
+	&:before {
+		background: #eef8fc;
+		box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+		color: rgba($blue, 0.7) !important;
+		font-family: linearicons;
+		height: 100%;
+		line-height: $size*1.7;
+		position: absolute;
+		right: 0 !important;
+		text-align: center;
+		top: 0 !important;
+		width: $size*1.5;
+		z-index: 1;
+	}
+}
+
+.w-units {
+	color: $blue;
+	opacity: 0.7;
+	position: absolute;
+	right: $size*1.7;
+	top: $size*0.35;
+	&:hover, &:focus {
+		opacity: 1;
+	}
+
+	//line-height: $size*1.7;
+}
+span.w-units {
+	padding-right: $size/4;
 }
