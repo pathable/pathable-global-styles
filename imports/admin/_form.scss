@@ -378,6 +378,15 @@
   }
 }
 
+// Field code
+
+.field-code:not(pre)  {
+  > code[class*="language-"] {
+    @extend .input;
+    min-height: $size*10;
+  }
+}
+
 // Input icons
 
 .input-icon {
