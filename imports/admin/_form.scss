@@ -114,16 +114,17 @@
   position: relative;
   @include pie-clearfix;
 
-  &.with-icon input {
-    padding-left: 2.5em;
-  }
-
-  [class^="icon-"]:not(.button &), [class*="icon-"]:not(.button &) {
-    font: 1em linearicons;
-    left: 1.2em;
-    @include opacity(0.75);
-    position: absolute;
-    top: 1.2em;
+  &.with-icon {
+    input {
+      padding-left: 2.8em;
+    }
+    [class^="icon-"], [class*="icon-"] {
+      font: 1em linearicons;
+      left: 1em;
+      @include opacity(0.75);
+      position: absolute;
+      top: 1em;
+    }
   }
 
   &.inline {
