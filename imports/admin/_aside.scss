@@ -133,30 +133,28 @@
 	z-index: 2;
 	@include pie-clearfix;
 	.radio-group {
+		@extend .b-block-style;
+		box-shadow: rgba(0,0,0,0.2) 0 -1px 0 inset;
+		background: none;
+		box-shadow: none;
 		float: right;
-		padding: $size/2;
+		margin: $size/2;
 	}
 	.radio-field input[type="radio"] + label span {
-		background: transparent;
-		border-color: $border;
-		padding: $size/3.3 $size/1.5;
-	}
-	.radio-field input[type="radio"]:checked + label span {
-		background: $gray;
-		border-color: $gray;
-		color: $white;
-	}
-	.button--light {
-		background: transparent;
-		border-color: $border;
+		background: #fff;
+		box-shadow: rgba(0,0,0,0.2) 0 -1px 0 inset;
 		color: $gray;
-		height: 32px;
-		margin: $size/2 $size/2 $size/2 0;
 		padding: $size/3.3 $size/1.5;
 		&:hover, &:focus {
-			background: $gray;
-			border-color: $gray;
-			color: $white;
+			background: $orange - #111;
+			color: #fff;
+		}
+	}
+	.radio-field input[type="radio"]:checked + label span {
+		background: $orange;
+		color: $white;
+		&:hover, &:focus {
+			background: $orange - #111;
 		}
 	}
 }

@@ -388,7 +388,7 @@ $block-size: 50px;
 // Block basic style
 
 .b-block-style {
-	background: rgba($blue, 0.05);
+	background: $blue-light;
 	box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
 	@include border-radius(2px);
 	@include transition(all .4s);
@@ -526,6 +526,12 @@ $block-size: 50px;
 	@include border-radius(2px);
 	@media screen and (max-width:500px) {
 		height: auto;
+	}
+	.rte-form {
+		padding-left: $size;
+	}
+	* {
+		outline: none;
 	}
 }
 
@@ -846,7 +852,7 @@ $block-size: 50px;
 .b-block-handle {
 	line-height: $block-size;
 	text-align: center;
-	width: 5%;
+	width: 7%;
 	@media screen and (max-width:500px) {
 		width: 9%;
 		.b-block-row.editable & {

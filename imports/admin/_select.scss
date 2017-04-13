@@ -41,7 +41,7 @@
   display: table;
   border-spacing: 0;
   border-collapse: separate;
-  height: 40px;
+  height: 35px;
   outline: none;
   overflow: hidden;
   position: relative;
@@ -60,6 +60,12 @@
   .b-block-linetext &, .b-block-fieldset & {
     border: none;
     box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+  }
+  .b-blocks-toolbar & {
+    height: 38px;
+    &.select.small {
+      padding-right: 0;
+    }
   }
   // refactor
 }

@@ -41,8 +41,7 @@
 .w-block-list {
 	@extend .horizontal-list;
 	@include box-sizing(border-box);
-	background: #fff;
-	padding: $size $size*2;
+	background: $blue-light;
 }
 
 
@@ -51,7 +50,7 @@
 .w-block-item {
 	@include box-sizing(border-box);
 	float: left;
-	padding: $size/1.5 $size/1.5 $size*2;
+	padding: $size/1.5 $size/1.5;
 	position: relative;
 	width: 25%;
 	@media screen and (max-width: 500px) {

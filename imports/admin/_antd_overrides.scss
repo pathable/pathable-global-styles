@@ -1,0 +1,22 @@
+//
+// AntD Overrides
+
+
+// Date/calendar picker
+.ant-calendar-picker {
+  width: 100% !important;
+  > span {
+    display: inline-block;
+    width: 100%;
+  }
+}
+.ant-calendar-picker-icon {
+  margin-top: 0;
+  right: 1em;
+  top: 1em;
+  &:after {
+    content: "\e93a";
+    color: rgba($blue, 0.4);
+    font-family: linearicons;
+  }
+}

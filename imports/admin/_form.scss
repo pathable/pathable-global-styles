@@ -242,7 +242,8 @@
       content: "\e95a";
     }
     input, select, textarea {
-      border-color: $red;
+      color: $red;
+      box-shadow: rgba($red, 0.2) -1px -1px 0 inset;
     }
     &.mini-notice:after {
       background: $red;
@@ -362,9 +363,9 @@
 
 .field-image {
   div {
+    @extend .b-block-style;
+    @include border-radius(2px);
     @include box-sizing(border-box);
-    background: $border-light;
-    border: 1px solid $border-light;
     overflow: hidden;
     padding: $size*1.5 $size;
     position: relative;
@@ -390,6 +391,17 @@
   > code[class*="language-"] {
     @extend .input;
     min-height: $size*10;
+  }
+}
+
+// Field for date picker
+
+.field-date {
+  input {
+    @extend .input;
+    @extend .b-block-style;
+    @extend .push;
+    width: 100%;
   }
 }
 
@@ -695,7 +707,7 @@
   background-color: #fff;
   border: 1px solid $blue;
   display: none;
-  left: -0.5em;
+  min-width: 350px;
   padding: $size*2 0.5em 0.5em;
   position: absolute;
   right: -0.5em;
@@ -711,8 +723,7 @@
 
 // Styled form box
 .form-box {
-  background: rgba($black, 0.02);
-  border: 1px solid rgba($black, 0.07);
+  @extend .b-block-style;
   margin: $size/2 0 $size;
   padding: $size $size $size/2;
   position: relative;
