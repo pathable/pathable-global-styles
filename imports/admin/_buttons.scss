@@ -10,7 +10,7 @@ $btn-schemes: (
   default: $border,
   success: $green,
   danger:  $red,
-  warning: #f1c40f,
+  warning: rgba(0,0,0,0.2),
   info:    #2980b9
 ) !default;
 
@@ -182,7 +182,7 @@ $btn-schemes: (
 
   &--cancel, &--delete { // 10
     background: rgba(0,0,0,0.2);
-    box-shadow: rgba($red, 0.4) -1px -1px 0 inset;
+    box-shadow: rgba(0,0,0,0.1) -1px -1px 0 inset;
     &:hover, &:focus {
       background: $red;
     }

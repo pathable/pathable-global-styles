@@ -529,6 +529,23 @@ $block-size: 50px;
 	}
 	.rte-form {
 		padding-left: $size;
+		.field.error select {
+			color: $gray;
+			box-shadow: none;
+		}
+		.field-image {
+			@extend .field.inline;
+			.button {
+				span {
+					color: $blue;
+				}
+				&:hover, &:focus {
+					span {
+						color: $white;
+					}
+				}
+			}
+		}
 	}
 	* {
 		outline: none;
