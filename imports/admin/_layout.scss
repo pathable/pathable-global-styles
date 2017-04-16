@@ -40,6 +40,9 @@ html, body {
 .fifth {
   width: 20%;
 }
+.sixth {
+  width: 16.666%;
+}
 .right {
 	float: right;
 }
@@ -64,19 +67,17 @@ html, body {
 // Header and footer widget groups
 .themeContainer {
   height: 100%;
-  >[class^="section"], >[class*="section"] {
-    &:first-child {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-      z-index: 10;
-    }
-    &:last-child {
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-    }
+  .group-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    z-index: 10;
+  }
+  .group-footer {
+    @include box-sizing(border-box);
+    @include pie-clearfix;
   }
 }
 
@@ -141,4 +142,11 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 	display: none;
 	opacity: 0;
 	visibility: hidden;
+}
+
+// Show all things
+.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }

@@ -37,10 +37,10 @@
     @include center;
   }
   form {
-    background: rgba(255, 255, 255, 0.9);
     padding: 2em;
     @include border-radius(2px);
     @include pie-clearfix;
+    @extend .b-block-style;
   }
   .field {
     clear: both;
@@ -50,6 +50,9 @@
     }
     &.inline {
       margin-bottom: 0;
+    }
+    [class*="icon-"] {
+      color: $blue;
     }
   }
   h1 {
@@ -77,11 +80,12 @@
     }
   }
   .checkbox {
+    font-size: 0.9em;
     margin-bottom: 1.5em;
-    padding-left: 0;
+    padding-left: 1em;
     width: 100%;
     input {
-      margin-right: 0.5em;
+      margin-right: 1em;
       margin-top: 0.2em;
       margin-bottom: 0;
     }
@@ -109,11 +113,10 @@
     display: block;
     text-transform: uppercase;
     width: 100%;
-    i {
+    [class*="icon-"] {
+      color: #fff;
       margin-left: -$size/3;
-      margin-right: $size/3;
       position: relative;
-      top: -1px;
     }
   }
 }
