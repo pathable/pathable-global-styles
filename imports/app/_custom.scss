@@ -1,0 +1,22 @@
+
+// App wrapper
+#app {
+  @extend .height-100;
+  >div, >div>div, div & {
+    @extend .height-100;
+  }
+}
+
+// Header and footer widget groups
+.group-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+  z-index: 10;
+}
+.group-footer {
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+}

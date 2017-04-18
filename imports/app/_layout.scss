@@ -44,33 +44,6 @@ html, body {
   height: 100%;
 }
 
-// App wrapper
-#app {
-  @extend .height-100;
-  >div, >div>div {
-    @extend .height-100;
-  }
-}
-
-// Header and footer widget groups
-.themeContainer {
-  height: 100%;
-  >[class^="section"], >[class*="section"] {
-    &:first-child {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-      z-index: 10;
-    }
-    &:last-child {
-      @include box-sizing(border-box);
-      @include pie-clearfix;
-    }
-  }
-}
-
 @media screen and (max-width: 999px) {
   .third, .twothirds, .fourth {
     width: 50%;
@@ -84,46 +57,6 @@ html, body {
   .half, .third, .twothirds, .fourth {
     float: none;
     width: 100%;
-  }
-}
-
-
-// Container
-
-.w-container {
-
-  .w-header & {
-  }
-  .w-splash & {
-    text-align: center;
-    width: 80%;
-    @include center;
-    @media screen and (min-width: 1000px) {
-      max-width: 50%;
-    }
-  }
-  .w-text & {
-  }
-  .w-gallery & {
-  }
-  .w-people & {
-    padding: $w-size * 3 10%;
-  }
-  .w-agenda & {
-    padding: $w-size * 3 5%;
-  }
-  .w-community & {
-    padding: $w-size * 3 10%;
-  }
-  .w-contact & {
-    height: 100%;
-  }
-  .w-footer & {
-     padding: $w-size*4 10% $w-size*3;
-  }
-
-  @media screen and (max-width:999px) {
-    text-align: center;
   }
 }
 
