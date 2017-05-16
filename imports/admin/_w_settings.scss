@@ -6,6 +6,22 @@
 	@include box-sizing(border-box);
 }
 
+// FIXME: @dime please style this properly!
+input {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #bbb;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #bbb;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: #bbb;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: #bbb;
+  }
+}
+
 .w-setting {
 	border-bottom: 1px dashed rgba($blue, 0.2);
 	clear: both;
