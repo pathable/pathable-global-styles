@@ -1,0 +1,399 @@
+//
+// AGENDA
+
+.agenda {
+  background: #eee;
+  padding: 20px 30px;
+  &.admin {
+    .meeting {
+      justify-content: space-between;
+      line-height: 30px;
+      .track {
+        box-sizing: border-box;
+        flex: 0 0 50px;
+        margin-top: 10px;
+        order: 1;
+        a {
+          background: $red;
+          display: block;
+          height: 10px;
+          width: 10px;
+          @include border-radius(50%);
+        }
+        span {
+          display: none;
+        }
+      }
+      .time { order: 2; }
+      .title { order: 3; h2 { font-size: 14px; white-space: nowrap; } }
+      .description { order: 4; display: none; }
+      .people { order: 5; span { display: none; } }
+      .location { order: 6; span { white-space: nowrap; } }
+      .track-name { order: 7; }
+      .registered { order: 8; }
+      .updated { order: 9; span { white-space: nowrap; } }
+      .attachment { order: 10; }
+      .actions { order: 11; display: none; }
+    }
+    .people {
+      span {
+        display: none;
+      }
+    }
+    .description {
+      p {
+        display: none;
+      }
+    }
+  }
+  &.attendee {
+    .meeting {
+      flex-flow: row wrap;
+      padding-top: 40px;
+      padding-right: 60px;
+      padding-bottom: 15px;
+      position: relative;
+      @include box-sizing(border-box);
+      .track {
+        order: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        a {
+          background: $blue;
+          color: $white;
+          display: block;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          line-height: 20px;
+          padding: 0 10px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+      .time { order: 3; display: none; }
+      .title { order: 4; flex: 1 1 100%; }
+      .description { order: 5; flex: 1 1 100%; p { max-width: 500px; } }
+      .people { order: 6; line-height: 20px; flex: 0 0 auto; }
+      .location { order: 7; }
+      .track-name { order: 2; display: none; }
+      .registered { order: 8; display: none; }
+      .updated { order: 9; display: none; }
+      .attachment { order: 10; display: none;}
+      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 80px; top: 0; a {@include center;}}
+    }
+  }
+  .toolbar {
+    background: rgba($slate, 0.9);
+    margin-bottom: 6px;
+    padding: 10px;
+    @include border-radius(2px);
+    @include pie-clearfix;
+  }
+  .tracks {
+    background: rgba(0,0,0,.1);
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    margin-right: 10px;
+    padding: 10px;
+    position: relative;
+    width: 30px;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    &:hover, &:focus {
+      background: $slate;
+      .main-track {
+        @include border-bottom-radius(0);
+      }
+      ul {
+        display: block;
+      }
+    }
+    a {
+      color: $white;
+      display: block;
+      white-space: nowrap;
+      &:before {
+        background: $blue;
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        @include border-radius(50%);
+      }
+    }
+    .main-track {
+
+      &:before {
+        background: $blue;
+        content: '';
+        display: block;
+        height: 10px;
+        width: 10px;
+        @include border-radius(50%);
+      }
+    }
+    ul {
+      background: $slate;
+      color: $white;
+      display: none;
+      left: 0;
+      position: absolute;
+      top: 30px;
+      li {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        &:last-child {
+          margin-bottom: 0;
+          border: none;
+        }
+      }
+      a {
+        display: block;
+        font-size: 11px;
+        line-height: 20px;
+        padding: 5px 20px 5px 10px;
+        &:before {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .switch {
+    float: left;
+    a {
+      background: $white;
+      box-shadow: (rgba(0,0,0,0.1) 1px 1px 0);
+      color: #444;
+      display: inline-block;
+      line-height: 30px;
+      white-space: nowrap;
+      @include border-radius(2px);
+      span {
+        display: inline-block;
+        padding: 0 10px;
+      }
+      .active {
+        background: $orange;
+        color: #fff;
+        @include border-radius(2px);
+      }
+    }
+  }
+  .sorting {
+    background: rgba(0,0,0,.1);
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    &:hover, &:focus {
+      background: $slate;
+      .main-track {
+        @include border-bottom-radius(0);
+      }
+      ul {
+        display: block;
+      }
+    }
+    a {
+      color: $white;
+      display: block;
+      line-height: 12px;
+      white-space: nowrap;
+      i {
+        line-height: 10px;
+      }
+    }
+    ul {
+      background: $slate;
+      color: $white;
+      display: none;
+      right: 0;
+      position: absolute;
+      top: 30px;
+      li {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        &:last-child {
+          margin-bottom: 0;
+          border: none;
+        }
+      }
+      a {
+        display: block;
+        font-size: 11px;
+        line-height: 20px;
+        padding: 5px 20px 5px 10px;
+        text-align: left;
+        &:before {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .dayswitcher {
+    ul {
+      @include pie-clearfix;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      width: 25%;
+      span {
+        display: block;
+        font-weight: 600;
+      }
+    }
+  }
+  .listing {}
+  .timeband {
+    background: rgba($slate, 0.5);
+    color: #fff;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 6px;
+    padding: 0 20px;
+    text-align: center;
+    @include border-radius(2px);
+  }
+
+  //////
+  .meeting {
+    background: #fff;
+    box-shadow: (rgba(0,0,0,0.1) 1px 1px 0);
+    display: flex;
+    font-size: 12px;
+    margin-bottom: 6px;
+    padding: 10px 20px;
+    @include border-radius(2px);
+    > * {
+      vertical-align: super;
+      padding-right: 20px;
+      @include box-sizing(border-box);
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    .track {
+
+    }
+    .time {
+      flex: 0 0 100px;
+      @include box-sizing(border-box);
+      span {
+        line-height: 20px;
+      }
+      .start {
+        color: #444;
+        font-weight: 600;
+      }
+      .end {
+        color: #bbb;
+      }
+    }
+    .title {
+      flex-grow: 2;
+      h2 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 10px;
+        padding-right: 20px;
+      }
+    }
+    .description {
+      p {
+        color: #999;
+        font-size: 12px;
+        height: 36px;
+        line-height: 18px;
+        margin-bottom: 10px;
+        max-width: 500px;
+        overflow: hidden;
+        padding-right: 20px;
+        text-overflow: ellipsis;
+      }
+    }
+    .people {
+      flex-grow: 1;
+    }
+    .speaker {
+      color: #999;
+      display: inline-block;
+      margin-right: 10px;
+      white-space: nowrap;
+      img {
+        display: inline;
+        float: left;
+        height: 20px;
+        margin-right: 7px;
+        object-fit: cover;
+        width: 20px;
+        @include border-radius(50%);
+      }
+      span {}
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    .location {
+      color: #999;
+      line-height: 20px;
+      span {
+        align-items: center;
+        display: inline-flex;
+      }
+      i {
+        font-size: 15px;
+      }
+    }
+    .track-name {
+      color: #999;
+      line-height: 20px;
+      span {}
+    }
+    .registered {
+      color: #999;
+      line-height: 20px;
+      span {
+        align-items: center;
+        display: inline-flex;
+      }
+      i {
+        font-size: 16px;
+      }
+    }
+    .updated {
+      color: #999;
+      line-height: 20px;
+      span {}
+    }
+    .attachment {
+      color: #999;
+      line-height: 20px;
+      span {}
+    }
+    .actions {
+      a {
+        display: block;
+      }
+      i {
+        background: $green;
+        color: $white;
+        display: block;
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 30px;
+        @include border-radius(50%);
+      }
+    }
+  }
+}
