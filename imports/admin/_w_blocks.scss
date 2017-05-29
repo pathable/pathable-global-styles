@@ -13,9 +13,9 @@
 // Widget block
 
 .w-block {
-	background: #e0f3fb;
+	background: $slate-light;
 	border-radius: 2px;
-	box-shadow: rgba($blue, 0.3) 0 -1px 0 inset;
+	box-shadow: rgba($slate, 0.3) 0 -1px 0 inset;
 	margin-bottom: $size;
 }
 
@@ -23,9 +23,9 @@
 // Widget block heading
 
 .w-block-heading {
-	background: #cfebf7;
-	box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
-	color: rgba($blue, 0.7);
+	background: $slate;
+	box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
+	color: $white;
 	font-size: 1em;
 	font-weight: 500;
 	letter-spacing: 0.06em;
@@ -41,7 +41,7 @@
 .w-block-list {
 	@extend .horizontal-list;
 	@include box-sizing(border-box);
-	background: $blue-light;
+	background: $slate-light;
 }
 
 
@@ -62,7 +62,7 @@
 		display: block;
 		@include pie-clearfix;
 		&:hover, &:focus, .w-selected & {
-			border-color: rgba($blue, 0.25);
+			border-color: rgba($slate, 0.25);
 		}
 	}
 	img {
@@ -80,7 +80,7 @@
 	&.w-selected {
 		font-weight: 400;
 		a {
-			border-color: rgba($blue, 0.25);
+			border-color: rgba($slate, 0.25);
 		}
 		&:after {
 			background: $orange;

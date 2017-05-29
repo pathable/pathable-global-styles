@@ -23,7 +23,7 @@ input {
 }
 
 .w-setting {
-	border-bottom: 1px dashed rgba($blue, 0.2);
+	border-bottom: 1px dashed rgba($slate, 0.2);
 	clear: both;
 	padding: 0.5em;
 	@include box-sizing(border-box);
@@ -35,14 +35,14 @@ input {
 		right: -3em;
 	}
 	.label, .input, .select {
-		color: $blue;
+		color: $slate;
 	}
 	.label, .input, .select, .radio-field input[type="radio"] + label span {
 		line-height: $size*1.7;
 		padding: 0 0.8em;
 	}
 	.label {
-		color: rgba($blue, 0.7);
+		color: rgba($slate, 0.7);
 	}
 	.input {
 		background: $white;
@@ -103,9 +103,9 @@ input {
 	position: relative;
 	@include pie-clearfix;
 	&:before {
-		background: #eef8fc;
-		box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
-		color: rgba($blue, 0.7) !important;
+		background: rgba($slate-light, 0.5);
+		box-shadow: rgba($slate, 0.4) -1px -1px 0 inset;
+		color: rgba($slate, 0.7) !important;
 		font-family: linearicons;
 		height: 100%;
 		line-height: $size*1.7;
@@ -120,7 +120,7 @@ input {
 }
 
 .w-units {
-	color: $blue;
+	color: $slate;
 	opacity: 0.7;
 	position: absolute;
 	right: $size*1.7;

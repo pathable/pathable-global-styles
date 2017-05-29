@@ -45,11 +45,11 @@
 // Host tools / Admin app header
 
 #header-host {
-  background: $blue;
+  background: $slate;
   position: relative;
   z-index: 100;
   #logo {
-    background: darken($blue, 10%);
+    background: darken($slate, 10%);
     max-width: 100%;
     @include box-sizing(border-box);
     &.big {
@@ -63,7 +63,7 @@
       padding: $size / 2;
     }
     &:hover, &:focus {
-      background: darken($blue, 15%);
+      background: darken($slate, 15%);
     }
   }
   i {
@@ -96,7 +96,7 @@
     width: $sub-nav;
   }
   @media screen and (max-width:500px) {
-    background: darken($blue, 10%);
+    background: darken($slate, 10%);
     position: fixed;
     top: 0;
     width: 100%;

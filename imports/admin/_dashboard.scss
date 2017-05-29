@@ -23,11 +23,12 @@
 }
 
 .wizard-header {
-  background: $white;
+  background: rgba($slate-light, 0.5);
   border: 1px solid $border-light;
   padding: $size;
   position: relative;
   text-align: center;
+  @include border-top-radius(2px);
   @include box-sizing(border-box);
   @media screen and (max-width:1200px) {
     text-align: right;
@@ -134,10 +135,11 @@
 }
 
 .wizard-body {
-  background: rgba($white, 0.5);
+  background: rgba($slate-light, 0.25);
   border: 1px solid $border-light;
   border-top: none;
   padding: $size;
+  @include border-bottom-radius(2px);
   @include box-sizing(border-box);
   @include pie-clearfix;
   p {

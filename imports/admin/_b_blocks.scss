@@ -17,7 +17,7 @@ $block-size: 50px;
 .b-blocks-toolbar {
 	background: #cfebf7;
 	border-radius: 2px;
-	box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
+	box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
 	display: block;
 	padding: $size/1.5;
 	@include pie-clearfix;
@@ -36,14 +36,15 @@ $block-size: 50px;
 
 // Blocks main container
 .b-blocks-container {
-	background: #e0f2f9;
-	border-bottom: 1px solid rgba($blue, 0.3);
+	background: $slate-light;
+	border-bottom: 1px solid rgba($slate, 0.3);
 	border-radius: 2px;
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;
+	margin-bottom: 1em;
 	overflow: hidden;
 	padding: $size/1.5;
 	&.multi-columns {
@@ -56,7 +57,7 @@ $block-size: 50px;
 
 // Blocks divider
 .b-blocks-divider {
-	border-left: 1px dashed rgba($blue, 0.5);
+	border-left: 1px dashed rgba($slate, 0.5);
 	position: relative;
 	width: 0;
 	&:before {
@@ -69,7 +70,7 @@ $block-size: 50px;
 		top: 0;
 	}
 	&:hover, &:focus {
-		border-color: $blue;
+		border-color: $slate;
 		&:before {
 			background: rgba($orange, 0.5);
 		}
@@ -121,7 +122,7 @@ $block-size: 50px;
 			width: 70%;
 		}
 		.b-block-name {
-			border-bottom: 1px solid rgba($blue,0.1);
+			border-bottom: 1px solid rgba($slate,0.1);
 			text-align: center;
 			width: 100%;
 			a {
@@ -154,7 +155,7 @@ $block-size: 50px;
 	@include transition(all, .4);
 	@include pie-clearfix;
 	h3 {
-		color: $blue;
+		color: $slate;
 		font-size: $size/2;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -184,12 +185,12 @@ $block-size: 50px;
 		margin-bottom: 0;
 	}
 	&.expanded {
-		border: 1px solid $blue;
+		border: 1px solid $slate;
 		@include border-radius(3px);
 		> .b-block {
 			@include border-radius(2px);
 			a {
-				color: $blue;
+				color: $slate;
 				font-weight: 500;
 			}
 		}
@@ -214,11 +215,9 @@ $block-size: 50px;
 			margin-bottom: 1em;
 		}
 		.b-block-content {
-			background: rgba($blue, 0.05);
-			border-color: rgba($blue, 0.2);
-			border-style: solid;
+			background: $slate-light;
 			height: auto;
-			padding: $size $size $size 0;
+			padding: $size $size $size;
 		}
 		.b-block-handle {
 			line-height: normal;
@@ -231,7 +230,7 @@ $block-size: 50px;
 				width: 100%;
 			}
 			input, select, .select {
-				border-color: rgba($blue, 0.7);
+				border-color: rgba($slate, 0.7);
 				width: 100%;
 			}
 			.field {
@@ -272,7 +271,7 @@ $block-size: 50px;
 			@include border-radius(2px);
 			@include appearance(initial);
 			&:hover, &:focus {
-				border-color: $blue;
+				border-color: $slate;
 			}
 		}
 
@@ -340,14 +339,14 @@ $block-size: 50px;
 	&.group {
 		// -webkit-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
 		// -moz-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
-		box-shadow: 2px 2px 0 0 rgba(#fff,0.2), 3px 3px 0 0 rgba($blue,0.2);
+		box-shadow: 2px 2px 0 0 rgba(#fff,0.2), 3px 3px 0 0 rgba($slate,0.2);
 		border-radius: 3px;
 		margin: $size/3 0;
 		&:first-of-type {
 			margin-top: 0;
 		}
 		@media screen and (max-width:500px) {
-			box-shadow: 0 2px 0 0 rgba(#fff,0.2), 0 3px 0 0 rgba($blue,0.2);
+			box-shadow: 0 2px 0 0 rgba(#fff,0.2), 0 3px 0 0 rgba($slate,0.2);
 		}
 	}
 	&.group.opened {
@@ -358,7 +357,7 @@ $block-size: 50px;
 		padding: $size/3;
 		@include border-radius(2px);
 		&:hover, &:focus {
-			border-color: $blue;
+			border-color: $slate;
 		}
 	}
 }
@@ -388,17 +387,17 @@ $block-size: 50px;
 // Block basic style
 
 .b-block-style {
-	background: $blue-light;
-	box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+	background: #fff;
+	box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
 	@include border-radius(2px);
 	@include transition(all .4s);
 	&:hover, &:focus {
-		box-shadow: rgba($blue, 0.5) -1px -1px 0 inset;
+		box-shadow: rgba($slate, 0.5) -1px -1px 0 inset;
 	}
 	@media screen and (max-width: 500px) {
-		box-shadow: rgba($blue, 0.4) 0 -1px 0 inset;
+		box-shadow: rgba($slate, 0.4) 0 -1px 0 inset;
 		&:hover, &:focus {
-			box-shadow: rgba($blue, 0.5) 0 -1px 0 inset;
+			box-shadow: rgba($slate, 0.5) 0 -1px 0 inset;
 		}
 	}
 }
@@ -457,6 +456,7 @@ $block-size: 50px;
 			padding: 0 $size/1.5;
 		}
 		.b-block-text {
+			font-size: 1.1em;
 			line-height: $block-size;
 			width: 100%;
 			p {
@@ -528,7 +528,7 @@ $block-size: 50px;
 		height: auto;
 	}
 	.rte-form {
-		padding-left: $size;
+
 		.field.error select {
 			color: $gray;
 			box-shadow: none;
@@ -537,7 +537,7 @@ $block-size: 50px;
 			@extend .field.inline;
 			.button {
 				span {
-					color: $blue;
+					color: $slate;
 				}
 				&:hover, &:focus {
 					span {
@@ -616,6 +616,7 @@ $block-size: 50px;
 
 .b-block-linetext {
 	line-height: $block-size;
+	padding-left: $size;
 	white-space: nowrap;
 	width: 50%;
 	a {
@@ -714,11 +715,11 @@ $block-size: 50px;
 	height: $block-size;
 	width: 30%;
 	a {
-		color: $blue;
+		color: $slate;
 		display: table-cell;
     vertical-align: middle;
 		&:hover, &:focus {
-			color: $blue - #111;
+			color: $slate - #111;
 		}
 		.b-block-row.group & {
 			font-weight: 600;
@@ -737,7 +738,7 @@ $block-size: 50px;
 		}
 	}
 	@media screen and (max-width:500px) {
-		border-bottom: 1px solid rgba($blue,0.1);
+		border-bottom: 1px solid rgba($slate,0.1);
 		text-align: center;
 		width: 100%;
 		a {
@@ -759,7 +760,7 @@ $block-size: 50px;
 
 .b-block-actions {
 	@extend .right;
-	color: $blue;
+	color: $slate;
 	padding: 0 $size*0.9;
 	width: auto;
 	&:hover, &:focus {
@@ -791,7 +792,7 @@ $block-size: 50px;
 		line-height: $block-size;
 	}
 	a {
-		color: rgba($blue, 0.5);
+		color: rgba($slate, 0.5);
 		display: block;
 		font-size: $size/1.5;
 		line-height: $block-size;
@@ -799,7 +800,7 @@ $block-size: 50px;
 		text-align: center;
 		@include transition(all 0.4s);
 		&:hover, &:focus {
-			color: $blue;
+			color: $slate;
 		}
 		&:active {
 			background: $orange;
@@ -831,22 +832,22 @@ $block-size: 50px;
 // Block show device
 
 .b-block-show {
-	border-left: 1px solid rgba($blue,0.1);
+	border-left: 1px solid rgba($slate,0.1);
 	padding: 0 $size/1.5;
 	@extend .right;
 	a {
 		.b-block & {
-			color: rgba($blue, 0.5);
+			color: rgba($slate, 0.5);
 		}
 		display: none;
 		font-size: $size/1.4;
 		line-height: $block-size;
 		padding: 0 $size/4;
 		&:hover, &:focus {
-			color: $blue;
+			color: $slate;
 		}
 		&.visible {
-			color: $blue;
+			color: $slate;
 			display: inline-block;
 		}
 	}
@@ -880,6 +881,9 @@ $block-size: 50px;
 	@media screen and (max-width:300px) {
 		width: 12%;
 	}
+	+ .b-block-linetext {
+		padding-left: 0;
+	}
 }
 
 // Block turn off/on
@@ -907,7 +911,7 @@ $block-size: 50px;
 	transition: all 0.4s;
 
 	i {
-		background: $blue;
+		background: $slate;
 		display: block;
 		color: #fff;
 		float: left;
@@ -923,7 +927,7 @@ $block-size: 50px;
 			width: auto;
 		}
 		.b-block-row.group & {
-			background: $blue - #222;
+			background: $slate - #222;
 		}
 	}
 	img {
@@ -957,7 +961,7 @@ $block-size: 50px;
 // Block form
 
 .b-block-row.editable .b-block-form {
-	width: 95%;
+	width: 100%;
 	@media screen and (max-width:500px) {
 		clear: both;
 		margin-top: $size;
@@ -985,7 +989,7 @@ $block-size: 50px;
 		width: 100%;
 	}
 	input, select, .select {
-		border-color: rgba($blue, 0.7);
+		border-color: rgba($slate, 0.7);
 		width: 100%;
 	}
 	.field {
@@ -1055,9 +1059,9 @@ $block-size: 50px;
 .b-blocks-filter {
 	padding-left: $size*2;
 	a {
-		background: rgba($blue, 0.05);
-		box-shadow: rgba($blue, 0.2) 0 -1px 0 inset;
-		color: rgba($blue, 0.5);
+		background: rgba($slate, 0.05);
+		box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
+		color: rgba($slate, 0.5);
 		display: block;
 		font-size: 0.9em;
 		padding: $size/2 $size/2;
@@ -1066,7 +1070,7 @@ $block-size: 50px;
 			float: right;
 		}
 		&.active {
-			background: $blue;
+			background: $slate;
 			color: $white;
 		}
 	}

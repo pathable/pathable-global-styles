@@ -24,6 +24,7 @@
 
 .session-form {
   clear: both;
+  height: auto !important;
   margin: 0 auto;
   max-width: 25em;
   padding: 2em 0;
@@ -52,11 +53,12 @@
       margin-bottom: 0;
     }
     [class*="icon-"] {
-      color: $blue;
+      color: $slate;
     }
   }
   h1 {
     color: $white;
+    font-size: 3em;
     line-height: 1.3;
     margin-bottom: 0.5em;
     text-align: center;

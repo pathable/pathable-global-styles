@@ -87,6 +87,7 @@ $btn-schemes: (
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.02em;
+  line-height: 1;
   padding: .9em 1.5em;
   text-transform: uppercase;
   @include box-sizing(border-box);
@@ -124,6 +125,10 @@ $btn-schemes: (
 
   &--small { // 5
     font-size: 1em / $btn-size-ratio;
+
+    i {
+      font-size: 1.4em;
+    }
   }
 
   &--xs { // 5
@@ -226,14 +231,18 @@ $btn-schemes: (
   // Custom icon fonts
   i {
   	display: inline-block;
-    font-size: 1em;
+    font-size: 1.4em;
   	position: relative;
   	top: 1px;
   	@include scale(1);
+    &.button--small & {
+      font-size: 1.4em;
+    }
   }
   i + span {
     margin-left: $size/3;
     text-transform: uppercase;
+    vertical-align: text-top;
   }
 }
 
@@ -291,10 +300,9 @@ $btn-schemes: (
 		display: inline-block;
 		float: left;
     margin-bottom: .5em;
-    margin-left: .5em;
 	}
   &.padded {
-    margin: 0 0 2em;
+    margin: 0 0 1em;
     @media screen and (max-width:500px) {
       margin: 0 0 1.2em;
     }

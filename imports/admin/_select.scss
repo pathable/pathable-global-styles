@@ -77,10 +77,6 @@
   > .sSelect-control {
     @include border-bottom-radius(0);
     background: #fff;
-    > .sSelect-arrow {
-      border-color: transparent transparent #999;
-      border-width: 0 5px 5px;
-    }
     // refactor
     .b-block-linetext &, .b-block-fieldset & {
       z-index: 2;
@@ -190,16 +186,7 @@
 }
 
 .sSelect-arrow {
-  border-color: #999 transparent transparent;
-  border-style: solid;
-  border-width: 5px 5px 2.5px;
-  display: inline-block;
-  height: 0;
-  width: 0;
-}
-
-.is-open .sSelect-arrow, .sSelect-arrow-zone:hover > .sSelect-arrow {
-  border-top-color: #666;
+  display: none;
 }
 
 @-webkit-keyframes sSelect-animation-fadeIn {

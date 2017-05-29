@@ -4,7 +4,7 @@
 
 .nav-host {
 	a {
-		background: $blue;
+		background: $slate;
 		color: #fff;
 		display: block;
 		line-height: 20px;
@@ -16,15 +16,15 @@
 			color: rgba(255,255,255,.8);
 		}
 		&.active {
-			background: darken($blue, 20%);
+			background: darken($slate, 10%);
 			// background: $bg-light;
-			// color: $blue;
+			// color: $slate;
 			+ .sub-nav-host {
 				display: block;
 			}
 		}
 		&:hover, &:focus {
-			background: darken($blue, 15%);
+			background: darken($slate, 10%);
 			color: #fff;
 		}
 	}
@@ -44,7 +44,7 @@
 	}
 
 	@media screen and (max-width: 500px) {
-		background: $blue;
+		background: $slate;
 		bottom: 0;
 		font-size: $size/1.5;
 		left: 0;
@@ -95,7 +95,7 @@
 				position: relative;
 				&:hover, &:focus {
 					>a {
-						background: darken($blue, 15%);
+						background: darken($slate, 15%);
 						color: #fff;
 					}
 					.sub-nav-host {
@@ -120,16 +120,16 @@
 		padding-left: $size*2.6;
 		text-align: left;
 		&:hover, &:focus {
-			background: darken($blue, 20%);
+			background: darken($slate, 20%);
 		}
 	}
 	@media screen and (max-width: 500px) {
 	}
 	@media screen and (min-width: 501px) {
-		background: darken($blue, 15%);
+		background: darken($slate, 15%);
 		display: none;
 		a {
-			background: darken($blue, 15%);
+			background: darken($slate, 15%);
 		}
 		.collapsed & {
 			right: -$sub-nav;
@@ -155,7 +155,7 @@
 }
 
 #launch {
-	background: #444;
+	background: darken($slate, 10%);
 	bottom: 0;
 	color: #fff;
 	display: block;

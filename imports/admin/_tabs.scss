@@ -20,7 +20,7 @@
 			a {
 				border: 1px solid $border-light;
 				border-bottom-color: $bg-light;
-				color: $blue;		
+				color: $blue;
 			}
 		}
 	}
@@ -40,6 +40,21 @@
 	@media screen and (max-width:500px) {
 		a span {
 			display: none;
+		}
+	}
+	&.connected {
+		border: none;
+		margin-bottom: 0;
+		+ div .form-box {
+			margin-top: 0;
+		}
+		li.active {
+			a {
+				border: none;
+				border-top: 1px solid rgba(0,0,0,0.1);
+				@include border-top-radius(2px);
+			}
+			@include background-image(linear-gradient(rgba($slate-light, 0.5), $slate-light));
 		}
 	}
 }

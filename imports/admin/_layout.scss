@@ -82,6 +82,7 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 		margin-right: 400px;
 
 		.content {
+      background: rgba($slate-light, 0.5);
 			height: 100%;
 			overflow-y: auto;
 			padding: $size * 3;
@@ -91,7 +92,7 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 
 		&.editor, &.profile {
 			.content {
-				padding: $size*2 $size*3 0;
+				padding: $size*1.5 $size*2;
 			}
 		}
 		&.expand-nav {
@@ -101,10 +102,17 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 			margin-right: 0px;
 		}
 	}
+  @media screen and (min-width: 1401px) {
+    &.editor, &.profile {
+      .content {
+        padding: $size*2 $size*3;
+      }
+    }
+  }
 	&.editor {
     @media screen and (min-width: 801px) { margin-right: 300px; }
     @media screen and (min-width: 1001px) { margin-right: 400px; }
-	  @media screen and (min-width: 1401px) { margin-right: 600px; }
+	  @media screen and (min-width: 1401px) { margin-right: 500px; }
 	  @media screen and (min-width: 1681px) { margin-right: 800px; }
 	  @media screen and (min-width: 1921px) { margin-right: 1000px; }
 	}
