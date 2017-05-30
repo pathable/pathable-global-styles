@@ -9,6 +9,7 @@
   box-shadow: rgba($slate, 0.4) -1px -1px 0 inset;
   font-size: 1em;
   font-weight: 300;
+  line-height: 1.6;
   outline: none;
   padding: 0.9em 1em;
   @include border-radius(2px);
@@ -728,7 +729,7 @@
 // Styled form box
 .form-box {
   @extend .b-block-style;
-  background: $slate-light;
+  background: $slate-light2;
   margin: $size/2 0 $size;
   padding: $size $size $size/2;
   position: relative;
@@ -774,6 +775,74 @@
     font-size: 1.2em;
     margin-right: 0.25em;
   }
+}
+
+// File Picker
+.field-picker {
+  @include pie-clearfix;
+}
+.file-picker {
+  float: left;
+  width: auto;
+  .button {
+    position: relative;
+    .loading-bar {
+      background: $slate;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      @include border-radius(2px);
+    }
+    span {
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+  }
+  &.uploaded {
+    height: 40px;
+    width: 75%;
+    @extend .b-block-style;
+    .b-block-style {
+      background: $slate-light;
+    }
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      @include border-radius(2px);
+    }
+
+    .button {
+      background: rgba($slate-light, 0.5);
+      line-height: 30px;
+      padding: 0 10px;
+      margin: 5px 5px 5px 0;
+      span {
+        padding: 0 20px;
+      }
+      &:hover, &:focus {
+        background: $slate;
+        color: $white;
+      }
+    }
+  }
+}
+.file-name {
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.file-type {
+  background: $slate;
+  color: $white;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+  @include border-radius(2px);
 }
 
 // Loading indicator

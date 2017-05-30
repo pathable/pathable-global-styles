@@ -388,7 +388,7 @@ $block-size: 50px;
 
 .b-block-style {
 	background: #fff;
-	box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
+	box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
 	@include border-radius(2px);
 	@include transition(all .4s);
 	&:hover, &:focus {
