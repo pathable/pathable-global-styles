@@ -9,24 +9,38 @@
   .right {
     width: 35%;
   }
-  h1 {
-    margin-bottom: 0.2em;
+  .left, .right {
+    @media screen and (max-width: 800px) {
+      float: none;
+      width: 100%;
+    }
   }
-  h2 {
-    color: rgba($slate, 0.7);
-    font-size: 1em;
+  .details {
     margin-bottom: 2em;
-    span {
-      margin-right: 2em;
+    h1 {
+      margin-bottom: 0.2em;
+      line-height: 1.2;
     }
-    i {
-      margin-right: 5px;
+    h2 {
+      color: rgba($slate, 0.7);
+      font-size: 1em;
+      margin-bottom: 2em;
+      span {
+        margin-right: 2em;
+      }
+      i {
+        margin-right: 5px;
+      }
     }
-  }
-  p {
-    color: rgba($slate, 0.8);
-    padding-right: 2em;
-    @include box-sizing(border-box);
+    p {
+      border-left: 2px solid $slate-light;
+      color: rgba($slate, 0.8);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+      padding-left: 1.4em;
+      padding-right: 2em;
+      @include box-sizing(border-box);
+    }
   }
   .speakers {
     margin-bottom: 1em;
@@ -38,7 +52,7 @@
       @media screen and (max-width: 1300px) {
         width: 50%;
       }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 360px) {
         width: 100%;
       }
     }
@@ -61,7 +75,7 @@
       color: $slate;
       display: block;
       font-size: 1.2em;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
   iframe {
@@ -110,6 +124,43 @@
     }
     i {
       float: right;
+    }
+  }
+  .tracks, .tags {
+    ul {
+      @include pie-clearfix;
+      margin-bottom: 10px;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      margin-right: 5px;
+    }
+    a {
+      box-shadow: rgba(0,0,0,0.1) -1px -1px 0 inset;
+      display: block;
+      font-weight: 300;
+      letter-spacing: 1px;
+      @include border-radius(2px);
+    }
+  }
+  .tracks {
+    a {
+      color: #fff;
+      font-size: 9px;
+      line-height: 20px;
+      padding: 0 10px;
+      text-transform: uppercase;
+      @include border-radius(2px);
+    }
+  }
+  .tags {
+    a {
+      background: $slate-light;
+      color: $slate;
+      font-size: 11px;
+      line-height: 25px;
+      padding: 0 15px;
     }
   }
 }
