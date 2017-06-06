@@ -111,10 +111,6 @@ $btn-schemes: (
       font-size: 1em;
       padding: 0 1.2em;
       .field & {
-        [class^="icon-"], [class*="icon-"] {
-          left: 0.8em;
-          top: 1em;
-        }
       }
     }
   }

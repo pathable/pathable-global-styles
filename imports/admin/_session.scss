@@ -42,6 +42,7 @@
     @include border-radius(2px);
     @include pie-clearfix;
     @extend .b-block-style;
+    background-color: $slate-light;
   }
   .field {
     clear: both;

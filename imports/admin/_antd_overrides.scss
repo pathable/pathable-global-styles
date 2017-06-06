@@ -11,17 +11,45 @@
   }
 }
 .ant-calendar-picker-clear {
+  background: transparent;
   left: auto !important;
+  margin-top: 0;
   right: 3em !important;
-  top: 1.5em !important;
 }
 .ant-calendar-picker-icon {
+  height: 40px;
+  line-height: 40px;
   margin-top: 0;
   right: 1em;
-  top: 1em;
+  top: 0;
   &:after {
     content: "\e93a";
-    color: rgba($blue, 0.4);
+    color: rgba($slate, 0.5);
     font-family: linearicons;
+    vertical-align: middle;
   }
+}
+.ant-time-picker-input {
+  @extend .input;
+}
+.ant-time-picker-icon {
+  display: none;
+}
+.ant-time-picker {
+  width: 100%;
+}
+.ant-select {
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+.ant-select-selection {
+  @extend .b-block-style;
+  border: none;
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+}
+.ant-calendar-picker-input {
+  margin-bottom: 0 !important;
 }

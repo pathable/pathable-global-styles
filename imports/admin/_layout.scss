@@ -72,9 +72,13 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 // Container
 
 .container {
-
+  .content {
+    background: rgba($slate-light, 0.5);
+  }
 	@media screen and (max-width: 500px) {
-		padding: $size*3.5 $size $size*2.5;
+    .content {
+  		padding: $size*3.5 $size $size*2.5;
+    }
 	}
 	@media screen and (min-width: 501px) {
     height: 100%;
@@ -82,7 +86,6 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
 		margin-right: 400px;
 
 		.content {
-      background: rgba($slate-light, 0.5);
 			height: 100%;
 			overflow-y: auto;
 			padding: $size * 3;
