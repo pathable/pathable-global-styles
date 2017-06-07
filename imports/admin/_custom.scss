@@ -19,3 +19,21 @@
   @include box-sizing(border-box);
   @include pie-clearfix;
 }
+.group-columns, .group {
+  min-height: 1px;
+}
+.group-content > div {
+  display: flex;
+  @media screen and (max-width:600px) {
+    flex-direction: column;
+    > section {
+      width: 100%;
+    }
+  }
+  .preview-mobile & {
+    flex-direction: column;
+    > section {
+      width: 100%;
+    }
+  }
+}
