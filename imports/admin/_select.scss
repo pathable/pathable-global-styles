@@ -10,6 +10,7 @@
     @include box-sizing(border-box);
   }
   span {
+    letter-spacing: 1px;
     margin: 0;
     font: inherit;
   }
@@ -41,7 +42,7 @@
   display: table;
   border-spacing: 0;
   border-collapse: separate;
-  height: 35px;
+  height: 37px;
   outline: none;
   overflow: hidden;
   position: relative;
@@ -54,15 +55,15 @@
     outline: none;
   }
   .b-block-row.editable & {
-    height: 36px;
+    height: 38px;
   }
   // refactor
   .b-block-linetext &, .b-block-fieldset & {
     border: none;
-    box-shadow: rgba($blue, 0.4) -1px -1px 0 inset;
+    box-shadow: rgba($slate, 0.4) -1px -1px 0 inset;
   }
   .b-blocks-toolbar & {
-    height: 38px;
+    height: 40px;
     &.select.small {
       padding-right: 0;
     }
@@ -98,7 +99,7 @@
   line-height: 37px;
   max-width: 100%;
   overflow: hidden;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 10px;
   position: absolute;
   right: 0;
@@ -126,7 +127,7 @@
 }
 
 .sSelect-input {
-  height: 34px;
+  height: 36px;
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
@@ -183,6 +184,15 @@
   vertical-align: middle;
   width: 25px;
   padding-right: 5px;
+  &:before {
+    bottom: 0;
+    content: "\e93a";
+    font-family: linearicons;
+    line-height: 40px;
+    position: absolute;
+    right: 1em;
+    top: 0;
+  }
 }
 
 .sSelect-arrow {
@@ -266,8 +276,8 @@
     width: 60%;
   }
   .sSelect-arrow-zone {
-    background: rgba($blue, 0.08);
-    color: $blue;
+    background: rgba($slate, 0.08);
+    color: $slate;
     padding-right: 0;
     width: 40px;
   }
@@ -277,7 +287,7 @@
     @extend .b-block-style;
   }
   &.has-value.sSelect--single > .sSelect-control .sSelect-value .sSelect-value-label {
-    color: $blue;
+    color: $slate;
   }
   .sSelect-value-label {
     img {

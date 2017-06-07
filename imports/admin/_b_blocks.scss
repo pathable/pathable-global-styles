@@ -15,13 +15,14 @@ $block-size: 50px;
 
 // Block columns controls
 .b-blocks-toolbar {
-	background: #cfebf7;
+	background: $slate-light2;
 	border-radius: 2px;
 	box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
 	display: block;
 	padding: $size/1.5;
 	@include pie-clearfix;
 	.button {
+		margin-left: 5px;
 		opacity: 0.6;
 		&:hover, &:focus {
 			opacity: 1;
