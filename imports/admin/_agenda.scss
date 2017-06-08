@@ -2,15 +2,16 @@
 // AGENDA
 
 .agenda {
-  background: #eee;
-  padding: 20px 30px;
+  background: $slate-light2;
+  @include pie-clearfix;
   &.admin {
     .meeting {
-      justify-content: space-between;
+      height: 50px;
       line-height: 30px;
+      overflow: hidden;
       .track {
         box-sizing: border-box;
-        flex: 0 0 50px;
+        flex: 0 0 10px;
         margin-top: 10px;
         order: 1;
         a {
@@ -23,37 +24,94 @@
         span {
           display: none;
         }
+        @media screen and (max-width: 500px) {
+          left: 20px;
+          order: 2;
+          position: absolute;
+          top: 10px;
+          a {
+            height: 10px;
+            padding: 0;
+            width: 10px;
+            @include border-radius(50%);
+            span {
+              display: none;
+            }
+          }
+        }
       }
-      .time { order: 2; }
-      .title { order: 3; h2 { font-size: 14px; white-space: nowrap; } }
+      .time {
+        flex: 0 0 50px;
+        order: 2;
+        span {
+          display: block;
+          font-size: 11px;
+          line-height: 15px;
+        }
+        @media screen and (max-width: 500px) {
+          bottom: 10px;
+          left: 10px;
+          order: 1;
+          position: absolute;
+        }
+      }
+      .title {
+        flex: 0 0 40%; max-width: 40%; order: 3; h2 { font-size: 13px; padding-right: 0; margin-bottom: 0; line-height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        @media screen and (max-width: 500px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
       .description { order: 4; display: none; }
-      .people { order: 5; span { display: none; } }
-      .location { order: 6; span { white-space: nowrap; } }
-      .track-name { order: 7; }
-      .registered { order: 8; }
-      .updated { order: 9; span { white-space: nowrap; } }
-      .attachment { order: 10; }
+      .people { flex: 1 1 20%; max-width: 20%; width: 20%; line-height: 30px; margin-top: 5px; order: 5; a { margin-right: 0; } img { margin-right: 3px; } span { display: none; } }
+      .location { font-size: 11px; line-height: 30px; order: 6; span { white-space: nowrap; } }
+      .track-name { font-size: 11px; line-height: 30px; order: 7; }
+      .registered { font-size: 11px; line-height: 30px; order: 8; }
+      .updated { font-size: 11px; line-height: 30px; order: 9; span { white-space: nowrap; } }
+      .attachment { line-height: 30px; order: 10; }
       .actions { order: 11; display: none; }
-    }
-    .people {
-      span {
-        display: none;
-      }
-    }
-    .description {
-      p {
-        display: none;
+      @media screen and (max-width: 500px) {
+        flex-flow: row wrap;
+        height: 80px;
+        margin-bottom: 1px;
+        padding: 10px 10px 10px 60px;
+        position: relative;
+        @include box-sizing(border-box);
       }
     }
   }
   &.attendee {
     .meeting {
       flex-flow: row wrap;
+      height: 170px;
       padding-top: 40px;
       padding-right: 60px;
       padding-bottom: 15px;
       position: relative;
       @include box-sizing(border-box);
+      @media screen and (max-width: 500px) {
+        height: 80px;
+        margin-bottom: 1px;
+        padding: 10px 40px;
+      }
+      @media screen and (min-width: 800px) and (max-width: 1200px) {
+        float: left;
+        margin-right: 0.5%;
+        width: 49.5%;
+        &:nth-of-type(2n) {
+          margin-right: 0;
+          width: 50%;
+        }
+      }
+      @media screen and (min-width: 1201px) {
+        float: left;
+        margin-right: 0.333%;
+        width: 33%;
+        &:nth-of-type(3n) {
+          margin-right: 0;
+          width: 33.333%;
+        }
+      }
       .track {
         order: 1;
         position: absolute;
@@ -71,28 +129,90 @@
           text-align: center;
           text-transform: uppercase;
         }
+        @media screen and (max-width: 500px) {
+          left: 15px;
+          margin-top: -5px;
+          top: 50%;
+          a {
+            height: 10px;
+            padding: 0;
+            width: 10px;
+            @include border-radius(50%);
+            span {
+              display: none;
+            }
+          }
+        }
       }
       .time { order: 3; display: none; }
-      .title { order: 4; flex: 1 1 100%; }
-      .description { order: 5; flex: 1 1 100%; p { max-width: 500px; } }
-      .people { order: 6; line-height: 20px; flex: 0 0 auto; }
+      .title {
+        order: 4; flex: 1 1 100%;
+        @media screen and (max-width: 500px) {
+          h2 {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .description {
+        order: 5;
+        flex: 1 1 100%;
+        p {
+          max-width: 500px;
+        }
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
+      .people {
+        order: 6; line-height: 20px; flex: 0 0 auto;
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
       .location { order: 7; }
       .track-name { order: 2; display: none; }
       .registered { order: 8; display: none; }
       .updated { order: 9; display: none; }
       .attachment { order: 10; display: none;}
-      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 80px; top: 0; a {@include center;}}
+      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 50px; top: 0; a {@include center;}}
+      &.featured {
+        background: lighten($blue, 50%);
+        box-shadow: rgba($blue, 0.5) 1px 1px 0;
+        .title {
+          h2 {
+            height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        .people {
+          @media screen and (max-width: 500px) {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
   .toolbar {
-    background: rgba($slate, 0.9);
-    margin-bottom: 6px;
+    background: rgba($slate, 1);
     padding: 10px;
-    @include border-radius(2px);
+    position: relative;
+    z-index: 1;
+    @include border-top-radius(2px);
+    @include box-sizing(border-box);
     @include pie-clearfix;
+    @media screen and (max-width: 500px) {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      width: 100%;
+    }
   }
   .tracks {
     background: rgba(0,0,0,.1);
+    box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
     cursor: pointer;
     float: left;
     height: 30px;
@@ -103,7 +223,7 @@
     @include border-radius(2px);
     @include box-sizing(border-box);
     &:hover, &:focus {
-      background: $slate;
+      background: $slate - #111;
       .main-track {
         @include border-bottom-radius(0);
       }
@@ -115,6 +235,7 @@
       color: $white;
       display: block;
       white-space: nowrap;
+      @include border-radius(2px);
       &:before {
         background: $blue;
         content: '';
@@ -136,7 +257,7 @@
       }
     }
     ul {
-      background: $slate;
+      background: $slate - #111;
       color: $white;
       display: none;
       left: 0;
@@ -162,27 +283,77 @@
   }
   .switch {
     float: left;
+    @media screen and (max-width: 500px) {
+      float: none;
+      @include center;
+    }
     a {
-      background: $white;
-      box-shadow: (rgba(0,0,0,0.1) 1px 1px 0);
-      color: #444;
+      background: rgba(0,0,0,0.1);
+      box-shadow: (rgba(0,0,0,0.1) -1px -1px 0 inset);
+      color: $slate-light2;
       display: inline-block;
+      font-weight: 300;
+      letter-spacing: 0.25px;
       line-height: 30px;
       white-space: nowrap;
       @include border-radius(2px);
       span {
         display: inline-block;
-        padding: 0 10px;
+        padding: 0 15px;
       }
       .active {
         background: $orange;
-        color: #fff;
+        color: $white;
+        font-weight: 500;
         @include border-radius(2px);
+        @include text-shadow(rgba(0,0,0,0.1) 1px 1px 1px);
       }
+      &:hover, &:focus {
+        background: $slate - #111;
+        color: $white;
+      }
+    }
+  }
+  .search {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    &:hover, &:focus {
+      .input {
+        background: $slate - #111;
+        color: $slate;
+      }
+    }
+    @media screen and (max-width:500px) {
+      display: none;
+    }
+    .input {
+      background: rgba(0,0,0,.1);
+      box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+      color: $white;
+      height: 30px;
+      padding-left: 30px;
+      width: 100%;
+      @include border-radius(2px);
+      &:focus {
+        background: $slate - #111;
+      }
+    }
+    i {
+      color: $slate-light;
+      display: block;
+      height: 30px;
+      left: 0;
+      line-height: 30px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 30px;
     }
   }
   .sorting {
     background: rgba(0,0,0,.1);
+    box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
     cursor: pointer;
     float: right;
     height: 30px;
@@ -193,7 +364,7 @@
     @include border-radius(2px);
     @include box-sizing(border-box);
     &:hover, &:focus {
-      background: $slate;
+      background: $slate - #111;
       .main-track {
         @include border-bottom-radius(0);
       }
@@ -211,7 +382,7 @@
       }
     }
     ul {
-      background: $slate;
+      background: $slate - #111;
       color: $white;
       display: none;
       right: 0;
@@ -225,7 +396,6 @@
         }
       }
       a {
-        display: block;
         font-size: 11px;
         line-height: 20px;
         padding: 5px 20px 5px 10px;
@@ -237,6 +407,8 @@
     }
   }
   .dayswitcher {
+    background: rgba($slate, 0.9);
+    @include border-bottom-radius(2px);
     ul {
       @include pie-clearfix;
     }
@@ -245,33 +417,96 @@
       float: left;
       text-align: center;
       width: 25%;
+    }
+    a {
+      color: $slate-light2;
+      display: block;
+      font-size: 14px;
+      font-weight: 300;
+      height: 46px;
+      line-height: 0.9;
+      padding: 10px 0;
+      @include box-sizing(border-box);
+      &:hover, &:focus {
+        background: $slate;
+      }
+      &.active {
+        color: $orange;
+        background: $slate;
+        font-size: 15px;
+        @include text-shadow(rgba(0,0,0,0.1) 1px 1px 1px);
+        span {
+          font-weight: 500;
+        }
+        small {
+          color: $white;
+          font-weight: 400;
+          opacity: 0.9;
+        }
+      }
       span {
         display: block;
-        font-weight: 600;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+      small {
+        color: $slate-light2;
+        font-size: 10px;
+        font-weight: 300;
+        opacity: 0.8;
+      }
+    }
+    &.minimized {
+      a {
+        height: 35px;
+      }
+      small {
+        display: none;
       }
     }
   }
-  .listing {}
-  .timeband {
-    background: rgba($slate, 0.5);
-    color: #fff;
+  .listing {
+    @include pie-clearfix;
+    @media screen and (max-width: 500px) {
+      padding-bottom: 50px;
+    }
+    @media screen and (min-width: 501px) {
+      padding: 0 20px 20px;
+    }
+  }
+  .dayband {
+    clear: both;
+    color: $slate;
+    height: 40px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 25px;
-    margin-bottom: 6px;
+    line-height: 40px;
+    text-align: center;
+    + .timeband {
+      height: 20px;
+      line-height: 10px;
+    }
+  }
+  .timeband {
+    clear: both;
+    color: $slate + #111;
+    font-weight: 600;
+    height: 30px;
+    line-height: 30px;
     padding: 0 20px;
     text-align: center;
-    @include border-radius(2px);
   }
 
   //////
   .meeting {
     background: #fff;
-    box-shadow: (rgba(0,0,0,0.1) 1px 1px 0);
+    box-shadow: (rgba($slate, 0.1) 1px 1px 0);
     display: flex;
     font-size: 12px;
     margin-bottom: 6px;
     padding: 10px 20px;
     @include border-radius(2px);
+    @include box-sizing(border-box);
     > * {
       vertical-align: super;
       padding-right: 20px;
@@ -300,9 +535,9 @@
     .title {
       flex-grow: 2;
       h2 {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 18px;
+        line-height: 20px;
         margin-bottom: 10px;
         padding-right: 20px;
       }
@@ -322,6 +557,7 @@
     }
     .people {
       flex-grow: 1;
+      white-space: nowrap;
     }
     .speaker {
       color: #999;
@@ -343,19 +579,23 @@
       }
     }
     .location {
-      color: #999;
+      color: rgba($slate, 0.5);
       line-height: 20px;
       span {
         align-items: center;
         display: inline-flex;
+        white-space: nowrap;
       }
       i {
-        font-size: 15px;
+        font-size: 14px;
+        margin-right: 3px;
       }
     }
     .track-name {
       color: #999;
       line-height: 20px;
+      white-space: nowrap;
+      width: 50px;
       span {}
     }
     .registered {
@@ -367,6 +607,7 @@
       }
       i {
         font-size: 16px;
+        margin-right: 6px;
       }
     }
     .updated {
@@ -380,6 +621,7 @@
       span {}
     }
     .actions {
+      display: inherit;
       a {
         display: block;
       }
@@ -392,7 +634,7 @@
         line-height: 30px;
         text-align: center;
         width: 30px;
-        @include border-radius(50%);
+        @include border-radius(2px);
       }
     }
   }
