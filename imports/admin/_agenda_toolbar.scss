@@ -3,6 +3,7 @@
 
 .agenda {
   height: 100%;
+  position: relative;
   @include box-sizing(border-box);
   @media screen and (max-width: 500px) {
     padding-top: 36px;
