@@ -2,6 +2,14 @@
 // Agenda toolbar and sliding panes
 
 .agenda {
+  height: 100%;
+  @include box-sizing(border-box);
+  @media screen and (max-width: 500px) {
+    padding-top: 36px;
+  }
+  @media screen and (min-width: 501px) {
+    padding-top: 86px;
+  }
   .toolbar {
     background: rgba($slate, 1);
     padding: 10px;
@@ -10,6 +18,15 @@
     @include border-top-radius(2px);
     @include box-sizing(border-box);
     @include pie-clearfix;
+    @media screen and (min-width: 501px) {
+      height: 50px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+    }
     @media screen and (max-width: 500px) {
       bottom: 0;
       left: 0;
@@ -321,6 +338,24 @@
   .dayswitcher {
     background: rgba($slate, 0.9);
     @include border-bottom-radius(2px);
+    @media screen and (min-width: 501px) {
+      height: 36px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+    @media screen and (max-width: 500px) {
+      height: 36px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+    }
     ul {
       display: table;
       table-layout: fixed;

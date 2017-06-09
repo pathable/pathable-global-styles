@@ -194,9 +194,12 @@
       }
     }
   }
-  
+
   .listing {
+    height: 100%;
+    overflow: auto;
     @include pie-clearfix;
+    @include box-sizing(border-box);
     @media screen and (max-width: 500px) {
       padding-bottom: 50px;
     }

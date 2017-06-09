@@ -60,6 +60,9 @@ html, body {
 
 body.styleguide-white {
 	background: #f9f9f9;
+  >div, >div>div, >div>div>div, >div>div>div>div {
+		height: 100%;
+	}
 }
 body[class^="styleguide-"], body[class*="styleguide-"] {
 	>div, >div>div, >div>div>div, >div>div>div>div {
