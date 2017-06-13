@@ -2,7 +2,11 @@
 // MEETING STYLES
 
 .meeting {
+  position: relative;
   @include pie-clearfix;
+  @media screen and (max-width: 500px) {
+    padding-top: 50px;
+  }
   .left {
     width: 60%;
   }
@@ -10,7 +14,7 @@
     width: 35%;
   }
   .left, .right {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 799px) {
       float: none;
       width: 100%;
     }
@@ -82,6 +86,28 @@
     width: 100%;
   }
   .actions {
+    @media screen and (max-width: 799px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      ul {
+        float: left;
+        margin-left: 5px;
+        width: auto;
+      }
+      .button--medium {
+        padding: 0.7em;
+        span {
+          display: none;
+        }
+      }
+      .button--orange {
+      }
+      .button--gray {
+      }
+    }
+  }
+  .action {
     display: table;
     margin-bottom: 5px;
     width: 100%;
@@ -92,15 +118,30 @@
         padding-right: 0;
       }
     }
-    a, button {
+    a, .button {
       display: block;
       white-space: nowrap;
       width: 100%;
       span {
         white-space: nowrap;
       }
+      &.remove {
+        span:after {
+          content: "Added";
+        }
+        &:hover, &:focus {
+          background: $red;
+          .icon-check:before {
+            content: "\e92a";
+          }
+          span:after {
+            content: "Remove";
+          }
+        }
+
+      }
     }
-    &.one li {
+    &.three li {
       width: 15%;
       &:first-of-type {
         width: 70%;
@@ -124,6 +165,65 @@
     }
     i {
       float: right;
+    }
+  }
+  .files {
+    background: $slate-light;
+    box-shadow: rgba($slate, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+    @include border-radius(2px);
+    @include pie-clearfix;
+    h2 {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+  }
+  .file {
+    color: $slate;
+    display: block;
+    font-size: 11px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 100%;
+    @extend .b-block-style;
+    @include pie-clearfix;
+    span {
+      display: block;
+      float: left;
+      &.file-size {
+        color: rgba($slate, 0.5);
+        float: right;
+        padding-right: 40px;
+        font-size: 11px;
+      }
+    }
+    i {
+      color: $white;
+      display: block;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 40px;
+    }
+    &:hover, &:focus {
+      cursor: pointer;
+      &:after {
+        color: $slate;
+      }
+    }
+    &:after {
+      color: rgba($slate, 0.5);
+      content: "\e8f5";
+      font-size: 15px;
+      font-family: linearicons;
+      position: absolute;
+      right: 10px;
     }
   }
   .tracks, .tags {
@@ -155,6 +255,7 @@
     }
   }
   .tags {
+    margin-bottom: 20px;
     a {
       background: $slate-light;
       color: $slate;

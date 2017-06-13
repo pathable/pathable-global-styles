@@ -46,7 +46,7 @@ h4 {
 a {
   color: $blue;
   text-decoration: none;
-  @include transition(all, 0.4s);
+  transition: all, 0.4s;
   &:hover, &:focus {
     color: $red;
   }
