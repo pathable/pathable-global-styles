@@ -111,7 +111,7 @@ body[class^="styleguide-"], body[class*="styleguide-"] {
   @media screen and (min-width: 1401px) {
     &.editor, &.profile {
       .content {
-        padding: $size*2 $size*3;
+        padding: $size*2 $size*3 0;
       }
     }
   }

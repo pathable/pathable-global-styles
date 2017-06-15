@@ -92,6 +92,22 @@ $btn-schemes: (
   text-transform: uppercase;
   @include box-sizing(border-box);
   @include transition(all .3s);
+  // Custom icon fonts
+  i {
+    display: inline-block;
+    font-size: 1.4em;
+    position: relative;
+    top: 1px;
+    @include scale(1);
+    &.button--small & {
+      font-size: 1.4em;
+    }
+  }
+  i + span {
+    margin-left: $size/3;
+    text-transform: uppercase;
+    vertical-align: text-top;
+  }
 
   // Modifiers
 
@@ -122,9 +138,16 @@ $btn-schemes: (
 
   &--small { // 5
     font-size: 1em / $btn-size-ratio;
-
+    height: 30px;
+    line-height: 30px;
+    padding: 0 1.5em;
     i {
       font-size: 1.4em;
+      + span {
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+      }
     }
   }
 
@@ -149,7 +172,7 @@ $btn-schemes: (
   	background: #fff;
   	border: none;
   	color: $slate;
-  	box-shadow: rgba($slate, 0.4) -1px -1px 0 inset;
+  	box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
   	&:hover, &:focus, &.active {
       background-color: $slate;
   		border-color: $slate;
@@ -223,23 +246,6 @@ $btn-schemes: (
     &--#{$key} {
       @include button-color($value);
     }
-  }
-
-  // Custom icon fonts
-  i {
-  	display: inline-block;
-    font-size: 1.4em;
-  	position: relative;
-  	top: 1px;
-  	@include scale(1);
-    &.button--small & {
-      font-size: 1.4em;
-    }
-  }
-  i + span {
-    margin-left: $size/3;
-    text-transform: uppercase;
-    vertical-align: text-top;
   }
 }
 
@@ -337,12 +343,13 @@ $btn-schemes: (
   }
   @media screen and (max-width:500px) {
     &.top-right {
-      float: none;
-      margin-top: 0;
-      margin-bottom: $size;
-      > div {
-        width: 100%;
-      }
+      margin-bottom: -6em;
+      // float: none;
+      // margin-top: 0;
+      // margin-bottom: $size;
+      // > div {
+      //   width: 100%;
+      // }
     }
     span {
       display: none;

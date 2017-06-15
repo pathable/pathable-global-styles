@@ -144,7 +144,9 @@
 
 // Table wrapper
 .table-wrapper {
+	clear: both;
 	margin-bottom: 2em;
 	overflow-x: auto;
 	overflow-y: hidden;
+	width: 100%;
 }

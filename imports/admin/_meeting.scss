@@ -142,9 +142,11 @@
       }
     }
     &.three li {
-      width: 15%;
-      &:first-of-type {
-        width: 70%;
+      @media screen and (min-width: 501px) {
+        width: 15%;
+        &:first-of-type {
+          width: 70%;
+        }
       }
     }
     &.two li {
