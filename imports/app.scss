@@ -32,6 +32,13 @@
 @import "app/layout";
 
 
+// Temporary import for meetings lists
+
+@import "admin/variables";
+@import "admin/agenda_list";
+@import "admin/agenda_toolbar";
+
+
 // Import widgets
 
 @import "app/custom";
