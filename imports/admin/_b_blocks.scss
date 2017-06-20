@@ -814,11 +814,13 @@ $block-size: 50px;
 		width: auto;
 	}
 	@media screen and (max-width:500px) {
-		float: left;
-		padding: 0 $size*0.6;
+		float: right;
+		// float: left;
+		// padding: 0 $size*0.6;
 		width: auto;
 		a, span {
-			line-height: $block-size/1.5;
+			line-height: $block-size;
+			// line-height: $block-size/1.5;
 		}
 	}
 	@media screen and (max-width:850px) and (min-width:500px) {

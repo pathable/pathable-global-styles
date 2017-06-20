@@ -114,7 +114,8 @@
   &.attendee {
     .meeting {
       flex-flow: row wrap;
-      height: 170px;
+      height: 130px;
+      // height: 170px;
       padding-top: 40px;
       padding-right: 60px;
       padding-bottom: 15px;
@@ -190,6 +191,7 @@
         flex: 1 1 100%;
         p {
           max-width: 500px;
+          text-align: left;
           white-space: normal;
         }
         @media screen and (max-width: 500px) {

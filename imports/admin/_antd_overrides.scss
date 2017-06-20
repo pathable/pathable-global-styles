@@ -60,3 +60,17 @@
 .ant-calendar-picker-input {
   margin-bottom: 0 !important;
 }
+
+.ant-select-selection--multiple .ant-select-selection__choice__content {
+  height: 30px;
+  line-height: 30px;
+}
+.ant-select-selection--multiple > ul > li, .ant-select-selection--multiple .ant-select-selection__rendered > ul > li {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+}
+.ant-select-selection--multiple .ant-select-search--inline .ant-select-search__field {
+  height: 30px;
+  line-height: 30px;
+}
