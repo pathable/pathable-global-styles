@@ -9,19 +9,36 @@
   background: $slate-light2;
   @include pie-clearfix;
   &.admin {
+    @media screen and (max-width: 500px) {
+      margin-left: -$size;
+      margin-right: -$size;
+    }
     .meeting {
       height: 50px;
       line-height: 30px;
       overflow: hidden;
       @media screen and (max-width: 500px) {
         flex-flow: row wrap;
-        // height: 80px;
+        height: 50px;
         margin-bottom: 1px;
-        // padding: 10px 10px 10px 60px;
+        padding: 7px 10px 7px 50px;
         position: relative;
         @include box-sizing(border-box);
       }
+      .check {
+        box-sizing: border-box;
+        flex: 0 0 4%;
+        order: 1;
+        input {
+          margin: 10px 0;
+        }
+        @media screen and (max-width: 500px) {
+          left: 20px;
+          position: absolute;
+        }
+      }
       .track {
+        display: none;
         box-sizing: border-box;
         flex: 0 0 4%;
         margin-top: 10px;
@@ -53,32 +70,44 @@
         }
       }
       .time {
-        flex: 0 0 7%;
         order: 2;
+        @media screen and (max-width: 500px) {
+          flex-flow: row nowrap;
+          flex: 0 0 30%;
+          span {
+            display: inline-block;
+            margin-right: 5px;
+            line-height: 15px;
+          }
+        }
+        @media screen and (min-width: 501px) {
+          flex: 0 0 8%;
+          span {
+            display: block;
+            font-size: 11px;
+            // line-height: 15px;
+          }
+        }
 
         // @media screen and (max-width: 500px) {
         //   bottom: 10px;
         //   left: 10px;
         //   order: 1;
         //   position: absolute;
-        //   span {
-        //     display: block;
-        //     font-size: 11px;
-        //     line-height: 15px;
-        //   }
+        //
         // }
-        @media screen and (min-width: 1px) {
-          flex: 0 0 15%;
-        }
+        // @media screen and (min-width: 1px) {
+        //   flex: 0 0 15%;
+        // }
       }
       .title {
-        flex: 1 1 30%;
+        flex: 1 1 25%;
         // max-width: 40%;
-        order: 3;
+        order: 4;
         h2 { font-size: 12px; padding-right: 20px; margin-bottom: 0; line-height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         @media screen and (max-width: 500px) {
-          // flex: 0 0 100%;
-          // max-width: 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
         }
       }
       .description {
@@ -99,23 +128,46 @@
           display: none;
         }
         @media screen and (max-width: 500px) {
-          flex: 0 0 100%;
+          display: none;
+          // flex: 0 0 100%;
         }
       }
-      .location { font-size: 11px; line-height: 15px; order: 6; span { white-space: normal; } }
-      .track-name { font-size: 11px; line-height: 30px; order: 7; }
+      .location {
+        font-size: 11px; line-height: 15px; order: 6;
+        span { white-space: normal; }
+        @media screen and (max-width: 500px) {
+          display: block;
+          order: 3;
+          span {
+            float: right;
+          }
+        }
+        @media screen and (min-width: 501px) {
+          flex: 1 1 8%;
+        }
+      }
+      .track-name {
+        font-size: 11px; line-height: 30px; order: 7;
+        @media screen and (min-width: 501px) {
+          flex: 1 1 6%;
+        }
+      }
       .registered { font-size: 11px; line-height: 30px; order: 8; }
       .updated { font-size: 11px; line-height: 30px; order: 9; span { white-space: nowrap; } }
-      .attachment { line-height: 30px; order: 10; flex: 0 0 20px; }
+      .attachment { line-height: 30px; order: 10; flex: 0 0 20px;
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
       .actions { order: 11; display: none; }
-
     }
+
   }
   &.attendee {
     .meeting {
       flex-flow: row wrap;
-      height: 130px;
-      // height: 170px;
+      // height: 130px;
+      height: 170px;
       padding-top: 40px;
       padding-right: 60px;
       padding-bottom: 15px;
@@ -408,9 +460,22 @@
       display: inherit;
       a {
         display: block;
+        &.added {
+          i {
+            background: $green;
+          }
+          &:hover, &:focus {
+            i {
+              background: $red;
+              &:before {
+                content: "\e935";
+              }
+            }
+          }
+        }
       }
       i {
-        background: $green;
+        background: rgba($slate, 0.5);
         color: $white;
         display: block;
         font-size: 16px;

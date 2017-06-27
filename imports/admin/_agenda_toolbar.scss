@@ -70,6 +70,58 @@
       }
     }
   }
+  .editing {
+    float: left;
+    margin-right: 10px;
+    ul a {
+      padding-left: 10px;
+      position: relative;
+    }
+    &:hover, &:focus {
+      .pane-toggle {
+        background: $slate - #111;
+      }
+    }
+    .pane {
+      @media screen and (min-width: 501px) {
+        &.left {
+          ul a {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+    input {
+      margin: 0;
+    }
+  }
+  .editing-actions {
+    float: left;
+    margin-right: 10px;
+    ul {
+      @include pie-clearfix;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      margin-right: 5px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    a {
+      background: rgba(0,0,0,.1);
+      box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+      color: $white;
+      cursor: pointer;
+      display: block;
+      line-height: 30px;
+      height: 30px;
+      text-align: center;
+      width: 30px;
+      @include border-radius(2px);
+    }
+  }
   .switch {
     float: left;
     @media screen and (max-width: 500px) {

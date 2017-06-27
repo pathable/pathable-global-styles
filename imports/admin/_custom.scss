@@ -43,11 +43,13 @@
 
 .page-meeting-details, .page-meetings {
   .group-content {
-    margin: 40px auto 0;
-    max-width: 1200px;
-    width: 70%;
+    @media screen and (min-width: 501px) {
+      margin: 40px auto 0;
+      max-width: 1200px;
+      width: 70%;
+    }
     @media screen and (max-width:500px) {
-      max-width: 90%;
+      width: 100%;
     }
   }
 }
