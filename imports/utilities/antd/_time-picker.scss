@@ -1,5 +1,4 @@
 .ant-time-picker-panel {
-  max-width: 168px;
   z-index: 1050;
   position: absolute;
 }
@@ -54,7 +53,6 @@
   display: inline-block;
   line-height: 1;
   width: 20px;
-  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   font-family: 'anticon';
   text-rendering: optimizeLegibility;
@@ -66,7 +64,7 @@
   color: rgba(0, 0, 0, 0.43);
 }
 .ant-time-picker-panel-narrow .ant-time-picker-panel-input-wrap {
-  max-width: 111px;
+  max-width: 112px;
 }
 .ant-time-picker-panel-select {
   float: left;
@@ -95,14 +93,14 @@
   list-style: none;
   box-sizing: border-box;
   margin: 0;
-  padding: 0 0 120px 0;
+  padding: 0 0 120px;
   width: 100%;
 }
 .ant-time-picker-panel-select li {
   list-style: none;
   box-sizing: content-box;
   margin: 0;
-  padding: 0 0 0 16px;
+  padding: 0 0 0 8px;
   width: 100%;
   height: 24px;
   line-height: 24px;
@@ -112,8 +110,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 .ant-time-picker-panel-select li:hover {
   background: #ecf6fd;
@@ -121,6 +118,9 @@
 li.ant-time-picker-panel-select-option-selected {
   background: #f7f7f7;
   font-weight: bold;
+}
+li.ant-time-picker-panel-select-option-selected:hover {
+  background: #f7f7f7;
 }
 li.ant-time-picker-panel-select-option-disabled {
   color: rgba(0, 0, 0, 0.25);
@@ -176,7 +176,6 @@ li.ant-time-picker-panel-select-option-disabled:hover {
   display: inline-block;
   outline: none;
   font-size: 12px;
-  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   width: 100px;
 }
@@ -194,7 +193,6 @@ li.ant-time-picker-panel-select-option-disabled:hover {
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 .ant-time-picker-input::-moz-placeholder {
@@ -236,7 +234,6 @@ textarea.ant-time-picker-input {
 .ant-time-picker-input-sm {
   padding: 1px 7px;
   height: 22px;
-  border-radius: 2px;
 }
 .ant-time-picker-large .ant-time-picker-input {
   padding: 6px 7px;
@@ -245,7 +242,6 @@ textarea.ant-time-picker-input {
 .ant-time-picker-small .ant-time-picker-input {
   padding: 1px 7px;
   height: 22px;
-  border-radius: 2px;
 }
 .ant-time-picker-open {
   opacity: 0;
@@ -256,7 +252,6 @@ textarea.ant-time-picker-input {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 12px;
   height: 12px;
