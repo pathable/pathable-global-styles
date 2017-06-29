@@ -716,11 +716,8 @@
   a {
     padding-left: 15%;
   }
-  &.active {
+  &:hover, &.active {
     z-index: 5;
-    .color-overlay {
-      display: block;
-    }
     .input, .field:after {
       z-index: 3;
     }
@@ -729,6 +726,11 @@
     }
     &:before {
       z-index: 4;
+    }
+  }
+  &.active {
+    .color-overlay {
+      display: block;
     }
   }
 }
@@ -744,6 +746,9 @@
   @include border-radius(2px);
 }
 .color-overlay {
+  &:hover {
+    display: block;
+  }
   background-color: #fff;
   border: 1px solid $blue;
   display: none;
