@@ -10,6 +10,7 @@
 }
 
 #left-close {
+	cursor: pointer;
 	right: -$size;
 	.icon-chevron-right {
 		display: none;
@@ -28,24 +29,44 @@
 				display: none;
 			}
 		}
+		@media screen and (max-width: 500px) {
+			.icon-chevron-left:before {
+				content: "\e92b";
+				font-size: $size * 0.75;
+			}
+		}
 	}
 	@media screen and (max-width:500px) {
-		right: $size/3;
-		top: $size/1.5;
-
+		height: 50px;
+		line-height: 50px;
+		right: 0;
+		top: 0;
+		width: 50px;
 		a {
 			display: block;
+			@include pie-clearfix;
+			&:hover, &:focus {
+				background: darken($slate, 10%);
+			}
 		}
 
 		.icon-chevron-left, .icon-chevron-right {
 			color: $white;
-			font-size: $size * 1.2;
-			padding: $size/4;
+			float: left;
+			font-size: $size;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			top: 0;
+			width: 100%;
 			@include box-sizing(border-box);
 			&:before {
-				display: inline-block;
-				content:"\e92b";
+
 			}
+		}
+		.icon-chevron-left:before {
+			content: "\e935";
+			font-size: $size * 0.5;
 		}
 	}
 }
