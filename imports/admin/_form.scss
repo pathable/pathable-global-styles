@@ -706,6 +706,7 @@
 
 .color-picker {
   position: relative;
+  @include pie-clearfix;
   input:after {
     position: absolute;
   }
@@ -733,10 +734,20 @@
       display: block;
     }
   }
+  .field.inline & {
+    float: left;
+    width: 75%;
+    @media screen and (min-width: 501px) {
+      .input {
+        width: 100%;
+      }
+    }
+  }
 }
 .color-preview {
   background-image: url("/packages/pathable-styles/images/transparent.png");
   background-color: transparent;
+  background-size: cover;
   border: 1px solid rgba($black, 0.1);
   display: block;
   height: $size*1.25;
@@ -765,6 +776,10 @@
   @include border-radius(2px);
   img {
     @extend .full;
+  }
+  .field.inline & {
+    @include box-sizing(content-box);
+    width: 100%;
   }
 }
 

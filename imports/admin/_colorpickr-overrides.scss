@@ -24,3 +24,16 @@
     &:last-child { width:50px;}
   }
 }
+.colorpickr .cp-colormode-slider input[type=range] {
+  height: auto;
+  float: none;
+  line-height: normal;
+  padding: 0;
+}
+.colorpickr .cp-inputs > div fieldset input[type=radio] {
+  height: auto;
+}
+.colorpickr fieldset input[type='number'],
+.colorpickr fieldset input[type='text'] {
+
+}
