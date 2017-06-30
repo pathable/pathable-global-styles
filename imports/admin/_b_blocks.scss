@@ -219,6 +219,10 @@ $block-size: 50px;
 			background: $slate-light;
 			height: auto;
 			padding: $size $size $size;
+			.field:after {
+				height: 15px;
+				line-height: 15px;
+			}
 		}
 		.b-block-handle {
 			line-height: normal;
