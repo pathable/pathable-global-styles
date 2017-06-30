@@ -41,15 +41,20 @@
   }
 }
 
-.page-meeting-details, .page-meetings {
-  .group-content {
-    @media screen and (min-width: 501px) {
+.preview-mobile {
+  .page-meeting-details, .page-meetings {
+    .group-content {
+      margin: 20px auto 0;
+      width: 85%;
+    }
+  }
+}
+.preview-desktop {
+  .page-meeting-details, .page-meetings {
+    .group-content {
       margin: 40px auto 0;
       max-width: 1200px;
       width: 70%;
-    }
-    @media screen and (max-width:500px) {
-      width: 100%;
     }
   }
 }

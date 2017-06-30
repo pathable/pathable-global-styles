@@ -143,7 +143,7 @@
 	.radio-field input[type="radio"] + label span {
 		background: #fff;
 		box-shadow: rgba(0,0,0,0.2) 0 -1px 0 inset;
-		color: $gray;
+		color: $slate;
 		padding: $size/3.3 $size/1.5;
 		&:hover, &:focus {
 			background: $orange - #111;
@@ -174,12 +174,14 @@
 		a {
 			background: #eee;
 			border-right: 1px solid $border-light;
-			color: $gray;
+			color: $slate;
+			cursor: pointer;
 			display: block;
 			font-size: $size/3;
 			height: $size*2.5;
 			line-height: $size*2.5;
-			padding: 0 $size/1.5;
+			padding: 0 $size;
+			transition: all 0.4s;
 		}
 		i {
 			margin-left: $size/2;
@@ -187,32 +189,47 @@
 	}
 
 	ul {
-		display: none;
+		display: block;
 		font-size: $size;
+		height: 0;
 		left: 0;
 		margin-top: -1px;
+		opacity: 0;
+		overflow: hidden;
 		position: absolute;
 		top: $size*1.5;
+		transition: all 0.4s;
 		width: 150%;
+		li {
+			&:first-child {
+				@include border-top-left-radius(2px);
+			}
+			&:last-child {
+				@include border-bottom-radius(2px);
+			}
+		}
 		a {
-			background: $gray;
+			background: $slate;
 			border-top: 1px solid rgba(0,0,0,0.1);
 			color: $white;
+			cursor: pointer;
 			display: block;
 			font-size: $size/3.5;
 			padding: $size/2 $size/1.5;
 			&:hover, &:focus {
-				background: $gray - #111;
+				background: $slate - #111;
 			}
 		}
 	}
 	&:hover, &:focus {
 		h1 a {
-			background: $gray;
+			background: $slate;
 			color: $white;
 		}
 		ul {
 			display: block;
+			height: auto;
+			opacity: 1;
 		}
 	}
 }
