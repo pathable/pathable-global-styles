@@ -173,12 +173,14 @@
     }
     .input {
       background: rgba(0,0,0,.1);
+      border: none;
       box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
       color: $white;
       height: 30px;
       padding-left: 30px;
       width: 100%;
       @include border-radius(2px);
+      @include box-sizing(border-box);
       &:focus {
         background: $slate - #111;
       }
