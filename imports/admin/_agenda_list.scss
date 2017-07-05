@@ -105,7 +105,15 @@
         flex: 1 1 25%;
         // max-width: 40%;
         order: 4;
-        h2 { font-size: 12px; padding-right: 20px; margin-bottom: 0; line-height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        h2 {
+          font-size: 12px;
+          padding-right: 20px;
+          margin-bottom: 0;
+          line-height: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         @media screen and (max-width: 500px) {
           flex: 0 0 100%;
           max-width: 100%;
@@ -134,8 +142,12 @@
         }
       }
       .location {
-        font-size: 11px; line-height: 15px; order: 6;
-        span { white-space: normal; }
+        font-size: 11px;
+        line-height: 15px;
+        order: 6;
+        span {
+          white-space: normal;
+        }
         @media screen and (max-width: 500px) {
           display: block;
           order: 3;
@@ -148,7 +160,9 @@
         }
       }
       .track-name {
-        font-size: 11px; line-height: 30px; order: 7;
+        font-size: 11px;
+        line-height: 30px;
+        order: 7;
         @media screen and (min-width: 501px) {
           flex: 1 1 6%;
         }
@@ -171,16 +185,35 @@
           }
         }
       }
-      .registered { font-size: 11px; line-height: 30px; order: 8; }
-      .updated { font-size: 11px; line-height: 30px; order: 9; span { white-space: nowrap; } }
-      .attachment { line-height: 30px; order: 10; flex: 0 0 20px;
+      .registered {
+        font-size: 11px;
+        line-height: 30px;
+        order: 8;
+      }
+      .updated {
+        font-size: 11px;
+        line-height: 30px;
+        order: 9;
+        span {
+          white-space: nowrap;
+        }
+      }
+      .attachment {
+        line-height: 30px;
+        order: 10;
+        flex: 0 0 20px;
         @media screen and (max-width: 500px) {
           display: none;
         }
       }
-      .actions { order: 11; display: none; }
+      .actions {
+        order: 11;
+        display: none;
+      }
     }
-
+    .switch {
+      display: none;
+    }
   }
   &.attendee {
     .meeting {
@@ -219,9 +252,13 @@
       }
       .track {
       }
-      .time { order: 3; display: none; }
+      .time {
+        order: 3;
+        display: none;
+      }
       .title {
-        order: 4; flex: 1 1 100%;
+        order: 4;
+        flex: 1 1 100%;
         @media screen and (max-width: 500px) {
           h2 {
             font-size: 14px;
@@ -242,15 +279,22 @@
         }
       }
       .people {
-        order: 6; line-height: 20px; flex: 1 1 auto; line-height: 30px;
+        order: 6;
+        line-height: 20px;
+        flex: 1 1 auto;
+        line-height: 30px;
         @media screen and (max-width: 500px) {
           display: none;
         }
       }
       .location {
-        order: 3; flex: 1 1 auto; line-height: 30px;
+        order: 3;
+        flex: 1 1 auto;
+        line-height: 30px;
         @media screen and (min-width: 501px) {
-          order: 5; flex: 1 1 auto; line-height: 30px;
+          order: 5;
+          flex: 1 1 auto;
+          line-height: 30px;
           position: absolute;
           right: 10px;
           top: 0px;
@@ -322,10 +366,29 @@
           }
         }
       }
-      .registered { order: 8; display: none; }
-      .updated { order: 9; display: none; }
-      .attachment { order: 10; display: none;}
-      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 50px; top: 0; a {@include center;}}
+      .registered {
+        order: 8;
+        display: none;
+      }
+      .updated {
+        order: 9;
+        display: none;
+      }
+      .attachment {
+        order: 10;
+        display: none;
+      }
+      .actions {
+        order: 11;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 50px;
+        top: 0;
+        a {
+          @include center;
+        }
+      }
       &.featured {
         background: lighten($blue, 50%);
         box-shadow: rgba($blue, 0.5) 1px 1px 0;
@@ -416,7 +479,6 @@
       }
     }
     .track {
-
     }
     .time {
       flex: 1 1 50px;
@@ -499,7 +561,8 @@
       color: #999;
       line-height: 20px;
       white-space: nowrap;
-      span {}
+      span {
+      }
     }
     .registered {
       color: #999;
@@ -516,12 +579,14 @@
     .updated {
       color: #999;
       line-height: 20px;
-      span {}
+      span {
+      }
     }
     .attachment {
       color: #999;
       line-height: 20px;
-      span {}
+      span {
+      }
     }
     .actions {
       display: inherit;
@@ -531,7 +596,8 @@
           i {
             background: $green;
           }
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             i {
               background: $red;
               &:before {
