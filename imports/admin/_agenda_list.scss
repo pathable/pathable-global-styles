@@ -329,7 +329,7 @@
       .registered { order: 8; display: none; }
       .updated { order: 9; display: none; }
       .attachment { order: 10; display: none;}
-      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 50px; top: 0; a {@include center;}}
+      .actions { order: 11; position: absolute; right: 0; height: 100%; width: 50px; top: 0; a, button {@include center;}}
       &.featured {
         background: lighten($blue, 50%);
         box-shadow: rgba($blue, 0.5) 1px 1px 0;
@@ -532,7 +532,7 @@
     }
     .actions {
       display: inherit;
-      a {
+      a, button {
         display: block;
         &.added {
           i {
