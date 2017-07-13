@@ -76,7 +76,9 @@
 				width: 260px;
 				z-index: 1;
 				@include center;
-
+			}
+			[class*="body-"] {
+				height: 100%;
 			}
 		}
 		.widgetContainer {

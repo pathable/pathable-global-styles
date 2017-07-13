@@ -1,0 +1,154 @@
+//
+// AGENDA
+
+.preview-mobile {
+
+  [class*="section-"].group-layout.page-meetings {
+    height: 100%;
+    .group-content {
+      height: 100%;
+      padding-top: 46px;
+      [class*="container-"], [class*="section-"] {
+        height: 100%;
+      }
+    }
+    .agenda {
+      height: 100%;
+    }
+    .group-footer {
+      display: none;
+    }
+  }
+  .group-layout {
+    height: 100%;
+    > [class*="container-"] {
+      height: 100%;
+    }
+  }
+
+  // overrides
+  .agenda {
+    padding-top: 36px;
+    &.attendee {
+      height: 100%;
+      .meeting {
+        height: 60px;
+        margin-bottom: 1px;
+        padding: 10px 40px;
+        width: 100%;
+        .location {
+          order: 5;
+        }
+        .title {
+          h2 {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+        }
+        .description {
+          display: none;
+        }
+        .people {
+          display: none;
+        }
+        .location {
+          left: 10px;
+          margin-top: -5px;
+          order: 5;
+          top: 50%;
+          a {
+            height: 10px;
+            padding: 0;
+            width: 10px;
+            @include border-radius(50%);
+            span {
+              display: none;
+            }
+          }
+        }
+        .track-name {
+          order: 1;
+          position: absolute;
+          left: 0;
+          top: 0;
+          left: 15px;
+          margin-top: -5px;
+          top: 50%;
+          span {
+            background: $blue;
+            color: transparent !important;
+            content: '.';
+            height: 10px;
+            padding: 0;
+            width: 10px;
+            @include border-radius(50%);
+          }
+        }
+        &.featured {
+          .people {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    &.no-picker {
+      padding-top: 0;
+    }
+    .listing {
+      padding: 0 0 50px 0;
+    }
+    .toolbar {
+      bottom: 0;
+      height: auto;
+      left: 0;
+      min-height: 50px;
+      padding: 0;
+      position: fixed;
+      right: 0;
+      top: initial;
+      width: 100%;
+    }
+    .switch {
+      float: none;
+      left: 50%;
+      position: absolute;
+      top: 10px;
+      transform: translate(-50%, 0);
+    }
+    .search {
+      display: none;
+    }
+  }
+  .pane {
+    &.expanded {
+      padding-top: 50px;
+      position: static;
+      width: 100%;
+      ul {
+        max-height: 200px;
+        min-height: 100px;
+        overflow: auto;
+      }
+    }
+  }
+
+  .sorting .pane-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .tracks .pane-toggle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  .dayswitcher {
+    height: 36px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}

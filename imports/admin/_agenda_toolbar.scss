@@ -2,15 +2,6 @@
 // Agenda toolbar and sliding panes
 
 .agenda {
-  height: 100%;
-  position: relative;
-  @include box-sizing(border-box);
-  @media screen and (max-width: 500px) {
-    padding-top: 36px;
-  }
-  @media screen and (min-width: 501px) {
-    padding-top: 86px;
-  }
   .toolbar {
     background: rgba($slate, 1);
     position: relative;
