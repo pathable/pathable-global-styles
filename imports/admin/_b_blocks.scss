@@ -312,6 +312,17 @@ $block-size: 50px;
 			.label {
 				display: none;
 			}
+			.toolbar {
+				[class*="Dropdown__root"] {
+					select {
+						height: 30px;
+						line-height: 22px;
+					}
+					span {
+						color: transparent;
+					}
+				}
+			}
 			.editor {
 				font-size: 12px;
 			}
