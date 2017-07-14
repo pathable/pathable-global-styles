@@ -312,7 +312,23 @@ $block-size: 50px;
 			.label {
 				display: none;
 			}
+			.toolbar {
+				[class*="Dropdown__root"] {
+					select {
+						height: 30px;
+						line-height: 22px;
+					}
+					span {
+						color: transparent;
+					}
+				}
+			}
 			.editor {
+				a span {
+					color: #29a0d1;
+					text-decoration: none;
+					transition: all, 0.4s;
+				}
 				font-size: 12px;
 			}
 			.button {
