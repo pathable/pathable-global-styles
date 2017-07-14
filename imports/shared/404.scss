@@ -1,0 +1,40 @@
+//
+// 404 Page Styles
+
+.broken-link {
+  @include center;
+  max-width: 600px;
+  @media screen and (max-width:800px) {
+    width: 80%;
+  }
+  width: 50%;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+  h1, h2, p {
+    margin: auto;
+    max-width: 500px;
+  }
+  h1 {
+    font-size: $size*4;
+    font-weight: 100;
+    line-height: 1;
+    margin-bottom: $size/8;
+  }
+  h2 {
+    color: $blue;
+    font-size: $size*1.2;
+    font-weight: 300;
+    margin-bottom: $size/4;
+  }
+  p {
+    color: #666;
+    font-size: 1.1em;
+    font-weight: 300;
+  }
+  .button {
+    display: inline-block;
+    margin: $size $size/5 0;
+  }
+}
