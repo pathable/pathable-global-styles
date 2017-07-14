@@ -324,6 +324,11 @@ $block-size: 50px;
 				}
 			}
 			.editor {
+				a span {
+					color: #29a0d1;
+					text-decoration: none;
+					transition: all, 0.4s;
+				}
 				font-size: 12px;
 			}
 			.button {
