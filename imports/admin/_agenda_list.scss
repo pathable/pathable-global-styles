@@ -196,7 +196,7 @@
 
   }
   &.attendee {
-    height: 50em;
+    height: 52em;
     .meeting {
       flex-flow: row wrap;
       height: 170px;
@@ -224,8 +224,8 @@
       }
       @media screen and (min-width: 1201px) {
         float: left;
-        margin-right: 0.333%;
-        width: 33%;
+        margin-right: 0.533%;
+        width: 32.8%;
         &:nth-of-type(3n) {
           margin-right: 0;
           width: 33.333%;
@@ -399,6 +399,7 @@
   .timeband {
     clear: both;
     color: $slate + #111;
+    font-size: 12px;
     font-weight: 600;
     height: 30px;
     line-height: 30px;
@@ -412,7 +413,7 @@
     box-shadow: (rgba($slate, 0.1) 1px 1px 0);
     display: flex;
     font-size: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
     padding: 10px 10px 10px 20px;
     width: 100%;
     @include border-radius(2px);
@@ -454,7 +455,7 @@
       // flex-grow: 5;
       h2 {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
         margin-bottom: 10px;
         padding-right: 20px;

@@ -160,7 +160,10 @@
       }
     }
     @media screen and (max-width:500px) {
-      display: none;
+      // display: none;
+      position: absolute;
+      right: 40px;
+      top: 10px;
     }
     .input {
       background: rgba(0,0,0,.1);
