@@ -59,10 +59,8 @@
     }
     .group-content {
       height: 100%;
+      overflow-y: auto !important;
       padding-top: 46px;
-      > [class*="container-"] {
-        overflow-y: auto !important;
-      }
     }
   }
   .group-footer {
