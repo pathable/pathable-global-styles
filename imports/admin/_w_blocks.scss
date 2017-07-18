@@ -58,11 +58,19 @@
 	}
 
 	a {
-		border: 5px solid #fff;
+		background: $white;
+		box-shadow: rgba($slate, 0.1) 1px 1px 0;
+		cursor: pointer;
 		display: block;
+		padding: 5px;
+		@include border-radius(2px);
 		@include pie-clearfix;
 		&:hover, &:focus, .w-selected & {
-			border-color: rgba($slate, 0.25);
+			background: rgba($slate, 0.7);
+			color: $white;
+			span {
+				color: $white;
+			}
 		}
 	}
 	img {
@@ -70,10 +78,9 @@
 		width: 100%;
 	}
 	span {
-		bottom: $size/2;
 		display: block;
-		left: 0;
-		position: absolute;
+		float: left;
+		padding-top: 4px;
 		text-align: center;
 		width: 100%;
 	}
