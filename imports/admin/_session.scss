@@ -85,7 +85,7 @@
   .checkbox {
     font-size: 0.9em;
     margin-bottom: 1.5em;
-    padding-left: 1em;
+    padding-left: 0;
     width: 100%;
     input {
       margin-right: 1em;
@@ -103,6 +103,11 @@
     margin-bottom: 1.5em;
     span {
       padding-left: 0;
+    }
+  }
+  .custom-checkbox {
+    .input-message {
+      margin: 0;
     }
   }
   &.wide {

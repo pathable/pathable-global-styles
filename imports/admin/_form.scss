@@ -207,7 +207,7 @@
     }
   }
   &:after {
-    font-family: linearicons;
+    font: 12px linearicons;
     height: 40px;
     line-height: 40px;
     position: absolute;
@@ -505,7 +505,7 @@
   white-space: nowrap;
   width: $checkbox-size;
   @include border-radius(2px);
-  label {
+  label, span {
     cursor: pointer;
     height: $checkbox-size;
     left: 0;
@@ -552,6 +552,82 @@
     }
   }
 }
+
+// Custom checkbox
+
+.custom-checkbox {
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="checkbox"]:not(:checked) + span,
+  [type="checkbox"]:checked + span {
+    position: relative;
+    padding-left: 2.25em;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + span:before,
+  [type="checkbox"]:checked + span:before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.6em; height: 1.6em;
+    border: none;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset -1px -1px 0 rgba($slate,.3);
+  }
+  /* checked mark aspect */
+  [type="checkbox"]:not(:checked) + span:after,
+  [type="checkbox"]:checked + span:after {
+    content: "\e934";
+    font-family: linearicons;
+    position: absolute;
+    top: .5em; left: .3em;
+    font-size: 1em;
+    line-height: 0.8;
+    color: #09ad7e;
+    transition: all .2s;
+  }
+  /* checked mark aspect changes */
+  [type="checkbox"]:not(:checked) + span:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  [type="checkbox"]:checked + span:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* disabled checkbox */
+  [type="checkbox"]:disabled:not(:checked) + span:before,
+  [type="checkbox"]:disabled:checked + span:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  [type="checkbox"]:disabled:checked + span:after {
+    color: #999;
+  }
+  [type="checkbox"]:disabled + span {
+    color: #aaa;
+  }
+  /* accessibility */
+  [type="checkbox"]:checked:focus + span:before,
+  [type="checkbox"]:not(:checked):focus + span:before {
+    box-shadow: inset -1px -1px 0 rgba($slate,.5);
+  }
+
+  /* hover style just for information */
+  span:hover:before {
+    box-shadow: inset -1px -1px 0 rgba($slate,.5);
+  }
+}
+
+
+
 
 // Icon checkbox
 
