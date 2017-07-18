@@ -312,25 +312,6 @@ $block-size: 50px;
 			.label {
 				display: none;
 			}
-			.toolbar {
-				[class*="Dropdown__root"] {
-					select {
-						height: 30px;
-						line-height: 22px;
-					}
-					span {
-						color: transparent;
-					}
-				}
-			}
-			.editor {
-				a span {
-					color: #29a0d1;
-					text-decoration: none;
-					transition: all, 0.4s;
-				}
-				font-size: 12px;
-			}
 			.button {
 				margin: 0;
 			}
@@ -445,7 +426,7 @@ $block-size: 50px;
 		.b-block-wtype {
 			opacity: 1;
 		}
-		.rte, .rte * {
+		.rte:not(a span), .rte:not(a span) * {
 			color: #444;
 			opacity: 1;
 		}

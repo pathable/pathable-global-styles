@@ -12,6 +12,12 @@
       display: block;
       float: none;
       width: auto;
+      height: 30px;
+      line-height: 22px;
+
+      + span {
+        color: transparent;
+      }
     }
   }
   .toolbar {
@@ -19,6 +25,14 @@
     > div {
       float: left;
     }
+  }
+  .editor {
+    a span {
+      color: #29a0d1;
+      text-decoration: none;
+      transition: all, 0.4s;
+    }
+    font-size: 12px;
   }
 }
 
