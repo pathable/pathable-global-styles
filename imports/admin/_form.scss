@@ -624,6 +624,11 @@
   span:hover:before {
     box-shadow: inset -1px -1px 0 rgba($slate,.5);
   }
+  .flexlist & {
+    [type="checkbox"] + span:before {
+      background: rgba($slate-light, 0.5);
+    }
+  }
 }
 
 

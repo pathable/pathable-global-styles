@@ -12,7 +12,7 @@
         height: 100%;
       }
     }
-    .agenda {
+    .agenda, .flexlist {
       height: 100%;
     }
     .group-footer {
@@ -27,11 +27,11 @@
   }
 
   // overrides
-  .agenda {
+  .agenda, .flexlist {
     padding-top: 36px;
     &.attendee {
       height: 100%;
-      .meeting {
+      .meeting, .flex-item {
         height: 60px;
         margin-bottom: 1px;
         padding: 10px 40px;
