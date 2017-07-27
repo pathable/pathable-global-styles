@@ -1,0 +1,119 @@
+// Mobile header widget
+
+.m-header {
+  background: $slate;
+  color: $white;
+  height: 50px;
+  position: relative;
+  &.expanded {
+    height: 100%;
+  }
+  i {
+    font-size: 20px;
+  }
+}
+
+.m-toggle {
+  color: $white;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 50px;
+  i {
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+  }
+}
+.m-title {
+  color: $white;
+  font-size: 13px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.m-nav-toggle {
+  left: 0;
+}
+
+.m-search-toggle {
+  right: 0;
+}
+
+.m-search {
+  background: $slate;
+  height: 50px;
+  padding: 10px 50px 10px 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @include box-sizing(border-box);
+  input {
+    background: rgba($black, 0.1);
+    border: none;
+    color: $white;
+    font-size: 13px;
+    height: 30px;
+    outline: none;
+    padding: 0 10px 0 30px;
+    width: 100%;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    &:active, &:focus {
+      background: $white;
+      color: $slate;
+    }
+  }
+  > i {
+    color: #999;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10px;
+    text-align: center;
+    top: 10px;
+    width: 30px;
+  }
+  a {
+    color: $white;
+    right: 0;
+  }
+}
+
+.m-nav {
+  background: $slate + #050505;
+}
+
+.m-list {
+  > li {
+    border-bottom: 1px solid $slate - #050505;
+    li {
+      border: none;
+    }
+  }
+  a {
+    color: rgba($white, 0.5);
+    display: block;
+    line-height: 40px;
+    padding: 0 10px;
+    i {
+      font-size: 15px;
+      line-height: 40px;
+      margin-right: 10px;
+      width: 20px;
+    }
+    &:hover, &:focus, .active {
+      background: $slate - #111;
+      color: $white;
+    }
+  }
+  .m-list {
+    a {
+      padding-left: 40px;
+    }
+  }
+}
