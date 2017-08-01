@@ -1068,8 +1068,10 @@
     width: 40px;
   }
   &:hover, &:focus {
-    background: $slate;
-    color: $white;
+    i {
+      background: $slate;
+      color: $white;
+    }
   }
   &:after {
     content: '';
