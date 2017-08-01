@@ -1047,6 +1047,7 @@
 
 // Field action
 .field-action {
+  background: $white;
   border-left: 1px solid $slate-light2;
   color: $slate;
   display: block;
@@ -1058,6 +1059,9 @@
   width: 40px;
   @include border-radius(2px);
   i {
+    background: $white;
+    box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
+    display: block;
     font-size: 15px;
     height: 40px;
     line-height: 40px;
@@ -1066,5 +1070,16 @@
   &:hover, &:focus {
     background: $slate;
     color: $white;
+  }
+  &:after {
+    content: '';
+    display: block;
+    height: 39px;
+    position: absolute;
+    right: 41px;
+    top: 0;
+    width: 60px;
+    // @include background-image(linear-gradient(left, transparent 0%, $white 100%));
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
   }
 }
