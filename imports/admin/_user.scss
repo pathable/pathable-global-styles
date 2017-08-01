@@ -1,0 +1,196 @@
+.user-header-widget {
+  background-image: url("/packages/pathable-styles/images/user-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 120px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 50px;
+  padding-top: 20px;
+  text-align: center;
+  .avatar {
+    img {
+      border: 5px $white solid;
+      box-shadow: rgba(0,0,0,0.07) 0 -2px 5px;
+      height: 140px;
+      object-fit: cover;
+      width: 140px;
+      @include border-radius(50%);
+    }
+  }
+  .actions {
+    position: absolute;
+    right: 20px;
+    top: 140px;
+    a {
+      background: $slate;
+      box-shadow: $slate - #999 -1px -1px 0 inset;
+      color: $white;
+      display: inline-block;
+      font-size: 15px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      width: 30px;
+      @include border-radius(2px);
+      i {
+        line-height: 30px;
+      }
+      &:hover, &:focus {
+        background: $blue;
+        color: $white;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      top: 20px;
+    }
+  }
+  .title {
+    color: $blue;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 10px 0 5px;
+  }
+  .description {
+    color: #999;
+    font-size: 12px;
+    font-weight: 300;
+    span {
+      color: #666;
+      font-size: 15px;
+      display: block;
+    }
+  }
+  .tags {
+    margin: 20px auto 20px;
+    li {
+      display: inline-block;
+    }
+    a {
+      background: $green;
+      color: $white;
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      line-height: 20px;
+      padding: 0 10px;
+      text-transform: uppercase;
+      @include border-radius(2px);
+      &:hover, &:focus {
+        background: $slate;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+
+  }
+}
+
+.user-details-widget {
+  margin-bottom: 20px;
+  p {
+    color: #888;
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    padding-right: 10%;
+  }
+  .large {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 500px) {
+    p {
+      padding: 0 10%;
+    }
+  }
+}
+
+.user-links-widget {
+  ul {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    max-width: 90%;
+  }
+  a {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: block;
+    font-size: 13px;
+    line-height: 40px;
+    padding: 0 10px;
+    @include box-sizing(border-box);
+    &:hover, &:focus {
+      color: $slate;
+      i {
+        margin-right: -5px;
+      }
+    }
+  }
+  span {
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 15px;
+  }
+  i {
+    float: right;
+    line-height: 40px;
+    transition: all 0.2s;
+  }
+  @media screen and (max-width: 500px) {
+    ul {
+      margin: 0 auto 30px;
+      width: 80%;
+    }
+  }
+}
+
+.user-list-agenda {
+  background: rgba($slate-light, 0.5);
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+  h2 {
+    color: #777;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 20px;
+    i {
+      float: right;
+      margin-top: 5px;
+    }
+  }
+  ul {
+    padding: 0 10px 10px;
+  }
+  a {
+    background: $white;
+    box-shadow: rgba($slate-light, 0.5) -1px -1px 0 inset;
+    display: block;
+    padding: 10px;
+    @include border-radius(2px);
+    &:hover, &:focus {
+      color: $slate;
+    }
+    b, span {
+      display: block;
+    }
+    b {
+      font-size: 13px;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+    span {
+      color: #999;
+      font-size: 11px;
+      font-weight: 300;
+      margin-bottom: 1px;
+    }
+  }
+}
+
+// container override, do not use
+.styleguide.spec-container {
+  .section {
+    clear: none;
+  }
+  .container {
+    margin: 0;
+  }
+}
