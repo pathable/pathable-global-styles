@@ -1044,3 +1044,27 @@
     float: none;
   }
 }
+
+// Field action
+.field-action {
+  border-left: 1px solid $slate-light2;
+  color: $slate;
+  display: block;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 40px;
+  @include border-radius(2px);
+  i {
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+  }
+  &:hover, &:focus {
+    background: $slate;
+    color: $white;
+  }
+}
