@@ -723,7 +723,7 @@
 }
 .agenda {
   &.admin {
-    .flex-item {
+    .flex-item, .meeting {
       .check {
         order: 1;
       }
