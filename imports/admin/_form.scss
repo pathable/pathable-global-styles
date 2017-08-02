@@ -277,6 +277,9 @@
       content: "\e92a";
     }
   }
+  &.hide {
+    display: none;
+  }
 }
 
 .field-group {
