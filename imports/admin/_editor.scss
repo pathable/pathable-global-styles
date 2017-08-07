@@ -1,11 +1,7 @@
 //
 // EDITOR
 
-.editor--root {
-
-}
-
-.editor--toolbar {
+.editor-toolbar {
   background: $slate-light + #333;
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px;
@@ -25,7 +21,7 @@
     text-align: center;
     width: 40px;
     @include border-radius(2px);
-    span, .fa {
+    span, i {
       color: $slate;
       display: block;
       float: none;
@@ -34,12 +30,12 @@
     &:hover, &:focus {
       background: $slate;
       color: $white;
-      span, .fa {
+      span, i {
         color: $white;
       }
     }
   }
-  .slate-alignment-plugin--button-bar, .slate-list-plugin--button-bar {
+  .editor-button-bar {
     float: left;
     margin-right: 5px;
     button {
@@ -55,7 +51,7 @@
   }
 }
 
-.editor--content {
+.editor-content {
   background: $white;
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px;
@@ -63,7 +59,7 @@
 }
 
 @media screen and (min-width: 1401px) {
-  .editor--content {
+  .editor-content {
     padding: 20px;
   }
 }
