@@ -22,7 +22,7 @@
     width: 40px;
     @include border-radius(2px);
     span, i {
-      color: $slate;
+      color: rgba($slate, 0.85);
       display: block;
       float: none;
       line-height: 30px;
@@ -32,6 +32,12 @@
       color: $white;
       span, i {
         color: $white;
+      }
+    }
+    &.active {
+      background: $slate-light - #222;
+      span, i {
+        color: $slate;
       }
     }
   }
