@@ -49,7 +49,7 @@
   }
 }
 
-[class*="section-"].group-layout {
+[class*="section-"].layouts {
   @media screen and (max-width: 500px) {
     height: 100%;
     text-align: center;
@@ -68,7 +68,7 @@
   }
 }
 
-[class*="section-"].group-layout.page-meetings {
+[class*="section-"].layouts.page-meetings {
   @media screen and (max-width: 500px) {
     .group-content {
       padding-top: 46px;
@@ -83,7 +83,7 @@
   }
 }
 
-[class*="section-"].group-layout.page-meeting-details {
+[class*="section-"].layouts.page-meeting-details {
   @media screen and (max-width: 500px) {
     .group-content {
       padding-top: 70px;
