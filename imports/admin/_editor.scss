@@ -74,6 +74,30 @@
       position: static;
       width: 20px;
     }
+
+    // Remove after old color picker wrapper is replaced with antd component
+    .color-overlay {
+      border: none;
+      display: block;
+      min-width: auto;
+      padding: 0;
+      right: initial;
+      top: 33px;
+      width: auto;
+      .sketch-picker {
+        @include border-radius(2px !important);
+        padding-bottom: 5px !important;
+        width: 300px !important;
+      }
+      input {
+        height: auto;
+        line-height: normal;
+        padding: 4px 5% 3px;
+        width: 70%;
+      }
+      // end remove
+
+    }
     &.unset {
       button {
         background: url("/packages/pathable-styles/images/transparent.png") no-repeat center;
