@@ -3,7 +3,7 @@
 
 .preview-mobile {
 
-  [class*="section-"].layouts.page-meetings {
+  [class*="section-"].group-page.page-meetings {
     height: 100%;
     .group-content {
       height: 100%;
@@ -19,7 +19,7 @@
       display: none;
     }
   }
-  .layouts {
+  .group-page {
     height: 100%;
     > [class*="container-"] {
       height: 100%;
