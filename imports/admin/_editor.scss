@@ -4,7 +4,7 @@
 .editor-toolbar {
   background: $slate-light + #333;
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
-  padding: 10px;
+  padding: 10px 10px 5px;
   @include pie-clearfix;
   button {
     background: $slate-light;
@@ -46,6 +46,7 @@
   }
   .editor-button-bar {
     float: left;
+    margin-bottom: 5px;
     margin-right: 5px;
     @include pie-clearfix;
     button {
@@ -74,7 +75,6 @@
       position: static;
       width: 20px;
     }
-
     // Remove after old color picker wrapper is replaced with antd component
     .color-overlay {
       border: none;
@@ -94,9 +94,7 @@
         padding: 4px 5% 3px;
         width: 70%;
       }
-      // end remove
-
-    }
+    } // end remove
     &.unset {
       button {
         background: url("/packages/pathable-styles/images/transparent.png") no-repeat center;
@@ -112,6 +110,26 @@
   }
 
 }
+// Remove after old color picker wrapper is replaced with antd component
+.color-overlay {
+  border: none;
+  min-width: auto;
+  padding: 0;
+  right: initial;
+  top: 33px;
+  width: auto;
+  .sketch-picker {
+    @include border-radius(2px !important);
+    padding-bottom: 5px !important;
+    width: 300px !important;
+  }
+  input {
+    height: auto;
+    line-height: normal;
+    padding: 4px 5% 3px !important;
+    width: 70% !important;
+  }
+} // end remove
 
 .editor-content {
   background: $white;
