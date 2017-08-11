@@ -1,0 +1,48 @@
+// NOTE: Temporary styles until we have jss translation
+
+.attendees-item {
+  width: 100% !important;
+}
+
+.attendees-search {
+  float: right;
+  margin-right: 10px;
+  position: relative;
+  &:hover, &:focus {
+    .input {
+      background: $slate - #111;
+      color: $slate;
+    }
+  }
+  @media screen and (max-width:500px) {
+    // display: none;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+  }
+  .input {
+    background: rgba(0,0,0,.1);
+    border: none;
+    box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+    color: $white;
+    height: 30px;
+    padding-left: 30px;
+    width: 100%;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    &:focus {
+      background: $slate - #111;
+    }
+  }
+  i {
+    color: $slate-light;
+    display: block;
+    height: 30px;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 30px;
+  }
+}
