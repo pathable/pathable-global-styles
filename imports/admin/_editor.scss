@@ -4,7 +4,7 @@
 .editor-toolbar {
   background: $slate-light + #333;
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
-  padding: 10px;
+  padding: 10px 10px 5px;
   @include pie-clearfix;
   button {
     background: $slate-light;
@@ -41,9 +41,14 @@
       }
     }
   }
+  span.label {
+    display: none;
+  }
   .editor-button-bar {
     float: left;
+    margin-bottom: 5px;
     margin-right: 5px;
+    @include pie-clearfix;
     button {
       margin-right: 0;
       @include border-radius(0);
@@ -55,7 +60,76 @@
       }
     }
   }
+  .font-family-picker, .font-size-picker {
+    background: $slate-light;
+    min-width: 0 !important;
+  }
+  .font-color-picker {
+    background: $slate-light;
+    border: none;
+    box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
+    width: 30px !important;
+    .color-preview {
+      height: 20px;
+      margin: 5px;
+      position: static;
+      width: 20px;
+    }
+    // Remove after old color picker wrapper is replaced with antd component
+    .color-overlay {
+      border: none;
+      min-width: auto;
+      padding: 0;
+      right: initial;
+      top: 33px;
+      width: auto;
+      .sketch-picker {
+        @include border-radius(2px !important);
+        padding-bottom: 5px !important;
+        width: 300px !important;
+      }
+      input {
+        height: auto;
+        line-height: normal;
+        padding: 4px 5% 3px;
+        width: 70%;
+      }
+    } // end remove
+    &.unset {
+      button {
+        background: url("/packages/pathable-styles/images/transparent.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+  .font-family-picker {
+    width: 120px;
+  }
+  .font-size-picker {
+    width: 60px ;
+  }
+
 }
+// Remove after old color picker wrapper is replaced with antd component
+.color-overlay {
+  border: none;
+  min-width: auto;
+  padding: 0;
+  right: initial;
+  top: 33px;
+  width: auto;
+  .sketch-picker {
+    @include border-radius(2px !important);
+    padding-bottom: 5px !important;
+    width: 300px !important;
+  }
+  input {
+    height: auto;
+    line-height: normal;
+    padding: 4px 5% 3px !important;
+    width: 70% !important;
+  }
+} // end remove
 
 .editor-content {
   background: $white;
@@ -92,4 +166,9 @@
   .editor-content {
     padding: 20px;
   }
+}
+
+span.label + .editor {
+  float: left;
+  width: 75%;
 }
