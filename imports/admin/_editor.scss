@@ -47,6 +47,7 @@
   .editor-button-bar {
     float: left;
     margin-right: 5px;
+    @include pie-clearfix;
     button {
       margin-right: 0;
       @include border-radius(0);
@@ -58,6 +59,35 @@
       }
     }
   }
+  .font-family-picker, .font-size-picker {
+    background: $slate-light;
+    min-width: 0 !important;
+  }
+  .font-color-picker {
+    background: $slate-light;
+    border: none;
+    box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
+    width: 30px !important;
+    .color-preview {
+      height: 20px;
+      margin: 5px;
+      position: static;
+      width: 20px;
+    }
+    &.unset {
+      button {
+        background: url("/packages/pathable-styles/images/transparent.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+  .font-family-picker {
+    width: 120px;
+  }
+  .font-size-picker {
+    width: 60px ;
+  }
+
 }
 
 .editor-content {

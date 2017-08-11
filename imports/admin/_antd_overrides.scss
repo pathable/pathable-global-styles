@@ -2,7 +2,7 @@
 // AntD Overrides
 
 
-// Date/calendar picker
+// Date picker
 .ant-calendar-picker {
   width: 100% !important;
   > span {
@@ -32,6 +32,8 @@
     vertical-align: middle;
   }
 }
+
+// Time picker
 .ant-time-picker-input {
   @extend .input;
 }
@@ -41,21 +43,33 @@
 .ant-time-picker {
   width: 100%;
 }
+
+// Select
 .ant-select {
   @media screen and (max-width: 500px) {
     width: 100%;
   }
 }
 .ant-select-selection {
-  @extend .b-block-style;
+  background: $slate-light;
   border: none;
+  box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
   line-height: 40px;
   height: 40px;
   width: 100%;
+  .editor-toolbar & {
+    background: $slate-light;
+    height: 30px;
+    line-height: 30px;
+  }
 }
 .ant-select-selection__rendered, .ant-select-selection-selected-value {
   height: 40px;
   line-height: 40px;
+  .editor-toolbar & {
+    height: 30px;
+    line-height: 30px;
+  }
 }
 .ant-calendar-picker-input {
   margin-bottom: 0 !important;
