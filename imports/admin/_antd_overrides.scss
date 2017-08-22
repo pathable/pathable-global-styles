@@ -92,3 +92,31 @@
   line-height: 30px !important;
   width: 100% !important;
 }
+
+// Popover
+
+.ant-popover-inner {
+  background: $slate-light2;
+  @include pie-clearfix;
+  input {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 5px;
+  }
+  button {
+    @extend .button--success;
+    float: right;
+    height: 35px;
+    outline: none;
+  }
+}
+.ant-popover-inner-content {
+  padding: 5px 8px;
+  > div {
+    @include pie-clearfix;
+  }
+}
+.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow:after, .ant-popover-placement-bottomLeft > .ant-popover-content > .ant-popover-arrow:after, .ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow:after {
+  border-bottom-color: $slate-light;
+}
