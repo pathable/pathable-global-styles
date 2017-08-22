@@ -136,6 +136,16 @@
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px;
   @include border-radius(2px);
+  > div {
+    cursor: text;
+  }
+  a {
+    color: $blue;
+    text-decoration: underline;
+    &:hover, &:focus {
+      color: $orange !important;
+    }
+  }
   b {
     font-weight: bold;
   }
