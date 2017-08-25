@@ -496,11 +496,13 @@
     }
   }
   &.minimized {
-    a {
-      height: 35px;
-    }
-    small {
-      display: none;
+    @media screen and (max-width: 500px) {
+      a {
+        height: 35px;
+      }
+      small {
+        display: none;
+      }
     }
   }
 }
