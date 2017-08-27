@@ -170,6 +170,27 @@
      list-style-position: inside;
      margin-left: 15px;
   }
+
+  .ant-popover-inner {
+    background: $slate-light2;
+    @include pie-clearfix;
+    input {
+      float: left !important; // FIXME
+      width: auto !important; // FIXME
+      height: 35px !important; // FIXME
+      line-height: 35px !important; // FIXME
+      margin-right: 5px !important; // FIXME
+    }
+    button {
+      @extend .button--success;
+      float: right !important; // FIXME
+      height: 35px !important; // FIXME
+      outline: none !important; // FIXME
+    }
+    .hide {
+      display: none !important; // FIXME
+    }
+  }
 }
 
 @media screen and (min-width: 1401px) {
