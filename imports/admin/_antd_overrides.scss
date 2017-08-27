@@ -113,7 +113,7 @@
 }
 .ant-popover-inner-content {
   padding: 5px 8px;
-  > form {
+  > div {
     @include pie-clearfix;
     overflow: hidden;
   }
