@@ -153,4 +153,10 @@
   }
 }
 
-.preview-desktop {}
+.preview-desktop {
+  [class*="section-"].group-page-layout.page-meetings {
+    .group-footer {
+      display: none;
+    }
+  }
+}
