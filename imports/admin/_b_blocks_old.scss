@@ -133,7 +133,7 @@
 			top: 1.5em;
 			white-space: normal;
 		}
-		.field.inline .rte {
+		.field.inline .rich-text {
 			width: 100%;
 			@include text-shadow(none);
 			.label {
@@ -265,7 +265,7 @@
 				display: none;
 			}
 		}
-		.rte, .rte * {
+		.rich-text, .rich-text * {
 			color: #444;
 			opacity: 1;
 		}

@@ -306,7 +306,7 @@ $block-size: 50px;
 			top: 1.5em;
 			white-space: normal;
 		}
-		.field.inline .rte {
+		.field.inline .rich-text {
 			width: 100%;
 			@include text-shadow(none);
 			.label {
@@ -429,7 +429,7 @@ $block-size: 50px;
 		.b-block-wtype {
 			opacity: 1;
 		}
-		.rte:not(a span), .rte:not(a span) * {
+		.rich-text:not(a span), .rich-text:not(a span) * {
 			color: #444;
 			opacity: 1;
 		}
