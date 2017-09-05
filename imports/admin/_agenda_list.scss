@@ -5,6 +5,7 @@
     height: 85%;
   }
 }
+
 .agenda, .flexlist {
   background: $slate-light2;
   height: 100%;
@@ -547,6 +548,14 @@
         width: 30px;
         @include border-radius(2px);
       }
+    }
+  }
+}
+
+.preview-desktop {
+  .agenda, .flexlist {
+    &.attendee {
+      height: 150em;
     }
   }
 }
