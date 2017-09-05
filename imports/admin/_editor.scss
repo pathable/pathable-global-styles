@@ -136,6 +136,7 @@
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px;
   @include border-radius(2px);
+  word-break: break-all;
   > div {
     cursor: text;
   }
