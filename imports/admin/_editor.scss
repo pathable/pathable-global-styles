@@ -191,6 +191,14 @@
       display: none !important; // FIXME
     }
   }
+
+  .flow-node {
+    overflow: hidden;
+    > .pivot {
+      position: relative;
+      z-index: 1;
+    }
+  }
 }
 
 @media screen and (min-width: 1401px) {
