@@ -192,6 +192,11 @@
     }
   }
 
+  .flow-resizable {
+    position: relative !important;
+    transform: none !important;
+  }
+
   .flow-node {
     overflow: hidden;
     > .pivot {
