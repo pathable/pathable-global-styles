@@ -1,7 +1,8 @@
 //
 // Agenda toolbar and sliding panes
 
-.agenda, .flexlist {
+.agenda,
+.flexlist {
   .toolbar {
     background: rgba($slate, 1);
     position: relative;
@@ -29,7 +30,6 @@
     }
   }
   .tracks {
-
     .main-track {
       &:before {
         background: $blue;
@@ -55,7 +55,8 @@
         @include border-radius(50%);
       }
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .pane-toggle {
         background: $slate - #111;
       }
@@ -68,7 +69,8 @@
       padding-left: 10px;
       position: relative;
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .pane-toggle {
         background: $slate - #111;
       }
@@ -101,8 +103,8 @@
       }
     }
     a {
-      background: rgba(0,0,0,.1);
-      box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+      background: rgba(0, 0, 0, 0.1);
+      box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
       color: $white;
       cursor: pointer;
       display: block;
@@ -123,8 +125,8 @@
       transform: translate(-50%, 0);
     }
     a {
-      background: rgba(0,0,0,0.1);
-      box-shadow: (rgba(0,0,0,0.1) -1px -1px 0 inset);
+      background: rgba(0, 0, 0, 0.1);
+      box-shadow: (rgba(0, 0, 0, 0.1) -1px -1px 0 inset);
       color: $slate-light2;
       display: inline-block;
       font-weight: 300;
@@ -143,7 +145,8 @@
         @include border-radius(2px);
         @include text-shadow(rgba(0,0,0,0.1) 1px 1px 1px);
       }
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $slate - #111;
         color: $white;
       }
@@ -153,22 +156,23 @@
     float: right;
     margin-right: 10px;
     position: relative;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .input {
         background: $slate - #111;
         color: $slate;
       }
     }
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       // display: none;
       position: absolute;
       right: 40px;
       top: 10px;
     }
     .input {
-      background: rgba(0,0,0,.1);
+      background: rgba(0, 0, 0, 0.1);
       border: none;
-      box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+      box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
       color: $white;
       height: 30px;
       padding-left: 30px;
@@ -230,7 +234,7 @@
     @include pie-clearfix;
   }
   li {
-    border-bottom: 1px solid rgba(0,0,0,0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     position: relative;
     &:last-child {
       margin-bottom: 0;
@@ -254,16 +258,16 @@
     padding: 0 20px 0 10px;
     position: relative;
     text-align: left;
-    &:hover, &:focus {
-      background: rgba(0,0,0,0.07);
+    &:hover {
+      background: rgba(0, 0, 0, 0.07);
       color: $orange;
     }
     &:before {
       margin-right: 5px;
     }
     &:after {
-      color: rgba(255,255,255,0.3);
-      content: "\e95b";
+      color: rgba(255, 255, 255, 0.3);
+      content: '\e95b';
       font-family: linearicons;
       font-size: 12px;
       position: absolute;
@@ -273,7 +277,7 @@
     &.checked {
       &:after {
         color: rgba($white, 0.6);
-        content: "\e959";
+        content: '\e959';
       }
     }
     i {
@@ -316,7 +320,7 @@
       // padding: 6px 15px;
       &.button--light {
         background: transparent;
-        border: 1px solid rgba(255,255,255,0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         color: $white;
       }
     }
@@ -348,8 +352,8 @@
 }
 
 .pane-toggle {
-  background: rgba(0,0,0,.1);
-  box-shadow: rgba(0,0,0,.1) -1px -1px 0 inset;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
   color: $white;
   cursor: pointer;
   display: block;
@@ -364,7 +368,8 @@
   i {
     line-height: 10px;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $slate - #111;
     .main-track {
       @include border-bottom-radius(0);
@@ -397,17 +402,17 @@
 .triangle {
   @media screen and (min-width: 501px) {
     &:after {
-    	border: solid transparent;
-    	content: " ";
-    	height: 0;
+      border: solid transparent;
+      content: ' ';
+      height: 0;
       top: -4px;
-    	width: 0;
-    	position: absolute;
-    	pointer-events: none;
-    	border-color: rgba(136, 183, 213, 0);
-    	border-bottom-color: $slate - #111;
-    	border-width: 7px;
-    	margin-left: -7px;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-bottom-color: $slate - #111;
+      border-width: 7px;
+      margin-left: -7px;
     }
     &.left {
       &:after {
@@ -464,7 +469,8 @@
     line-height: 0.9;
     padding: 10px 0;
     @include box-sizing(border-box);
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: $slate;
       color: $orange;
     }

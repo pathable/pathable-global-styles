@@ -171,25 +171,68 @@
      list-style-position: inside;
      margin-left: 15px;
   }
+  .b-block-row.editable .b-block-content .rte-form .inline.field  & {
+    .ant-popover-inner {
+      background: $slate-light2;
+      @include pie-clearfix;
+      input {
+        float: left; // FIXME
+        width: auto; // FIXME
+        height: 35px; // FIXME
+        line-height: 35px; // FIXME
+        margin-right: 5px; // FIXME
+      }
+      button {
+        @extend .button--success;
+        float: left; // FIXME
+        height: 35px; // FIXME
+        outline: none; // FIXME
+      }
+      .hide {
+        display: none; // FIXME
+      }
+    }
 
-  .ant-popover-inner {
-    background: $slate-light2;
-    @include pie-clearfix;
-    input {
-      float: left !important; // FIXME
-      width: auto !important; // FIXME
-      height: 35px !important; // FIXME
-      line-height: 35px !important; // FIXME
-      margin-right: 5px !important; // FIXME
+    .flow-resizable {
+      position: relative !important;
+      transform: none !important;
     }
-    button {
-      @extend .button--success;
-      float: right !important; // FIXME
-      height: 35px !important; // FIXME
-      outline: none !important; // FIXME
+
+    .flow-node {
+      overflow: hidden;
+      > .pivot {
+        position: relative;
+        z-index: 1;
+      }
     }
-    .hide {
-      display: none !important; // FIXME
+    .image-controls {
+      @include pie-clearfix;
+      .size-controls {
+        float: left;
+        @include pie-clearfix;
+        input {
+          box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
+          margin-right: 0;
+          width: 60px;
+        }
+        button {
+          background: $white;
+          box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
+          color: $slate;
+        }
+      }
+      .flow-controls {
+        @include pie-clearfix;
+        float: right;
+        margin-left: 30px;
+      }
+      button {
+        background: rgba($slate, 0.7);
+        padding: .9em 0.7em;
+        &.active {
+          background: $slate;
+        }
+      }
     }
   }
 }

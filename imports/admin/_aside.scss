@@ -3,7 +3,6 @@
 
 .sidebar {
 	bottom: 0;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -21,9 +20,12 @@
 		background: #eee;
 		border-left: 1px solid $border-light;
 		width: 400px;
-		overflow-y: auto;
-
-
+		&.collapsed {
+			width: 0;
+			.preview-controls, .themeScrollbar {
+				display: none;
+			}
+		}
 		&.preview-desktop {
 			.themeOuterContainer {
 				margin: $size/2 $size/2 0;
