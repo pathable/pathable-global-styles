@@ -154,7 +154,9 @@
 }
 
 .preview-desktop {
-  .group-footer {
-    display: none;
+  [class*="section-"].group-page-layout.page-meetings {
+    .group-footer {
+      display: none;
+    }
   }
 }
