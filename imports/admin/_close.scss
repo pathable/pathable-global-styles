@@ -73,14 +73,14 @@
 
 #right-close {
 	left: -$size;
-	.icon-chevron-left {
+	.icon-chevron-right {
 		display: none;
 	}
 	&.open {
-		.icon-chevron-left {
+		.icon-chevron-right {
 			display: inline;
 		}
-		.icon-chevron-right {
+		.icon-chevron-left {
 			display: none;
 		}
 	}
