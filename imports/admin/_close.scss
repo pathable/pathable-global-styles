@@ -2,15 +2,15 @@
 // OPEN/CLOSE PANELS
 
 #left-close, #right-close {
-	position: absolute;
 	bottom: 10px;
+	cursor: pointer;
+	position: absolute;
 	.session & {
 		display: none;
 	}
 }
 
 #left-close {
-	cursor: pointer;
 	right: -$size;
 	.icon-chevron-right {
 		display: none;
@@ -72,7 +72,7 @@
 }
 
 #right-close {
-	left: -$size * 2;
+	left: -$size;
 	.icon-chevron-left {
 		display: none;
 	}
