@@ -635,6 +635,7 @@ $block-size: 50px;
 	}
 	i {
 		font-size: $size;
+		line-height: $block-size;
 		margin-right: .5em;
 	}
 }

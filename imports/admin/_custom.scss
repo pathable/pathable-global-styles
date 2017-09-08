@@ -65,6 +65,12 @@
       display: none;
     }
   }
+  .group-content .group-columns > [class*="container-"] {
+    display: flex;
+    @media screen and (max-width: 500px) {
+      display: block;
+    }
+  }
 }
 
 [class*="section-"].group-page-layout.page-meetings {
