@@ -136,6 +136,7 @@
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px;
   @include border-radius(2px);
+  @include pie-clearfix;
   word-break: break-all;
   > div {
     cursor: text;
@@ -196,10 +197,37 @@
     .flow-resizable {
       position: relative !important;
       transform: none !important;
+      &.active {
+        .image-node {
+          border: 1px solid $blue;
+          @include box-sizing(border-box);
+        }
+        .corner-node {
+          &:after {
+            background: $blue;
+            border: 1px solid $white;
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: 7.5px;
+            left: 7.5px;
+          }
+        }
+      }
     }
 
     .flow-node {
-      overflow: hidden;
+      @include pie-clearfix;
+      &[data-flow="left"] {
+        float: left;
+        padding-right: 10px;
+      }
+      &[data-flow="right"] {
+        float: right;
+        padding-left: 10px;
+      }
       > .pivot {
         position: relative;
         z-index: 1;
