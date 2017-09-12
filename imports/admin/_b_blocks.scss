@@ -178,9 +178,19 @@ $block-size: 50px;
 	}
 }
 
+// Block free spot
+.b-block-free-spot {
+	width: 100%;
+	height: $size/4;
+	&.over {
+		height: auto;
+		background-color: blue;
+		color: white;
+	}
+}
+
 // Block row
 .b-block-row {
-	margin-bottom: $size/4;
 	@include pie-clearfix;
 	&:last-child {
 		margin-bottom: 0;
