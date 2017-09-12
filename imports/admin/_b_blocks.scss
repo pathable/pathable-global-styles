@@ -11,6 +11,10 @@ $block-size: 50px;
 	&.twothirds {
 		width: 66.666%;
 	}
+
+	& .b-block-free-spot ~ .b-block-row {
+		margin: 0;
+	}
 }
 
 // Block columns controls
@@ -192,6 +196,7 @@ $block-size: 50px;
 // Block row
 .b-block-row {
 	@include pie-clearfix;
+	margin: $size/3 0;
 	&:last-child {
 		margin-bottom: 0;
 	}
