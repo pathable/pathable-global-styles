@@ -471,6 +471,7 @@
 }
 
 .global-search {
+  position: relative;
   input {
     @extend .input;
     @extend .input-icon--search;
@@ -478,7 +479,7 @@
     color: $blue;
     height: 30px;
     line-height: normal;
-    padding: 0 1.5em;
+    padding: 0 1.5em 0 2.5em;
     @include input-placeholder {
       color: $blue;
     }
@@ -490,11 +491,13 @@
     }
   }
   [class^="icon-"], [class*="icon-"] {
-    color: $blue - #111;
     height: 30px;
+    left: 10px;
     line-height: 30px;
     opacity: 1;
     top: 0;
+    position: absolute;
+    z-index: 1;
     @include scale(1.25);
   }
 }
