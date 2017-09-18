@@ -61,10 +61,11 @@
     }
   }
   .font-family-picker, .font-size-picker {
+    float: left;
     background: $slate-light;
     min-width: 0 !important;
   }
-  .font-color-picker {
+  .font-color-picker, .font-background-color-picker {
     background: $slate-light;
     border: none;
     box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
