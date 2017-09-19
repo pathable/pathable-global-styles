@@ -469,8 +469,10 @@
     line-height: 0.9;
     padding: 10px 0;
     @include box-sizing(border-box);
-    &:hover,
     &:focus {
+      color: $slate-light2;
+    }
+    &:hover {
       background: $slate;
       color: $orange;
     }
