@@ -821,6 +821,40 @@
       display: block;
     }
   }
+  &.with-arrow {
+    padding: 0 8px 0 3px;
+
+    &:hover, &.active {
+      background-color: #eeeff0;
+    }
+    &:focus, &:active {
+      border-color: #49a9ee;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+      .color-arrow {
+        transform: scale(0.75) rotate(180deg);
+        transition: transform 0.2s ease;
+      }
+    }
+    .color-preview {
+      margin-right: 9px !important;
+    }
+    .color-arrow {
+      display: inline-block;
+      height: 29px;
+      line-height: 29px;
+      color: rgba(0, 0, 0, 0.65);
+      font-size: 12px;
+      text-align: center;
+      transform: scale(0.75) rotate(0deg);
+      transition: transform 1s ease;
+    }
+    .color-arrow:before {
+      content: '\e61d';
+      display: block;
+      font-family: "anticon" !important;
+    }
+  }
   .field.inline & {
     float: left;
     width: 75%;
