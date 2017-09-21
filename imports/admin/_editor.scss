@@ -60,6 +60,24 @@
       }
     }
   }
+  .radio-group {
+    width: 100%;
+    .radio-field {
+      height: 30px;
+      line-height: 30px;
+      input[type="radio"]:checked + label span {
+        background: $slate-light2;
+        box-shadow: rgba($slate, 0.3) 0 -1px 3px 0 inset;
+        font-weight: bold;
+      }
+      input[type="radio"] + label span {
+        background: $slate-light;
+      }
+      span {
+        padding: 0 10px;
+      }
+    }
+  }
   .font-family-picker, .font-size-picker {
     float: left;
     background: $slate-light;
@@ -293,5 +311,30 @@ span.label + .editor {
 .code-editor {
   pre {
     white-space: pre-wrap;
+  }
+}
+
+// Advanced color picker control
+
+$adv-color: $slate;
+$adv-highlight: transparent;
+
+.editor-toolbar .adv-color-picker {
+  b {
+    background: $adv-highlight;
+    border-bottom: 3px solid $adv-color;
+    color: $adv-color;
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 10px;
+    width: 20px;
+    @include box-sizing(border-box);
+  }
+  &:hover, &:focus {
+    background: $slate-light2;
   }
 }
