@@ -436,7 +436,7 @@
         line-height: 20px;
         margin-bottom: 10px;
         padding-right: 20px;
-        color: rgba($slate, 0.5);
+        color: rgba($slate, 0.8);
       }
     }
     .description {
@@ -459,20 +459,25 @@
     .speaker {
       color: #999;
       display: inline-block;
-      margin-right: 10px;
+      margin-right: 15px;
       white-space: nowrap;
       img {
         display: inline;
         float: left;
-        height: 20px;
+        height: 30px;
         margin-right: 7px;
         object-fit: cover;
-        width: 20px;
+        width: 30px;
         @include border-radius(50%);
       }
       span {
         float: left;
-        line-height: 20px;
+        line-height: 15px;
+      }
+      em {
+        display: block;
+        font-size: 10px;
+        opacity: 0.7;
       }
       &:last-of-type {
         margin-right: 0;
