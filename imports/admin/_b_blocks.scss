@@ -329,7 +329,7 @@ $block-size: 50px;
 			}
 		}
 		// delete 1
-		.input, .select, .ant-select {
+		.input, .select {
 			background-color: $white;
 			display: block;
 			height: 40px;
@@ -345,10 +345,10 @@ $block-size: 50px;
 		.ant-select {
 			min-width: 0 !important;
 			width: 100%;
-		}
-		.ant-select-selection {
-			box-shadow: -1px -1px 0 rgba($slate, 0.3) inset;
-			@include border-radius(2px);
+			.ant-select-selection {
+				box-shadow: -1px -1px 0 rgba($slate, 0.2) inset;
+				@include border-radius(2px);
+			}
 		}
 
 		span.label {
@@ -404,7 +404,7 @@ $block-size: 50px;
 			}
 		}
 		.b-block-devices {
-			padding: 0 14px;
+			padding: 14px 0;
 		}
 		.b-block-actions {
 			padding: 0;
@@ -492,7 +492,7 @@ $block-size: 50px;
 
 .b-block-style {
 	background: #fff;
-	box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
+	box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
 	@include border-radius(2px);
 	@include transition(all .4s);
 	&:hover, &:focus {

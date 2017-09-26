@@ -6,10 +6,10 @@
   box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   padding: 10px 10px 5px;
   @include pie-clearfix;
-  button {
+  button, .button {
     background: $slate-light;
     border: none;
-    box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
+    box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
     cursor: pointer;
     display: inline-block;
     float: left;
@@ -21,6 +21,9 @@
     text-align: center;
     width: 40px;
     @include border-radius(2px);
+    .b-block-row.editable & {
+      height: 30px;
+    }
     span, i {
       color: rgba($slate, 0.85);
       display: block;
@@ -67,7 +70,7 @@
       line-height: 30px;
       input[type="radio"]:checked + label span {
         background: $slate-light2;
-        box-shadow: rgba($slate, 0.3) 0 -1px 3px 0 inset;
+        box-shadow: rgba($slate, 0.2) 0 -1px 3px 0 inset;
         font-weight: bold;
       }
       input[type="radio"] + label span {
@@ -86,12 +89,12 @@
   .font-color-picker, .font-background-color-picker {
     background: $slate-light;
     border: none;
-    box-shadow: rgba($slate, 0.1) -1px -1px 0 inset;
+    box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
     width: 30px !important;
     &.with-arrow {
       width: 57px !important;
     }
-    .color-preview {
+    button.color-preview {
       height: 20px;
       margin: 5px;
       position: static;
@@ -135,10 +138,10 @@
     }
   }
   .font-family-picker {
-    width: 120px;
+    width: 120px !important;
   }
   .font-size-picker {
-    width: 60px ;
+    width: 60px !important;
   }
 
 }

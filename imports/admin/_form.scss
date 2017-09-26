@@ -6,7 +6,7 @@
 .input {
   background: #fff;
   border: none;
-  box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
+  box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
   font-size: 1em;
   font-weight: 300;
   height: 40px;
@@ -713,7 +713,7 @@
   display: table-cell;
   white-space: nowrap;
   &:last-of-type input[type="radio"] + label span {
-    box-shadow: rgba($slate, 0.3) 0 -1px 0 inset;
+    box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
   }
   input[type="radio"] {
     display:none;
@@ -731,7 +731,7 @@
   }
   input[type="radio"] + label span {
     background-color: $slate-light2;
-    box-shadow: rgba($slate, 0.3) 0 -1px 0 inset;
+    box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
     cursor: pointer;
     display: block;
     padding: 0 $size/3.3;
@@ -759,7 +759,7 @@
 
   input[type="radio"]:checked + label span {
     background-color: #fff;
-    box-shadow: rgba($slate, 0.3) 0 -1px 0 inset;
+    box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
     color: $slate;
     .btn-controls & {
       padding: $size/2.5 $size/1.5;
@@ -777,7 +777,7 @@
   }
   &:last-child {
     input[type="radio"]:checked + label span {
-      box-shadow: rgba($slate, 0.3) -1px -1px 0 inset;
+      box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
     }
     span {
       @include border-right-radius(2px);
