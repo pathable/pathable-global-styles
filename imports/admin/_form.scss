@@ -963,6 +963,11 @@
 // File Picker
 .field-picker {
   @include pie-clearfix;
+  &.right-adjust {
+    .file-picker {
+      float: right;
+    }
+  }
 }
 .file-picker {
   float: left;

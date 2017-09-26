@@ -275,7 +275,7 @@ $block-size: 50px;
 		.b-block-content {
 			background: $slate-light;
 			height: auto;
-			padding: $size $size $size;
+			padding: $size;
 			.field:after {
 				height: 40px;
 				line-height: 40px;
@@ -283,6 +283,14 @@ $block-size: 50px;
 		}
 		.b-block-handle {
 			line-height: normal;
+		}
+		.b-block-form {
+			margin: -$size 0;
+			height: 40px;
+			padding: 10px;
+			.b-block-buttons .button {
+				margin: 0;
+			}
 		}
 		// delete 1
 		.b-block-linetext {
@@ -321,13 +329,11 @@ $block-size: 50px;
 			}
 		}
 		// delete 1
-		.input, .select {
+		.input, .select, .ant-select {
 			background-color: $white;
 			display: block;
-			height: 3.3em;
-			line-height: 3.3em;
-			margin: -$size/2 0;
-			padding: 0 1.2em;
+			height: 40px;
+			line-height: 40px;
 			position: relative;
 			width: 45%;
 			@include border-radius(2px);
@@ -336,13 +342,21 @@ $block-size: 50px;
 				border-color: $slate;
 			}
 		}
+		.ant-select {
+			min-width: 0 !important;
+			width: 100%;
+		}
+		.ant-select-selection {
+			box-shadow: -1px -1px 0 rgba($slate, 0.3) inset;
+			@include border-radius(2px);
+		}
 
 		span.label {
 			display: none;
 		}
 		.button {
 			font-size: 1em;
-			margin: -$size/2 0;
+			height: 40px;
 			text-transform: uppercase;
 			i {
 				position: static;
@@ -389,6 +403,9 @@ $block-size: 50px;
 				color: #fff;
 			}
 		}
+		.b-block-devices {
+			padding: 0 14px;
+		}
 		.b-block-actions {
 			padding: 0;
 			.button {
@@ -397,7 +414,7 @@ $block-size: 50px;
 				padding-top: 0;
 			}
 		}
-	}
+	} // editable
 	&.group {
 		// -webkit-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
 		// -moz-box-shadow: 3px 3px 0 0 rgba(204,204,204,1);
@@ -1163,5 +1180,15 @@ $block-size: 50px;
 			background: $slate;
 			color: $white;
 		}
+	}
+}
+
+// Empty block, full column
+.b-block-empty {
+	@include pie-clearfix;
+	height: 300px;
+	width: 100%;
+	.no-content {
+		width: 60%;
 	}
 }

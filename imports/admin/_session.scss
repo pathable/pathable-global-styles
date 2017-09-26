@@ -112,7 +112,7 @@
   }
   &.wide {
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 45%;
     @media screen and (max-width:1000px) {
       max-width: 75%;
     }
@@ -132,10 +132,10 @@
 // Template selection
 
 .template {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid $border-light;
+  background: rgba(255, 255, 255, 1);
+  // border: 1px solid $border-light;
   margin-bottom: $size;
-  padding: $size/1.5;
+  padding: 0 0 $size;
   @include border-radius(2px);
   @include box-sizing(border-box);
   @include pie-clearfix;
@@ -150,8 +150,9 @@
     }
   }
   button {
-    margin-top: $size/2;
-    width: 100%;
+    float: none;
+    margin: $size auto 0 !important;
+    width: 50% !important;
     &.preview {
       /*@include button(#cccccc);*/
     }
@@ -159,7 +160,7 @@
   .session & {
     margin: 0 1% $size;
     @media screen and (min-width:501px) {
-      width: 23%;
+      width: 48%;
     }
   }
 }
@@ -172,6 +173,6 @@
     width: 100%;
   }
   .session & {
-    max-height: $size*10;
+
   }
 }
