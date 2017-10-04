@@ -342,6 +342,36 @@ $adv-highlight: transparent;
   }
 }
 
-.paragraph-node {
+.paragraph-node,
+.unordered-list-node,
+.ordered-list-node {
   display: block;
+}
+
+.list-item-node {
+  display: list-item;
+}
+
+.unordered-list-node {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.ordered-list-node {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.unordered-list-node .unordered-list-node,
+.ordered-list-node .unordered-list-node {
+   list-style-type: circle;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+
+.ordered-list-node .ordered-list-node,
+.unordered-list-node .ordered-list-node {
+   list-style-type: lower-latin;
+   list-style-position: inside;
+   margin-left: 15px;
 }
