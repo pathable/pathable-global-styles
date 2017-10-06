@@ -130,9 +130,9 @@
   .paragraph-picker {
     width: 170px;
     .ant-select-selection-selected-value {
-      h1, h2, h3, h4 {
-        font-weight: normal;
-        font-style: normal;
+      [class$="paragraph-node"] {
+        font-weight: inherit;
+        font-style: inherit;
         font-size: inherit;
       }
     }
