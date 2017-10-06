@@ -280,10 +280,11 @@ $block-size: 50px;
 		}
 		.b-block-content {
 			background: $slate-light;
-			height: auto;
-			padding: $size;
+			.b-blocks-container & {
+				background: $slate-light2;
+			}
 			.field:after {
-				height: 40px;
+				height: 30px;
 				line-height: 40px;
 			}
 		}
@@ -291,9 +292,7 @@ $block-size: 50px;
 			line-height: normal;
 		}
 		.b-block-form {
-			margin: -$size 0;
-			height: 40px;
-			padding: 10px;
+			height: 50px;
 			.b-block-buttons .button {
 				margin: 0;
 			}
@@ -338,8 +337,8 @@ $block-size: 50px;
 		.input, .select {
 			background-color: $white;
 			display: block;
-			height: 40px;
-			line-height: 40px;
+			height: 36px;
+			line-height: 36px;
 			position: relative;
 			width: 45%;
 			@include border-radius(2px);
@@ -362,7 +361,7 @@ $block-size: 50px;
 		}
 		.button {
 			font-size: 1em;
-			height: 40px;
+			height: 36px;
 			text-transform: uppercase;
 			i {
 				position: static;
@@ -395,8 +394,8 @@ $block-size: 50px;
 		}
 		.inline.field.inline.field .input {
 			font-size: 12px;
-			height: 40px;
-			line-height: 40px;
+			height: 36px;
+			line-height: 36px;
 			width: 100%;
 		}
 		.field-group.with-border.push-top.right-align {
@@ -1056,8 +1055,10 @@ $block-size: 50px;
 // Block device switch
 
 .b-block-devices {
-	line-height: $block-size;
+	height: 36px;
+	line-height: 36px;
 	margin-left: $size/2;
+	@include box-sizing(border-box);
 	@include pie-clearfix;
 	i {
 		font-size: 1.5em;
@@ -1068,27 +1069,61 @@ $block-size: 50px;
 	}
 	.icon-checkbox {
 		margin-right: 0.3em;
+		margin-top: -0.85em;
 	}
 }
 
 // Block form
 
 .b-block-row.editable .b-block-form {
+	padding: 7px 10px;
 	width: 100%;
+	@include box-sizing(border-box);
 	@media screen and (max-width:500px) {
 		clear: both;
 		margin-top: $size;
 		width: 100%;
-		.b-block-row.editable & {
-			text-align: center;
-			width: 100%;
-		}
-		.b-block-handle {
-			display: none;
-		}
 	}
 	@media screen and (max-width:300px) {
 		width: 12%;
+	}
+	.ant-select-selection.ant-select-selection--single, .ant-select-selection__rendered, .ant-select-selection-selected-value {
+		height: 36px;
+		line-height: 36px;
+	}
+	.b-blocks-container & {
+		padding: 7px 10px 7px 70px;
+		.b-block-wtype {
+			position: absolute;
+			left: 0;
+			top: 0;
+			i {
+				background: $blue;
+			}
+		}
+	}
+
+	.b-block-buttons {
+		float: right;
+		.field {
+			float: right;
+			margin-left: $size/5;
+		}
+		i {
+			font-size: $size/1.5;
+			font-weight: bold;
+		}
+		.button {
+			float: left;
+		}
+		.button--warning {
+			opacity: 0.7;
+			padding: .8em;
+			@include transition(opacity .4em)
+			&:hover, &:focus {
+				opacity: 1;
+			}
+		}
 	}
 }
 
@@ -1125,36 +1160,10 @@ $block-size: 50px;
 		&:only-child {
 			width: 100%;
 		}
-		&:after {
-			top: .2em;
-		}
 	}
 }
 // refactor
 
-
-.b-block-row.editable .b-block-form .b-block-buttons {
-	float: right;
-	.field {
-		float: right;
-		margin-left: $size/5;
-	}
-	i {
-		font-size: $size/1.5;
-		font-weight: bold;
-	}
-	.button {
-		float: left;
-	}
-	.button--warning {
-		opacity: 0.7;
-		padding: .8em;
-		@include transition(opacity .4em)
-		&:hover, &:focus {
-			opacity: 1;
-		}
-	}
-}
 
 .b-block-buttons {
 	float: right !important;

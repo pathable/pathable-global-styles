@@ -14,24 +14,23 @@
 
 .w-block {
 	background: $slate-light;
-	border-radius: 2px;
-	box-shadow: rgba($slate, 0.3) 0 -1px 0 inset;
-	margin-bottom: $size;
+	box-shadow: rgba($slate, 0.2) 0 1px 0 inset;
+	@include border-top-radius(2px);
+	&:nth-of-type(n-1) {
+		box-shadow: rgba($slate, 0.2) 0 1px 0 inset, rgba($slate, 0.2) 0 1px 0;
+	}
 }
 
 
 // Widget block heading
 
 .w-block-heading {
-	background: rgba($slate, 0.7);
-	box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
-	color: $white;
-	font-size: 1em;
-	font-weight: 500;
+	color: rgba($slate, 0.7);
+	font-size: 1.1em;
+	font-weight: 600;
 	letter-spacing: 0.06em;
-	padding: $size/3 $size/1.5;
+	padding: $size/1.5 $size/1.2 0;
 	text-transform: uppercase;
-	@include border-top-radius(2px);
 	@include box-sizing(border-box);
 }
 
@@ -40,11 +39,8 @@
 
 .w-block-list {
 	@extend .horizontal-list;
-	@include border-bottom-radius(3px);
 	@include box-sizing(border-box);
-	background: $slate-light;
-	box-shadow: rgba($slate, 0.1) 0 -1px 0 inset;
-	padding: $size/2;
+	padding: $size/6 $size/2 $size/2;
 }
 
 
@@ -119,5 +115,75 @@
 			width: 18px;
 			@include border-radius(50%);
 		}
+	}
+}
+
+// Request a widget style
+
+.w-block-wish {
+	background: rgba($blue, 0.8);
+	box-shadow: 0 -1px 0 rgba(0,0,0,0.2) inset;
+	color: rgba($white, 0.7);
+	cursor: pointer;
+	display: block;
+	font-weight: 300;
+	letter-spacing: 0.1px;
+	margin-top: $size*1.5;
+	padding: 25px 150px 25px 90px;
+	position: relative;
+	transition: all 0.7s;
+	@include border-radius(2px);
+	@include pie-clearfix;
+	&:hover, &:focus {
+		background: rgba($blue, 0.9);
+		color: $white;
+		i {
+			opacity: 1;
+		}
+		.icon-star-empty {
+			@include scale(1.1);
+			@include rotate(72deg);
+		}
+		b {
+			color: #fff;
+		}
+		em {
+			color: rgba($white, 0.85);
+		}
+	}
+	@media screen and (max-width: 500px) {
+		padding: 25px 60px 25px 90px;
+	}
+	i {
+		display: block;
+		opacity: 0.4;
+		position: absolute;
+		top: 50%;
+		transition: all 0.5s;
+		&.icon-chevron-right {
+			font-size: 20px;
+			margin-top: -10px;
+			right: 25px;
+		}
+		&.icon-star-empty {
+			font-size: 40px;
+			margin-top: -20px;
+			left: 25px;
+		}
+	}
+	b {
+		color: $white;
+		font-size: 15px;
+		font-weight: 500;
+		display: block;
+		margin-bottom: 5px;
+	}
+	em {
+		color: rgba($white, 0.6);
+		font-size: 1em;
+	}
+	span {
+		position: absolute;
+		right: 50px;
 	}
 }
