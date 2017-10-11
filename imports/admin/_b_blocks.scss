@@ -636,8 +636,11 @@ $block-size: 50px;
 	@media screen and (max-width:500px) {
 		height: auto;
 	}
+	.b-block-row.editable.multiline & {
+		height: auto;
+	}
 	.rte-form {
-
+		padding: 10px;
 		.field.error select {
 			color: $gray;
 			box-shadow: none;
