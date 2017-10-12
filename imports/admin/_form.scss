@@ -791,7 +791,7 @@
   }
 }
 
-.color-picker {
+.color-picker, .adv-color-picker {
   position: relative;
   @include pie-clearfix;
   input:after {

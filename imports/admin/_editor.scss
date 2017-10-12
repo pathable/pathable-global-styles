@@ -90,6 +90,7 @@
     background: $slate-light;
     border: none;
     box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
+    padding-left: 0;
     width: 30px !important;
     &.with-arrow {
       width: 57px !important;
@@ -108,6 +109,14 @@
       right: initial;
       top: 33px;
       width: auto;
+      .radio-group {
+        background: #fff;
+        padding: 10px;
+        width: 100%;
+      }
+      .radio-field span {
+        color: $slate;
+      }
       .sketch-picker {
         @include border-radius(2px !important);
         padding-bottom: 5px !important;
@@ -327,7 +336,7 @@ $adv-highlight: transparent;
     background: $adv-highlight;
     border-bottom: 3px solid $adv-color;
     color: $adv-color;
-    display: block;
+    display: inline-block;
     font-weight: bold;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
