@@ -1,0 +1,70 @@
+//
+// Nav buttons
+
+.nav-buttons {
+  @include pie-clearfix;
+  border-collapse: collapse;
+}
+.nav-button {
+  border: solid $slate-light2;
+  border-width: 1px 0 0 1px;
+  color: $slate;
+  display: inline-block;
+  float: left;
+  padding: 10px;
+  text-align: center;
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+  &:hover, &:focus {
+    background: $slate-light;
+    color: $black;
+  }
+  &.full {
+    height: 70px;
+    padding: 25px 10px 0;
+    width: 100%;
+  }
+  &.half {
+    height: 100px;
+    padding: 25px 10px 0;
+    width: 50%;
+  }
+  &.third {
+    height: 90px;
+    padding: 20px 10px 0;
+    width: 33.3333%;
+  }
+  &.fourth {
+    height: 80px;
+    padding: 15px 10px 0;
+    width: 25%;
+  }
+  &.inline {
+    > * {
+      display: inline-block;
+      margin-top: 0;
+      vertical-align: middle;
+    }
+    .nav-icon {
+      font-size: 20px;
+      line-height: 1;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+}
+.nav-icon, .nav-name {
+  display: block;
+}
+.nav-icon {
+  font-size: 30px;
+  line-height: 1;
+  height: 30px;
+}
+.nav-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin-top: 7px;
+  text-transform: uppercase;
+}
