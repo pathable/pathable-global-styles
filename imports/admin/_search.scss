@@ -1,0 +1,304 @@
+//
+// Search UI
+
+// Global search
+.global-search {
+  background: $slate;
+  max-width: 300px;
+  min-width: 200px;
+  position: relative;
+  @include border-radius(2px);
+  &:hover,
+  &:focus {
+    .search-input {
+      background: $slate - #111;
+      color: $white;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    // display: none;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+  }
+}
+.global-search, .global-filter {
+  .search-input {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
+    color: $white;
+    height: 30px;
+    padding-left: 30px;
+    width: 100%;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    &:focus {
+      background: $slate - #111;
+    }
+  }
+
+  .search-icon {
+    color: $slate-light;
+    display: block;
+    height: 30px;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 30px;
+  }
+}
+
+.search-pane {
+  @media screen and (min-width: 501px) {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+  }
+}
+.filter-pane {
+  @media screen and (min-width: 501px) {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 300px;
+  }
+}
+.search-pane, .filter-pane {
+  display: none;
+  padding-top: 10px;
+  @include pie-clearfix;
+  ul {
+    background: $slate - #111;
+    color: $white;
+    float: left;
+    width: 100%;
+    @include pie-clearfix;
+  }
+  li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    position: relative;
+    @include pie-clearfix;
+    &:last-child {
+      margin-bottom: 0;
+      border: none;
+    }
+    > i {
+      display: inline-block;
+      float: right;
+      line-height: 34px;
+      margin-right: 20px;
+      position: absolute;
+      right: 20px;
+      top: 0;
+    }
+    &.expanded {
+      background: rgba(0,0,0,0.1);
+      .filter-search {
+        background: transparent;
+        padding: 0 10px 10px;
+        width: 100%;
+        .search-input {
+          background: $slate;
+          height: 30px !important;
+          line-height: 30px !important;
+        }
+        .search-icon {
+          height: 30px;
+          line-height: 30px;
+          margin-left: 10px;
+          width: 30px;
+        }
+      }
+    }
+  }
+  ul a {
+    color: $white;
+    display: block;
+    font-size: 11px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    position: relative;
+    text-align: left;
+    &:hover {
+      background: rgba(0, 0, 0, 0.07);
+      color: $orange;
+    }
+    i {
+      color: rgba($white, 0.6);
+      font-size: 13px;
+      margin-right: 8px;
+      position: relative;
+      top: 2px;
+      &.direction {
+        display: inline-block;
+        float: right;
+        line-height: 34px;
+        opacity: 0.4;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+    input {
+      margin-right: 10px;
+    }
+  }
+  .back {
+    background: $slate - #111;
+    float: left;
+    a {
+      background: rgba(0, 0, 0, 0.2);
+      color: rgba($white, 0.6);
+      display: block;
+      font-size: 10px;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 40px;
+      &:hover, &:focus {
+        color: $white;
+      }
+    }
+    i {
+      margin-right: 5px;
+    }
+  }
+  .filter-search {
+    background: $slate - #111;
+    float: right;
+    padding-left: 1px;
+    position: relative;
+    width: 260px;
+    @include box-sizing(border-box);
+    .search-input {
+      height: 40px !important;
+      line-height: 40px !important;
+    }
+    .search-icon {
+      height: 40px;
+      line-height: 40px;
+      width: 40px;
+    }
+  }
+  .search-keyword {
+    font-style: italic;
+    margin-left: 10px;
+    opacity: 0.6;
+  }
+  .selected {
+    color: rgba($white, 0.5);
+    font-size: 10px;
+    height: 40px;
+    padding: 5px 10px 5px 30px;
+    position: relative;
+    text-align: left;
+    @include box-sizing(border-box);
+    img {
+      display: inline-block;
+      float: left;
+      height: 30px;
+      margin-right: 10px;
+      object-fit: cover;
+      width: 30px;
+      @include border-radius(50%);
+    }
+    b {
+      color: rgba($white, 0.75);
+      display: block;
+    }
+    .remove {
+      left: 12px;
+      line-height: 40px;
+      position: absolute;
+      top: 0;
+    }
+  }
+  .buttons {
+    background: $slate - #191919;
+    float: left;
+    padding: 10px;
+    width: 100%;
+    @include border-bottom-radius(2px);
+    @include box-sizing(border-box);
+    @include pie-clearfix;
+    i {
+      margin-right: 10px;
+    }
+    a {
+      color: rgba($white, 0.5);
+    }
+    .button {
+      height: 25px;
+      line-height: 25px;
+    }
+    .reset {
+      line-height: 25px;
+    }
+  }
+  &.expanded {
+    display: block;
+    @media screen and (max-width: 500px) {
+      padding-top: 50px;
+      width: 100%;
+      ul {
+        max-height: 200px;
+        min-height: 100px;
+        overflow: auto;
+      }
+    }
+  }
+}
+.search-toggle {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
+  color: $white;
+  cursor: pointer;
+  height: 30px;
+  line-height: 12px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+  width: 30px;
+  @include border-radius(2px);
+  @include box-sizing(border-box);
+  i {
+    line-height: 10px;
+  }
+  &:hover,
+  &:focus {
+    background: $slate - #111;
+    .main-track {
+      @include border-bottom-radius(0);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    .sorting & {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .tracks & {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+  }
+  @media screen and (min-width: 501px) {
+    .tracks & {
+      float: left;
+      margin-right: 10px;
+    }
+    .sorting & {
+      float: right;
+    }
+  }
+}

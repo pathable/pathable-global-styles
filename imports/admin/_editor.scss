@@ -334,10 +334,9 @@ $adv-highlight: transparent;
 .editor-toolbar .adv-color-picker {
   b {
     background: $adv-highlight;
-    border-bottom: 3px solid $adv-color;
+    border-bottom: 2px solid $adv-color;
     color: $adv-color;
     display: inline-block;
-    font-weight: bold;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
     height: 20px;

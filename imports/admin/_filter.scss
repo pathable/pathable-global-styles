@@ -1,0 +1,11 @@
+//
+// Search UI
+
+// Global search
+.global-filter {
+  position: relative;
+}
+
+.global-search + .global-filter {
+  margin-left: 10px;
+}
