@@ -185,37 +185,6 @@
   > div {
     cursor: text;
   }
-  a {
-    color: $blue;
-    text-decoration: underline;
-    &:hover, &:focus {
-      color: $orange !important;
-    }
-  }
-  b {
-    font-weight: bold;
-  }
-  em {
-    font-style: italic;
-  }
-  ul {
-   list-style-type: disc;
-   list-style-position: inside;
-  }
-  ol {
-     list-style-type: decimal;
-     list-style-position: inside;
-  }
-  ul ul, ol ul {
-     list-style-type: circle;
-     list-style-position: inside;
-     margin-left: 15px;
-  }
-  ol ol, ul ol {
-     list-style-type: lower-latin;
-     list-style-position: inside;
-     margin-left: 15px;
-  }
   .inline.field  & {
     .ant-popover-inner {
       background: $slate-light2;
