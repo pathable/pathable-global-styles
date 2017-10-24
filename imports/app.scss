@@ -3,47 +3,45 @@
 
 // Import compass
 //
-@import "{francocatena:compass}/compass/reset";
-@import "{francocatena:compass}/compass/utilities";
-@import "{francocatena:compass}/compass/css3";
+@import '{francocatena:compass}/compass/reset';
+@import '{francocatena:compass}/compass/utilities';
+@import '{francocatena:compass}/compass/css3';
 
 // Import Susy
 //
-@import "{meta:susy}/susy";
-
+@import '{meta:susy}/susy';
 
 // Import variables
 
-@import "app/variables";
-
+@import 'app/variables';
 
 // Import utilities
 
-@import "utilities/webfonts"; // Custom web fonts
-@import "utilities/linearicons"; // Linearicons font
-@import "utilities/fontawesome4.7.0/font-awesome"; // Linearicons font
-@import "utilities/mixins"; // Custom mixins
-@import "utilities/lists"; // List extends
-@import "utilities/antd/carousel";
-
+@import 'utilities/webfonts'; // Custom web fonts
+@import 'utilities/linearicons'; // Linearicons font
+@import 'utilities/fontawesome4.7.0/font-awesome'; // Linearicons font
+@import 'utilities/mixins'; // Custom mixins
+@import 'utilities/lists'; // List extends
+@import 'utilities/antd/carousel';
 
 // Import shared styles
 
-@import "app/base";
-@import "app/layout";
-@import "shared/404";
-
+@import 'app/base';
+@import 'app/layout';
+@import 'shared/404';
 
 // Temporary import for meetings lists
 
-@import "admin/variables";
-@import "admin/agenda_list";
-@import "admin/agenda_toolbar";
-@import "admin/agenda_mobile";
-@import "admin/custom";
+@import 'admin/variables';
+@import 'admin/agenda_list';
+@import 'admin/agenda_toolbar';
+@import 'admin/agenda_mobile';
+@import 'admin/custom';
 
+// Import for
+@import 'admin/search';
 
 // Import widgets
 
-@import "app/custom";
-@import "admin/m_header";
+@import 'app/custom';
+@import 'admin/m_header';
