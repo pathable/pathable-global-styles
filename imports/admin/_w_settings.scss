@@ -4,6 +4,7 @@
 
 .w-settings-list {
 	@include box-sizing(border-box);
+	padding-bottom: 0.5em;
 }
 
 // FIXME: @dime please style this properly!
@@ -23,16 +24,22 @@ input {
 }
 
 .w-setting {
-	border-bottom: 1px dashed rgba($slate, 0.2);
 	clear: both;
-	padding: 0.5em;
+	padding: 0 $size/1.5;
 	@include box-sizing(border-box);
 	@include pie-clearfix;
-	&:last-child {
+	&:last-child label.field {
 		border-bottom: none;
 	}
-	.field:after {
-		right: -3em;
+	label.field {
+		border-bottom: 1px dashed rgba($slate, 0.2);
+		overflow: hidden;
+		padding: 0.5em 0;
+		@include box-sizing(border-box);
+		@include pie-clearfix;
+		&:after {
+			right: -3em;
+		}
 	}
 	.input, .select {
 		color: $slate;
@@ -46,6 +53,7 @@ input {
 		line-height: 40px;
 		height: 40px;
 		overflow: hidden;
+		padding: 0;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}

@@ -14,22 +14,22 @@
 
 .w-block {
 	background: $slate-light;
-	box-shadow: rgba($slate, 0.2) 0 1px 0 inset;
-	@include border-top-radius(2px);
-	&:nth-of-type(n-1) {
-		box-shadow: rgba($slate, 0.2) 0 1px 0 inset, rgba($slate, 0.2) 0 1px 0;
-	}
+	box-shadow: rgba($slate, 0.2) 0 1px 0;
+	margin-bottom: $size;
+	@include border-radius(2px);
 }
 
 
 // Widget block heading
 
 .w-block-heading {
-	color: rgba($slate, 0.7);
+	background: rgba($slate, 0.05);
+	color: rgba($slate, 0.9);
 	font-size: 1.1em;
 	font-weight: 600;
 	letter-spacing: 0.06em;
-	padding: $size/1.5 $size/1.2 0;
+	margin-bottom: $size/4;
+	padding: $size/1.75 0 $size/1.75 $size/1.5;
 	text-transform: uppercase;
 	@include box-sizing(border-box);
 }
