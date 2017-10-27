@@ -5,8 +5,6 @@
   "keywords": [],
   "homepage": "http://pathable.com",
   "scripts": {
-    "preinstall": "./initialize",
-    "install": "p-install",
     "postinstall": "./postinstall"
   },
   "devDependencies": {
