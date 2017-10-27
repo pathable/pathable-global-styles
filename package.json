@@ -11,8 +11,5 @@
     "antd": "^2.5.3",
     "prismjs": "^1.5.0",
     "pathable-scripts": "https://github.com/pathable/pathable-scripts.git"
-  },
-  "dependencies": {
-    "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git"
   }
 }
