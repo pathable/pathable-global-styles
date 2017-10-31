@@ -22,6 +22,7 @@ $slate-light: #eeeff0;
 $slate-light2: #e5e7e9;
 $slate-dark: #39444c;
 
+
 // Width
 
 $nav: 60px;
@@ -29,10 +30,12 @@ $sub-nav: 170px;
 $size: 1.75em;
 $font-size: 13px;
 
+
 // Size
 
 $checkbox-size: 1.2em;
 $icheckbox-size: 2em;
+
 
 // Style
 
@@ -40,3 +43,11 @@ $input-gray-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
 $input-blue-shadow: inset 0 -1px rgba($blue, 0.4);
 
 @import "../app/_variables";
+
+
+// Break points
+$bp-s: 500px;
+//$bp-m: ?
+//$bp-u: ?
+$bp-l: 1200px;;
+//$bp-xl: ?

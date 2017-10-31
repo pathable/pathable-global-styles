@@ -1,0 +1,7 @@
+// Converts pixel values to EMs
+// i.e. font-size: em(16); = font-size: 1em;
+// If the context is not not 16, the new value should be passed as the second parameter
+$browser-context: 16; // Default browser context
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
