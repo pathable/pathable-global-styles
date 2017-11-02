@@ -4,8 +4,7 @@
 // Global search
 .global-search {
   background: $slate;
-  max-width: 300px;
-  min-width: 200px;
+  width: 300px;
   position: relative;
   @include border-radius(2px);
   &:hover,
@@ -21,15 +20,16 @@
     right: 40px;
     top: 10px;
   }
-}
-.global-search, .global-filter {
+
   .search-input {
     background: rgba(0, 0, 0, 0.1);
     border: none;
     box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
     color: $white;
-    height: 30px;
-    padding-left: 30px;
+    font-size: 12px;
+    height: 50px;
+    outline: none;
+    padding-left: 45px;
     width: 100%;
     @include border-radius(2px);
     @include box-sizing(border-box);
@@ -41,20 +41,21 @@
   .search-icon {
     color: $slate-light;
     display: block;
-    height: 30px;
+    font-size: 15px;
+    height: 50px;
     left: 0;
-    line-height: 30px;
+    line-height: 50px;
     position: absolute;
     text-align: center;
     top: 0;
-    width: 30px;
+    width: 50px;
   }
 }
 
 .search-pane {
   @media screen and (min-width: 501px) {
     position: absolute;
-    top: 30px;
+    top: 50px;
     width: 100%;
   }
 }
@@ -62,13 +63,12 @@
   @media screen and (min-width: 501px) {
     position: absolute;
     right: 0;
-    top: 30px;
+    top: 50px;
     width: 300px;
   }
 }
 .search-pane, .filter-pane {
   display: none;
-  padding-top: 10px;
   @include pie-clearfix;
   ul {
     background: $slate - #111;
@@ -104,6 +104,7 @@
           background: $slate;
           height: 30px !important;
           line-height: 30px !important;
+          padding-left: 10px !important;
         }
         .search-icon {
           height: 30px;
@@ -112,39 +113,6 @@
           width: 30px;
         }
       }
-    }
-  }
-  ul a {
-    color: $white;
-    display: block;
-    font-size: 11px;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 10px;
-    position: relative;
-    text-align: left;
-    &:hover {
-      background: rgba(0, 0, 0, 0.07);
-      color: $orange;
-    }
-    i {
-      color: rgba($white, 0.6);
-      font-size: 13px;
-      margin-right: 8px;
-      position: relative;
-      top: 2px;
-      &.direction {
-        display: inline-block;
-        float: right;
-        line-height: 34px;
-        opacity: 0.4;
-        &.active {
-          opacity: 1;
-        }
-      }
-    }
-    input {
-      margin-right: 10px;
     }
   }
   .back {
@@ -253,19 +221,19 @@
   }
 }
 .search-toggle {
-  background: rgba(0, 0, 0, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 0 inset;
+  border-left: 1px solid $slate;
   color: $white;
   cursor: pointer;
-  height: 30px;
-  line-height: 12px;
+  font-size: 15px;
+  height: 50px;
+  line-height: 30px;
   padding: 10px;
   position: absolute;
   right: 0;
   text-align: center;
   top: 0;
   white-space: nowrap;
-  width: 30px;
+  width: 50px;
   @include border-radius(2px);
   @include box-sizing(border-box);
   i {
@@ -274,11 +242,24 @@
   &:hover,
   &:focus {
     background: $slate - #111;
+    color: $white;
     .main-track {
       @include border-bottom-radius(0);
     }
   }
-
+  &.active {
+    &:before {
+      background: $orange;
+      content: '';
+      display: block;
+      height: 7px;
+      position: absolute;
+      right: -3px;
+      top: -3px;
+      width: 7px;
+      @include border-radius(50%);
+    }
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
     .sorting & {
