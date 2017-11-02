@@ -679,17 +679,22 @@
       margin-right: 8px;
       position: relative;
       top: 2px;
-      &.direction {
+      &.direction,
+      &.clear-filter {
         display: inline-block;
         float: right;
         line-height: 34px;
-        margin-right: 20px;
+        margin-right: 10px;
         opacity: 0.4;
+        cursor: pointer;
         &.active,
         &:hover,
         &:focus {
           opacity: 1;
         }
+      }
+      &.direction {
+        margin-right: 20px;
       }
     }
   }
