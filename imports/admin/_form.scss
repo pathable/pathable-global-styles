@@ -24,14 +24,15 @@
     border-color: #222222;
   }
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     background: #fff;
     border-color: $blue;
   }
 
   &.push {
     margin: 0 0 1.2em;
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       margin: 0 0 0.8em;
     }
   }
@@ -87,24 +88,24 @@
       font-weight: bold;
     }
     .select {
-  		line-height: $size;
-  		padding-right: $size/1.5;
-  	}
+      line-height: $size;
+      padding-right: $size/1.5;
+    }
   }
   &:before {
     color: inherit;
-    content: "\e93a";
+    content: '\e93a';
     font-family: linearicons;
     pointer-events: none;
     position: absolute;
-    right: .75em;
+    right: 0.75em;
     top: 30%;
     z-index: 1;
   }
 }
 
 .select-group {
-  .select-custom:nth-last-child(n+2) {
+  .select-custom:nth-last-child(n + 2) {
     margin-right: -1px;
   }
 }
@@ -120,7 +121,8 @@
     input {
       padding-left: 2.8em;
     }
-    [class^="icon-"], [class*="icon-"] {
+    [class^='icon-'],
+    [class*='icon-'] {
       font: 1em linearicons;
       height: 40px;
       left: 1em;
@@ -143,7 +145,7 @@
       padding: 0.5em 0;
       @include text-shadow($white 1px 1px 1px);
       @include box-sizing(border-box);
-      @media screen and (min-width:501px) {
+      @media screen and (min-width: 501px) {
         display: inline-block;
         float: left;
         padding: 1em 1em 1em 0;
@@ -153,11 +155,17 @@
     .inline {
       width: auto;
     }
-    input, textarea, select, .rich-text, .field-image, .sSelect, .radio-group {
+    input,
+    textarea,
+    select,
+    .rich-text,
+    .field-image,
+    .sSelect,
+    .radio-group {
       display: block;
       width: 100%;
       @include box-sizing(border-box);
-      @media screen and (min-width:501px) {
+      @media screen and (min-width: 501px) {
         display: inline-block;
         float: right;
         width: 75%;
@@ -166,7 +174,11 @@
         }
       }
     }
-    input, .sSelect, .field-image, .radio-group, select {
+    input,
+    .sSelect,
+    .field-image,
+    .radio-group,
+    select {
       height: 40px;
       line-height: 40px;
       padding-top: 0;
@@ -191,7 +203,7 @@
     font-weight: 100;
     @include box-sizing(border-box);
     @include pie-clearfix;
-    @media screen and (min-width:501px) {
+    @media screen and (min-width: 501px) {
       padding-left: 25%;
     }
     input {
@@ -237,44 +249,50 @@
   &.success {
     &:after {
       color: $green;
-      content: "\e959";
+      content: '\e959';
     }
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       // border-color: $green;
     }
     &.mini-notice:after {
       background: $green;
-      content: "\e934";
+      content: '\e934';
     }
-    .input-message{
+    .input-message {
       display: none;
     }
   }
   &.warning {
     color: $orange;
     &:after {
-      content: "\e956";
+      content: '\e956';
     }
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       border-color: $orange;
     }
     &.mini-notice:after {
       background: $orange;
-      content: "\e954";
+      content: '\e954';
     }
   }
   &.error {
     color: $red;
     &:after {
-      content: "\e95a";
+      content: '\e95a';
     }
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       color: $red;
       box-shadow: rgba($red, 0.3) -1px -1px 0 inset;
     }
     &.mini-notice:after {
       background: $red;
-      content: "\e92a";
+      content: '\e92a';
     }
   }
   &.hide {
@@ -287,13 +305,14 @@
   @include box-sizing(border-box);
   &.with-border {
     border: none;
-    border-top: 1px dashed rgba(0,0,0,0.1);
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
     padding-top: $size;
-    @media screen and (min-width:501px) {
+    @media screen and (min-width: 501px) {
       margin-bottom: 2em;
     }
   }
-  .field, .field.inline {
+  .field,
+  .field.inline {
     margin-right: $size/3;
     margin-bottom: 0;
     width: auto;
@@ -305,20 +324,22 @@
     margin-top: $size;
   }
   &.right-align {
-    > .field, .field.inline {
+    > .field,
+    .field.inline {
       float: right;
       margin-right: 0;
       margin-left: $size/3;
     }
   }
   &.right {
-    > .field, .field.inline {
+    > .field,
+    .field.inline {
       &:last-child {
         margin-right: 0;
       }
     }
   }
-  @media screen and (max-width:500px) {
+  @media screen and (max-width: 500px) {
     &.with-border {
       background: white;
       bottom: 0;
@@ -346,7 +367,9 @@
     span.label {
       display: none;
     }
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
     }
     &:last-child {
@@ -374,8 +397,9 @@
       width: 48%;
     }
   }
-  @media screen and (max-width:500px) {
-    label, .field {
+  @media screen and (max-width: 500px) {
+    label,
+    .field {
       clear: both;
       float: none;
       width: 100% !important;
@@ -417,8 +441,8 @@
 
 // Field code
 
-.field-code:not(pre)  {
-  > code[class*="language-"] {
+.field-code:not(pre) {
+  > code[class*='language-'] {
     @extend .input;
     min-height: $size*10;
   }
@@ -439,16 +463,16 @@
 
 .input-icon {
   &--user:before {
-    content: "\e6c2";
+    content: '\e6c2';
   }
   &--mail:before {
-    content: "\e696";
+    content: '\e696';
   }
   &--lock:before {
-    content: "\e6b6";
+    content: '\e6b6';
   }
   &--search:before {
-    content: "\e922";
+    content: '\e922';
   }
 }
 
@@ -456,8 +480,8 @@
 .input-message {
   clear: right;
   float: right;
-  font-size: .8em;
-  padding-top: .5em;
+  font-size: 0.8em;
+  padding-top: 0.5em;
 }
 
 // Input search
@@ -479,7 +503,8 @@
   white-space: nowrap;
   width: $checkbox-size;
   @include border-radius(2px);
-  label, span {
+  label,
+  span {
     cursor: pointer;
     height: $checkbox-size;
     left: 0;
@@ -490,12 +515,12 @@
     &:after {
       @include opacity(0);
       background: #fff;
-      content: "\e934";
+      content: '\e934';
       display: inline-block;
       font-family: linearicons;
-      font-size: .75em;
+      font-size: 0.75em;
       margin-right: 1em;
-      padding: .2em;
+      padding: 0.2em;
       position: absolute;
       text-align: center;
       width: $checkbox-size;
@@ -503,16 +528,16 @@
       @include border-radius(2px);
     }
   }
-  input[type=checkbox] {
+  input[type='checkbox'] {
     margin: 0 1em 0 0;
     visibility: hidden;
   }
-  input[type=checkbox]:checked + label:after {
+  input[type='checkbox']:checked + label:after {
     @include opacity(1);
   }
   span {
     color: $border;
-    font: .95em "Open Sans", sans-serif;
+    font: 0.95em 'Open Sans', sans-serif;
     position: relative;
     top: -0.1em;
   }
@@ -530,84 +555,87 @@
 // Custom checkbox
 
 .custom-checkbox {
-  [type="checkbox"]:not(:checked),
-  [type="checkbox"]:checked {
+  [type='checkbox']:not(:checked),
+  [type='checkbox']:checked {
     position: absolute;
     left: -9999px;
   }
-  [type="checkbox"]:not(:checked) + span,
-  [type="checkbox"]:checked + span {
+  [type='checkbox']:not(:checked) + span,
+  [type='checkbox']:checked + span {
     position: relative;
     padding-left: 2.25em;
     cursor: pointer;
   }
 
   /* checkbox aspect */
-  [type="checkbox"]:not(:checked) + span:before,
-  [type="checkbox"]:checked + span:before {
+  [type='checkbox']:not(:checked) + span:before,
+  [type='checkbox']:checked + span:before {
     content: '';
     position: absolute;
-    left: 0; top: 0;
-    width: 1.5em; height: 1.5em;
+    left: 0;
+    top: 0;
+    width: 1.5em;
+    height: 1.5em;
     border: none;
     background: #fff;
     border-radius: 4px;
-    box-shadow: inset -1px -1px 0 rgba($slate,.3);
+    box-shadow: inset -1px -1px 0 rgba($slate, 0.3);
   }
   /* checked mark aspect */
-  [type="checkbox"]:not(:checked) + span:after,
-  [type="checkbox"]:checked + span:after {
-    content: "\e934";
+  [type='checkbox']:not(:checked) + span:after,
+  [type='checkbox']:checked + span:after {
+    content: '\e934';
     font-family: linearicons;
     position: absolute;
-    top: .4em; left: .2em;
+    top: 0.4em;
+    left: 0.2em;
     font-size: 1em;
     line-height: 0.8;
     color: #09ad7e;
-    transition: all .2s;
+    transition: all 0.2s;
   }
   /* checked mark aspect changes */
-  [type="checkbox"]:not(:checked) + span:after {
+  [type='checkbox']:not(:checked) + span:after {
     opacity: 0;
     transform: scale(0);
   }
-  [type="checkbox"]:checked + span:after {
+  [type='checkbox']:checked + span:after {
     opacity: 1;
     transform: scale(1);
   }
   /* disabled checkbox */
-  [type="checkbox"]:disabled:not(:checked) + span:before,
-  [type="checkbox"]:disabled:checked + span:before {
+  [type='checkbox']:disabled:not(:checked) + span:before,
+  [type='checkbox']:disabled:checked + span:before {
     box-shadow: none;
     border-color: #bbb;
     background-color: #ddd;
   }
-  [type="checkbox"]:disabled:checked + span:after {
+  [type='checkbox']:disabled:checked + span:after {
     color: #999;
   }
-  [type="checkbox"]:disabled + span {
+  [type='checkbox']:disabled + span {
     color: #aaa;
   }
   /* accessibility */
-  [type="checkbox"]:checked:focus + span:before,
-  [type="checkbox"]:not(:checked):focus + span:before {
-    box-shadow: inset -1px -1px 0 rgba($slate,.5);
+  [type='checkbox']:checked:focus + span:before,
+  [type='checkbox']:not(:checked):focus + span:before {
+    box-shadow: inset -1px -1px 0 rgba($slate, 0.5);
   }
 
   /* hover style just for information */
   span:hover:before {
-    box-shadow: inset -1px -1px 0 rgba($slate,.5);
+    box-shadow: inset -1px -1px 0 rgba($slate, 0.5);
   }
   .flexlist & {
-    [type="checkbox"] + span:before {
+    [type='checkbox'] + span:before {
       background: rgba($slate-light, 0.5);
     }
   }
   &.filter {
     float: none;
-    padding-left: 15px;
-    [type="checkbox"]:not(:checked) + span:before,
-    [type="checkbox"]:checked + span:before {
+    padding-left: 0;
+    [type='checkbox']:not(:checked) + span:before,
+    [type='checkbox']:checked + span:before {
       background: transparent;
       border: 1px solid rgba($slate-light2, 0.5);
       height: 9px;
@@ -616,11 +644,11 @@
       width: 9px;
       @include border-radius(50%);
     }
-    [type="checkbox"]:not(:checked) + span:after,
-    [type="checkbox"]:checked + span:after {
+    [type='checkbox']:not(:checked) + span:after,
+    [type='checkbox']:checked + span:after {
       background: $green;
       color: $white;
-      content: "\e934";
+      content: '\e934';
       font-family: linearicons;
       font-size: 10px;
       height: 15px;
@@ -628,7 +656,7 @@
       line-height: 15px;
       position: absolute;
       text-align: center;
-      transition: all .2s;
+      transition: all 0.2s;
       top: -1px;
       width: 15px;
       @include border-radius(50%);
@@ -657,7 +685,9 @@
         line-height: 34px;
         margin-right: 20px;
         opacity: 0.4;
-        &.active, &:hover, &:focus {
+        &.active,
+        &:hover,
+        &:focus {
           opacity: 1;
         }
       }
@@ -689,7 +719,7 @@
     &:after {
       bottom: 0;
       color: $blue;
-      content: "";
+      content: '';
       display: inline-block;
       font: 1.25em linearicons;
       left: 0;
@@ -701,7 +731,8 @@
       @include border-radius(50%);
       @include box-sizing(border-box);
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       &:after {
         background: $blue;
         color: $white;
@@ -709,19 +740,19 @@
     }
   }
   &.both label:after {
-    content: "\e7ae";
+    content: '\e7ae';
   }
   &.desktop label:after {
-    content: "\e7af";
+    content: '\e7af';
   }
   &.mobile label:after {
-    content: "\e7a6";
+    content: '\e7a6';
   }
-  input[type=checkbox] {
+  input[type='checkbox'] {
     margin: 0;
     visibility: hidden;
   }
-  input[type=checkbox]:checked + label:after {
+  input[type='checkbox']:checked + label:after {
     background: $blue;
     color: $white;
   }
@@ -737,24 +768,25 @@
 .radio-field {
   display: table-cell;
   white-space: nowrap;
-  &:last-of-type input[type="radio"] + label span {
+  &:last-of-type input[type='radio'] + label span {
     box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
   }
-  input[type="radio"] {
-    display:none;
+  input[type='radio'] {
+    display: none;
   }
-  input[type="radio"] + label {
+  input[type='radio'] + label {
     color: rgba($slate, 0.7);
     font-size: 1em;
     text-align: center;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $slate;
     }
     .btn-controls & {
       font-size: 1.05em;
     }
   }
-  input[type="radio"] + label span {
+  input[type='radio'] + label span {
     background-color: $slate-light2;
     box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
     cursor: pointer;
@@ -769,7 +801,6 @@
         position: relative;
         top: 2px;
       }
-
     }
     .field.inline & {
       padding: 0 $size/2.3;
@@ -782,7 +813,7 @@
     }
   }
 
-  input[type="radio"]:checked + label span {
+  input[type='radio']:checked + label span {
     background-color: #fff;
     box-shadow: rgba($slate, 0.2) 0 -1px 0 inset;
     color: $slate;
@@ -793,30 +824,32 @@
     }
   }
 
-  input[type="radio"] + label span,
-  input[type="radio"]:checked + label span {
+  input[type='radio'] + label span,
+  input[type='radio']:checked + label span {
     @include transition(background-color, 0.4s, linear);
   }
   &:first-child span {
     @include border-left-radius(2px);
   }
   &:last-child {
-    input[type="radio"]:checked + label span {
+    input[type='radio']:checked + label span {
       box-shadow: rgba($slate, 0.2) -1px -1px 0 inset;
     }
     span {
       @include border-right-radius(2px);
     }
   }
-  &:nth-child(n+2) input[type="radio"]:not(:checked) + label span {
+  &:nth-child(n + 2) input[type='radio']:not(:checked) + label span {
     border-left-color: $white;
   }
-  [class^="icon-"], [class*="icon-"] {
+  [class^='icon-'],
+  [class*='icon-'] {
     position: static;
   }
 }
 
-.color-picker, .adv-color-picker {
+.color-picker,
+.adv-color-picker {
   position: relative;
   @include pie-clearfix;
   input:after {
@@ -829,9 +862,11 @@
   a {
     padding-left: 15%;
   }
-  &:hover, &.active {
+  &:hover,
+  &.active {
     z-index: 5;
-    .input, .field:after {
+    .input,
+    .field:after {
       z-index: 3;
     }
     .color-preview {
@@ -849,10 +884,12 @@
   &.with-arrow {
     padding: 0 8px 0 3px;
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       background-color: #eeeff0;
     }
-    &:focus, &:active {
+    &:focus,
+    &:active {
       border-color: #49a9ee;
       outline: 0;
       box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
@@ -877,7 +914,7 @@
     .color-arrow:before {
       content: '\e61d';
       display: block;
-      font-family: "anticon" !important;
+      font-family: 'anticon' !important;
     }
   }
   .field.inline & {
@@ -891,7 +928,7 @@
   }
 }
 .color-preview {
-  background-image: url("/packages/pathable-styles/images/transparent.png");
+  background-image: url('/packages/pathable-styles/images/transparent.png');
   background-color: transparent;
   background-size: cover;
   border: 1px solid rgba($black, 0.1);
@@ -964,7 +1001,8 @@
   //     margin-left: 25%;
   //   }
   // }
-  [class^="icon-"], [class*="icon-"] {
+  [class^='icon-'],
+  [class*='icon-'] {
     position: static;
   }
 }
@@ -1043,7 +1081,8 @@
       span {
         padding: 0 20px;
       }
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $slate;
         color: $white;
       }
@@ -1054,7 +1093,6 @@
   }
 }
 .file {
-
 }
 .file-name {
   height: 40px;
@@ -1063,13 +1101,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 70%;
-  @media screen and (max-width:1400px) {
+  @media screen and (max-width: 1400px) {
     width: 60%;
   }
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width: 1200px) {
     width: 50%;
   }
-  @media screen and (max-width:1000px) {
+  @media screen and (max-width: 1000px) {
     width: 40%;
   }
 }
@@ -1113,7 +1151,8 @@
     cursor: pointer;
     font-weight: 100;
     margin: $size/3 0;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $blue;
     }
   }
@@ -1159,7 +1198,8 @@
     line-height: 40px;
     width: 40px;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     i {
       background: $slate;
       color: $white;
@@ -1174,6 +1214,10 @@
     top: 0;
     width: 60px;
     // @include background-image(linear-gradient(left, transparent 0%, $white 100%));
-    background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }

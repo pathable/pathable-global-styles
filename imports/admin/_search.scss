@@ -67,7 +67,8 @@
     width: 300px;
   }
 }
-.search-pane, .filter-pane {
+.search-pane,
+.filter-pane {
   display: none;
   @include pie-clearfix;
   ul {
@@ -95,7 +96,7 @@
       top: 0;
     }
     &.expanded {
-      background: rgba(0,0,0,0.1);
+      background: rgba(0, 0, 0, 0.1);
       .filter-search {
         background: transparent;
         padding: 0 10px 10px;
@@ -114,6 +115,11 @@
         }
       }
     }
+    &.active {
+      .filter > span {
+        color: $orange;
+      }
+    }
   }
   .back {
     background: $slate - #111;
@@ -127,7 +133,8 @@
       text-align: center;
       text-transform: uppercase;
       width: 40px;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $white;
       }
     }
