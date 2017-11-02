@@ -201,7 +201,7 @@
     @include box-sizing(border-box);
     @include pie-clearfix;
     i {
-      margin-right: 10px;
+      margin-right: 7px;
     }
     a {
       color: rgba($white, 0.5);
@@ -211,7 +211,15 @@
       line-height: 25px;
     }
     .reset {
-      line-height: 25px;
+      background: transparent;
+      border: none;
+      color: rgba($white, 0.6);
+      line-height: 20px;
+      @include border-radius(2px);
+      &:hover, &:focus {
+        background: $slate - #111;
+        color: $white;
+      }
     }
   }
   &.expanded {
