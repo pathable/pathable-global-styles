@@ -3,13 +3,5 @@
   "version": "0.0.1",
   "description": "Pathable.",
   "keywords": [],
-  "homepage": "http://pathable.com",
-  "scripts": {
-    "postinstall": "./postinstall"
-  },
-  "devDependencies": {
-    "antd": "^2.5.3",
-    "prismjs": "^1.5.0",
-    "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git"
-  }
+  "homepage": "http://pathable.com"
 }
