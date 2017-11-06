@@ -9,6 +9,15 @@
   }
 }
 
+.nav-buttons-row-container {
+  background: $slate-light;
+  border-bottom: 1px solid rgba($slate, 0.3);
+  border-radius: 2px;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: $size/1.5;
+}
+
 .nav-buttons {
   @include pie-clearfix;
   border-collapse: collapse;
