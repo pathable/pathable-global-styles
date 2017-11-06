@@ -10,6 +10,7 @@
   background: $slate-light2;
   height: 100%;
   position: relative;
+
   @include box-sizing(border-box);
   @include pie-clearfix;
   @media screen and (max-width: 500px) {
@@ -150,6 +151,8 @@
       height: 160px;
       padding: 25px 50px 15px 50px;
       position: relative;
+      cursor: pointer;
+
       @include box-sizing(border-box);
       @media screen and (max-width: 500px) {
         height: 60px;
@@ -593,6 +596,8 @@
 .users {
   &.admin {
     .flex-item {
+      cursor: pointer;
+
       .check {
         order: 1;
       }
@@ -669,9 +674,12 @@
       align-content: flex-start;
       height: 140px;
       padding: 15px 10px 15px 150px;
+      cursor: pointer;
+
       .check {
         display: none;
       }
+
       .user {
         order: 1;
         flex: 0 0 80px;
@@ -688,7 +696,9 @@
           width: 80px;
           @include border-radius(50%);
         }
+
       }
+
       .title {
         flex: 0 0 100%;
         order: 2;
@@ -714,6 +724,7 @@
         order: 4;
         p {
           margin: 0;
+          padding: 0;
         }
       }
       .role {
