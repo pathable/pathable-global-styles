@@ -1,8 +1,17 @@
 //
 // AGENDA
 .agenda-wrapper, .flexlist-wrapper {
+  @include box-sizing(border-box);
   @media screen and (min-width: 1px) {
     height: 85%;
+  }
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    top: 0;
+    padding-top: 160px;
+    left: 0;
+    right: 0;
+    height: 100%;
   }
 }
 
@@ -10,19 +19,16 @@
   background: $slate-light2;
   height: 100%;
   position: relative;
+
   @include box-sizing(border-box);
   @include pie-clearfix;
   @media screen and (max-width: 500px) {
-    padding-top: 36px;
+    padding-top: 50px;
   }
   @media screen and (min-width: 501px) {
     padding-top: 99px;
   }
   &.admin {
-    @media screen and (max-width: 500px) {
-      margin-left: -$size;
-      margin-right: -$size;
-    }
     .meeting, .flex-item {
       cursor: pointer;
       height: 50px;
@@ -31,8 +37,8 @@
       @media screen and (max-width: 500px) {
         flex-flow: row wrap;
         height: 50px;
-        margin-bottom: 1px;
-        padding: 7px 10px 7px 50px;
+        margin-bottom: 0;
+        padding: 7px 10px 7px 20px;
         position: relative;
         @include box-sizing(border-box);
       }
@@ -115,19 +121,19 @@
           flex: 1 1 6%;
         }
         @media screen and (max-width: 500px) {
+          height: 100%;
           position: absolute;
           left: 0;
           top: 0;
-          left: 15px;
-          margin-top: -5px;
-          top: 50%;
+          left: 0;
+          margin-top: 0;
           span {
             background: $blue;
             color: transparent !important;
             content: '.';
-            height: 10px;
+            height: 100%;
             padding: 0;
-            width: 10px;
+            width: 8px;
           }
         }
       }
@@ -141,7 +147,7 @@
       .actions { display: none; }
     }
     .timeslot, .flex-block {
-      padding: 0 10px 5px;
+      padding: 0 10px 10px;
     }
   }
   &.attendee {
@@ -150,11 +156,13 @@
       height: 160px;
       padding: 25px 50px 15px 50px;
       position: relative;
+      cursor: pointer;
+
       @include box-sizing(border-box);
       @media screen and (max-width: 500px) {
         height: 60px;
-        margin-bottom: 1px;
-        padding: 10px 40px;
+        margin-bottom: 0;
+        padding: 10px 20px;
         .location {
           order: 5;
         }
@@ -232,7 +240,7 @@
           }
         }
         @media screen and (max-width: 500px) {
-          left: 10px;
+          left: 20px;
           margin-top: -5px;
           top: 50%;
           a {
@@ -298,7 +306,7 @@
       .registered { display: none; }
       .updated { display: none; }
       .attachment { display: none;}
-      .actions { position: absolute; right: 0; height: 100%; width: 50px; top: 0; a, button {margin-top: 20px;}}
+      .actions { position: absolute; right: 0; height: 100%; width: 50px; top: 0; a, button {margin-top: 15px;}}
       &.featured {
         background: lighten($blue, 50%);
         box-shadow: rgba($blue, 0.5) -1px -1px 0 inset;
@@ -593,6 +601,8 @@
 .users {
   &.admin {
     .flex-item {
+      cursor: pointer;
+
       .check {
         order: 1;
       }
@@ -669,26 +679,31 @@
       align-content: flex-start;
       height: 140px;
       padding: 15px 10px 15px 150px;
+      cursor: pointer;
+
       .check {
         display: none;
       }
+
       .user {
         order: 1;
-        flex: 0 0 80px;
-        height: 80px;
-        left: 45px;
-        line-height: 80px;
+        flex: 0 0 90px;
+        height: 90px;
+        left: 30px;
+        line-height: 90px;
         position: absolute;
-        top: 20px;
-        width: 80px;
+        top: 25px;
+        width: 90px;
         img {
           display: block;
-          height: 80px;
+          height: 90px;
           object-fit: cover;
-          width: 80px;
+          width: 90px;
           @include border-radius(50%);
         }
+
       }
+
       .title {
         flex: 0 0 100%;
         order: 2;
@@ -702,7 +717,7 @@
 
         .position {
           color: rgba($slate, 0.75);
-          margin-bottom: 1px;
+          margin-bottom: 0;
         }
 
         .company-name {
@@ -714,6 +729,7 @@
         order: 4;
         p {
           margin: 0;
+          padding: 0;
         }
       }
       .role {
@@ -731,21 +747,25 @@
         }
       }
       @media screen and (max-width: 500px) {
-        height: 60px;
-        padding-left: 60px;
+        height: 80px;
+        padding: 12px 10px 12px 80px;
         .user {
-          flex: 0 0 40px;
-          height: 40px;
-          left: 10px;
-          top: 10px;
-          width: 40px;
+          flex: 0 0 50px;
+          height: 50px;
+          left: 15px;
+          top: 15px;
+          width: 50px;
           img {
-            height: 40px;
-            width: 40px;
+            height: 50px;
+            width: 50px;
           }
         }
         .title {
           margin: 0;
+          h2 {
+            font-size: 15px;
+            margin: 0;
+          }
         }
         .company {
           color: rgba($slate, 0.5);

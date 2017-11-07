@@ -1,7 +1,9 @@
 // App wrapper
 #app {
+  height: 100%;
   @extend .height-100;
   >div, >div>div, div & {
+    height: 100%;
     @extend .height-100;
   }
 }
