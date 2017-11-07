@@ -162,7 +162,7 @@
       @media screen and (max-width: 500px) {
         height: 60px;
         margin-bottom: 0;
-        padding: 10px 30px;
+        padding: 10px 20px;
         .location {
           order: 5;
         }
@@ -306,7 +306,7 @@
       .registered { display: none; }
       .updated { display: none; }
       .attachment { display: none;}
-      .actions { position: absolute; right: 0; height: 100%; width: 50px; top: 0; a, button {margin-top: 20px;}}
+      .actions { position: absolute; right: 0; height: 100%; width: 50px; top: 0; a, button {margin-top: 15px;}}
       &.featured {
         background: lighten($blue, 50%);
         box-shadow: rgba($blue, 0.5) -1px -1px 0 inset;
