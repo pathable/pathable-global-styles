@@ -1,15 +1,27 @@
 .uped-file-list {
-  background: rgba(0,0,0,0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid $border-light;
 
   .flexlist {
-      padding: 15px;
-      height: auto;
-      background: none;
+    padding: 15px;
+    height: auto;
+    background: none;
   }
 
   .uped-file-list__new {
     padding: 15px 15px 0;
+
+    .file-picker + .file-picker {
+      margin-left: 10px;
+    }
+
+    .button--light {
+      float: right;
+    }
+
+    .clear {
+      clear: both;
+    }
 
     hr {
       background: none;
@@ -105,7 +117,9 @@
   .uped-file-list__actions {
     flex-basis: 10%;
 
-    form { width: 100%; }
+    form {
+      width: 100%;
+    }
 
     .button {
       float: right;
@@ -125,9 +139,15 @@
       margin-bottom: 0;
     }
 
-    &.uped-file-list__summary-row--ok { color: $green; }
-    &.uped-file-list__summary-row--warning { color: $orange; }
-    &.uped-file-list__summary-row--error { color: $red; }
+    &.uped-file-list__summary-row--ok {
+      color: $green;
+    }
+    &.uped-file-list__summary-row--warning {
+      color: $orange;
+    }
+    &.uped-file-list__summary-row--error {
+      color: $red;
+    }
   }
 
   .uped-file-list__summary-icon {
@@ -135,5 +155,4 @@
     display: inline-block;
     margin-right: 2px;
   }
-
 }
